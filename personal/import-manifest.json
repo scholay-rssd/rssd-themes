@@ -1,0 +1,295 @@
+{
+  "sourceRepository": "git@github.com:scholay/pm.scholay.com.git",
+  "sourceCommit": "63ec351274292a987b29d07c00f026ad88fa2991",
+  "includesWorkingTreeChanges": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "207e265ff4901f9ad9f96d8ce08530e04f9fc600815472a66d0a446096d654cd"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb"
+    },
+    {
+      "path": "README.md",
+      "sha256": "20e37f5574537a2582f6063df1ea3cd7639f867924ab69ffc4e060b98808fc1f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "5bf9a0459be8cc57d3c07b394fd3d8853d2c9d648c059fe1fcdbf39263e449a8"
+    },
+    {
+      "path": "content/posts/a-better-link.md",
+      "sha256": "0c628c14a0914c6f10f235b32808c622b2530acc5223b9392b54fddad197e062"
+    },
+    {
+      "path": "content/posts/designing-for-reading.md",
+      "sha256": "9bf3e7a8bb42f80d1ab6edde0e04615714283d140462cae1990e4a9c65436e4c"
+    },
+    {
+      "path": "content/posts/why-write.md",
+      "sha256": "c6a33cd81310a09bb556bda4bc75a1c26288774d5f8e383b6371b9ec4898150b"
+    },
+    {
+      "path": "docs/input-schemes.md",
+      "sha256": "691f4fc5c8431aa4709738dc0d137e3d093f0d9927a4440d735987b414e46977"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "7b7da8e1f4776367abe30a93d4aa9db8d701382e4a5a57263dc5083fc57b8c7f"
+    },
+    {
+      "path": "next.config.ts",
+      "sha256": "079e83accd7e6c1e1c121849d7b11ccfba72bc6e2f97e0a4027a05e82b8b9eb4"
+    },
+    {
+      "path": "package.json",
+      "sha256": "14b1c6f081f5adc96b38ed18a407ff21d555ea62c4c68063da682ff5b5098969"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "d857cd3f7c79033c46408352876ca27df24dc16592cc0d73b78879a43277a081"
+    },
+    {
+      "path": "public/admin/index.html",
+      "sha256": "835493c4264f89fab65b7fac384d0765faebbbb5fa23218e683b377aaded79ec"
+    },
+    {
+      "path": "public/downloads/rimes/.gitignore",
+      "sha256": "15093ccf76e1aa623e0fe9d23172fa6cdf29131a772d2eb49bae10708e1e6434"
+    },
+    {
+      "path": "public/downloads/rimes/SHA256SUMS",
+      "sha256": "4b04a419e3ff0e2947a2b0a2cf797ccf717ab3409063ff73c27c56a0eeaf565f"
+    },
+    {
+      "path": "public/icon.svg",
+      "sha256": "426a08561d4076c76831ed001f9b38a6068b777b1817ab53686d2b3230e3b89f"
+    },
+    {
+      "path": "public/models/draco/LICENSE.txt",
+      "sha256": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4"
+    },
+    {
+      "path": "public/models/draco/README.md",
+      "sha256": "839850a67c93f6b26d3cc038a45bd8289e3cfdf15531e69339e8eb1282b4eb76"
+    },
+    {
+      "path": "public/models/draco/draco_decoder.js",
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "public/models/draco/draco_decoder.wasm",
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "public/models/draco/draco_wasm_wrapper.js",
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    },
+    {
+      "path": "public/models/licenses/THREE-MIT.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "public/models/split-keyboard.glb",
+      "sha256": "6d3cf9657cacfb676ef7447d424c5233429751de07fdeca48f5008cf6e133e79"
+    },
+    {
+      "path": "public/models/split-keyboard.keys.json",
+      "sha256": "17e98f2c49d97c551c475bfc86cd0d16cfb396e4955a22dd5795ebabf3382105"
+    },
+    {
+      "path": "public/visuals/modular-keyboard.webp",
+      "sha256": "06803ab8e1d79e519f31e1b4befeaab8d9cdcd351069e7c3efcca33cc7d6b537"
+    },
+    {
+      "path": "public/visuals/rimes-icon.webp",
+      "sha256": "e4972ef3247446c17538ad0dc673eafe8289f693978f91328ab0e8e2e669e242"
+    },
+    {
+      "path": "public/visuals/rimes/01-home.webp",
+      "sha256": "393b6957e83928efa713ef88a70b6d6656681fdf81d7af7f2d70a4bde77c84d3"
+    },
+    {
+      "path": "public/visuals/rimes/02-chord-keyboard.webp",
+      "sha256": "64537868020353cb6ebc4a598c15129a8674ff1f6e652d06ed1051c71efa06c1"
+    },
+    {
+      "path": "public/visuals/rimes/03-buffer.webp",
+      "sha256": "ca55ab1db520aa3c53d2db8fa91078195fa8822fb0a3dc9d5248557e377ff8a2"
+    },
+    {
+      "path": "public/visuals/rimes/04-pinyin-keyboard.webp",
+      "sha256": "2c09fde21956ae86a14cdd26ca31e15c33027a96918be1c9e3997f9f5c71bac7"
+    },
+    {
+      "path": "public/visuals/scholay-rhino-2d.png",
+      "sha256": "565118b8a8c3aab0370c7e11ceef0709a2cfcba201cb840821f962618ce5f55e"
+    },
+    {
+      "path": "public/visuals/scholay-rhino-3d.png",
+      "sha256": "946ac7782d8ebd5d5a5d66eff8ca48ffb75e3eac266b08a44582867848b7c2e9"
+    },
+    {
+      "path": "public/visuals/scholay-rhino-typing.png",
+      "sha256": "c775a849111f99362f8a22da9abad8c57303d7f87cffa8aba31eceec6f6ce972"
+    },
+    {
+      "path": "public/visuals/split-keyboard-poster.webp",
+      "sha256": "38e9739fb4a761984d8b008949816b8884cc1ef034ce9ed6a49e0d40d6d06a69"
+    },
+    {
+      "path": "scripts/export-split-keyboard.py",
+      "sha256": "879f27d6b5b02757b62801df02de7e17c2e97da3c2fd17924f5be350ae36ad48"
+    },
+    {
+      "path": "scripts/sync-input-schemes.mjs",
+      "sha256": "e152c4d85e24c58f401834c461b70fdb74e8a7de4dac73e6152208e405c7cb8d"
+    },
+    {
+      "path": "src/app/(zh)/layout.tsx",
+      "sha256": "c485d6db3bf162b5f8f86dcb28a6a0b9cd1c72c1b097cd9128d87ce7eaac775b"
+    },
+    {
+      "path": "src/app/(zh)/page.tsx",
+      "sha256": "8acf0daf8eca346efb7c0ae2b83007f0137eeedc2a8b60f48691a025a06bc8ee"
+    },
+    {
+      "path": "src/app/(zh)/projects/[slug]/page.tsx",
+      "sha256": "89e3c829d73df82e24d8995fb3cad7731e516a33271fe28f2f627d1d5ee2d36e"
+    },
+    {
+      "path": "src/app/(zh)/projects/page.tsx",
+      "sha256": "63ad9d057f1786ec86ae24b37c49436ffd0b537f48fd6bfa59d925200f6981bc"
+    },
+    {
+      "path": "src/app/(zh)/projects/rimes/input-schemes/page.tsx",
+      "sha256": "dddf613ac8a8e6b943d45ca5dc988a8e7a96efdef3a2b1f5c556f7a71d7c69a9"
+    },
+    {
+      "path": "src/app/[lang]/layout.tsx",
+      "sha256": "3b6825dd583ea65da32e90c8976fd0dcff2f98f520f199cd2f3d5d312e7d22e7"
+    },
+    {
+      "path": "src/app/[lang]/page.tsx",
+      "sha256": "493a48fd68f21c9fef0e4ca8c5b912ae16f380ca4f84a348ede7ad74c78bc740"
+    },
+    {
+      "path": "src/app/[lang]/projects/[slug]/page.tsx",
+      "sha256": "e8de1f5c5e5079a5534f63855ee7a31a90cde7b1f2ab0c357f089bc518dee0ac"
+    },
+    {
+      "path": "src/app/[lang]/projects/page.tsx",
+      "sha256": "05aac483187a036dc14ae702e8e39ab969ccc7cf0c8ca8c559c90cae2a55f87d"
+    },
+    {
+      "path": "src/app/[lang]/projects/rimes/input-schemes/page.tsx",
+      "sha256": "c17a3b024dd1b66cfb01f9e309ea39e7c7bfa6d8bffa81ff959384ec8148d79f"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "5f5a2f7eab6f602f4b041e459924df6a3f23a8feee0fb58843298d31b1c0b727"
+    },
+    {
+      "path": "src/app/personal-home.css",
+      "sha256": "fe9e90fc5af16660b4311b3a4601e070a24a0e3ae3ad67a0e0177c8c14729cdb"
+    },
+    {
+      "path": "src/app/project-pages.css",
+      "sha256": "368441fd4ec7ac712f33491b90351235f6c968e6b942f11221f36196a78ab3e7"
+    },
+    {
+      "path": "src/app/robots.ts",
+      "sha256": "e3ea8f74d2b60984dbee0d1c0b122c1e1289239a5b66be745192f472023f3eb5"
+    },
+    {
+      "path": "src/app/rss.xml/route.ts",
+      "sha256": "3e48ea54d6622c9cdf091e57f343aafa4e2296ac94d870d2ef5ae45806aaa1ee"
+    },
+    {
+      "path": "src/app/scheme-catalog.css",
+      "sha256": "6f7897a459347d136724e28d35f9f13c9b9f8ef9758e77117ec1f870ebbb4b60"
+    },
+    {
+      "path": "src/app/sitemap.ts",
+      "sha256": "109fc74ee5213da4550c101554a5e58d35daca7900e7b2c1221bcbec4b595a16"
+    },
+    {
+      "path": "src/app/split-keyboard.css",
+      "sha256": "a17602727f446b12b99869bddf96fb566e0da1ee0df21c7469899f6d4ca6a8b7"
+    },
+    {
+      "path": "src/components/article-actions.tsx",
+      "sha256": "ceda2f3023634f7fed4c57162e3842c5a1647024e055c08f7d8f509b0766b4e5"
+    },
+    {
+      "path": "src/components/clarity-script.tsx",
+      "sha256": "ebc1bc07e7feacdece3fa2863f7995a92dd67ca791c334288bc16cab4aa11bff"
+    },
+    {
+      "path": "src/components/personal-home.tsx",
+      "sha256": "01a3a8a6ae6256ce6f9a016fe627261948ad76f3fec88545f26ea959614f13e9"
+    },
+    {
+      "path": "src/components/portfolio-frame.tsx",
+      "sha256": "41aa01dade6c1842c598f2b8b9821e7a14eaf1375ed7148aac8afb64a5ef33dc"
+    },
+    {
+      "path": "src/components/portfolio-language-picker.tsx",
+      "sha256": "2228e31ea330ab0ecff6d71ba25cad3aced03a3b55b2a5e87fa30b2469f16c7d"
+    },
+    {
+      "path": "src/components/post-browser.tsx",
+      "sha256": "56e174ed1f08ebcd71950f375959b124e8dd05e4acc755170fcc6e294119e34b"
+    },
+    {
+      "path": "src/components/project-pages.tsx",
+      "sha256": "ab5395da101afd27b3a6eed5a2d3e7b098c89b8aedf327dcf6342d6d9bbfdcdc"
+    },
+    {
+      "path": "src/components/scheme-catalog.tsx",
+      "sha256": "0407b4de56fd8874d9740a19be342e91d189a421b2aa5a1b445f1901bf26e02b"
+    },
+    {
+      "path": "src/components/site-header.tsx",
+      "sha256": "73de795ef3356d2a31ce7fc2f60f8031e60e82d2cdb1ab7860b54e0e466c2bfc"
+    },
+    {
+      "path": "src/components/split-keyboard.tsx",
+      "sha256": "29ad9bc729e08937a3c0a0f49815579cd38b6378dcd16e312725c58feb334fac"
+    },
+    {
+      "path": "src/components/theme-toggle.tsx",
+      "sha256": "53560035cb59769454ede2ad7abb7e916294561c67fc744dbc5137d14815d483"
+    },
+    {
+      "path": "src/lib/input-schemes.json",
+      "sha256": "ca61e74ac8242f7bea869644295038aa1d3fe988625a7bfad3deff7ddec871c8"
+    },
+    {
+      "path": "src/lib/posts.ts",
+      "sha256": "0f40f522c67211675047c5215350af0483c97952764384a1562ea53d3668ed47"
+    },
+    {
+      "path": "src/lib/project-capabilities.ts",
+      "sha256": "f7057deeaa30c0c225bd6a124cdb061c91cbc8ff62864ba35bdb2584d845cbfa"
+    },
+    {
+      "path": "src/lib/project-content.ts",
+      "sha256": "598bef666034d82015e274c7d2e500544193736f28e0e0898b50c2c1ab69385d"
+    },
+    {
+      "path": "src/lib/site-content.ts",
+      "sha256": "a078ff6bf33d2d7bdd040704c11969f76a9f1ed4461841606753b316d4088c1f"
+    },
+    {
+      "path": "src/lib/site-metadata.ts",
+      "sha256": "870e9774f05622cacd35e254d29577970b7dac8e848525e71b92b759021e18ee"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "5c51df4c59f4510d8c7dadf07a5c32132228826a3b331da5e286207b4df7ef9c"
+    }
+  ]
+}

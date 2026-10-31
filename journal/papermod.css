@@ -1,0 +1,11 @@
+/*! Adapted from Hugo PaperMod (MIT), Aditya Telange. See /theme-license.txt. */
+body[data-blog=papermod]{--paper:#f7f7f5;--soft:#edeee9;--line:#dedfd9}
+[data-blog=papermod] .entry{position:relative;margin-bottom:20px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:8px;transition:transform .2s ease,border-color .2s ease}
+[data-blog=papermod] .entry:hover,[data-blog=papermod] .entry:focus-within{transform:translateY(-2px);border-color:var(--accent)}
+[data-blog=papermod] .entry h3{font-size:24px;line-height:1.4}
+[data-blog=papermod] .entry p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+[data-blog=papermod] .section-heading{border:0;margin-bottom:6px}
+[data-blog=papermod] .blog-emblem{border-radius:24px;transform:rotate(-5deg)}
+[data-blog=papermod] .blog-emblem>*{transform:rotate(5deg)}
+[data-site=study]{--soft:#e8eddf}
+@media(max-width:650px){[data-blog=papermod] .entry{padding:22px}[data-blog=papermod] .entry h3{font-size:21px}}

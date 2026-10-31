@@ -1,0 +1,4 @@
+import { getAllPosts } from '@/lib/posts';
+export const dynamic='force-static';
+function xml(s:string){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');}
+export function GET(){const base=process.env.NEXT_PUBLIC_SITE_URL || 'https://pm.scholay.com'; const items=getAllPosts().map(p=>`<item><title>${xml(p.title)}</title><link>${base}/posts/${p.slug}/</link><guid>${base}/posts/${p.slug}/</guid><description>${xml(p.description)}</description><pubDate>${new Date(p.date).toUTCString()}</pubDate></item>`).join('');return new Response(`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>学术海</title><link>${base}</link><description>学术、产品与开放构建</description><language>zh-CN</language>${items}</channel></rss>`,{headers:{'Content-Type':'application/rss+xml; charset=utf-8'}});}

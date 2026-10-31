@@ -1,0 +1,29 @@
+/* 学术海 — quiet journal after AstroPaper: one narrow serif column, archive-list rows.
+   Applies to the engine pages (articles, archive); the authored homepage is untouched. */
+body[data-skin=personal]{--paper:light-dark(#f6f5ef,#1c2322);--ink:light-dark(#24302c,#eaeee8);--muted:light-dark(#56645e,#aebbb4);--line:light-dark(#dcdcd2,#3b4743);--soft:light-dark(#eceee6,#273230);--card:light-dark(#fbfaf5,#222b29);--accent:light-dark(#2f6f69,#8fd0c8);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-family:var(--serif)}
+[data-skin=personal] :is(.site-header,main,footer){width:min(780px,100% - 56px)}
+[data-skin=personal] .site-header{min-height:84px;border:0;padding-top:28px}
+[data-skin=personal] .brand{font-family:var(--serif)}
+[data-skin=personal] .brand small{display:none}
+[data-skin=personal] .site-header nav{font-family:var(--mono);font-size:13px}
+[data-skin=personal] .hero.compact{padding:48px 0 24px}
+[data-skin=personal] h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,4vw,38px)}
+[data-skin=personal] .eyebrow,[data-skin=personal] .entry-meta{font-family:var(--mono)}
+[data-skin=personal] .feed-layout{display:block}
+[data-skin=personal] .feed-sidebar{position:static;margin-bottom:28px}
+[data-skin=personal] .feed-filters{flex-direction:row;flex-wrap:wrap;gap:8px;margin-top:16px}
+[data-skin=personal] .feed-filters a{padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+[data-skin=personal] .feed-entry{display:grid;grid-template-columns:124px minmax(0,1fr);column-gap:16px;padding:14px 0;border-color:var(--line)}
+[data-skin=personal] .feed-entry>.entry-meta{grid-column:1;grid-row:1/span 2;display:block;margin:0}
+[data-skin=personal] .feed-entry>.entry-meta span:first-child{display:none}
+[data-skin=personal] .feed-entry>h2,[data-skin=personal] .feed-entry>p{grid-column:2}
+[data-skin=personal] .feed-entry h2{font-family:var(--serif);font-size:18px;line-height:1.6;font-weight:600;margin:0}
+[data-skin=personal] .feed-entry p{display:none}
+[data-skin=personal] .reading{margin:48px auto 72px}
+[data-skin=personal] .prose{font-size:18px;line-height:2.05}
+[data-skin=personal] .prose h1{font-family:var(--serif);font-weight:900;line-height:1.45}
+[data-skin=personal] .prose :is(h2,h3){font-family:var(--serif)}
+[data-skin=personal] .prose blockquote{background:none;border-left:2px solid var(--accent);padding:4px 0 4px 20px}
+[data-skin=personal] .post-meta{font-family:var(--mono)}
+[data-skin=personal] .article-neighbors a{border-radius:0;border-width:1px 0}
+@media(max-width:650px){[data-skin=personal] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-skin=personal] .feed-entry{grid-template-columns:72px minmax(0,1fr)}}

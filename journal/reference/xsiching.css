@@ -1,0 +1,21 @@
+/* Shuge catalogue. The authored homepage never loads this stylesheet. */
+body[data-site=xsiching][data-design]{--paper:light-dark(#f0ecdf,#25231e);--ink:light-dark(#2c2821,#e9e1d3);--accent:light-dark(#8d4d37,#d7a28a);--soft:light-dark(#eae3d4,#343027);--line:light-dark(#d7cebc,#4c4437);--muted:light-dark(#716858,#bdb09c);--card:light-dark(#fbf8ef,#2e2b24);font-family:var(--ref-serif)}
+[data-site=xsiching][data-design] .brand{font:600 27px/1.3 var(--ref-serif);letter-spacing:.12em}
+[data-site=xsiching][data-design] .site-header{border-bottom:1px solid var(--line)}
+[data-site=xsiching][data-design] .feed-layout{display:block}
+[data-site=xsiching][data-design] .feed-sidebar{position:static;margin-bottom:24px}
+[data-site=xsiching][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px}
+[data-site=xsiching][data-design] .feed-filters a{border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent}
+[data-site=xsiching][data-design] .feed-filters a[aria-current=page]{border-color:var(--accent);color:var(--accent)}
+[data-site=xsiching][data-design] #feed-search-form{max-width:550px}
+[data-site=xsiching][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+[data-site=xsiching][data-design] :is(.feed-entry,.showcase-card){background:var(--card);border:1px solid var(--line);border-radius:0;box-shadow:none;padding:0 0 20px}
+[data-site=xsiching][data-design] .feed-entry>:not(.feed-cover){margin-left:19px;margin-right:19px}
+[data-site=xsiching][data-design] .feed-entry h2{font:500 21px/1.6 var(--ref-serif)}
+[data-site=xsiching][data-design] .feed-entry p{font-size:15px;line-height:1.95}
+[data-site=xsiching][data-design] .feed-cover{display:block;margin-bottom:18px}
+[data-site=xsiching][data-design] .feed-cover img{filter:saturate(.75);height:220px}
+[data-site=xsiching][data-design] .prose h1{text-align:center;font-weight:500;font-family:var(--ref-serif)}
+[data-site=xsiching][data-design] .prose{font-size:18px;line-height:2.1}
+@media(max-width:850px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:1fr}}

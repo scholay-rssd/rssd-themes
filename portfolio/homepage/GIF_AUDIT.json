@@ -1,0 +1,122 @@
+{
+  "method": "Inspect all composited RGBA frames for opaque bright green pixels (G > 150, G > 1.55R, G > 1.4B). Selected files are unchanged archive originals. The bath GIF is the archive transparent version; its two bright-green pixels in frame 5 are excluded on the page by an sRGB SVG alpha mask. No animation is generated or re-encoded.",
+  "gifs": [
+    {
+      "file": "assets/motion-01.gif",
+      "frames_checked": 5,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "assets/motion-03.gif",
+      "frames_checked": 9,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "assets/motion-04.gif",
+      "frames_checked": 9,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "assets/motion-08.gif",
+      "frames_checked": 17,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "assets/motion-09.gif",
+      "frames_checked": 9,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "file": "assets/motion-05.gif",
+      "frames_checked": 9,
+      "bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "display_filter": "bath-green-clean",
+      "filtered_bright_green_pixels_per_frame": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residue_coordinates_in_frame_5": [
+        [
+          190,
+          44
+        ],
+        [
+          175,
+          66
+        ]
+      ],
+      "mask_validation": "Applied the exact filter alpha equations to every decoded RGBA frame; no bright green residue remains."
+    }
+  ]
+}

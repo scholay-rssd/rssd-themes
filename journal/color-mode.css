@@ -1,0 +1,34 @@
+/* Follow the browser's system preference, including changes while reading.
+   Kept in the existing stylesheet: no theme script, storage or extra request. */
+:root{color-scheme:light dark}
+body[data-blog]{color-scheme:inherit;--paper:light-dark(#fcfbf8,#1c1f20);--ink:light-dark(#292b28,#eceee9);--muted:light-dark(#60665f,#b1b8b2);--line:light-dark(#dedfd7,#424945);--soft:light-dark(#f0f1eb,#282e2b);--card:light-dark(#fff,#242a27);--night-accent:#a8ceb6;--accent:light-dark(var(--blog-accent,#376c68),var(--night-accent))}
+body[data-blog=papermod]{--paper:light-dark(#f7f7f5,#1c201e);--soft:light-dark(#edeee9,#2b322d)}
+body[data-blog=archie]{--paper:light-dark(#fff,#1c1f22);--soft:light-dark(#eff3f1,#29312f)}
+body[data-blog=bear]{--paper:light-dark(#faf8f2,#24221f);--soft:light-dark(#eeeae0,#322f29);--line:light-dark(#dedbcf,#4b4740)}
+body[data-blog=xmin]{--paper:light-dark(#f9f7f0,#23221f);--soft:light-dark(#eeece4,#302f29);--line:light-dark(#d6d3c8,#4b4941)}
+body[data-site=piggytuck]{--paper:light-dark(#fcfbf8,#1e2029);--soft:light-dark(#eaeafa,#2d3041);--night-accent:#b1bbff}
+body[data-site=personal]{--paper:light-dark(#f6f5ef,#202928);--ink:light-dark(#29362f,#f4f0e7);--muted:light-dark(#59685f,#b7c3b8);--soft:light-dark(#e8ede5,#293330);--line:light-dark(#cfd7cb,#45534b);--night-accent:#b3d3b5}
+body[data-site=pets]{--night-accent:#e0b594}
+body[data-site=legis]{--paper:light-dark(#fbfbf9,#202429);--soft:light-dark(#eceef0,#2c333c);--night-accent:#b2c6df}
+body[data-site=metho]{--night-accent:#9ed4c2}
+body[data-site=enter]{--paper:light-dark(#fafbfd,#1d232c);--soft:light-dark(#e9eef6,#2b3544);--night-accent:#a9c4ee}
+body[data-site=xsiching]{--night-accent:#e4b5a9}
+body[data-site=study]{--soft:light-dark(#e8eddf,#2e352a);--night-accent:#c0d3ac}
+[data-blog=papermod] .entry{background:var(--card)}
+[data-blog=bear] .blog-emblem{background:var(--soft)}
+[data-blog] :is(.hero>p:not(.eyebrow),.entry-meta span,.column-links span,.column-links small,.section-heading>span,.section-description,.standing-gallery figcaption,.legacy-archives summary,.entry-tags){color:var(--muted)}
+[data-blog] :is(.feed-search-control input,.feed-search-control button,.feed-pagination button,.entry-tags span,.legacy-archives,.calendar-toolbar button,.calendar-toolbar select,#day-details){border-color:var(--line)}
+[data-blog] :is(.standing-gallery img,.standing-cover,.month){background:var(--soft)}
+[data-blog] :is(.month-grid,.day){color:var(--muted)}
+[data-blog] .day.has-items{background:var(--accent);color:var(--paper)}
+[data-blog] .day:hover{background:var(--line);color:var(--ink)}
+[data-blog] select option{background:var(--paper);color:var(--ink)}
+[data-blog] input::placeholder{color:var(--muted);opacity:1}
+[data-blog] .feed-legacy{color:var(--muted)}
+[data-blog] .prose :not(pre)>code{background:var(--soft);border-radius:3px;padding:.1em .25em}
+[data-blog] :is(.gallery-toolbar,.gallery-item small,.graph-toolbar,.graph-caption,.graph-relation h2 small,.graph-scope,.graph-review){color:var(--muted)}
+[data-blog] :is(.gallery-toolbar,.gallery-toolbar select,.graph-toolbar,.graph-toolbar select,.graph-stage,.graph-relation,.graph-entities,.graph-empty){border-color:var(--line)}
+[data-blog] :is(.gallery-art,.graph-stage,.graph-evidence blockquote,.graph-empty){background:var(--soft)}
+[data-blog] :is(.graph-node circle,.graph-edge circle){fill:var(--paper)}
+[data-blog] :is(.graph-node text,.graph-edge text){fill:var(--ink)}
+[data-blog] :is(.graph-node:hover circle,.graph-node:focus circle){fill:var(--soft)}

@@ -1,0 +1,25 @@
+/* 智能学堂 — course desk after Just the Docs: olive paper, pill topics, card list. */
+body[data-skin=study]{--paper:light-dark(#f6f7f2,#161a13);--ink:light-dark(#1d2617,#e8eee0);--muted:light-dark(#4d5943,#aab6a0);--line:light-dark(#e0e4d6,#2f3829);--soft:light-dark(#eef1e6,#212a1c);--card:light-dark(#fff,#1d2418);--accent:light-dark(#4d6b2f,#aed47f);font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+[data-skin=study] .brand .brand-monogram,[data-skin=study] .brand .site-logo{border-radius:9px}
+[data-skin=study] .blog-intro{grid-template-columns:minmax(0,1fr);padding:64px 0 36px;border-bottom:0}
+[data-skin=study] .blog-emblem{display:none}
+[data-skin=study] h1{font-weight:900;letter-spacing:-.02em}
+[data-skin=study] .eyebrow{font-weight:700}
+[data-skin=study] .home-layout{display:flex;flex-direction:column-reverse;gap:0;margin-top:8px}
+[data-skin=study] .home-directory{position:static;margin-bottom:28px}
+[data-skin=study] .home-directory h2,[data-skin=study] .directory-note{display:none}
+[data-skin=study] .home-directory nav{display:flex;flex-wrap:wrap;gap:10px;border:0}
+[data-skin=study] .home-directory nav a{min-height:0;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:600}
+[data-skin=study] .home-directory nav a:nth-child(4n+1){background:#e6eed9;color:#35501d;border-color:#d3e1bf}
+[data-skin=study] .home-directory nav a:nth-child(4n+2){background:#dde9f3;color:#1f4a6b;border-color:#c5dbe9}
+[data-skin=study] .home-directory nav a:nth-child(4n+3){background:#f6ead0;color:#6b4a0e;border-color:#ebd7a8}
+[data-skin=study] .home-directory nav a:nth-child(4n){background:#e6e2f3;color:#4a3a7a;border-color:#d4cdea}
+[data-skin=study] .home-directory nav small{margin-left:8px;opacity:.7}
+[data-skin=study] .entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+[data-skin=study] .entry{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:none}
+[data-skin=study] .entry:hover{border-color:var(--accent);transform:none}
+[data-skin=study] .entry h3{font-size:18px;line-height:1.5}
+[data-skin=study] .feed-entry{padding:18px 20px;margin-bottom:10px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+[data-skin=study] .prose{font-size:17px;line-height:1.95}
+[data-skin=study] .prose .callout{border-radius:10px}
+@media(max-width:700px){[data-skin=study] .entries{grid-template-columns:1fr}}

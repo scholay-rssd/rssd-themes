@@ -1,0 +1,23 @@
+/* 犀术 IME — dark docs console after Starlight: near-black green, mono labels, keycaps. */
+body[data-skin=lingxi]{--paper:light-dark(#f4f8f5,#0f1512);--ink:light-dark(#16231c,#e8efe9);--muted:light-dark(#46584d,#9fb0a5);--line:light-dark(#d5e0d8,#25302a);--soft:light-dark(#e8f0ea,#18211c);--card:light-dark(#fff,#131b17);--accent:light-dark(#237a49,#7fd39b);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+[data-skin=lingxi] :is(.site-header,main,footer){width:min(1200px,100% - 64px)}
+[data-skin=lingxi] .site-header{min-height:68px;border-color:var(--line)}
+[data-skin=lingxi] .brand .brand-monogram,[data-skin=lingxi] .brand .site-logo{border-radius:7px;border-bottom:3px solid color-mix(in srgb,var(--accent) 60%,#000)}
+[data-skin=lingxi] .site-header nav{font-size:14px}
+[data-skin=lingxi] .blog-intro{display:block;margin-top:36px;padding:40px 36px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+[data-skin=lingxi] .blog-emblem{display:none}
+[data-skin=lingxi] .eyebrow{font-family:var(--mono);color:var(--accent);letter-spacing:.1em}
+[data-skin=lingxi] h1{font-weight:900;letter-spacing:-.02em}
+[data-skin=lingxi] .hero-links a{font-family:var(--mono);font-size:12px;padding:6px 12px;border:1px solid var(--line);border-bottom-width:3px;border-radius:7px}
+[data-skin=lingxi] .hero-links a:hover{border-color:var(--accent)}
+[data-skin=lingxi] .entry{padding:22px;margin-bottom:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+[data-skin=lingxi] .entry:hover{border-color:var(--accent);transform:none}
+[data-skin=lingxi] .entry-meta{font-family:var(--mono);font-size:11px}
+[data-skin=lingxi] .read{font-family:var(--mono);display:inline-block;padding:3px 10px;border:1px solid var(--line);border-bottom-width:3px;border-radius:6px}
+[data-skin=lingxi] .home-directory nav a{font-family:var(--mono);font-size:13px}
+[data-skin=lingxi] .feed-entry{padding:18px 20px;margin-bottom:10px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+[data-skin=lingxi] .prose pre{background:light-dark(#0f1a14,#0a0f0d);color:#b8e6c6;border:1px solid var(--line);border-radius:10px;font-family:var(--mono)}
+[data-skin=lingxi] .prose :not(pre)>code{font-family:var(--mono);font-size:.88em;padding:2px 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;background:var(--soft)}
+[data-skin=lingxi] .prose .callout{border-radius:8px}
+[data-skin=lingxi] .toc li a:hover{color:var(--accent)}
+@media(max-width:650px){[data-skin=lingxi] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-skin=lingxi] .blog-intro{padding:28px 22px}}

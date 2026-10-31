@@ -1,0 +1,839 @@
+{
+  "sourceRepository": "git@github.com:scholay/piggytuck.git",
+  "sourceCommit": "594b34c8655e54c725478f24e99859681251e6cb",
+  "includesWorkingTreeChanges": true,
+  "files": [
+    {
+      "path": "ASSET_SOURCES.json",
+      "sha256": "f03dfcac0e5f36a35c8d28e7e557c30eac0d8cb2958e092a63d4899f1cb0b740"
+    },
+    {
+      "path": "GIF_AUDIT.json",
+      "sha256": "1fd6210549ecb79acaecf532836e9fcaf82187a156418e31b054deb64afed009"
+    },
+    {
+      "path": "assets/collections/basketball-01.png",
+      "sha256": "2142324a97580057e2123c4235ace91cfd518cba3efdd6a8faf04bfe643806ef"
+    },
+    {
+      "path": "assets/collections/basketball-02.png",
+      "sha256": "8331bf8a1143a295cc69766e1bbbb7ddb1dbab9aab185563808575100decb87f"
+    },
+    {
+      "path": "assets/collections/basketball-03.png",
+      "sha256": "7c4153146ab9863bade19e45f759f23da873bb7f9fc65ba92b22a44e7c46c213"
+    },
+    {
+      "path": "assets/collections/basketball-04.png",
+      "sha256": "446eebc27b4986c46aba777f97abadd9e3a0f46be8ea635134756ce69465c9f9"
+    },
+    {
+      "path": "assets/collections/basketball-05.png",
+      "sha256": "bac65b97974f4797dda4adbe9388ec45d9f30607586f4b407658cd165f67edb2"
+    },
+    {
+      "path": "assets/collections/basketball-06.png",
+      "sha256": "7265948d0268f3e08a3334f7c96642e694514ae88c869f44293bfe31a79f1ec4"
+    },
+    {
+      "path": "assets/collections/basketball-07.png",
+      "sha256": "f436761db577c4e46781b5b70140c2b461d66277551601e18f7aae4e48c4a4c6"
+    },
+    {
+      "path": "assets/collections/basketball-08.png",
+      "sha256": "796c36c8f70f5d9382998e13d5dec366508ab7e63ddeced8c68eff6016e6482d"
+    },
+    {
+      "path": "assets/collections/basketball-09.png",
+      "sha256": "94c283179d09d4eda0d7fb913219ea69a1600ffa78d2d41b7e14b3064707dcf8"
+    },
+    {
+      "path": "assets/collections/birthday-01.png",
+      "sha256": "e64fcc21fdc83aee906498dc392173bff4de365449bf96d5e5128261747cc088"
+    },
+    {
+      "path": "assets/collections/birthday-02.png",
+      "sha256": "988dc65f9a7aed2ac7d05f26325c6f354ca0bd235c98ba190bec9bcc70ade0b2"
+    },
+    {
+      "path": "assets/collections/birthday-03.png",
+      "sha256": "4cdda57b129e3cfa1455797eac9963f21b89249201eb8b0cb63591d135bf680a"
+    },
+    {
+      "path": "assets/collections/birthday-04.png",
+      "sha256": "6b65c54eb8ec69d530afad9d0060271ecd89fbdc6b9cb61dae2b9138ed946479"
+    },
+    {
+      "path": "assets/collections/birthday-05.png",
+      "sha256": "4f1987f395a5e3c65b0055dd6b72f584ba0b68314c0db30e155e216e263dfd1e"
+    },
+    {
+      "path": "assets/collections/birthday-06.png",
+      "sha256": "ca0ae3f794487bf5261498e9820fe4803e69464c21437694581569a77d90dc90"
+    },
+    {
+      "path": "assets/collections/birthday-07.png",
+      "sha256": "fe5c303c118c5393586712168d1f999146cfc2830120219ffeaf37da4b22e20d"
+    },
+    {
+      "path": "assets/collections/birthday-08.png",
+      "sha256": "c497ff36082883e7b12125a2112061340f9f15deda7592391df8b60196b2c2ac"
+    },
+    {
+      "path": "assets/collections/birthday-09.png",
+      "sha256": "a145bc58f27cfeb679550480f4f4ce6c7333dec59b15c3a2b150b08d6c0fb0c7"
+    },
+    {
+      "path": "assets/collections/birthday-10.png",
+      "sha256": "ac1c9f3bcbf7744fbfddb11faf1d38a5a1467bb961bdd6250edfc3447411562f"
+    },
+    {
+      "path": "assets/collections/birthday-11.png",
+      "sha256": "7c51bdaf93299a5c1020a624931cbcbfbd13b1bb2a49c8cafdcbe17ebe2cdd78"
+    },
+    {
+      "path": "assets/collections/birthday-12.png",
+      "sha256": "b2e68aa977291bee059ff2c663da3e1c64df146b81601cffca9a0685e777beba"
+    },
+    {
+      "path": "assets/collections/capybara-01.png",
+      "sha256": "bd0b2a06ab5e3180f793b0fbcba518390b920e34f8df531903eb0beb4776567f"
+    },
+    {
+      "path": "assets/collections/capybara-02.png",
+      "sha256": "6b100f896ee4406a5aefb6775c1c9eaa0a0b0b7fe240666b740bb6af9d80d76c"
+    },
+    {
+      "path": "assets/collections/capybara-03.png",
+      "sha256": "8cce676379a10e82f705fdd629270d5c7e56bdb84c941f9338e99bb3350f082d"
+    },
+    {
+      "path": "assets/collections/capybara-04.png",
+      "sha256": "102e99b144b6130923f7675779e2ccbcc644103ce31bf242edeae1902e69ef87"
+    },
+    {
+      "path": "assets/collections/capybara-05.png",
+      "sha256": "e87d03f4fa889099e9aada6f136c5f110a28bf3ec862189e1d41f96090c32df8"
+    },
+    {
+      "path": "assets/collections/capybara-06.png",
+      "sha256": "70400cab6276268507bb21b7ba0e695f3a2fbab62101c4f24355fe3e843d1944"
+    },
+    {
+      "path": "assets/collections/capybara-07.png",
+      "sha256": "0725f4c798096b4f46724bebd4083df4248b128830a4b95cca66af3c89e4c42b"
+    },
+    {
+      "path": "assets/collections/capybara-08.png",
+      "sha256": "c289bf61a290fbded0a17544936c547a5cd431079ea14bc6713d9e1b7e07ed99"
+    },
+    {
+      "path": "assets/collections/capybara-09.png",
+      "sha256": "2bdd193b15881e7c6764bb45357c6f3aa18c3865ba12c044a3f1c86bd3d4d64e"
+    },
+    {
+      "path": "assets/collections/capybara-10.png",
+      "sha256": "4d3c7adf71993a4e8f4c62c1dacd218f7c51129bb5178fad62972447bd7b14cd"
+    },
+    {
+      "path": "assets/collections/capybara-11.png",
+      "sha256": "21ebe9ea543c1ecfa4a0a18c40faab9530c38848f510dd7c712645098ce9c289"
+    },
+    {
+      "path": "assets/collections/capybara-12.png",
+      "sha256": "3bea3f016206d2cbaf066772b81b5efec273fdf0dbfb597f690120b0008b48eb"
+    },
+    {
+      "path": "assets/collections/cat-01.png",
+      "sha256": "fb6589398bb72210ddea70d379e81580ea8ea1e4e57f7efc3a28809168329867"
+    },
+    {
+      "path": "assets/collections/cat-02.png",
+      "sha256": "281d0a7b9489055bdd782ddf3141ae014fbc7a05d9f5b3ebe873459fc8e700d2"
+    },
+    {
+      "path": "assets/collections/cat-03.png",
+      "sha256": "a75e7cad65ee28266232acadfe608c3f130f3933d2f12fa1f9cdb2d4ef0da324"
+    },
+    {
+      "path": "assets/collections/cat-04.png",
+      "sha256": "0688332491b1c8df27989eef46a579e94292dfc5ac914414d7dd64cc51332039"
+    },
+    {
+      "path": "assets/collections/cat-05.png",
+      "sha256": "dff245f15d2504987d8882c4280e8847885654f7737bbc2114c37c8a1e0d8fc6"
+    },
+    {
+      "path": "assets/collections/cat-06.png",
+      "sha256": "61c4a3553d33b4886a0397a984fc5f03368736e2b46b9d1865a60d8d2f963adb"
+    },
+    {
+      "path": "assets/collections/cat-07.png",
+      "sha256": "8e9ff31f5d5fb7e365cd42d65bc3d5425eb49d5e1d97cceb4bbfc88d3fac2521"
+    },
+    {
+      "path": "assets/collections/cat-08.png",
+      "sha256": "e2502f8cf7af199ee7c755a990d7bf6ab90db289e3982b53fc3a82f2257fcd28"
+    },
+    {
+      "path": "assets/collections/cat-09.png",
+      "sha256": "2541f2363ee3cdbaa232d5dfa67f47f90c31ded7df148564439d123809d61a3d"
+    },
+    {
+      "path": "assets/collections/cat-10.png",
+      "sha256": "002c4e15bd2d2676bd59d256a2bd91beafe68ef16a06addcd15830c41ecb74e7"
+    },
+    {
+      "path": "assets/collections/cat-11.png",
+      "sha256": "2ecbe7493bd3662c37bba0f1d7a5981535dd4d6d302805a98fe109e95e439d02"
+    },
+    {
+      "path": "assets/collections/cat-12.png",
+      "sha256": "0345951369a201ebb348c04057f9593d62969ea4d536f81bde67bb74a8fe625a"
+    },
+    {
+      "path": "assets/collections/giraffe-01.png",
+      "sha256": "9448ee4d09cb943054b270b6a8c9acbb597cef43915dfe50f58b0ab431254ae2"
+    },
+    {
+      "path": "assets/collections/giraffe-02.png",
+      "sha256": "9bef9f996be26e2d6893dbd080ce59a2d45a8a6bf78d7653aa5e8deb89ce0104"
+    },
+    {
+      "path": "assets/collections/giraffe-03.png",
+      "sha256": "3d8a111b8df2a3948542a26864f43021516525fa98b6a974db51b4e8506c625b"
+    },
+    {
+      "path": "assets/collections/giraffe-04.png",
+      "sha256": "41535909605f1fdc66a5b777a604801b17357bc577689a8b7260ab4d480c9505"
+    },
+    {
+      "path": "assets/collections/giraffe-05.png",
+      "sha256": "c433f831e5c12502ce24c6ec62dacac7792ffad9128547d3e0f8845531dc87c5"
+    },
+    {
+      "path": "assets/collections/giraffe-06.png",
+      "sha256": "7611f5709accde546cde23d101df04258be8dc8187eb89d4e0276872ad529bc1"
+    },
+    {
+      "path": "assets/collections/giraffe-07.png",
+      "sha256": "a68938536cde95280fda5f08bbb86d2f41b04b4ede61df3ae388dc65871daded"
+    },
+    {
+      "path": "assets/collections/giraffe-08.png",
+      "sha256": "566fb3f6857da5c94b9755842395090c1820e7dc034d43d35d3c406f0c40b039"
+    },
+    {
+      "path": "assets/collections/giraffe-09.png",
+      "sha256": "955c6f24975fde80be9a11bdb32f8c0dcce7579599600e10baeadde882705d4c"
+    },
+    {
+      "path": "assets/collections/heartwords-01.png",
+      "sha256": "39a5be817f26557def5861a637c3467d4e946742e03fbf57f6e68f3ec794107f"
+    },
+    {
+      "path": "assets/collections/heartwords-02.png",
+      "sha256": "a08e3ba8c761932f714a9763f3b41c105e765801e68ef7be6acdcf0d6fa6cc64"
+    },
+    {
+      "path": "assets/collections/heartwords-03.png",
+      "sha256": "f8fd960f7b9aa27e9150b410e3a8fcc8be88d3b91478b904813e7c55aab5d037"
+    },
+    {
+      "path": "assets/collections/heartwords-04.png",
+      "sha256": "dc8909c1d9965e576b753355437a59aaf5bf99bff8cb37b31fb62d953d0577d8"
+    },
+    {
+      "path": "assets/collections/heartwords-05.png",
+      "sha256": "cfc218a471c5c57495d70e63078bb44d297b9e7b0dc237d54dcae9e1036db7aa"
+    },
+    {
+      "path": "assets/collections/heartwords-06.png",
+      "sha256": "776c536e375abb7e39b7f66cdb79f6ec283c465f08717473d60522c8217f7e99"
+    },
+    {
+      "path": "assets/collections/heartwords-07.png",
+      "sha256": "0ad49ac9ed6598051863aa050f0ba0e85e0e70d05c783c89d8d9b79855f8b18a"
+    },
+    {
+      "path": "assets/collections/heartwords-08.png",
+      "sha256": "e7e3136dc8d63439e5f8a01606a889906cd6b0bb4c11778d49fc312e0b0bb9b6"
+    },
+    {
+      "path": "assets/collections/heartwords-09.png",
+      "sha256": "b0165f114219a171ff42a6059540925bc279c07c4ff9fafc0603f45bb9dae75d"
+    },
+    {
+      "path": "assets/collections/heartwords-10.png",
+      "sha256": "18b1324b7478f4dabdef29325abcafe697f7e22266337eb63607b747600a69ee"
+    },
+    {
+      "path": "assets/collections/heartwords-11.png",
+      "sha256": "c22b46f8d866a74b9c737c28c1daeae8b73bd28cdd7f226ec5edc26bec0a1adc"
+    },
+    {
+      "path": "assets/collections/heartwords-12.png",
+      "sha256": "599d6de349d0c9ab78c000b9ec8f57dc3457ff9622d41b79ab11784cbc5bcb2a"
+    },
+    {
+      "path": "assets/collections/heartwords-13.png",
+      "sha256": "70aa0dac626a915bfe2c4b14450119617cf6b43a8736596ea2ae208cc311a1a8"
+    },
+    {
+      "path": "assets/collections/heartwords-14.png",
+      "sha256": "da63ea8d7a4e30eb5775c920f5d54abbe795bfe4e289e1c14a0e4b8f56cda3da"
+    },
+    {
+      "path": "assets/collections/heartwords-15.png",
+      "sha256": "a1c64f3e12881bb83af3e00741b0d73c4e4e146af461d2821c9d74284f196a60"
+    },
+    {
+      "path": "assets/collections/heartwords-16.png",
+      "sha256": "e37f918e1dfd61b9a70e567ddea2281d1e060c7bd685a11aaafb69944ca0265a"
+    },
+    {
+      "path": "assets/collections/maxiaoman-01.png",
+      "sha256": "6e4ab6aad3ed96b2e0b6e722ddd6ec8c02a72e2ecbadd63b75fccf8436746167"
+    },
+    {
+      "path": "assets/collections/maxiaoman-02.png",
+      "sha256": "09cb73ef3a1f701ce7a4d50da19628cda347e20db097c6f00101b3502b048b5c"
+    },
+    {
+      "path": "assets/collections/maxiaoman-03.png",
+      "sha256": "59b375934b4c2f2b5f49e86f5ec1fa203928eb04db94e816d637dcad51589820"
+    },
+    {
+      "path": "assets/collections/maxiaoman-04.png",
+      "sha256": "b47f2817420fa6fc8e1fe35fdf3ae22b4b506156f4db505ed12cfca1108184a0"
+    },
+    {
+      "path": "assets/collections/maxiaoman-05.png",
+      "sha256": "67616cd16b76ced99f2d891490816ad8809f64d7ba47a503072b821369924c8f"
+    },
+    {
+      "path": "assets/collections/maxiaoman-06.png",
+      "sha256": "425ca021007a40a1304f0de80a4553df5152b0ac44a9c1bbb756ef79852d04aa"
+    },
+    {
+      "path": "assets/collections/maxiaoman-07.png",
+      "sha256": "ff11cad2cd59202c63e2c1664d661fc8bd5532dd21c83a15e823a879c54ccd35"
+    },
+    {
+      "path": "assets/collections/maxiaoman-08.png",
+      "sha256": "488d24a1cbdbbdb72b16cc41188cf36be07e6a2ba8ac230d352a24cc37439d58"
+    },
+    {
+      "path": "assets/collections/maxiaoman-09.png",
+      "sha256": "684132ac543c32b66e5abcf04dc957bd6c7e8a3476bd71b618ec17617cc55fdd"
+    },
+    {
+      "path": "assets/collections/maxiaoman-10.png",
+      "sha256": "6f3a988ab3c39726a8088ea63c968a4d5d2cd9b593f8fe7d42d372d6cf6ae4b1"
+    },
+    {
+      "path": "assets/collections/maxiaoman-11.png",
+      "sha256": "62130e311579e43b5071dbee1c9393ca4f370c317b445f8a94bfcf7cf21a8d6b"
+    },
+    {
+      "path": "assets/collections/maxiaoman-12.png",
+      "sha256": "1d66253a156d53689cef3bddcad4396a748966fa1ab5a1807fa702812f798c13"
+    },
+    {
+      "path": "assets/collections/mooncake-01.png",
+      "sha256": "2f627e516263b6e93b6dabf2f5adf9837bcc9b94e0d03c08546a2883d37072d4"
+    },
+    {
+      "path": "assets/collections/mooncake-02.png",
+      "sha256": "ad563af593f93ef552f88e997301f7e81af7dc52d40b0d8b54d4464ca7b988e1"
+    },
+    {
+      "path": "assets/collections/mooncake-03.png",
+      "sha256": "7f0426a92131215731e2b9d9562a293c7a499975ea943f170057c8b6551b13ef"
+    },
+    {
+      "path": "assets/collections/mooncake-04.png",
+      "sha256": "61696d777db7cbb7d81249bab5a3126d5d941ab347f170c010d0fcaed3a1a44c"
+    },
+    {
+      "path": "assets/collections/mooncake-05.png",
+      "sha256": "2d6c25d9ae845da4f5e9e7368be54371e8eab590fcc113f543987232960949d5"
+    },
+    {
+      "path": "assets/collections/mooncake-06.png",
+      "sha256": "60fa705593bd4a2ce1d762bab2086a25d4bebc55e63fc836c1e4d9d1c8f55e5e"
+    },
+    {
+      "path": "assets/collections/mooncake-07.png",
+      "sha256": "05cbdacfd6211c0a545a5074228d1f32809ed4069d03dd1f96b76c88d24fc0d3"
+    },
+    {
+      "path": "assets/collections/mooncake-08.png",
+      "sha256": "72d96ef57db251380ad239cac897388e0592d17b0cc202df058ca287ed8c26ec"
+    },
+    {
+      "path": "assets/collections/mooncake-09.png",
+      "sha256": "49153b13e6da18f22888ce096a543ef00d70016df4e8599e952398ae664fd3f1"
+    },
+    {
+      "path": "assets/collections/mooncake-10.png",
+      "sha256": "f85d0b64d48b2155517e81bf535a6a35f96c49f363376c4b01814b32eff7175f"
+    },
+    {
+      "path": "assets/collections/mooncake-11.png",
+      "sha256": "89b95d2a9dbe4a4dc811ec9eaeec2f1bfe8b0a741cfba802f3b018de31a5e3cb"
+    },
+    {
+      "path": "assets/collections/mooncake-12.png",
+      "sha256": "583b51b1b506e35eaf67007891fd65ae858798408b6f8dea2ec5ea66e8a1346a"
+    },
+    {
+      "path": "assets/collections/morning-01.png",
+      "sha256": "08a4e8618cbae2d5b452af4c62e5958e84b13ab900a5f00d3ec5561fae787c6c"
+    },
+    {
+      "path": "assets/collections/morning-02.png",
+      "sha256": "d8d6f00d0ff0b03190af00913540345ed6dc7687d65cf95ab1d7659223d855ce"
+    },
+    {
+      "path": "assets/collections/morning-03.png",
+      "sha256": "a6201a9895f1b1c10c80c6fe96405bc99fa40a000b33fd7da5538e24321c11aa"
+    },
+    {
+      "path": "assets/collections/morning-04.png",
+      "sha256": "d33fbd4ca7c376dc15c1db2e3ed3d2d863313d38aa23431929183d024246591e"
+    },
+    {
+      "path": "assets/collections/morning-05.png",
+      "sha256": "4bc335520726dfb3a0b0604bd582a56add3aaa38ad4725af6d194d48bdcbca2b"
+    },
+    {
+      "path": "assets/collections/morning-06.png",
+      "sha256": "36de4ec73e12f0a191b74464f9b341dfddf06eda4797b4dd2141190f78c37f9a"
+    },
+    {
+      "path": "assets/collections/morning-07.png",
+      "sha256": "e50cad1e19fc0c5b62a9a12c13747da78b8e862c1b353e474a3fd4927992ea79"
+    },
+    {
+      "path": "assets/collections/morning-08.png",
+      "sha256": "ae209cb465b260ec8e7e0d0cf7d787602ab0bc5b793a205cb83d2a62072da0a2"
+    },
+    {
+      "path": "assets/collections/morning-09.png",
+      "sha256": "03b2180359fc1d050be3f5b9f6bceadac670bd0638b929efdd280524d70d7173"
+    },
+    {
+      "path": "assets/collections/morning-10.png",
+      "sha256": "479fafba1d3feae36b376cbb0be0b59433f96a6c054bdc7198c02a7865e116f1"
+    },
+    {
+      "path": "assets/collections/morning-11.png",
+      "sha256": "c11935b5499dcdf2501a9e2577e0040d4e49288d6757ffadf3dd232dc7c2cdc0"
+    },
+    {
+      "path": "assets/collections/morning-12.png",
+      "sha256": "02cd36d618885da5d555857667e2b1c9114aa1e2886e22db1821bd900d229de3"
+    },
+    {
+      "path": "assets/collections/morning-13.png",
+      "sha256": "c4e561d046669022e52c985782770c64dbc401231a4cd1ccc0ff37d0a7ba0383"
+    },
+    {
+      "path": "assets/collections/morning-14.png",
+      "sha256": "515e9257ee700d11ca4354752e967e560d6ed8ee828b52ef651901e15ac4d108"
+    },
+    {
+      "path": "assets/collections/morning-15.png",
+      "sha256": "cddea940bd1868af6bdc6c67ccf2c6bc068e3aeaef5c47e0d74d8ad096d4fc99"
+    },
+    {
+      "path": "assets/collections/morning-16.png",
+      "sha256": "2d64dd9d4b057b7bc524d669c2bcdc8d57ae99177de02f9f0127db1f4106993c"
+    },
+    {
+      "path": "assets/collections/night-01.png",
+      "sha256": "5ac3b6d980b64e945bdff3899c45a33bc1407759a3672b0347a22f382ef95430"
+    },
+    {
+      "path": "assets/collections/night-02.png",
+      "sha256": "069a963ae36b8174e8c1e9194529f37b1dc3052e88c81b45723d60e665998a9f"
+    },
+    {
+      "path": "assets/collections/night-03.png",
+      "sha256": "99bb146c549c51a8e4312c5ec74752a010226243351cf4789aef6e2a96992ce4"
+    },
+    {
+      "path": "assets/collections/night-04.png",
+      "sha256": "f6d37135f47df8ca249038ae7721cbe691d1cb77adb07419fa0190a5cc789bed"
+    },
+    {
+      "path": "assets/collections/night-05.png",
+      "sha256": "a070d1525761295e05b185e56e31de509873a48addd7397a01ddf0310a7c10f4"
+    },
+    {
+      "path": "assets/collections/night-06.png",
+      "sha256": "c492d1468ee47b8f8819dea2ebf3aa52812c3051f289751b52db18fa121f198c"
+    },
+    {
+      "path": "assets/collections/night-07.png",
+      "sha256": "4ef249c2d688a409622013b3e3ff95551bc97c817d858acd75cf1741e99e65a6"
+    },
+    {
+      "path": "assets/collections/night-08.png",
+      "sha256": "1964e621c593b324aba3acacad2641f15d12e2e06c1eed3aed7da203f8de6d8e"
+    },
+    {
+      "path": "assets/collections/night-09.png",
+      "sha256": "fe3b52a410ce94dc722bd8894565035e0252891280639bb134f6963b75bf9076"
+    },
+    {
+      "path": "assets/collections/night-10.png",
+      "sha256": "966057ef8972623b5b75d4094deef96d0d53ad707a1b17c0536fad75c735ce72"
+    },
+    {
+      "path": "assets/collections/night-11.png",
+      "sha256": "a07be45202c7347b94c3fe9510579345a9683f2b7d94d68ca170f0f9e5dd112f"
+    },
+    {
+      "path": "assets/collections/night-12.png",
+      "sha256": "ac2502be98a082c7428545ea789665782f0c4c7a1202994dc879b229e2398d1c"
+    },
+    {
+      "path": "assets/collections/night-13.png",
+      "sha256": "85ef99a83a01f70bbc6e5043e9958d6f51aec9b225af65f2d9cddf73ec9d06f2"
+    },
+    {
+      "path": "assets/collections/night-14.png",
+      "sha256": "b6cb7a88507d4c310e9b0b4d3ac53c1c55a5aa657d045bd2a58b5e6f8c7ec94f"
+    },
+    {
+      "path": "assets/collections/night-15.png",
+      "sha256": "c2aced9dd0ad1fb7fe72828796c0f3518b6217eec1deb68bc32d401f57f19021"
+    },
+    {
+      "path": "assets/collections/night-16.png",
+      "sha256": "c710033020dd71c59385281a5906d659eb94546af65216e018509f23ff51e81e"
+    },
+    {
+      "path": "assets/collections/otter-01.png",
+      "sha256": "8ff91c6eab05aead1b240a416ff0814f8f02e0c2d517ce80665427c05e2086cb"
+    },
+    {
+      "path": "assets/collections/otter-02.png",
+      "sha256": "eafa15673ac363739734aaadb3751a98aab2af208ca69c0c29a7c249c1228b56"
+    },
+    {
+      "path": "assets/collections/otter-03.png",
+      "sha256": "4ffaa0d4c06b24139c8cf0cccab51d547580524ea94c17fc6d2105f4fce83cbc"
+    },
+    {
+      "path": "assets/collections/otter-04.png",
+      "sha256": "9c3a6d4632f87d89ac57a74f87d49b371de24375dbd3514a339067064830428d"
+    },
+    {
+      "path": "assets/collections/otter-05.png",
+      "sha256": "04427f5891cbe61dcc07ac9195a4787eba42e5d8af5d90c94ea0ced8805bf240"
+    },
+    {
+      "path": "assets/collections/otter-06.png",
+      "sha256": "ee332c421be22114e095ba24b92e5fd0d61e6be8ee31f8cda21e1b32918115c8"
+    },
+    {
+      "path": "assets/collections/otter-07.png",
+      "sha256": "dd6ed878aa3068afeca333e35b94e07474c01dc2c0cd04fbf24947affa79008a"
+    },
+    {
+      "path": "assets/collections/otter-08.png",
+      "sha256": "5e3bdc54f75072e8a146f62db143456e69f5ed8f87138fd4dc942e15647b904e"
+    },
+    {
+      "path": "assets/collections/otter-09.png",
+      "sha256": "608cef878fdd9ad6e1b2ddbe43c29200334e2d45d913a0374414a9ccf01cbb10"
+    },
+    {
+      "path": "assets/collections/shiba-01.png",
+      "sha256": "5ae84dcf9b49731833527c94bc03233583a2e3988a74539430685e0ea0a9d7c1"
+    },
+    {
+      "path": "assets/collections/shiba-02.png",
+      "sha256": "ae74dd44b23a38b81fd49524911f0d481d95c287c7d348b32b1b194c63ff326e"
+    },
+    {
+      "path": "assets/collections/shiba-03.png",
+      "sha256": "2ec724bf0f4eff99bc8334304697dfa84e337ac71d943f27292893206976b8a4"
+    },
+    {
+      "path": "assets/collections/shiba-04.png",
+      "sha256": "88ef8c3ff55442249cabbba1ceea655724842fb5b849add3e60b0a5b9019e735"
+    },
+    {
+      "path": "assets/collections/shiba-05.png",
+      "sha256": "8b67eefbeab3a9c08c06007e36ce3ded4c59e03987db8c9ed7b5b1ef3e7f9e6d"
+    },
+    {
+      "path": "assets/collections/shiba-06.png",
+      "sha256": "270e1c5c77aa375f9368da0abcd1272f4cc15efb6753534b6008b72ab663c783"
+    },
+    {
+      "path": "assets/collections/shiba-07.png",
+      "sha256": "d97297a2ce8c8d51302a698c7ad9de17d5d606a7c004367927a387de56071159"
+    },
+    {
+      "path": "assets/collections/shiba-08.png",
+      "sha256": "eb68e619c1a68a9003378c984c611a60a270a9cc469f60dacd37f223c443a8b7"
+    },
+    {
+      "path": "assets/collections/shiba-09.png",
+      "sha256": "018207b5fc995dca6368a4baf702e5731e055f544d7cdebd7bafe04aeaa4eb5f"
+    },
+    {
+      "path": "assets/collections/shiba-10.png",
+      "sha256": "aece216b3be7a118b4a152c390dae782ff1d92b7496ff9b02e6424bede7fb1ad"
+    },
+    {
+      "path": "assets/collections/shiba-11.png",
+      "sha256": "5afa5167d7cff169b4b482320f08f19482d929669360a31ee6f5c195b9b100ba"
+    },
+    {
+      "path": "assets/collections/shiba-12.png",
+      "sha256": "e46c852e4393515d2a8d06aba78d73c44bfa739b08ba65e33304fb61a25fb9e2"
+    },
+    {
+      "path": "assets/collections/shiba-13.png",
+      "sha256": "656e7a09ec0d44ae358f85609b8b7a93a666c25d821757522efa400f388ab038"
+    },
+    {
+      "path": "assets/collections/shiba-14.png",
+      "sha256": "45871ac964c7eb8a4b3386544645db986ea689a2f48eee3743471ce447485095"
+    },
+    {
+      "path": "assets/collections/shiba-15.png",
+      "sha256": "207d007729b945ebb16f77f78eb1a89ec75560c1801486d5b458209400996bf3"
+    },
+    {
+      "path": "assets/collections/shiba-16.png",
+      "sha256": "ff4f3a3c4440b04b55b29632b389c89f51605439d9c633b43912605f3b4ad980"
+    },
+    {
+      "path": "assets/collections/words-01.png",
+      "sha256": "7e8fc0c815f8e010e4be60ccd354098aa5bac2fa01f0a6831b09edec0a1d4ecd"
+    },
+    {
+      "path": "assets/collections/words-02.png",
+      "sha256": "b0eb065f241c2168b909cdcc21a5c778c615aeb615d9f8000f666d6ccfd73944"
+    },
+    {
+      "path": "assets/collections/words-03.png",
+      "sha256": "39bbdc54f9ac3f92be6285a0ae32ee63d4f414e500424ae64fd1f62dffe267c1"
+    },
+    {
+      "path": "assets/collections/words-04.png",
+      "sha256": "7418312599879400e07636b934e978bc1e241f60797a65f4c228bdc7231aed32"
+    },
+    {
+      "path": "assets/collections/words-05.png",
+      "sha256": "bfbad73a75191d393bd864a668218990230111c2e8e982238b4b07713b19ae46"
+    },
+    {
+      "path": "assets/collections/words-06.png",
+      "sha256": "cfc1102b87288d6e6c3c958aa6c4ec2fc88592274559b6ba288579c855c21666"
+    },
+    {
+      "path": "assets/collections/words-07.png",
+      "sha256": "466e56c7bfd6c596e5f8f31504e5e4d7bf3c48259a8aa537895042c9298bf68c"
+    },
+    {
+      "path": "assets/collections/words-08.png",
+      "sha256": "8918b1e6074e4d74cfcc39f39c7ba1fdcc4056d3e2fdc7248b26294761be5711"
+    },
+    {
+      "path": "assets/collections/words-09.png",
+      "sha256": "6b429d050bcb8dec3cfe3c23525b42ff20481e0800def7798a25fd29684bbcd3"
+    },
+    {
+      "path": "assets/collections/words-10.png",
+      "sha256": "44cf3e985a35f6932c9ba34f81553a5c5316c57162baee7c2748090809f7d9a7"
+    },
+    {
+      "path": "assets/collections/words-11.png",
+      "sha256": "c14d051646c76953f15d1abb8c56e78c0a7af7bc4bc138611201bb78f574a24d"
+    },
+    {
+      "path": "assets/collections/words-12.png",
+      "sha256": "132b40c2f658164af64d65213440c3158c87341dcc0e0514c701f174a675b298"
+    },
+    {
+      "path": "assets/collections/words-13.png",
+      "sha256": "e7b38ae56615af33fc86f3da1b5ddfd6f70f5e5c16b16d27d2ce6b0b7c4a5224"
+    },
+    {
+      "path": "assets/collections/words-14.png",
+      "sha256": "30913f2369dade72ab5ac9e7260db2e4eb5009fb6453f7f3ff73bfe5d2c3fa01"
+    },
+    {
+      "path": "assets/collections/words-15.png",
+      "sha256": "6fef3be6f311fb3fec106d0e9d2a6a249e64d4bd4d38a792d40a9064c5129891"
+    },
+    {
+      "path": "assets/collections/words-16.png",
+      "sha256": "aa2554bc5e22d8d5114e3ac8e453f035da5aa827febf9d1624fa966a3e818ba3"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-01.png",
+      "sha256": "3eb7d7a3947cf025c69478d9ea3addd55c5bb28554d5aa2d17d0c241c9eacef0"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-02.png",
+      "sha256": "d6369c210bc6b403a2d0aa5c317b45fbc4824e2084f81ae159b39b8906a5b129"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-03.png",
+      "sha256": "1f1cb05a944f8dc298f9934cfe7e6d7fee625ec2528c158a542f1758257a3b0a"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-04.png",
+      "sha256": "43efcb85e084979529a4989d7b8238ad78f263f33dddd99ef598530596e36822"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-05.png",
+      "sha256": "a5c5309ab9890bb0e1735a99933d3bbbb54a7ad3011110f07d59a40dab69e29e"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-06.png",
+      "sha256": "c67f4cdd0f3e12a61c961003f85919aeb4cbe1153da9d1b0685f8a50f57e0b47"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-07.png",
+      "sha256": "e86c8354d14d49250458196f2ff0ea4dad00526f356cae757e69e47686fe88b6"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-08.png",
+      "sha256": "43d8e0a2b2e161c27d016f448f465250618848457f5bd1bea099fe7adffabca9"
+    },
+    {
+      "path": "assets/collections/xiyuanyuan-09.png",
+      "sha256": "710f797a0f4f1770cfd3d4c286a97a74970d0fbef72778ebc8abeb7caf1526db"
+    },
+    {
+      "path": "assets/collections/zhuyuan-01.png",
+      "sha256": "7c1802029c5c1c691facc8582680728553bb62e37a724da88a72b18464cd0107"
+    },
+    {
+      "path": "assets/collections/zhuyuan-02.png",
+      "sha256": "65898256bf387686d49b794fea8c078faa5e7954d05b53d3b5646e5bdc59ee9e"
+    },
+    {
+      "path": "assets/collections/zhuyuan-03.png",
+      "sha256": "65f97c018368a478f1628f5683b2542db7362fd4c9b7333d42445c8419790a16"
+    },
+    {
+      "path": "assets/collections/zhuyuan-04.png",
+      "sha256": "adbb02aba2d4b6e40f506e09a3a6eecbec4d3c1a8186b9adea2ad5f537945ecb"
+    },
+    {
+      "path": "assets/collections/zhuyuan-05.png",
+      "sha256": "a5843fce58701ed4cf1c34a9fffe75f81ae8d595a053d5a7f6f8639f942e0729"
+    },
+    {
+      "path": "assets/collections/zhuyuan-06.png",
+      "sha256": "fd3c792acf7f9937d7185ca35bea93f8943dc80932444d2bc0441128160008e7"
+    },
+    {
+      "path": "assets/collections/zhuyuan-07.png",
+      "sha256": "60e310e7d2b6f79121a8a50ae83ac8f20eeef53ef3a4d692e0c95638ccb84de9"
+    },
+    {
+      "path": "assets/collections/zhuyuan-08.png",
+      "sha256": "23c28469d8a38280337d8a2d3619c3ae7fafaad2f7c2b68d85540feb37ea3274"
+    },
+    {
+      "path": "assets/collections/zhuyuan-09.png",
+      "sha256": "7bfa9309822e8cefec42c60f46f0ed01a6f8a0637b6e7b6e11d30b01e440e1e3"
+    },
+    {
+      "path": "assets/creator-avatar.jpg",
+      "sha256": "5fba2223ba1903c15ff2ae54019caf45f2c4323993d9684ba73b873f838e9090"
+    },
+    {
+      "path": "assets/motion-01.gif",
+      "sha256": "197f23338ed69875e247b4a95c35cc107d2cdd1ee5d0c9f7a840d2f60b60a9a5"
+    },
+    {
+      "path": "assets/motion-03.gif",
+      "sha256": "236751a6ae92f6c8fd7153024a42cc70953da3b913ce42983439e859fd0cb4e0"
+    },
+    {
+      "path": "assets/motion-04.gif",
+      "sha256": "40ccbe2a3f2cb2a27e947b821406c4da66912b4b76bfc89221e51d882fa1b5bb"
+    },
+    {
+      "path": "assets/motion-05.gif",
+      "sha256": "f41ddc5583153a261323f91afb2311d43fe2d66fd2547b2fca844c1837afaa9a"
+    },
+    {
+      "path": "assets/motion-08.gif",
+      "sha256": "5f7d52ffd51e5f8c69e5f03b70d9d59e62cf0ee1cec8fd5f61b281ad464ceefc"
+    },
+    {
+      "path": "assets/motion-09.gif",
+      "sha256": "09c1e749a47efa88e5856a83eccc79a8052812459a33571f9d4e2d1a179f388d"
+    },
+    {
+      "path": "assets/penguin-icon.png",
+      "sha256": "f84c6f24a58453f6bf5ab925685b61441254c11296adb495f72e10d2a49e7e3f"
+    },
+    {
+      "path": "assets/static-01.png",
+      "sha256": "79b93fd4d221fd22a899582ef368dd681f7a333463a26121b473bdbcaebcb926"
+    },
+    {
+      "path": "assets/static-02.png",
+      "sha256": "1cb07ddb089f55d2bb00d068bd0da42ac01ccc3b282318a4fc6e2be3d873188f"
+    },
+    {
+      "path": "assets/static-03.png",
+      "sha256": "e5426fcad3663d244577cdb764874ca955c66a3a71e7e3e752f9c4f3bec48009"
+    },
+    {
+      "path": "assets/static-04.png",
+      "sha256": "cdf2e0535bc1c51a803b7024afb6881542dab0632edf0562a728a81d1c138e23"
+    },
+    {
+      "path": "assets/static-05.png",
+      "sha256": "da7678a6f264ede8cda2bc36e70738d64fa41dbe4a23b4caa7de7e721821e867"
+    },
+    {
+      "path": "assets/static-06.png",
+      "sha256": "4a2534183e6ecff130f69d35eb6eda761746940d7c31c7123d4f8b962a0708d7"
+    },
+    {
+      "path": "assets/static-07.png",
+      "sha256": "117156f7c51fdd9936cba271c624f5e30e8cb19d594831d410308afa47827f89"
+    },
+    {
+      "path": "assets/static-08.png",
+      "sha256": "302f245bf47c5171fd0aadf3a27618527b2e46e7d7abe43f85eaeb9ec8c593cd"
+    },
+    {
+      "path": "assets/static-09.png",
+      "sha256": "c4ff380edf648217588653e5c6571766bda3414aee0eef85a06546fb8e668693"
+    },
+    {
+      "path": "catalog.js",
+      "sha256": "aba28125dfd425945d9d290e616372b428b6ea40a5d832fdc876c4abd052a92d"
+    },
+    {
+      "path": "index.html",
+      "sha256": "81c73276f776077e350b1ffe03806b73415eaea29aa104896532b87b145830ed"
+    },
+    {
+      "path": "script.js",
+      "sha256": "212eb09b4e94f325796d8d119a89e89a75b986ebc1208d97c405abedac8b859b"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "f856200b42d267245cc10cb3e0084a4ccb59a68d74ddac785cbf996860b2cfa7"
+    }
+  ]
+}

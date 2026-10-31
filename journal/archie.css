@@ -1,0 +1,12 @@
+/*! Adapted from Archie (MIT), Athul. See /theme-license.txt. */
+body[data-blog=archie]{--paper:#fff;--soft:#eff3f1;--line:#dedfdd}
+[data-blog=archie] .blog-intro{border-bottom:3px dotted var(--accent)}
+[data-blog=archie] :is(.eyebrow,.entry-meta,.read,.home-directory h2){font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+[data-blog=archie] .entry h3 a{border-bottom:2px solid color-mix(in srgb,var(--accent) 25%,transparent);text-decoration:none}
+[data-blog=archie] .entry h3 a:hover{border-color:var(--accent)}
+[data-blog=archie] .prose blockquote{border-left:3px solid var(--accent);padding-left:1em;color:var(--muted);background:transparent;font-style:italic}
+[data-blog=archie] .blog-emblem{border:1px solid var(--accent);background:transparent;border-radius:0;box-shadow:8px 8px 0 var(--soft)}
+[data-blog=archie] .entry{padding-block:28px}
+[data-site=piggytuck]{--paper:#fcfbf8;--soft:#eaeafa}
+[data-site=enter]{--paper:#fafbfd;--soft:#e9eef6}
+@media(max-width:650px){[data-blog=archie] .blog-emblem{box-shadow:4px 4px 0 var(--soft)}}

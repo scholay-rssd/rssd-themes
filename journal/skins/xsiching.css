@@ -1,0 +1,33 @@
+/* 犀术国学 — classical folio after Tufte CSS: rice paper, vermilion seal, kai/song type. */
+body[data-skin=xsiching]{--paper:light-dark(#f3eee2,#211d18);--ink:light-dark(#2a221b,#efe7da);--muted:light-dark(#6b5d50,#b9ab9a);--line:light-dark(#cbbfa8,#4a4136);--soft:light-dark(#ebe4d3,#2c261f);--card:light-dark(#f8f4ea,#272119);--accent:light-dark(#9b3b26,#e3866f);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--kai:"Kaiti SC",STKaiti,KaiTi,"Noto Serif CJK SC",serif;font-family:var(--serif)}
+[data-skin=xsiching] :is(.site-header,main,footer){width:min(1120px,100% - 64px)}
+[data-skin=xsiching] .site-header{min-height:92px}
+[data-skin=xsiching] .brand{font-family:var(--serif);letter-spacing:.2em;font-weight:900}
+[data-skin=xsiching] .brand .brand-monogram,[data-skin=xsiching] .brand .site-logo{border-radius:3px;background:var(--accent);font-family:var(--kai)}
+[data-skin=xsiching] .site-header nav{letter-spacing:.12em;font-size:15px}
+[data-skin=xsiching] .blog-intro{grid-template-columns:minmax(0,1fr) 120px;padding:72px 0 56px;border-bottom:1px solid var(--line)}
+[data-skin=xsiching] .eyebrow{font-family:var(--serif);letter-spacing:.5em;color:var(--muted)}
+[data-skin=xsiching] h1{font-family:var(--serif);font-weight:900;letter-spacing:.14em}
+[data-skin=xsiching] .blog-slogan{font-family:var(--kai);font-size:clamp(20px,2.4vw,28px);letter-spacing:.2em;color:var(--accent)}
+[data-skin=xsiching] .blog-emblem{width:96px;height:96px;aspect-ratio:auto;justify-self:end;border-radius:3px;background:var(--accent);color:#f8efe4;border:0;box-shadow:none;transform:rotate(-3deg)}
+[data-skin=xsiching] .blog-emblem span{font:58px/1 var(--kai)}
+[data-skin=xsiching] .blog-emblem img{filter:none}
+[data-skin=xsiching] .hero-links a{border-color:var(--line);letter-spacing:.1em}
+[data-skin=xsiching] .home-layout{grid-template-columns:minmax(0,1fr) 200px;gap:56px}
+[data-skin=xsiching] .section-heading h2{font-size:15px;letter-spacing:.4em;color:var(--muted);font-weight:600}
+[data-skin=xsiching] .entry{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:18px;padding:26px 0;border-color:var(--line)}
+[data-skin=xsiching] .entry>*{grid-column:2}
+[data-skin=xsiching] .entry>.entry-meta{grid-column:1;grid-row:1/span 4;display:block;writing-mode:vertical-rl;letter-spacing:.3em;font-size:13px;color:var(--accent);border-left:1px solid var(--line);padding-left:10px;height:max-content;max-height:9em}
+[data-skin=xsiching] .entry>.entry-meta span:last-child{display:none}
+[data-skin=xsiching] .entry>a:first-child{grid-column:2}
+[data-skin=xsiching] .entry h3{font-family:var(--serif);font-size:22px;line-height:1.6;font-weight:700}
+[data-skin=xsiching] .entry p{line-height:2}
+[data-skin=xsiching] .home-directory nav a{letter-spacing:.14em}
+[data-skin=xsiching] .prose{font-family:var(--serif);font-size:18px;line-height:2.1}
+[data-skin=xsiching] .prose p{text-indent:2em}
+[data-skin=xsiching] .prose :is(blockquote,li,td,th,.callout) p,[data-skin=xsiching] .prose :is(li,td,th) {text-indent:0}
+[data-skin=xsiching] .prose h1{font-family:var(--serif);letter-spacing:.06em}
+[data-skin=xsiching] .prose :is(h2,h3){font-family:var(--serif);letter-spacing:.08em}
+[data-skin=xsiching] .prose a.source-action{text-indent:0}
+[data-skin=xsiching] .feed-entry h2{font-family:var(--serif)}
+@media(max-width:700px){[data-skin=xsiching] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-skin=xsiching] .blog-intro{grid-template-columns:minmax(0,1fr) 64px}[data-skin=xsiching] .blog-emblem{width:56px;height:56px}[data-skin=xsiching] .blog-emblem span{font-size:34px}[data-skin=xsiching] .home-layout{display:flex}[data-skin=xsiching] .prose p{text-indent:0}}

@@ -1,0 +1,16 @@
+/*! Adapted from Hugo XMin (MIT), Yihui Xie. See /theme-license.txt. */
+body[data-blog=xmin]{--paper:#f9f7f0;--soft:#eeece4;--line:#d6d3c8;--reading:740px}
+[data-blog=xmin] :is(.site-header,main,footer){max-width:1040px}
+[data-blog=xmin] :is(h1,h2,h3,.blog-slogan){font-family:ui-serif,"Songti SC","STSong",SimSun,Georgia,serif}
+[data-blog=xmin] h1{font-weight:500;letter-spacing:.08em}
+[data-blog=xmin] .blog-intro{border-bottom:1px solid var(--accent)}
+[data-blog=xmin] .blog-emblem{border-radius:0;background:transparent;border:1px solid var(--accent);width:100px;justify-self:center}
+[data-blog=xmin] .blog-emblem span{font-size:56px}
+[data-blog=xmin] .entry h3{font-weight:600;letter-spacing:.01em;font-size:24px}
+[data-blog=xmin] .prose pre{border:1px solid var(--line);box-shadow:4px 4px 0 var(--soft);padding:1em;overflow-x:auto}
+[data-blog=xmin] .prose blockquote{background:var(--soft);border-left:4px solid var(--line);padding:3px 1em}
+[data-blog=xmin] .prose table{border-top:1px solid #666;border-bottom:1px solid #666}
+[data-blog=xmin] .prose thead th{border-bottom:1px solid var(--line)}
+[data-site=legis]{--paper:#fbfbf9;--soft:#eceef0;--line:#dbdedf}
+[data-site=xsiching] .brand-monogram{background:#8a4437;border-radius:2px}
+@media(max-width:650px){[data-blog=xmin] .blog-emblem{width:64px}[data-blog=xmin] .blog-emblem span{font-size:38px}[data-blog=xmin] .entry h3{font-size:21px}}

@@ -1,0 +1,21 @@
+/* Frank Chimero Archive and Derek Sivers. Original Next homepage is separate. */
+body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:light-dark(#303633,#e2e9e2);--accent:light-dark(#3f6251,#aacfb9);--soft:light-dark(#e2e5df,#2b352e);--line:light-dark(#cfd5cc,#465248);--muted:light-dark(#677267,#afbbaf);display:grid;grid-template-columns:300px minmax(0,1fr);font-family:ui-monospace,"PingFang SC",monospace}
+[data-site=personal][data-design]>.site-header{grid-row:1/3;position:sticky;top:0;height:100vh;width:100%;margin:0;background:#343b37;color:#edf2e9;padding:45px 32px;display:flex;flex-direction:column;align-items:start;justify-content:start;border:0;overflow:auto}
+[data-site=personal][data-design] .brand{font:400 24px/1.6 var(--ref-serif)}
+[data-site=personal][data-design] .brand small{color:#b0bdb1;font-size:11px}
+[data-site=personal][data-design] .site-header nav{display:flex;flex-direction:column;margin:40px 0 20px;gap:22px;flex-wrap:nowrap;order:0}
+[data-site=personal][data-design] .site-header nav a{color:inherit;font-weight:400}
+[data-site=personal][data-design] .site-language-control{margin:0!important;color:#e5ebe2}
+[data-site=personal][data-design]>main{width:calc(100% - 90px);max-width:950px;min-width:0;margin:0 auto}
+[data-site=personal][data-design]>footer{grid-column:2;width:calc(100% - 90px);max-width:950px}
+[data-site=personal][data-design] .hero.compact h1{font-size:29px;font-weight:500}
+[data-site=personal][data-design] .feed-layout{display:block}
+[data-site=personal][data-design] .feed-sidebar{position:static;margin-bottom:25px}
+[data-site=personal][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;font-size:12px}
+[data-site=personal][data-design] .feed-entry{padding:20px 0}
+[data-site=personal][data-design] .feed-entry h2{font:400 18px/1.8 ui-monospace,"PingFang SC",monospace}
+[data-site=personal][data-design] .feed-entry p{font-size:13px}
+[data-site=personal][data-design] .entry-meta{font-size:11px}
+[data-site=personal][data-design] .reading{margin-top:45px}
+@media(max-width:1050px){body[data-site=personal][data-design]{grid-template-columns:240px minmax(0,1fr)}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 48px)}}
+@media(max-width:750px){body[data-site=personal][data-design]{display:block}[data-site=personal][data-design]>.site-header{position:static;height:auto;padding:24px;display:flex}[data-site=personal][data-design] .site-header nav{flex-direction:row;flex-wrap:wrap;margin:20px 0;gap:12px 20px}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 40px)}}

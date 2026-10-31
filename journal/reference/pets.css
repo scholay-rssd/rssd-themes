@@ -1,0 +1,18 @@
+/* The Spruce Pets editorial lead and San Diego Zoo subject navigation. */
+body[data-site=pets][data-design]{--paper:light-dark(#fff,#17201e);--ink:light-dark(#192b2a,#e1eeea);--accent:light-dark(#356d72,#97cfd0);--soft:light-dark(#eef4ed,#24322e);--line:light-dark(#d9e3db,#3b4c44);--muted:light-dark(#5e7169,#afc5bb)}
+[data-site=pets][data-design] .brand{font-family:var(--ref-serif);font-size:28px}
+[data-site=pets][data-design] .pet-lead{position:relative;min-height:470px;display:flex;justify-content:flex-end;background:var(--soft);margin-bottom:40px}
+[data-site=pets][data-design] .pet-lead>.ref-cover{width:73%;height:470px}
+[data-site=pets][data-design] .pet-lead>div{position:absolute;left:0;top:35px;width:40%;padding:30px;background:var(--paper);box-shadow:0 2px 10px #263e2b10}
+[data-site=pets][data-design] .pet-lead h1{font:500 34px/1.4 var(--ref-serif);margin:14px 0}
+[data-site=pets][data-design] .pet-lead p{font-size:14px;line-height:1.8;color:var(--muted)}
+[data-site=pets][data-design] .ref-card h2,[data-site=pets][data-design] .feed-entry h2{font-family:var(--ref-serif)}
+[data-site=pets][data-design] .feed-layout{display:block}
+[data-site=pets][data-design] .feed-sidebar{position:static;margin-bottom:22px}
+[data-site=pets][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px}
+[data-site=pets][data-design] #feed-search-form{max-width:480px}
+[data-site=pets][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+[data-site=pets][data-design] .feed-cover{display:block;margin-bottom:20px}
+[data-site=pets][data-design] .feed-entry{border:0}
+@media(max-width:850px){[data-site=pets][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}[data-site=pets][data-design] .pet-lead>div{width:47%}}
+@media(max-width:650px){[data-site=pets][data-design] .pet-lead{display:block;min-height:0}[data-site=pets][data-design] .pet-lead>.ref-cover{width:100%;height:250px}[data-site=pets][data-design] .pet-lead>div{position:relative;top:0;width:92%;margin:-35px auto 0;padding:22px}[data-site=pets][data-design] .pet-lead h1{font-size:28px}[data-site=pets][data-design] #feed-entries{grid-template-columns:1fr}}

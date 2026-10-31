@@ -1,0 +1,37 @@
+/* 小猪萌宠 — field guide after MediaWiki, made friendly: rounded pills and warm colour cards. */
+body[data-skin=pets]{--paper:light-dark(#fbf6ee,#201a14);--ink:light-dark(#3a2a1d,#f3e9dc);--muted:light-dark(#6f5a47,#bfae9a);--line:light-dark(#eadcc6,#4a3d30);--soft:light-dark(#f1e3cf,#32281f);--card:light-dark(#fff,#2a2118);--accent:light-dark(#a4521f,#f0a878);font-family:ui-rounded,"Nunito","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif}
+[data-skin=pets] .site-header{min-height:84px;border:0}
+[data-skin=pets] .brand .site-logo,[data-skin=pets] .brand .brand-monogram{border-radius:50%}
+[data-skin=pets] .site-header nav{gap:6px}
+[data-skin=pets] .site-header nav a{padding:9px 16px;border-radius:999px;font-weight:700}
+[data-skin=pets] .site-header nav a:hover{background:var(--soft)}
+[data-skin=pets] .site-header nav a[aria-current=page]{background:var(--soft);text-decoration:none}
+[data-skin=pets] .blog-intro{margin-top:12px;padding:44px 48px;border:0;border-radius:30px;background:var(--soft)}
+[data-skin=pets] .blog-emblem{background:var(--card);border-radius:50%}
+[data-skin=pets] .eyebrow{font-weight:800}
+[data-skin=pets] h1{font-weight:900;letter-spacing:-.01em}
+[data-skin=pets] .hero-links a{border:0;background:var(--card);padding:8px 16px;border-radius:999px;font-weight:700}
+[data-skin=pets] .home-layout{display:flex;flex-direction:column-reverse;gap:0;margin-top:36px}
+[data-skin=pets] .home-directory{position:static;margin-bottom:24px}
+[data-skin=pets] .home-directory h2,[data-skin=pets] .directory-note{display:none}
+[data-skin=pets] .home-directory nav{display:flex;flex-wrap:wrap;gap:10px;border:0}
+[data-skin=pets] .home-directory nav a{min-height:0;padding:9px 18px;border:0;border-radius:999px;font-weight:700;background:#fde4cf;color:#8a3f12}
+[data-skin=pets] .home-directory nav a:nth-child(4n+2){background:#e3eedc;color:#2f5a2a}
+[data-skin=pets] .home-directory nav a:nth-child(4n+3){background:#e6e4f4;color:#433a7a}
+[data-skin=pets] .home-directory nav a:nth-child(4n){background:#dcecf1;color:#1f5266}
+[data-skin=pets] .home-directory nav small{margin-left:8px;opacity:.7}
+[data-skin=pets] .entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+[data-skin=pets] .entry{padding:24px;border:0;border-radius:24px;background:#fde4cf}
+[data-skin=pets] .entry:nth-child(4n+2){background:#e3eedc}
+[data-skin=pets] .entry:nth-child(4n+3){background:#e6e4f4}
+[data-skin=pets] .entry:nth-child(4n){background:#dcecf1}
+[data-skin=pets] .entry{color:#3a2a1d}
+[data-skin=pets] .entry p,[data-skin=pets] .entry-meta,[data-skin=pets] .entry-meta span{color:#5e4a39}
+[data-skin=pets] .entry a:hover{color:#8a3f12}
+[data-skin=pets] .entry-cover{border-radius:16px}
+[data-skin=pets] .entry h3{font-weight:800;font-size:20px}
+[data-skin=pets] .feed-entry{padding:18px 22px;margin-bottom:12px;border:0;border-radius:20px;background:var(--card)}
+[data-skin=pets] .prose{font-size:17px}
+[data-skin=pets] .infobox{border-radius:20px;overflow:hidden}
+[data-skin=pets] .see-also a{padding:6px 12px;border-radius:999px;background:var(--soft)}
+@media(max-width:700px){[data-skin=pets] .entries{grid-template-columns:1fr}[data-skin=pets] .blog-intro{padding:28px 24px}}

@@ -1,0 +1,39 @@
+/* Theme accents for the shared reading/calendar modules. The authored homepages
+   retain their own CSS and scripts and are not wrapped in these layouts. */
+body[data-theme="portfolio"]{--accent:#313ff4;background:#f9f8f4;color:#252638}
+[data-theme="portfolio"] .site-header{border-bottom:2px solid #313ff4}
+[data-theme="portfolio"] .brand{font-weight:800}
+[data-theme="portfolio"] .column-links>a{background:#eeedff;border-radius:16px}
+[data-theme="portfolio"] .entry h3{font-weight:700}
+body[data-theme="personal"]{--accent:#3a7c77;background:#f1ede3;color:#293638}
+[data-theme="personal"] .site-header{border-bottom-color:#c7cdc6}
+[data-theme="personal"] .column-links>a{background:#e1e6de;border-radius:10px}
+[data-theme="personal"] .prose{font-family:ui-serif,"Songti SC",serif}
+
+.site-header nav a[aria-current="page"]{color:var(--accent);text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:2px}
+.feed-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;align-items:start}
+.content-feed .hero.compact{padding-bottom:24px}
+.feed-sidebar{position:sticky;top:24px;font-size:14px}
+.feed-sidebar form label{display:block;font-weight:600;margin-bottom:10px}
+.feed-search-control{display:flex;gap:6px}
+.feed-search-control input{width:100%;min-width:0;padding:9px 10px;border:1px solid #cdd2c8;border-radius:5px;background:transparent;color:inherit;font:inherit}
+.feed-search-control button,.feed-pagination button{border:1px solid #cdd2c8;border-radius:5px;background:transparent;color:inherit;padding:7px 12px;white-space:nowrap;cursor:pointer}
+.feed-search-control input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.feed-filters{display:flex;flex-direction:column;gap:4px;margin-top:22px}
+.feed-filters a{display:flex;justify-content:space-between;gap:16px;padding:10px 12px;border-radius:5px}
+.feed-filters a[aria-current="page"]{color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);font-weight:600}
+.feed-filters small{font-size:12px;color:#747b70}
+.feed-legacy{margin-top:24px;color:#687160}.feed-legacy summary{cursor:pointer}.feed-legacy .feed-filters{margin-top:8px}
+#feed-count{font-size:12px;color:#747b70;margin:0;padding:0 0 18px;border-bottom:1px solid #d9ddcf}
+.feed-entry{padding:25px 0;border-bottom:1px solid #d9ddcf;overflow-wrap:anywhere}
+.feed-entry h2{font-size:23px;line-height:1.5;margin:9px 0 8px;font-weight:600}
+.feed-entry p{font-size:15px;color:#687160;line-height:1.8;margin:0}
+.feed-pagination{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:30px 0;font-size:14px}
+.feed-pagination a{color:var(--accent)}
+.prose .article-body a[href],.reading .sources a[href]{color:light-dark(#1769c2,#8ab4f8);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:750px){.feed-layout{grid-template-columns:1fr;gap:28px}.feed-sidebar{position:static}.feed-filters{flex-direction:row;flex-wrap:wrap;gap:6px}.feed-filters a{gap:10px;padding:8px 10px}.feed-legacy{margin-top:12px}.feed-entry h2{font-size:20px}.feed-search-control{max-width:420px}}
+
+/* Quiet article captions, including their attribution links. */
+.article-body p.article-caption,.article-body figcaption{font-size:10px;line-height:1.5;font-weight:400;color:var(--seo-muted,var(--muted,#777));margin:6px 0 20px;letter-spacing:0}
+.article-body p.article-caption a[href],.article-body figcaption a[href]{font-size:inherit;color:inherit;text-decoration:none}
+.article-body p.article-caption a[href]:hover,.article-body figcaption a[href]:hover{text-decoration:underline}

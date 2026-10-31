@@ -1,0 +1,20 @@
+/* OpenAlternative and AlternativeTo: compact, searchable resource records. */
+body[data-site=enter][data-design]{--paper:light-dark(#fff,#191b1d);--ink:light-dark(#222,#e9ebee);--accent:light-dark(#252525,#d2e3fc);--soft:light-dark(#f6f6f6,#282c31);--line:light-dark(#ddd,#40464e);--muted:light-dark(#686868,#b8c0cc);--card:light-dark(#fafafa,#22262b)}
+[data-site=enter][data-design] .ref-title h1{font:600 32px/1.4 system-ui,sans-serif}
+[data-site=enter][data-design] .resource-search{display:flex;flex-wrap:wrap;gap:8px;max-width:650px;margin-top:28px}
+[data-site=enter][data-design] .resource-search label{width:100%;font-size:12px;color:var(--muted)}
+[data-site=enter][data-design] .resource-search input{min-width:0;flex:1;border:1px solid var(--line);border-radius:6px;padding:12px;color:inherit;background:var(--paper);font:inherit}
+[data-site=enter][data-design] .resource-search button{padding:10px 20px;color:inherit;background:var(--soft);border:1px solid var(--line);border-radius:6px}
+[data-site=enter][data-design] :is(.ref-card,.feed-entry,.showcase-card){border:1px solid var(--line);border-radius:8px;background:var(--card);padding:22px;box-shadow:none}
+[data-site=enter][data-design] :is(.ref-card h2,.feed-entry h2,.showcase-card h2){font:600 19px/1.5 system-ui,sans-serif}
+[data-site=enter][data-design] :is(.ref-card p,.feed-entry p,.showcase-card p){font-size:13px;line-height:1.8}
+[data-site=enter][data-design] :is(.ref-cover,.feed-cover img,.showcase-card>a>img){width:48px;height:48px;object-fit:contain;border-radius:5px}
+[data-site=enter][data-design] .feed-cover{display:block;margin-bottom:18px}
+[data-site=enter][data-design] :is(.feed-layout){display:block}
+[data-site=enter][data-design] .feed-sidebar{position:static;margin-bottom:24px}
+[data-site=enter][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px}
+[data-site=enter][data-design] #feed-search-form{max-width:600px}
+[data-site=enter][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+[data-site=enter][data-design] .showcase-copy{padding:16px 0 0}
+@media(max-width:850px){[data-site=enter][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){[data-site=enter][data-design] #feed-entries{grid-template-columns:1fr}[data-site=enter][data-design] .ref-title h1{font-size:28px}}

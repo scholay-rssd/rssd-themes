@@ -1,0 +1,19 @@
+/* Seeing Theory chapter hierarchy and Observable's quiet reading column. */
+body[data-site=metho][data-design]{--paper:light-dark(#fff,#151b20);--ink:light-dark(#2c2d34,#e4e9ef);--accent:light-dark(#4b7990,#a3c9df);--soft:light-dark(#f1f3f7,#222e38);--line:light-dark(#dce1e7,#35424d);--muted:light-dark(#63717e,#aebdc9)}
+[data-site=metho][data-design] h1,[data-site=metho][data-design] .feed-entry h2{font-family:inherit}
+[data-site=metho][data-design] .method-feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:60px 0}
+[data-site=metho][data-design] .method-feature h1{font:600 48px/1.28 system-ui,sans-serif;letter-spacing:-.04em}
+[data-site=metho][data-design] .method-feature p{font-size:17px;color:var(--muted);max-width:520px}
+[data-site=metho][data-design] .method-feature .eyebrow{font-size:11px}
+[data-site=metho][data-design] .ref-button{border-radius:24px;margin-top:12px}
+[data-site=metho][data-design] .method-example{background:var(--soft);padding:20px}
+[data-site=metho][data-design] .method-example img{height:280px;object-fit:contain}
+[data-site=metho][data-design] .method-example span{display:block;font-size:13px;line-height:1.7;text-align:center;margin-top:14px}
+[data-site=metho][data-design] .method-chapter{display:flex;gap:30px;align-items:center;padding:30px 0;border-top:1px solid var(--line)}
+[data-site=metho][data-design] .method-chapter>strong{font:400 55px/1.2 Georgia,serif;color:var(--accent);opacity:.6}
+[data-site=metho][data-design] .method-chapter h3{font-size:25px;margin:0 0 8px}
+[data-site=metho][data-design] .method-chapter p{font-size:14px;color:var(--muted);margin:0}
+[data-site=metho][data-design] .method-chapter>span{margin-left:auto;flex-shrink:0;font-size:12px;color:var(--muted)}
+[data-site=metho][data-design] .method-chapters~.home-directory{display:none}
+[data-site=metho][data-design] .prose h2{font-family:inherit;font-size:27px}
+@media(max-width:650px){[data-site=metho][data-design] .method-feature{grid-template-columns:1fr;gap:24px;padding:30px 0}[data-site=metho][data-design] .method-feature h1{font-size:37px}[data-site=metho][data-design] .method-example img{height:210px}[data-site=metho][data-design] .method-chapter{gap:16px}[data-site=metho][data-design] .method-chapter>strong{font-size:38px}[data-site=metho][data-design] .method-chapter h3{font-size:21px}}

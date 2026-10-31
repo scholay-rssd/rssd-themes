@@ -1,0 +1,30 @@
+/* Nature / Quanta reading hierarchy. No calendar workspace selectors. */
+.fp{max-width:1240px;padding:12px 28px 64px}
+.fp-masthead{display:block;text-align:center;padding:20px 0 24px;border-bottom:1px solid var(--line)}
+.fp-dateline{border:0;margin:0 0 16px;font-size:11px}
+.fp-masthead h1{font-size:58px;line-height:1.3;letter-spacing:.08em}
+.fp-slogan{max-width:none;font:400 13px/1.7 system-ui,sans-serif;margin:8px 0 0}
+.fp-sections{justify-content:center;padding:16px 0;gap:10px 26px;font-size:13px}
+.fp-grid{grid-template-columns:minmax(0,1fr) 300px;gap:34px;padding-top:30px}
+.fp-stories{padding-right:34px}
+.fp-cover{display:block;width:100%;height:330px;object-fit:cover;background:var(--surface);margin-bottom:18px}
+.fp-story .fp-cover{height:190px}
+.fp-lead h2{font-size:34px;line-height:1.4}
+.fp-lead p:last-child{font-size:16px;line-height:1.9}
+.fp-more{gap:26px}
+.fp-story h2{font-size:21px;line-height:1.5}
+.fp-side h2{font-size:16px;letter-spacing:0}
+.fp-side section{padding:20px;background:var(--panel)}
+.fp-calendar li{grid-template-columns:1fr;gap:4px;padding:12px 0}
+.fp-open-grid a{background:transparent;border:0;border-top:2px solid var(--line);padding:20px 0}
+.archive-library{max-width:1240px;grid-template-columns:210px minmax(0,1fr);gap:38px}
+.archive-grid{gap:24px}
+.archive-record{background:var(--seo-panel);border:0;border-top:1px solid var(--seo-rule);box-shadow:none}
+.archive-card-link{padding:22px 0}
+.archive-record h2{font-size:23px;line-height:1.5}
+.archive-record p{font-size:14px;line-height:1.9}
+.archive-toolbar{padding-bottom:26px}
+.seo-main .article-body{line-height:1.95}
+.seo-main .record-card{background:transparent;border:0;border-top:1px solid var(--seo-rule);padding:22px 0}
+@media(max-width:900px){.fp-grid{grid-template-columns:minmax(0,1fr) 250px;gap:24px}.fp-stories{padding-right:24px}.fp-lead h2{font-size:29px}.archive-library{gap:22px;grid-template-columns:180px minmax(0,1fr)}}
+@media(max-width:760px){.fp{padding:10px 18px 40px}.fp-masthead h1{font-size:39px}.fp-sections{justify-content:flex-start;gap:10px 20px}.fp-grid{grid-template-columns:1fr}.fp-stories{border:0;padding:0}.fp-cover{height:240px}.fp-more{grid-template-columns:1fr}.fp-story .fp-cover{height:230px}.fp-side{display:grid;grid-template-columns:1fr;gap:20px}.archive-library{display:block}.archive-record h2{font-size:21px}}

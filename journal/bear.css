@@ -1,0 +1,14 @@
+/*! Adapted from Hugo Bear Blog (MIT), Jan Raasch. See /theme-license.txt. */
+body[data-blog=bear]{--paper:#faf8f2;--soft:#eeeae0;--line:#dedbcf;--reading:720px;overflow-wrap:break-word}
+[data-blog=bear] :is(.site-header,main,footer){max-width:1020px}
+[data-blog=bear] .blog-intro{padding-block:62px 44px}
+[data-blog=bear] .blog-slogan{font-family:ui-serif,"Songti SC",SimSun,serif}
+[data-blog=bear] .prose blockquote{border-left:1px solid #999;padding-left:20px;background:transparent}
+[data-blog=bear] .prose code{font-family:monospace;padding:2px;border-radius:3px}
+[data-blog=bear] .entry h3 a:hover{text-decoration:underline;text-underline-offset:5px}
+[data-blog=bear] .entry-meta time{font-family:monospace;font-style:normal}
+[data-blog=bear] .blog-emblem{background:#ede5d5}
+[data-site=personal] .blog-emblem{background:#e4eae1}
+body[data-site=personal]{--paper:#202928;--ink:#f4f0e7;--muted:#b7c3b8;--accent:#b3d3b5;--soft:#293330;--line:#45534b;color-scheme:dark}
+[data-blog=bear] .brand-monogram{border-radius:50%}
+@media(max-width:650px){[data-blog=bear] .blog-intro{padding-block:40px 30px}}
