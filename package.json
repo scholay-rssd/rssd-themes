@@ -1,0 +1,14 @@
+{
+  "name": "@rssd/themes",
+  "private": true,
+  "version": "0.2.0-alpha.1",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:homepages": "node scripts/build.mjs --homepages"
+  }
+}

@@ -1,0 +1,31 @@
+name: Independent public build
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm run build:homepages
+      - name: Stage the validated output
+        run: |
+          build=$(cat .local/latest-build.txt)
+          mkdir -p artifacts
+          cp -R "$build/.local/demo" artifacts/demo
+          if [ -d "$build/.local/theme-builds" ]; then cp -R "$build/.local/theme-builds" artifacts/themes; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rssd-themes-${{ github.sha }}
+          path: artifacts/
+          if-no-files-found: error
+          retention-days: 7
