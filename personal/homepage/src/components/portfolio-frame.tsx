@@ -16,7 +16,8 @@ export function PortfolioHeader({ locale, path = '' }: { locale: Locale; path?: 
     <nav className="section-nav" aria-label={locale === 'zh' ? '主导航' : 'Main navigation'}>
       {navigation.map(item => {
         const [base, hash] = item.href.split('#');
-        const href = item.localize ? localePath(locale, base) + (hash ? '#' + hash : '') : item.href;
+        const englishContent = locale === 'en' && ['/journal/', '/archive/', '/content-feed.xml'].includes(base);
+        const href = englishContent ? '/en' + base + (hash ? '#' + hash : '') : item.localize ? localePath(locale, base) + (hash ? '#' + hash : '') : item.href;
         const active = !hash && (base === '/' ? current === '/' : current.startsWith(base));
         const label = item.labels?.[locale] || item.label;
         return item.localize ? <Link key={item.id} href={href} aria-current={active ? 'page' : undefined}>{label}</Link> : <a key={item.id} href={href} aria-current={active ? 'page' : undefined}>{label}</a>;

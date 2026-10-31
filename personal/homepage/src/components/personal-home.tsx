@@ -88,7 +88,7 @@ export function PersonalHome({ locale }: { locale: Locale }) {
         </section>
         <section className="content-section journal-section" id="journal">
           <div className="home-heading"><span className="section-index">JOURNAL / NOTES</span><h2>{journalLabels[locale][2]}</h2><p>{journalLabels[locale][3]}</p></div>
-          <div className="social-grid"><a href="/journal/"><span>01</span><strong>{journalLabels[locale][0]}</strong><ArrowUpRight size={16}/></a><a href="/archive/"><span>02</span><strong>{journalLabels[locale][1]}</strong><ArrowUpRight size={16}/></a></div>
+          <div className="social-grid"><a href={locale==='en'?'/en/journal/':'/journal/'}><span>01</span><strong>{journalLabels[locale][0]}</strong><ArrowUpRight size={16}/></a><a href={locale==='en'?'/en/archive/':'/archive/'}><span>02</span><strong>{journalLabels[locale][1]}</strong><ArrowUpRight size={16}/></a></div>
         </section>
         <section className="content-section bio-section" id="about">
           <div className="home-heading"><span className="section-index">02 / ABOUT</span><h2>{t.aboutTitle}</h2></div>
