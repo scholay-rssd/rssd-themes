@@ -16,3 +16,9 @@ Run `npm run build` with Node.js 24+. The build fetches the exact public core
 commit in `compatibility.json`, assembles its pinned public dependencies under
 `.local/`, and overlays this repository. No private checkout or account is
 required. Artifacts remain under `.local/`; this command does not deploy.
+
+## Browser exports
+
+The [export template catalog](export/README.md) explicitly registers 60
+site/section combinations and 120 page-image/WeChat output identities,
+including the historical sections retained during center migration.
