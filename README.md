@@ -1,24 +1,21 @@
-# RSSD themes
+# RSSD Themes
 
-Presentations for RSSD's public publishing engine. This repository lives at
-`web/themes/` in the assembled workspace. The canonical academic presentation
-is `academic/public/`; portfolio and personal authored homepages retain their
-own source and build configuration. The personal homepage keeps its independent
-pnpm lockfile.
+RSSD 的公开页面主题、独立首页和浏览器导出模板。在组合工作区中位于 `web/themes/`。
 
-Build a homepage with `npm run theme:build -- <siteId>` from the assembled RSSD
-root. Only the validated static artifact is deployed; never deploy this source
-tree wholesale. See `NOTICE.md` for separate code and asset rights.
+**玩法、资源、写作流程与十站 Demo，统一见 [RSSD 主仓](https://github.com/scholay-rssd/rssd)。**
 
-## Independent build
+## 主题与输出
 
-Run `npm run build` with Node.js 24+. The build fetches the exact public core
-commit in `compatibility.json`, assembles its pinned public dependencies under
-`.local/`, and overlays this repository. No private checkout or account is
-required. Artifacts remain under `.local/`; this command does not deploy.
+学术呈现位于 `academic/public/`；作品集与个人站保留各自的首页源码和构建配置，个人首页保留独立 pnpm 锁文件。[导出模板目录](export/README.md) 维护各站点、栏目的分页图片与公众号输出。
 
-## Browser exports
+在 RSSD 根工作区构建首页：
 
-The [export template catalog](export/README.md) explicitly registers 60
-site/section combinations and 120 page-image/WeChat output identities,
-including the historical sections retained during center migration.
+```sh
+npm run theme:build -- <siteId>
+```
+
+## 独立构建
+
+使用 Node.js 24+，在本仓库运行 `npm run build`。构建会读取 `compatibility.json` 中固定的公开核心版本，在 `.local/` 组装依赖并叠加当前主题；产物也保存在 `.local/`，无需私有仓库或账号。
+
+部署使用通过验证的静态产物；构建本身不执行部署。代码和素材的权利分别见 [NOTICE](NOTICE.md)。
