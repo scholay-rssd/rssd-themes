@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "xsiching",
+  "sectionId": "calendar",
+  "article": {
+    "ink": "#3c3028",
+    "accent": "#746846",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#fbf5e9",
+    "heading": "double",
+    "titleSize": 40,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 0,
+    "identity": "classical",
+    "canvas": "#eee7d9",
+    "muted": "#7b6957",
+    "dark": {
+      "paper": "#2c251f",
+      "canvas": "#211c17",
+      "ink": "#eee3d2",
+      "muted": "#c4b299",
+      "accent": "#c2bdae"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "seal",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#382f28",
+    "accent": "#746846",
+    "family": "serif",
+    "layout": "ledger",
+    "paper": "#f4eddf",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "classical",
+    "titleFamily": "serif",
+    "imageRadius": 0,
+    "header": "seal",
+    "muted": "#7b6957"
+  }
+}

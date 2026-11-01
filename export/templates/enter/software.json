@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "enter",
+  "sectionId": "software",
+  "article": {
+    "ink": "#24334b",
+    "accent": "#3f7181",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#ffffff",
+    "heading": "rail",
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 26,
+    "width": 760,
+    "imageRadius": 8,
+    "identity": "directory",
+    "canvas": "#f1f4f9",
+    "muted": "#5e6c80",
+    "dark": {
+      "paper": "#1b2636",
+      "canvas": "#131c29",
+      "ink": "#e2e9f3",
+      "muted": "#a9b9cf",
+      "accent": "#abc1c8"
+    },
+    "titleFamily": "sans",
+    "radius": 12,
+    "header": "band",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#283d37",
+    "accent": "#3f7181",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#f7f7f2",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "directory",
+    "titleFamily": "sans",
+    "imageRadius": 8,
+    "header": "band",
+    "muted": "#5e6c80"
+  }
+}

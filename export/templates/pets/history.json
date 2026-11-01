@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "pets",
+  "sectionId": "history",
+  "article": {
+    "ink": "#463c2e",
+    "accent": "#79664e",
+    "family": "serif",
+    "layout": "archive",
+    "paper": "#fffcf5",
+    "heading": "seal",
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 16,
+    "identity": "companion",
+    "canvas": "#f6f0e5",
+    "muted": "#796e5a",
+    "dark": {
+      "paper": "#2c281f",
+      "canvas": "#211e17",
+      "ink": "#eee7d8",
+      "muted": "#c0b49c",
+      "accent": "#c4bcb1"
+    },
+    "titleFamily": "sans",
+    "radius": 20,
+    "header": "pill",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#423c2f",
+    "accent": "#79664e",
+    "family": "sans",
+    "layout": "archive",
+    "paper": "#fbf7ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65,
+    "identity": "companion",
+    "titleFamily": "sans",
+    "imageRadius": 16,
+    "header": "pill",
+    "muted": "#796e5a"
+  }
+}

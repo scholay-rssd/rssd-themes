@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs';
 // Web export templates are independent of desktop note-card/WeChat templates.
 // Every entry owns a stable site + section + output identity.
 const designs={
@@ -12,15 +13,33 @@ const designs={
  personal:{paper:'#f8f7f3',ink:'#303a3a',family:'sans',sections:{works:['#436d70','gallery'],'product-news':['#906e42','dispatch'],reflections:['#77614e','essay'],'academic-notes':['#5d6586','archive'],archive:['#65685f','essay'],calendar:['#7a704e','ledger'],history:['#5d717a','archive'],'open-source':['#55795c','guide']}},
  pets:{paper:'#fbf7ef',ink:'#423c2f',family:'sans',sections:{'pet-news':['#89723c','dispatch'],'daily-cat':['#a36753','gallery'],'daily-dog':['#537c61','guide'],'exotic-pets':['#6b6388','archive'],archive:['#8b614b','essay'],calendar:['#86663a','ledger'],history:['#79664e','archive'],'open-source':['#52735d','guide']}},
 };
+// Explicit legacy record categories remain readable even when no current
+// production column writes to them. They own templates too.
+const legacySections={
+ lingxi:{'input-methods':['#44697d','technical'],'custom-keyboards':['#79634e','gallery']},
+ personal:{'keyboard-projects':['#7d654c','gallery'],'input-method-projects':['#496b7a','technical'],'website-projects':['#556d60','technical'],'open-tools':['#65638b','guide'],'academic-sites':['#516c83','archive']},
+ 'scholay-today':{archive:['#526957','essay'],intelligence:['#3e6575','dispatch']},
+ metho:{archive:['#546a64','essay'],calendar:['#456978','ledger'],history:['#796b52','archive'],'open-source':['#4f7365','technical']},
+ enter:{archive:['#5c7060','essay'],calendar:['#56717d','ledger'],history:['#7b6c52','archive'],'open-source':['#4f776e','technical']},
+ legis:{archive:['#6d6256','essay'],calendar:['#536779','ledger'],history:['#80634e','archive'],'open-source':['#496e6c','technical']},
+ xsiching:{archive:['#7b6450','essay'],calendar:['#746846','ledger'],history:['#80604a','archive'],'open-source':['#526951','guide']},
+ study:{archive:['#57695b','essay'],calendar:['#4e7080','ledger'],history:['#766957','archive'],'open-source':['#4d7460','guide']},
+};
+for(const [site,sections] of Object.entries(legacySections))Object.assign(designs[site].sections,sections);
 export const exportDesigns=Object.freeze(designs);
+const templates=new Map();
+for(const [site,design] of Object.entries(designs))for(const section of Object.keys(design.sections)){
+ const record=JSON.parse(readFileSync(new URL(`./templates/${site}/${section}.json`,import.meta.url),'utf8'));
+ if(record.siteId!==site||record.sectionId!==section||!record.article||!record.pages)throw Error('Invalid authored article template: '+site+':'+section);
+ templates.set(site+':'+section,record);
+}
 export function exportTemplate({siteId,workspaceId,sectionId,sectionName,format}){
  if(!['pages','wechat'].includes(format))throw Error('Unknown export format');
- const design=designs[siteId]||{paper:'#f6f5ef',ink:'#263832',family:'sans',sections:{}};
- const entry=design.sections[sectionId];
- const seed=[...sectionId].reduce((n,c)=>(n*31+c.codePointAt(0))>>>0,0);
- const palette=['#35695f','#785544','#405f83','#6f5a80','#776337'];
- const [accent,layout]=entry||[palette[seed%palette.length],['guide','essay','ledger','archive','dispatch'][seed%5]];
- return {version:1,id:[siteId,sectionId,format].join(':'),siteId,workspaceId,sectionId,sectionName,format,
-  paper:format==='wechat'?'#ffffff':design.paper,ink:design.ink,accent,family:design.family,layout,
-  width:720,height:960,fontSize:layout==='essay'||layout==='archive'?27:26,lineHeight:1.65};
+ const record=templates.get(siteId+':'+sectionId);
+ // Synthetic demo sites may exercise arbitrary categories. Production never
+ // chooses a random or unrelated template for an unregistered category.
+ if(!record&&!siteId.startsWith('demo-'))throw Error('Missing article template: '+siteId+':'+sectionId);
+ const selected=record||templates.get('metho:methods');
+ return {version:2,id:[siteId,sectionId,format].join(':'),siteId,workspaceId,sectionId,sectionName,format,
+  ...structuredClone(selected[format==='wechat'?'article':'pages'])};
 }

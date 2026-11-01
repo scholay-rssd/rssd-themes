@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "xsiching",
+  "sectionId": "history",
+  "article": {
+    "ink": "#3c3028",
+    "accent": "#80604a",
+    "family": "serif",
+    "layout": "archive",
+    "paper": "#fbf5e9",
+    "heading": "seal",
+    "titleSize": 40,
+    "bodySize": 18,
+    "lineHeight": 2.1,
+    "paragraphGap": 32,
+    "width": 760,
+    "imageRadius": 0,
+    "identity": "classical",
+    "canvas": "#eee7d9",
+    "muted": "#7b6957",
+    "dark": {
+      "paper": "#2c251f",
+      "canvas": "#211c17",
+      "ink": "#eee3d2",
+      "muted": "#c4b299",
+      "accent": "#c7b9af"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "seal",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#382f28",
+    "accent": "#80604a",
+    "family": "serif",
+    "layout": "archive",
+    "paper": "#f4eddf",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65,
+    "identity": "classical",
+    "titleFamily": "serif",
+    "imageRadius": 0,
+    "header": "seal",
+    "muted": "#7b6957"
+  }
+}

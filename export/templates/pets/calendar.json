@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "pets",
+  "sectionId": "calendar",
+  "article": {
+    "ink": "#463c2e",
+    "accent": "#86663a",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#fffcf5",
+    "heading": "double",
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 28,
+    "width": 760,
+    "imageRadius": 16,
+    "identity": "companion",
+    "canvas": "#f6f0e5",
+    "muted": "#796e5a",
+    "dark": {
+      "paper": "#2c281f",
+      "canvas": "#211e17",
+      "ink": "#eee7d8",
+      "muted": "#c0b49c",
+      "accent": "#cabca8"
+    },
+    "titleFamily": "sans",
+    "radius": 20,
+    "header": "pill",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#423c2f",
+    "accent": "#86663a",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#fbf7ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "companion",
+    "titleFamily": "sans",
+    "imageRadius": 16,
+    "header": "pill",
+    "muted": "#796e5a"
+  }
+}

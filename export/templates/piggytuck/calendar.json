@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "piggytuck",
+  "sectionId": "calendar",
+  "article": {
+    "ink": "#46333b",
+    "accent": "#9b6039",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#fffaf8",
+    "heading": "double",
+    "titleSize": 40,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 28,
+    "width": 760,
+    "imageRadius": 14,
+    "identity": "studio",
+    "canvas": "#f8f0ec",
+    "muted": "#79646c",
+    "dark": {
+      "paper": "#2b232b",
+      "canvas": "#211a22",
+      "ink": "#f0e2e8",
+      "muted": "#c3abb8",
+      "accent": "#d3b9a8"
+    },
+    "titleFamily": "sans",
+    "radius": 18,
+    "header": "pill",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#4a3633",
+    "accent": "#9b6039",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#fff5ed",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "studio",
+    "titleFamily": "sans",
+    "imageRadius": 14,
+    "header": "pill",
+    "muted": "#79646c"
+  }
+}

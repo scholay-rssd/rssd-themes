@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "personal",
+  "sectionId": "product-news",
+  "article": {
+    "ink": "#2d3c38",
+    "accent": "#8b6a40",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#fbfaf6",
+    "heading": "rule",
+    "titleSize": 40,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 3,
+    "identity": "journal",
+    "canvas": "#f1f1e9",
+    "muted": "#63706b",
+    "dark": {
+      "paper": "#202c28",
+      "canvas": "#17211e",
+      "ink": "#e5e9df",
+      "muted": "#afbeb2",
+      "accent": "#cebfac"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "quiet",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#303a3a",
+    "accent": "#906e42",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#f8f7f3",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "journal",
+    "titleFamily": "serif",
+    "imageRadius": 3,
+    "header": "quiet",
+    "muted": "#63706b"
+  }
+}

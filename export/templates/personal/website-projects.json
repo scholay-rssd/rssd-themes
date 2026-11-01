@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "personal",
+  "sectionId": "website-projects",
+  "article": {
+    "ink": "#2d3c38",
+    "accent": "#556d60",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#fbfaf6",
+    "heading": "rail",
+    "titleSize": 40,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 3,
+    "identity": "journal",
+    "canvas": "#f1f1e9",
+    "muted": "#63706b",
+    "dark": {
+      "paper": "#202c28",
+      "canvas": "#17211e",
+      "ink": "#e5e9df",
+      "muted": "#afbeb2",
+      "accent": "#b4bfb9"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "quiet",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#303a3a",
+    "accent": "#556d60",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#f8f7f3",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "journal",
+    "titleFamily": "serif",
+    "imageRadius": 3,
+    "header": "quiet",
+    "muted": "#63706b"
+  }
+}

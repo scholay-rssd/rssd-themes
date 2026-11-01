@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "lingxi",
+  "sectionId": "custom-keyboards",
+  "article": {
+    "ink": "#27384b",
+    "accent": "#79634e",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#fbfcfe",
+    "heading": "open",
+    "titleSize": 36,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 24,
+    "width": 760,
+    "imageRadius": 8,
+    "identity": "technical",
+    "canvas": "#eef2f7",
+    "muted": "#607084",
+    "dark": {
+      "paper": "#182330",
+      "canvas": "#101923",
+      "ink": "#dfe9f2",
+      "muted": "#a6bbcc",
+      "accent": "#c4bab1"
+    },
+    "titleFamily": "sans",
+    "radius": 10,
+    "header": "rail",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#26343e",
+    "accent": "#79634e",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#f3f5f7",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "technical",
+    "titleFamily": "sans",
+    "imageRadius": 8,
+    "header": "rail",
+    "muted": "#607084"
+  }
+}

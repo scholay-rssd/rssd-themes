@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "scholay-today",
+  "sectionId": "open-source",
+  "article": {
+    "ink": "#282c29",
+    "accent": "#325f6c",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#fffdf8",
+    "heading": "rail",
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 28,
+    "width": 760,
+    "imageRadius": 3,
+    "identity": "scholarly",
+    "canvas": "#f4f1e9",
+    "muted": "#68675e",
+    "dark": {
+      "paper": "#202421",
+      "canvas": "#171b18",
+      "ink": "#e5e7df",
+      "muted": "#aeb6ac",
+      "accent": "#a5b9be"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "rule",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#172b28",
+    "accent": "#325f6c",
+    "family": "serif",
+    "layout": "technical",
+    "paper": "#f8f5ed",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "scholarly",
+    "titleFamily": "serif",
+    "imageRadius": 3,
+    "header": "rule",
+    "muted": "#68675e"
+  }
+}

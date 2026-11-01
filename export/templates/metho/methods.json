@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "siteId": "metho",
+  "sectionId": "methods",
+  "article": {
+    "ink": "#23352f",
+    "accent": "#35695f",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#fcfdfb",
+    "heading": "underline",
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 26,
+    "width": 760,
+    "imageRadius": 4,
+    "identity": "laboratory",
+    "canvas": "#f1f5f1",
+    "muted": "#637169",
+    "dark": {
+      "paper": "#192520",
+      "canvas": "#121c18",
+      "ink": "#e0eae4",
+      "muted": "#a6bbb0",
+      "accent": "#a6bdb9"
+    },
+    "titleFamily": "serif",
+    "radius": 4,
+    "header": "grid",
+    "padding": 48,
+    "headerGap": 34
+  },
+  "pages": {
+    "ink": "#203b3c",
+    "accent": "#35695f",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#f5f4ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65,
+    "identity": "laboratory",
+    "titleFamily": "serif",
+    "imageRadius": 4,
+    "header": "grid",
+    "muted": "#637169"
+  }
+}
