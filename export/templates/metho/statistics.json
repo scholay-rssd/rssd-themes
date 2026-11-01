@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "metho",
+  "sectionId": "statistics",
+  "article": {
+    "ink": "#203b3c",
+    "accent": "#365b82",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#ffffff",
+    "heading": "double",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#203b3c",
+    "accent": "#365b82",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#f5f4ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

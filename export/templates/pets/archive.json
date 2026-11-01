@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "pets",
+  "sectionId": "archive",
+  "article": {
+    "ink": "#423c2f",
+    "accent": "#8b614b",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#ffffff",
+    "heading": "quiet",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#423c2f",
+    "accent": "#8b614b",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#fbf7ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

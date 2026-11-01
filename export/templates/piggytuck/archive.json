@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "piggytuck",
+  "sectionId": "archive",
+  "article": {
+    "ink": "#4a3633",
+    "accent": "#875d62",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#ffffff",
+    "heading": "quiet",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#4a3633",
+    "accent": "#875d62",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#fff5ed",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

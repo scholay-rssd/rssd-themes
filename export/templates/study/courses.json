@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "study",
+  "sectionId": "courses",
+  "article": {
+    "ink": "#233936",
+    "accent": "#366954",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#ffffff",
+    "heading": "underline",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#233936",
+    "accent": "#366954",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#f4f6f5",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

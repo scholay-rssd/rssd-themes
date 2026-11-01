@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "lingxi",
+  "sectionId": "history",
+  "article": {
+    "ink": "#26343e",
+    "accent": "#6f6783",
+    "family": "sans",
+    "layout": "archive",
+    "paper": "#ffffff",
+    "heading": "seal",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#26343e",
+    "accent": "#6f6783",
+    "family": "sans",
+    "layout": "archive",
+    "paper": "#f3f5f7",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "personal",
+  "sectionId": "open-source",
+  "article": {
+    "ink": "#303a3a",
+    "accent": "#55795c",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#ffffff",
+    "heading": "underline",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#303a3a",
+    "accent": "#55795c",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#f8f7f3",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

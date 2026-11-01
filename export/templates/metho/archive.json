@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "metho",
+  "sectionId": "archive",
+  "article": {
+    "ink": "#203b3c",
+    "accent": "#546a64",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#ffffff",
+    "heading": "quiet",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#203b3c",
+    "accent": "#546a64",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#f5f4ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "piggytuck",
+  "sectionId": "web-design",
+  "article": {
+    "ink": "#4a3633",
+    "accent": "#766093",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#ffffff",
+    "heading": "rail",
+    "titleSize": 30,
+    "bodySize": 16,
+    "lineHeight": 1.9,
+    "paragraphGap": 20,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#4a3633",
+    "accent": "#766093",
+    "family": "sans",
+    "layout": "technical",
+    "paper": "#fff5ed",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

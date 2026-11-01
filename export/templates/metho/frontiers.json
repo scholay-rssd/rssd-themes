@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "metho",
+  "sectionId": "frontiers",
+  "article": {
+    "ink": "#203b3c",
+    "accent": "#60558a",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#ffffff",
+    "heading": "rule",
+    "titleSize": 32,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#203b3c",
+    "accent": "#60558a",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#f5f4ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

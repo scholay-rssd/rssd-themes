@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "pets",
+  "sectionId": "daily-cat",
+  "article": {
+    "ink": "#423c2f",
+    "accent": "#a36753",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#ffffff",
+    "heading": "open",
+    "titleSize": 34,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 8
+  },
+  "pages": {
+    "ink": "#423c2f",
+    "accent": "#a36753",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#fbf7ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

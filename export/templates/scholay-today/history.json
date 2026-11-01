@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "scholay-today",
+  "sectionId": "history",
+  "article": {
+    "ink": "#172b28",
+    "accent": "#79643e",
+    "family": "serif",
+    "layout": "archive",
+    "paper": "#ffffff",
+    "heading": "seal",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#172b28",
+    "accent": "#79643e",
+    "family": "serif",
+    "layout": "archive",
+    "paper": "#f8f5ed",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

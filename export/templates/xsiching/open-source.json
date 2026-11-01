@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "xsiching",
+  "sectionId": "open-source",
+  "article": {
+    "ink": "#382f28",
+    "accent": "#526951",
+    "family": "serif",
+    "layout": "guide",
+    "paper": "#ffffff",
+    "heading": "underline",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#382f28",
+    "accent": "#526951",
+    "family": "serif",
+    "layout": "guide",
+    "paper": "#f4eddf",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

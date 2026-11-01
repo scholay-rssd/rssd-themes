@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "xsiching",
+  "sectionId": "interpretations",
+  "article": {
+    "ink": "#382f28",
+    "accent": "#5d6440",
+    "family": "serif",
+    "layout": "essay",
+    "paper": "#ffffff",
+    "heading": "quiet",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#382f28",
+    "accent": "#5d6440",
+    "family": "serif",
+    "layout": "essay",
+    "paper": "#f4eddf",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "lingxi",
+  "sectionId": "calendar",
+  "article": {
+    "ink": "#26343e",
+    "accent": "#486e7c",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#ffffff",
+    "heading": "double",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#26343e",
+    "accent": "#486e7c",
+    "family": "sans",
+    "layout": "ledger",
+    "paper": "#f3f5f7",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

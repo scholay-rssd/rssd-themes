@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "legis",
+  "sectionId": "frontiers",
+  "article": {
+    "ink": "#342e2c",
+    "accent": "#784942",
+    "family": "serif",
+    "layout": "dispatch",
+    "paper": "#ffffff",
+    "heading": "rule",
+    "titleSize": 32,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#342e2c",
+    "accent": "#784942",
+    "family": "serif",
+    "layout": "dispatch",
+    "paper": "#f8f6f2",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

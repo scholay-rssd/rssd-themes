@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "lingxi",
+  "sectionId": "custom-keyboards",
+  "article": {
+    "ink": "#26343e",
+    "accent": "#79634e",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#ffffff",
+    "heading": "open",
+    "titleSize": 34,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 8
+  },
+  "pages": {
+    "ink": "#26343e",
+    "accent": "#79634e",
+    "family": "sans",
+    "layout": "gallery",
+    "paper": "#f3f5f7",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

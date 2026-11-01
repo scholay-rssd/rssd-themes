@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "enter",
+  "sectionId": "search",
+  "article": {
+    "ink": "#283d37",
+    "accent": "#78723b",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#ffffff",
+    "heading": "underline",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#283d37",
+    "accent": "#78723b",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#f7f7f2",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

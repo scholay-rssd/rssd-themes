@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "personal",
+  "sectionId": "reflections",
+  "article": {
+    "ink": "#303a3a",
+    "accent": "#77614e",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#ffffff",
+    "heading": "quiet",
+    "titleSize": 32,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 26,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#303a3a",
+    "accent": "#77614e",
+    "family": "sans",
+    "layout": "essay",
+    "paper": "#f8f7f3",
+    "width": 720,
+    "height": 960,
+    "fontSize": 27,
+    "lineHeight": 1.65
+  }
+}

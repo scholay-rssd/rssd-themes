@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "study",
+  "sectionId": "offers",
+  "article": {
+    "ink": "#233936",
+    "accent": "#9a6134",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#ffffff",
+    "heading": "rule",
+    "titleSize": 32,
+    "bodySize": 17,
+    "lineHeight": 1.9,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#233936",
+    "accent": "#9a6134",
+    "family": "sans",
+    "layout": "dispatch",
+    "paper": "#f4f6f5",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}

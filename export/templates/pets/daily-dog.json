@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "siteId": "pets",
+  "sectionId": "daily-dog",
+  "article": {
+    "ink": "#423c2f",
+    "accent": "#537c61",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#ffffff",
+    "heading": "underline",
+    "titleSize": 30,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 22,
+    "width": 680,
+    "imageRadius": 2
+  },
+  "pages": {
+    "ink": "#423c2f",
+    "accent": "#537c61",
+    "family": "sans",
+    "layout": "guide",
+    "paper": "#fbf7ef",
+    "width": 720,
+    "height": 960,
+    "fontSize": 26,
+    "lineHeight": 1.65
+  }
+}
