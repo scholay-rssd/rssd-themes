@@ -169,448 +169,448 @@
     },
     {
       "path": "export/templates/enter/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "2105a28ab27086e1f81fa10bd2c905cc74c186700ac062e73a68961812154374"
+      "sha256": "975eba6173bcdc9ce093e2335888a2ee0adcbf00932430002106290c10c53c0e",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b5d28ff6e856a1b50438e9af3a1dce5fe60a43b300d2bea61c518b1061baadfa"
+      "sha256": "18bb84162055662b4654cab79740a19a75a1b3a97f0032d0097f1dd8d80d137c",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/courses.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ef6f8ac189017f057f3dd29f708dd393ada3a888bac155eef26c918e367f7c77"
+      "sha256": "176f4f643ebfba47b76ebbbe2391ecbe581148accdb96e173be2f519bd6c5f1b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/forums.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b8aa0b9a4874bf379d86a26c3ce90b40566ed3e3e88c38cb375038515dc427e3"
+      "sha256": "5f42e17deae045d482c771131a1f143a2098f12c3cf5f8aca0886f74ae13f135",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "34b2059f5aa30c27598b944dfa13e286b73b5f5536134fd9c641ac7dcfc80cb7"
+      "sha256": "8d08d7b0570b030ac6084577a13b5e8c8de13e9dd652fac48b8ca2b2f286258f",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "bb69c2deeb2b357316dc85301056580059443d748ce96c02b0200adf1f80523c"
+      "sha256": "831c919dac2585a2ec1c0eb16d03f9516ad8d8fd583d21bd3dc2f39190234738",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/search.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b1cab714216ce7b343e4a0e7b5bdf0846fea73b26742f20458768b730c5b7b42"
+      "sha256": "ee1940fae8b3454f12799f9f6c8eba2c02ef1b3fc645e2217755a96816917203",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/enter/software.json",
-      "syntheticContentReplacement": false,
-      "sha256": "af5d995247bac8755f23a0ea9677a449741673505e79f6515a4f867c28e5482c"
+      "sha256": "36485df447bf1afc1a2c13d27c82a27d91d709689819658701ff81175d8f5a2e",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "986d908b3f2c4da08744490a6c753e7d4388f9cd985a12067affbdd93550f28b"
+      "sha256": "cd13c253c435fa8b915f2ab3fae28e1bc7a434ffacbcc3a3914a1bdb043313c4",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "469f67a3083f754084be017c78baa3272802a000d8f490617dd55a77a06b67a9"
+      "sha256": "2109492e66c911cc3958615d854d2ecfeac2fa2f5efe5a204f5d73e5109e8241",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/cases.json",
-      "syntheticContentReplacement": false,
-      "sha256": "6376f5564078517b22e075e4bfa55a111fb3596ba57a0c79daccddcd042c4cee"
+      "sha256": "e0b0989be568502a698aba9cc2f03789e503b29598a4ab379b7a5f74b35890c4",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/frontiers.json",
-      "syntheticContentReplacement": false,
-      "sha256": "9ae8bcc3ed1ec3fd4329f85de5ca9e137b92c3473e1d7d7aa18ae2c4b4faab06"
+      "sha256": "1acc3d300c0c07eef730a1b0d6517fed23b2253ac1174d09206a8708df3ff811",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "00bc1ec2679fe808034cf9b75759540a2abaee5e770461c50daea5ebfc8f366f"
+      "sha256": "7355b0c10fc5e8a12b0bb8e93509801b8f75d775cfd50407454188b00ae7898a",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/ip.json",
-      "syntheticContentReplacement": false,
-      "sha256": "c3f90d42d0162314cfbe3a539cca6810c46d3a8e6b595ec0f7954867be7adbc2"
+      "sha256": "20f1b61d207c8c0ff9bf348b153c668f37235027476e493009ad0da48c2dec86",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "97cd048636bba148c4de32b401d665555ad83cee670dc51a2dc54b86c305326a"
+      "sha256": "7987add067f29ac9fd180f04e2170f12dd32fbc138e5013212c28fea07d1ab45",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/legis/regulations.json",
-      "syntheticContentReplacement": false,
-      "sha256": "9a78b326439fdac93fcd52606412cf5681bb7968a3d1a6032c305c86d5c0ee99"
+      "sha256": "e886a84cfbbfc489dfa6822b715c9f6d2983ffd9bbc54fce264d99a67f500515",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "3a56474e87fe5fe69612abe1ba098f5c98ffedf19159d197fa98a2565dc29939"
+      "sha256": "1a1a883828c4e07c549b33c1c8ae3870a206aa31940443687368db0a7de0f08a",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "494e17719fec42cdea5afb1c8211944665a3d18233342e2b153bcde8a2cdfb75"
+      "sha256": "8e908977784f20a493880109dbc79695167e2742c3e60935f5f5e5d38eebba4b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/custom-keyboards.json",
-      "syntheticContentReplacement": false,
-      "sha256": "f9726d11e56656f5c0c92699bb9d04c10b5663e1a791f6392c72ea166d20db47"
+      "sha256": "feec20e835b048d82e8ddcb34b4c5c137dd405ee0a50526b83eb629d5ea454eb",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/development.json",
-      "syntheticContentReplacement": false,
-      "sha256": "159ef1d8c8e274b928fc4244b1f87e6589f406d3be7be7d72b92c1a8858cb777"
+      "sha256": "a0cab82edea3a59fe23b5bc74e746fb797f54933c8840f243d94ab01a66c8f00",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "13bc36731f54158bebac150fa8d8d3a7c6a681b750ab975a06ae5c383b46086b"
+      "sha256": "b4347e93bed1c2f608573961021125b504fa53703eb2232f14ec21007d41c1cf",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/input-methods.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b0285414aab4e8c5b526ba134da44b1671a8e6ff2f59a2da46547d58043469e2"
+      "sha256": "a465dc21902c6c0535f6e06d39878976b1dcbab58134eb2716c86f61b9bc6a37",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/input-schemes.json",
-      "syntheticContentReplacement": false,
-      "sha256": "496447695908bbe3ace66672d5f53e9451398bfa640fca8dd3fcbdeb09b68ae6"
+      "sha256": "20eb9ab514ad124291698af481cc2065e211a09cd2aadfd4c0fccefcdf5fdbc1",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/input-skins.json",
-      "syntheticContentReplacement": false,
-      "sha256": "5702d90e404551a5c12b63dfb9ff4a4f3819a3d541002141e5ac041b006ea842"
+      "sha256": "8bfda2dbc426d9f1f15b0f5c6fde7b7c9035bd97395935055e7a745cc8764668",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "bcb4d7c5ec6f39a37842e7bc602ec36bd4eb016666cfdd5827c173e06a663ad7"
+      "sha256": "6af6020858697ce9ba3a38a639f66e5a578791df9f0deb91f642094a8cf792b6",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/lingxi/tutorials.json",
-      "syntheticContentReplacement": false,
-      "sha256": "5286e7dd7b9de532e05c6e86cf516e3899347e5f3c9184955bf6fa61bbe57f0c"
+      "sha256": "329822abcecf6c4468cbe2669eb3c55368334f241c007301566ca7b671eec10b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "a8df748e4de903e1e56a5eb8787d6e2a45e46a89672347f31bc9864cfadc3dea"
+      "sha256": "d3200ce4cf45747f620f9a76c113c8afc1a99036bf58f6fab1c5473f3ca6eda0",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b1ceb0af9f4243b5145fa71900c4c98b70a1f766b30fa2ab79765fdcf8c3fd44"
+      "sha256": "7832c4ab4266b729a03de1797343cdfc11bd06f90f37f9b03611b2e1607a7c8e",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/experiments.json",
-      "syntheticContentReplacement": false,
-      "sha256": "5bdbd2880dc508a8f588056c4b2216a102f72d2d9390963f7f000399c362665d"
+      "sha256": "06f597759c8a5baeb8f303cc13c8af023e044a541cbf62c6056f90b223888f0b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/frontiers.json",
-      "syntheticContentReplacement": false,
-      "sha256": "eefa83ab26d9440af51370cb8e978192638a180812504179ed984d28fc9e7f94"
+      "sha256": "924bea14de3eac6f5f2c134997da12587946078699dfe1794e97240282654d12",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "523d34e8d932e44f75a4b81a79425893b7d3f558170147729ccc6d4283973f7a"
+      "sha256": "c27047a2b4c7d3e8e293be5fce79214ded12d26420185297fa3ff717dcba9749",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/methods.json",
-      "syntheticContentReplacement": false,
-      "sha256": "e7168d0dc626f64bdce2913d1ae64c7d1af684a8d231186c2dff0ffe3ef640c9"
+      "sha256": "d687867da0f6303c6e4c502c0d434bb333277c781668e4a5c896142d06504b7e",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "11e9c756af0bde27ad09393d571f9496afe8131efde7c62ab9d070f898744c8d"
+      "sha256": "062b155bf51865fee2bf53d135e130d0002f8c4972ece19c4b30e50b4e8ed3f1",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/metho/statistics.json",
-      "syntheticContentReplacement": false,
-      "sha256": "25ae62cc3671b3301e254a2f646260772bd8237e560582d81dc413b3c9d80c14"
+      "sha256": "a8fa0863471c7d8053ae7ac14ea25bafed4e28595be8a4563afcd571a8cfa029",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/academic-notes.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b6a14f7887d05ad007f6b6dc113717fd0d88fd16e274cfb54b0c9198834063d5"
+      "sha256": "221adb3ba244ce5c30b296e210b8690c0fc38c2235a620ffdecb948632c962fc",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/academic-sites.json",
-      "syntheticContentReplacement": false,
-      "sha256": "f3cb8693314fd6619899586fe9e2a444a34956e5220768eb0db2d76a12eba723"
+      "sha256": "cd31f648ca11b0703c0a0964ed0d122a7e68c2b9e25c67c503c43ec69ca9d3af",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "caf55722e0adb27eda78447937106e3b19c220c9930877480524f24f2277ba30"
+      "sha256": "8aa4d1c8342038ce0a73ded8138b32a83f49a9710dc7a494f24f76f3d2708b5a",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "cca60808305a4abc105ec56f0f33240e961e95bada7201be2d5c27bcd71f11dc"
+      "sha256": "da858c78a6091b978a5262c5b3dd6631f20592bdd958341d0f074cb1e95c0163",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "6f43c35d3d553e9f2eb2dde4cf1ab07c45748b61ea719b78f8d8682d5c20bd6f"
+      "sha256": "b9481c7f5f5ba592a9f41f40ec4c044254d723c44105dc3afc6d3d9585f389ae",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/input-method-projects.json",
-      "syntheticContentReplacement": false,
-      "sha256": "4feb680a6bd63ebba01b85f7f9b2f7a0709b33d00d2d31dbe4dd0ad4949f59fb"
+      "sha256": "a975713fd9c364fb7d505fb02f1362819959e3110523dece443d7de37d46c7de",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/keyboard-projects.json",
-      "syntheticContentReplacement": false,
-      "sha256": "73520c3010de77b4b0f99fb231d98087e03f51aee3b515557b529d71c952c5ba"
+      "sha256": "eeb820c4687298adbd0da1799adcf78d3428fba7b0fd4b5ed0ad9968069e6af0",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "fa1da52f81e7a710f0c0919756667a231e84f4b728b6978bf3b74dadfc7d6249"
+      "sha256": "0b1da95c78cca6f747b2d7554fe7058a38222a95383a7de74648ce31f9d28eba",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/open-tools.json",
-      "syntheticContentReplacement": false,
-      "sha256": "aa0d8715c3228a99c2e0ec60dbd5315d4b634373076c44fe7a217ca1197b2616"
+      "sha256": "c2d341263a2e3fe7bc93a204b0d65432d76571187ec4d45c5d794ec92bf0ffde",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/product-news.json",
-      "syntheticContentReplacement": false,
-      "sha256": "a4c5dc08d7a80d49e928e1ef0418d93dce38011689edc2aa3e6e6721d2934b07"
+      "sha256": "f8ae276ea38eda139ba20be859be46a50fb6a799dba40eef89d7d48deb48e34a",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/reflections.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ca9099ce83201473bd4ee55cd80f4f4c70ca4324cf07510cd79aca00a2fa18aa"
+      "sha256": "d0e724b7a9c7e4aa63467c87021f2b1ff1fbb36dc04d909fcc15bcee768fb5d3",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/website-projects.json",
-      "syntheticContentReplacement": false,
-      "sha256": "f32d4c150aebd384bffdeab5429c4790c42332d0d31cd81aaab2344d5130b69d"
+      "sha256": "b5b535a8b7b86b4fa7165dd7672645238324188bf979b9bad5946983dc2efd13",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/personal/works.json",
-      "syntheticContentReplacement": false,
-      "sha256": "e2434cb8a773fc722dfc5ffbbb20dd6937177bb4f856982823e3ab6c27380f6f"
+      "sha256": "a22493f37d408d513a08f0b492647850be52b0b82b6d75bdc3982559e6f8eb33",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "e24d8b01b3bcc5c21192f9f9424ba3142f1a6f6d25ee5a3f22112da0562ecafb"
+      "sha256": "53d0746f6ae1bbb2dee6d986ca906b933e64a4ad0587fd1862b9a8ca58d73727",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "aba9f85456b81f9d9f0664d8528d55e9f6402d9a64813deb7a131f497f82d789"
+      "sha256": "2415e15ed0b89bb22950c7a4438ffc9ba8913617148c220f537ae9653efebfaf",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/daily-cat.json",
-      "syntheticContentReplacement": false,
-      "sha256": "bb91f36a95f00068ed1e7a89843f95c0b3e9ba9628dab4a7c72305c2fafa4194"
+      "sha256": "5e90acd5259255e37a730d2dda6bfe78f56bd4aeeffdc2ebbab6bd7104d981ef",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/daily-dog.json",
-      "syntheticContentReplacement": false,
-      "sha256": "3e11812d58d6c7c8ee2e5ecedb62a08148130830cc28a1a24094c612ef255971"
+      "sha256": "c0c3ec82d9959a005c661f1ce2004f12c4c1c6da8c169605995a235b2ef62c25",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/exotic-pets.json",
-      "syntheticContentReplacement": false,
-      "sha256": "baefcce84495f31df0a2170c025896e902e4f39b644b3606bbdf313fb3c87a01"
+      "sha256": "81b3ad206bf865165066bf378fbde449414a21ceb5da7f6ec2b92930ab8f86ce",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "84b01fabd6d387b0cdec802944c8c7424c90dac6c58740d6c53d2361f55a21e3"
+      "sha256": "9ad62a1dc0e8207a332de5e1621cefca19b21ac19c7b61475448e18142e0fb1c",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ba5dc5c9b3606478d83e07473a99be3c37b5f15403f2b3cdda681d5db74b67b1"
+      "sha256": "6f1dff9cad4f25b20ace42456cafa25021a6b9fdb9eab587ef4fd77f8ffd2b7f",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/pets/pet-news.json",
-      "syntheticContentReplacement": false,
-      "sha256": "9e93b67e75131563dab8b640c6bf516dc7d8935670cfaa1c2850d3c2dc0ae204"
+      "sha256": "f4511262bd1e323caa5b68c26ae3d902707b18197ad6dd549880e9370c8750d0",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "0d68e89ba37a0e9fb4ab5b4d14e3153453b19ea946ffc679bf8130a521276db2"
+      "sha256": "80827b8c9abc59e17c5c80edb4ff802ba73727959006b461576cbeb6815c444c",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b8d0e88d7778eae2146293b74853f45be0fdd6405ed2d92375280d3f5572d4c1"
+      "sha256": "c7fc40a3693cace0c1c7382775d4242529f72914ad0253efddefa5d2dd82c574",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/design-news.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ad55cc3c85f316f9af4bb718caaf4ba63e481fbd9c4e72553b95a1d4d2112d30"
+      "sha256": "8c23941bf9d03513f976a774660fd4a9e78ac2ed36c1a6e7c5f3ff626b0057df",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "84e7e452749cf7eb067843b317877078f101b125e5c84f3a07ffdebb064ac707"
+      "sha256": "07d39d5034a320cf64cfbec285b98c9c53ac9e8c03f9ad955c4cb18d9b0c6687",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/icons.json",
-      "syntheticContentReplacement": false,
-      "sha256": "3afb83ae3d108e1f09b05630230581095bc50876f0b24ba1c2f562f94d7af8f8"
+      "sha256": "baf1297f0adaca87693062edaee2e597cd9d7c7402b9a16614e4106129a7481a",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "24c732ee179dabbbacb5d5d3189db7ba17354eb199b29ef34b3b26f857e3ece7"
+      "sha256": "30d156bc7b2fb431a86d5f2d17a56d90d041dbdb5514a630e9e6abc61d778d08",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/web-design.json",
-      "syntheticContentReplacement": false,
-      "sha256": "8fe79e79a2cc48b311424de7ec9508a1193f57c0b51b8590274dd693422a6f4e"
+      "sha256": "d69de7c0847d86692f32c416017a86e379a441c158d8cd0a824a712d4503d3b0",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/piggytuck/works.json",
-      "syntheticContentReplacement": false,
-      "sha256": "2096d5d46fbb64404a40c9e5a0a9b57ea7fc5e02f10535d8b22fef66d7f74f7a"
+      "sha256": "d9dfbd2b2ccb6cb38aff6c2956e7686127850cc2acf05fca92939d501f586958",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "6ac3472e40cfbe0ab9b5b361432ba4e861b95712bce5f7a34bb16eeac87c1d71"
+      "sha256": "a409040cbef68f130aed573ec6c3361066db1dcd07ac706a650f78d2ad5c6989",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/briefings.json",
-      "syntheticContentReplacement": false,
-      "sha256": "d0dd268ec9418df402d29372ec15628a36ea71bbe62808cbd605a27b171d0a2e"
+      "sha256": "a37d74936e253f9d8464d924087c7d65ce10a5874560531812cd1eb8f6e23de9",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "6fa5139d3dd8febefeb04c7cdd000123a06938e38b950fa0c5755d18ea4d34f0"
+      "sha256": "f7d9c5f8eadb61e14144c401825f185779c177580e1794d8f1ac4eeff93e9789",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/collaboration.json",
-      "syntheticContentReplacement": false,
-      "sha256": "b555506cc2817255a11fb2a4b2ae0e84b720c5140b2f0b87763e86b0fe646e72"
+      "sha256": "3245b84655b33aa6919520df49aa625ee8a564da477d04279244db67304b4893",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/courses.json",
-      "syntheticContentReplacement": false,
-      "sha256": "134462d6757327bf05631902f277c4280fce3b86674c6210aa93e7150cb8ba33"
+      "sha256": "2c3332ec399784d285ab6bbc43c2005da50f4f04c414eb06099f6d1d887b5aa1",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "21d39a93df89fd340bc720e19be2c7517318e8cbed11b484609cf3e1bb6b7d4a"
+      "sha256": "383842f3ffbf5c32aae41d08a5d40dc9f28e89e88164daeb26ca3bf4d0191b91",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/intelligence.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ef8c1d99111fb71e65ecd82fdee1e251a616470d2a3079847d0f0db6b1aa75bf"
+      "sha256": "d850a385d93215605fd53768428e04f8872eed1522e18d84c05af2ec6d54ac7b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/observations.json",
-      "syntheticContentReplacement": false,
-      "sha256": "416a7b9fe91b3881003bbf9d5d6782f3a0640bfeba06087f2db8716ece2bd155"
+      "sha256": "3dbcb9ff6a8a2ef3da37d3564ad5e891be938251c45b0a8aeb6e4c61043c3bf8",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "2465a978476676dfddfc630fa277550741e8b221edf1f0c3079c2598401aff67"
+      "sha256": "a0df9218f4adb092af5b4233456920a8f21419c2eae831069eb962a3b782b53e",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/scholay-today/resources.json",
-      "syntheticContentReplacement": false,
-      "sha256": "d617206797483beeaedc879bdaa4c06e4e7960e369e89da6bc888ddd6798ab3d"
+      "sha256": "61083c16c60bee7c3a07ee7fe1ed44678fa5772d2df6331523c151e3543e48c9",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "318bd485934fea1b426e4865c9bcc0f3b3eba24c2321927e5d3174b4ea0b2b89"
+      "sha256": "161553ab9cea1e3225c42aab09c0be161508acaf0c9dea7df7475f0d6d1cfa35",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "5102e52989054036fe21f4c12d941f7c98502cf05769d99c9550001f158533cc"
+      "sha256": "36da2795d5e0accdb1e0b500f846eb2efe9340647322dfb97e4f2480dbe89e68",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/certificates.json",
-      "syntheticContentReplacement": false,
-      "sha256": "02d490d534abf34bc8cd48d9fd68f9dd5360cd44b9416420a1143c972e7b5782"
+      "sha256": "e22d4b412e6add4af0c5db4acbf05f7b9e6f422670c7a4716699b9f2ad879df6",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/courses.json",
-      "syntheticContentReplacement": false,
-      "sha256": "c6ad2932213f5ab5c88f74b95c4a9add23c15cfab3e44c5f3f1c940f2fedc682"
+      "sha256": "fc667499b75f74cf2093e9915a14da1977a84fd340575c3d2a9e4c9e2335cf16",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "72630eeb2c4d1dfb5c5ca98758caf56d2fee71f51aa4284b609747111cccbc10"
+      "sha256": "1892b2e8f5f3bc8617c1db88fdfba48bae1a3785b191e2bc4634778a51266c41",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/models.json",
-      "syntheticContentReplacement": false,
-      "sha256": "761bc7aae32457242feb9d20f69d2eeae4d96b0fad84b0f50d886fecc4fbe65e"
+      "sha256": "57c55edfce79b8bc86ab65416ebd1adc1e94a908e8e96aff8f8e60b90818be59",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/offers.json",
-      "syntheticContentReplacement": false,
-      "sha256": "dbf40a62df30ee9fb52560c1268379a2d822a9efc01da3213e0dda1f849d65cb"
+      "sha256": "3b60f426089323581e785ca724f315f0a50a6ff1fddc09167207db88e110cf6b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/study/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "c43d8e1495c001ad994d5c7a5880a3b55c3aa89853cada5bea85972e6d5cd524"
+      "sha256": "17764478895dfeb47641282e6839d9c71d69940e80517a635dc300a3eb29513b",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/applications.json",
-      "syntheticContentReplacement": false,
-      "sha256": "3ba26b83fb1fc3098ab7e88c72d4fc6e3c50c7132df2102776e1cd2573b24781"
+      "sha256": "6e438367907af490ebb0fcefdf0a337ecd0d8fe1f59b10a5a03675db7a2589d5",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/archive.json",
-      "syntheticContentReplacement": false,
-      "sha256": "6f7e2664116803bdd29fa698f8f30b372c559d662ce4f4300cb808bb71adf5a9"
+      "sha256": "1d2a94613f3226dccddbcedf2e8d62569c55c07a3867301f0ceddc5b1967127f",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/calendar.json",
-      "syntheticContentReplacement": false,
-      "sha256": "8d66479b0d6e80a1b0ceabcb31785dd8617526a66bee95f0de34a6ffa21a71a3"
+      "sha256": "a767248b70eed90bf150cdcaecbfc199b798074275da818fb61f64f129417ec5",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/classics.json",
-      "syntheticContentReplacement": false,
-      "sha256": "ab245e95288b9daf5d14126d7da2d388a3883f2ced98a2a0930e544cef1cfed7"
+      "sha256": "1bc7e3864b75e940fe439839282596d22ce13752caf30366febc63178de245ac",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/courses.json",
-      "syntheticContentReplacement": false,
-      "sha256": "88075eddc37afe8aea29028b3bd61ac84ed7b070a8f3f29323ec13176d68072b"
+      "sha256": "ecd89a4c976a0ab3194c83b766405cd7dc7566589173249ba6cc7017d6713d53",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/history.json",
-      "syntheticContentReplacement": false,
-      "sha256": "cd05cd4b740523a8bee5263d5ea45c6ae3cdfd354277171379a26a4a92a8da00"
+      "sha256": "ee2a4c363e4cc72dbbb6c2ff45034af016006fdeb08c7de8e4be3e82c3b4ddf4",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/interpretations.json",
-      "syntheticContentReplacement": false,
-      "sha256": "7e6653ca5e8ee942abaa1e242faf7f865d509138220ffbd5a173779acd51afaa"
+      "sha256": "877bd1c777ee157ab00c49ec058528423498e90f506b026622a876a62e518c19",
+      "syntheticContentReplacement": false
     },
     {
       "path": "export/templates/xsiching/open-source.json",
-      "syntheticContentReplacement": false,
-      "sha256": "401c8c931d1921499d8d8d24281e40d9524eb290b55a503fdbbfde1eb136910e"
+      "sha256": "90895d50ebf97b3c1ce3fc611d849b32952d91822d5d1423d262dc27e01fd0d9",
+      "syntheticContentReplacement": false
     },
     {
       "path": "journal/archie.css",

@@ -3,18 +3,33 @@
   "siteId": "metho",
   "sectionId": "archive",
   "article": {
-    "ink": "#203b3c",
+    "ink": "#23352f",
     "accent": "#546a64",
-    "family": "sans",
+    "family": "serif",
     "layout": "essay",
-    "paper": "#ffffff",
+    "paper": "#fcfdfb",
     "heading": "quiet",
-    "titleSize": 32,
-    "bodySize": 18,
-    "lineHeight": 2,
-    "paragraphGap": 26,
-    "width": 680,
-    "imageRadius": 2
+    "titleSize": 38,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 28,
+    "width": 760,
+    "imageRadius": 4,
+    "identity": "laboratory",
+    "canvas": "#f1f5f1",
+    "muted": "#637169",
+    "dark": {
+      "paper": "#192520",
+      "canvas": "#121c18",
+      "ink": "#e0eae4",
+      "muted": "#a6bbb0",
+      "accent": "#b4bdbb"
+    },
+    "titleFamily": "serif",
+    "radius": 4,
+    "header": "grid",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#203b3c",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 27,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "laboratory",
+    "titleFamily": "serif",
+    "imageRadius": 4,
+    "header": "grid",
+    "muted": "#637169"
   }
 }

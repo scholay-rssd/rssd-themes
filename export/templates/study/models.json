@@ -3,18 +3,33 @@
   "siteId": "study",
   "sectionId": "models",
   "article": {
-    "ink": "#233936",
+    "ink": "#303e27",
     "accent": "#3c5d8a",
     "family": "sans",
     "layout": "ledger",
-    "paper": "#ffffff",
+    "paper": "#fcfdf8",
     "heading": "double",
-    "titleSize": 30,
+    "titleSize": 38,
     "bodySize": 17,
-    "lineHeight": 1.95,
-    "paragraphGap": 22,
-    "width": 680,
-    "imageRadius": 2
+    "lineHeight": 1.9,
+    "paragraphGap": 26,
+    "width": 760,
+    "imageRadius": 8,
+    "identity": "learning",
+    "canvas": "#f1f4e9",
+    "muted": "#67705c",
+    "dark": {
+      "paper": "#232b1d",
+      "canvas": "#191f15",
+      "ink": "#e4ebda",
+      "muted": "#b3bda5",
+      "accent": "#a9b8cc"
+    },
+    "titleFamily": "sans",
+    "radius": 10,
+    "header": "band",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#233936",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 26,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "learning",
+    "titleFamily": "sans",
+    "imageRadius": 8,
+    "header": "band",
+    "muted": "#67705c"
   }
 }

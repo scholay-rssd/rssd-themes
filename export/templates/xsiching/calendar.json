@@ -3,18 +3,33 @@
   "siteId": "xsiching",
   "sectionId": "calendar",
   "article": {
-    "ink": "#382f28",
+    "ink": "#3c3028",
     "accent": "#746846",
-    "family": "serif",
+    "family": "sans",
     "layout": "ledger",
-    "paper": "#ffffff",
+    "paper": "#fbf5e9",
     "heading": "double",
-    "titleSize": 30,
+    "titleSize": 40,
     "bodySize": 17,
-    "lineHeight": 1.95,
-    "paragraphGap": 22,
-    "width": 680,
-    "imageRadius": 2
+    "lineHeight": 1.9,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 0,
+    "identity": "classical",
+    "canvas": "#eee7d9",
+    "muted": "#7b6957",
+    "dark": {
+      "paper": "#2c251f",
+      "canvas": "#211c17",
+      "ink": "#eee3d2",
+      "muted": "#c4b299",
+      "accent": "#c2bdae"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "seal",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#382f28",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 26,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "classical",
+    "titleFamily": "serif",
+    "imageRadius": 0,
+    "header": "seal",
+    "muted": "#7b6957"
   }
 }

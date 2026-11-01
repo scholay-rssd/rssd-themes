@@ -3,18 +3,33 @@
   "siteId": "xsiching",
   "sectionId": "archive",
   "article": {
-    "ink": "#382f28",
+    "ink": "#3c3028",
     "accent": "#7b6450",
     "family": "serif",
     "layout": "essay",
-    "paper": "#ffffff",
+    "paper": "#fbf5e9",
     "heading": "quiet",
-    "titleSize": 32,
+    "titleSize": 40,
     "bodySize": 18,
-    "lineHeight": 2,
-    "paragraphGap": 26,
-    "width": 680,
-    "imageRadius": 2
+    "lineHeight": 2.1,
+    "paragraphGap": 32,
+    "width": 760,
+    "imageRadius": 0,
+    "identity": "classical",
+    "canvas": "#eee7d9",
+    "muted": "#7b6957",
+    "dark": {
+      "paper": "#2c251f",
+      "canvas": "#211c17",
+      "ink": "#eee3d2",
+      "muted": "#c4b299",
+      "accent": "#c5bbb2"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "seal",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#382f28",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 27,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "classical",
+    "titleFamily": "serif",
+    "imageRadius": 0,
+    "header": "seal",
+    "muted": "#7b6957"
   }
 }

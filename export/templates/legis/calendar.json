@@ -3,18 +3,33 @@
   "siteId": "legis",
   "sectionId": "calendar",
   "article": {
-    "ink": "#342e2c",
+    "ink": "#29303a",
     "accent": "#536779",
-    "family": "serif",
+    "family": "sans",
     "layout": "ledger",
-    "paper": "#ffffff",
+    "paper": "#fffdf9",
     "heading": "double",
-    "titleSize": 30,
+    "titleSize": 38,
     "bodySize": 17,
-    "lineHeight": 1.95,
-    "paragraphGap": 22,
-    "width": 680,
-    "imageRadius": 2
+    "lineHeight": 1.9,
+    "paragraphGap": 28,
+    "width": 760,
+    "imageRadius": 0,
+    "identity": "legal",
+    "canvas": "#f1efea",
+    "muted": "#6b6a65",
+    "dark": {
+      "paper": "#222731",
+      "canvas": "#191e26",
+      "ink": "#e7e8e9",
+      "muted": "#b6b8bc",
+      "accent": "#b3bcc4"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "double",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#342e2c",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 26,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "legal",
+    "titleFamily": "serif",
+    "imageRadius": 0,
+    "header": "double",
+    "muted": "#6b6a65"
   }
 }

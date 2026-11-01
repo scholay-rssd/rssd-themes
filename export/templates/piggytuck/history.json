@@ -3,18 +3,33 @@
   "siteId": "piggytuck",
   "sectionId": "history",
   "article": {
-    "ink": "#4a3633",
+    "ink": "#46333b",
     "accent": "#80634f",
-    "family": "sans",
+    "family": "serif",
     "layout": "archive",
-    "paper": "#ffffff",
+    "paper": "#fffaf8",
     "heading": "seal",
-    "titleSize": 32,
-    "bodySize": 18,
-    "lineHeight": 2,
-    "paragraphGap": 26,
-    "width": 680,
-    "imageRadius": 2
+    "titleSize": 40,
+    "bodySize": 17,
+    "lineHeight": 1.95,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 14,
+    "identity": "studio",
+    "canvas": "#f8f0ec",
+    "muted": "#79646c",
+    "dark": {
+      "paper": "#2b232b",
+      "canvas": "#211a22",
+      "ink": "#f0e2e8",
+      "muted": "#c3abb8",
+      "accent": "#c7bab2"
+    },
+    "titleFamily": "sans",
+    "radius": 18,
+    "header": "pill",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#4a3633",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 27,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "studio",
+    "titleFamily": "sans",
+    "imageRadius": 14,
+    "header": "pill",
+    "muted": "#79646c"
   }
 }

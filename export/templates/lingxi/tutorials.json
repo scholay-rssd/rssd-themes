@@ -3,18 +3,33 @@
   "siteId": "lingxi",
   "sectionId": "tutorials",
   "article": {
-    "ink": "#26343e",
+    "ink": "#27384b",
     "accent": "#32667e",
     "family": "sans",
     "layout": "guide",
-    "paper": "#ffffff",
+    "paper": "#fbfcfe",
     "heading": "underline",
-    "titleSize": 30,
+    "titleSize": 36,
     "bodySize": 17,
-    "lineHeight": 1.95,
-    "paragraphGap": 22,
-    "width": 680,
-    "imageRadius": 2
+    "lineHeight": 1.9,
+    "paragraphGap": 24,
+    "width": 760,
+    "imageRadius": 8,
+    "identity": "technical",
+    "canvas": "#eef2f7",
+    "muted": "#607084",
+    "dark": {
+      "paper": "#182330",
+      "canvas": "#101923",
+      "ink": "#dfe9f2",
+      "muted": "#a6bbcc",
+      "accent": "#a5bcc6"
+    },
+    "titleFamily": "sans",
+    "radius": 10,
+    "header": "rail",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#26343e",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 26,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "technical",
+    "titleFamily": "sans",
+    "imageRadius": 8,
+    "header": "rail",
+    "muted": "#607084"
   }
 }

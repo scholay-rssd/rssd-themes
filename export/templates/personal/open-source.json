@@ -3,18 +3,33 @@
   "siteId": "personal",
   "sectionId": "open-source",
   "article": {
-    "ink": "#303a3a",
+    "ink": "#2d3c38",
     "accent": "#55795c",
     "family": "sans",
     "layout": "guide",
-    "paper": "#ffffff",
+    "paper": "#fbfaf6",
     "heading": "underline",
-    "titleSize": 30,
-    "bodySize": 17,
-    "lineHeight": 1.95,
-    "paragraphGap": 22,
-    "width": 680,
-    "imageRadius": 2
+    "titleSize": 40,
+    "bodySize": 18,
+    "lineHeight": 2,
+    "paragraphGap": 30,
+    "width": 760,
+    "imageRadius": 3,
+    "identity": "journal",
+    "canvas": "#f1f1e9",
+    "muted": "#63706b",
+    "dark": {
+      "paper": "#202c28",
+      "canvas": "#17211e",
+      "ink": "#e5e9df",
+      "muted": "#afbeb2",
+      "accent": "#b4c4b7"
+    },
+    "titleFamily": "serif",
+    "radius": 0,
+    "header": "quiet",
+    "padding": 48,
+    "headerGap": 34
   },
   "pages": {
     "ink": "#303a3a",
@@ -25,6 +40,11 @@
     "width": 720,
     "height": 960,
     "fontSize": 26,
-    "lineHeight": 1.65
+    "lineHeight": 1.65,
+    "identity": "journal",
+    "titleFamily": "serif",
+    "imageRadius": 3,
+    "header": "quiet",
+    "muted": "#63706b"
   }
 }
