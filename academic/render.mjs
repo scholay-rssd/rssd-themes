@@ -8,6 +8,7 @@ import {renderDisplayModules} from '../../modules/registry.mjs';
 import {archiveSections} from '../../../scripts/archive-model.mjs';
 import {escapeHtml as esc} from '../../modules/shared.mjs';
 import {renderArticle,recordMathHtml} from '../../engine/article-math.mjs';
+import {imageSizeMap} from '../../engine/publication-assets.mjs';
 import {writeCalendarData} from './calendar-data.mjs';
 import {optimizeEntry} from './entry-hints.mjs';
 import {addSocialMetadata} from '../../engine/social-metadata.mjs';
@@ -31,10 +32,11 @@ export async function renderAcademic({job,source,target,previousRoot,now,site,th
   const withoutAssets=items=>items.map(({assets,...item})=>item);
   // Only the publisher produces this HTML. Never forward a supplied bodyHtml;
   // legacy plain-text notifications retain their original whitespace behavior.
-  const calendarItems=job.snapshot.data.year.map(({assets,bodyHtml,mathHtml,...item})=>({...item,...recordMathHtml(item,['summary',...(!item.sectionId&&!assets?.length?['body']:[])]),...(item.body&&(item.sectionId||assets?.length)?{bodyHtml:renderArticle(item.body)}:{})}));
+  const calendarItems=[];
+  for(const {assets,bodyHtml,mathHtml,...item} of job.snapshot.data.year)calendarItems.push({...item,...recordMathHtml(item,['summary',...(!item.sectionId&&!assets?.length?['body']:[])]),...(item.body&&(item.sectionId||assets?.length)?{bodyHtml:renderArticle(item.body,{imageSizes:await imageSizeMap(assets,previousRoot)})}:{})});
   await writeFile(join(target,'data.json'),JSON.stringify({...job.snapshot.data,year:calendarItems,history:withoutAssets(job.snapshot.data.history).map(({mathHtml,...item})=>({...item,...recordMathHtml(item,['factSummary','historicalSignificance'])}))}));
   await writeFile(join(target,'open-source.json'),JSON.stringify({...job.snapshot.openSource,items:withoutAssets(job.snapshot.openSource.items).map(({mathHtml,...item})=>({...item,...recordMathHtml(item,['summary','value'])}))}));
-  const calendar=await writeCalendarData(target,job.snapshot.data,Object.fromEntries(content.records.map(r=>[r.id,r.route])));
+  const calendar=await writeCalendarData(target,job.snapshot.data,Object.fromEntries(content.records.map(r=>[r.id,r.route])),previousRoot);
   await optimizeEntry(target,calendar);
   const hashes={};for(const file of ['data.json','open-source.json','content-catalog.json','archive-index.json','archive.js','seo-theme.js','index.html','sitemap.xml','robots.txt','content-feed.xml','rss-entry-state.json',...seo.rssFiles,...seo.mathFiles,...seo.sitemapFiles,...content.records.filter(r=>r.legacy.kind==='news').map(r=>r.route.slice(1)+'index.html'),'news/index.html','archive/index.html',...archiveSections.map(x=>'archive/'+x.slug+'/index.html')])hashes[file]=digest(await readFile(join(target,file),'utf8'));
   for(const file of ['calendar-index.json',calendar.year.slice(1),calendar.history.slice(1)])hashes[file]=digest(await readFile(join(target,file),'utf8'));

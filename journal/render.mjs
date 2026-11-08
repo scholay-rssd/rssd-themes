@@ -2,7 +2,7 @@ import {sectionRssFeeds} from '../../engine/section-rss.mjs';
 import {renderRssFeed} from '../../engine/rss-feed.mjs';
 import {pageMetadata,listingDescription,articleBodyHeadings} from '../../engine/page-metadata.mjs';
 import {clarityScript,verificationFiles} from '../../engine/site-services.mjs';
-import {publicationAssetBytes} from '../../engine/publication-assets.mjs';
+import {imageSizeMap,publicationAssetBytes} from '../../engine/publication-assets.mjs';
 import {createSeoState,sitemapXml,splitSitemap} from '../../../scripts/seo-state.mjs';
 import {showcaseCards} from '../../modules/showcase/index.mjs';
 import {standingPages} from '../../engine/standing-pages.mjs';
@@ -66,7 +66,7 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   };
   const intro=`<section class="hero blog-intro"><div><p class="eyebrow">${esc(blog.label)}</p><h1>${esc(site.name)}</h1><p class="blog-slogan">${esc(site.slogan||site.description)}</p><div class="hero-links"><a href="/archive/">${esc(journalLabel)} <span aria-hidden="true">↗</span></a>${[...utilities].map(p=>`<a href="${esc(p.route)}">${esc(p.label)} <span aria-hidden="true">→</span></a>`).join('')}</div></div><div class="blog-emblem" aria-hidden="true">${logo?`<img src="${logo}" width="108" height="108" alt="">`:`<span>${esc(blog.mark)}</span>`}</div></section>`;
   const recent=records.slice().sort((a,b)=>String(b.publication.date||'').localeCompare(String(a.publication.date||''))).slice(0,8);
-  const posts=recent.map(x=>`<article class="entry">${x.media?.[0]?`<a href="${esc(x.route)}" tabindex="-1" aria-hidden="true"><img class="entry-cover" src="${esc(x.media[0].src)}" alt="" width="640" height="360" loading="lazy" decoding="async"></a>`:''}<div class="entry-meta"><span>${esc(column(x))}</span><span>${esc(date(x))}</span></div><h3><a href="${esc(x.route)}">${esc(x.title)}</a></h3><p>${esc(blogExcerpt(x))}</p><a class="read" href="${esc(x.route)}">继续阅读 <span aria-hidden="true">↗</span></a></article>`).join('');
+  const posts=recent.map((x,index)=>`<article class="entry">${x.media?.[0]?`<a href="${esc(x.route)}" tabindex="-1" aria-hidden="true"><img class="entry-cover" src="${esc(x.media[0].src)}" alt="" width="640" height="360" ${index===0?'fetchpriority="high"':'loading="lazy"'} decoding="async"></a>`:''}<div class="entry-meta"><span>${esc(column(x))}</span><span>${esc(date(x))}</span></div><h3><a href="${esc(x.route)}">${esc(x.title)}</a></h3><p>${esc(blogExcerpt(x))}</p><a class="read" href="${esc(x.route)}">继续阅读 <span aria-hidden="true">↗</span></a></article>`).join('');
   const directory=`<aside class="home-directory" aria-label="栏目索引"><h2>按主题阅读</h2><nav>${primary.map(c=>`<a href="${esc(c.route)}"><span>${esc(c.name)}</span><small>${recordsInCollection(content,c.id).length.toString().padStart(2,'0')}</small></a>`).join('')}</nav><p class="directory-note">${esc(blog.description||site.description)}<br><a href="/content-feed.xml">通过 RSS 订阅更新 ↗</a></p></aside>`;
   const overview=intro+`<div class="home-layout"><section class="home-main"><div class="section-heading"><h2>${esc(blog.heading)}</h2><a href="/archive/">全部文章 <span aria-hidden="true">→</span></a></div><div class="entries">${posts||'<p class="empty">新的记录正在准备中。可以先从栏目开始探索。</p>'}</div></section>${directory}</div>${homeStructures({structures:blog.structures,content,sections:primary})}`;
   if(!homepage)await write('index.html',shell(site.name,'/',referenceHome({site,records,sections:primary,directory})??overview));
@@ -92,13 +92,14 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   for(const x of records){
     const record=x;
     let markdown=record.bodyMarkdown;
-    const rendered=renderArticleParts(markdown.replace(/^# [^\n]+\n+/,''),{site});
+    const recordAssets=legacyRecords.find(raw=>sourceKey(raw.kind,raw)===x.id)?.assets||[];
+    const rendered=renderArticleParts(markdown.replace(/^# [^\n]+\n+/,''),{site,imageSizes:await imageSizeMap(recordAssets,previousRoot)});
     const sourceLinks=record.sources;
     const links=sourceLinks.filter(l=>/^https?:\/\//.test(l.url||''));
     const layout=articleStructures({structures:blog.structures,record,records,body:articleBodyHeadings(rendered.body),column:column(x),date:date(x)});
     const article=`<article class="reading${layout.classes.map(c=>' '+c).join('')}"><a class="back" href="/archive/">← 返回${esc(journalLabel)}</a><div class="entry-meta">${esc(column(x))} · ${esc(date(x))}</div><div class="prose"><h1>${esc(x.title)}</h1>${layout.lead}<div class="article-body">${layout.body}</div></div>${record.related?.length?`<aside class="sources"><h2>关联${site.id==='piggytuck'?'作品':'项目'}</h2>${record.related.map(x=>standing.hubs.find(h=>h.id===x.id)).map(h=>`<a href="${esc(h.route)}">${esc(h.name)} ↗</a>`).join('')}</aside>`:''}${record.tags?.length?`<div class="entry-tags">${record.tags.map(tag=>`<span>${esc(tag)}</span>`).join('')}</div>`:''}${layout.sources??(links.length?`<aside class="sources"><h2>来源</h2>${links.map(l=>`<a href="${esc(l.url)}" rel="noreferrer">${esc(l.label||'原始来源')} ↗</a>`).join('')}</aside>`:'')}${rendered.endnotes?`<div class="prose"><div class="article-body article-endnotes">${rendered.endnotes}</div></div>`:''}${layout.after}</article>`;
     await write(x.route.slice(1)+'index.html',shell(x.title,x.route,layout.aside?`<div class="reading-layout">${article}<aside class="reading-aside">${layout.aside}</aside></div>`:article,x.summary||x.factSummary||site.description));
-    for(const asset of legacyRecords.find(raw=>sourceKey(raw.kind,raw)===x.id)?.assets||[])await write(asset.path.slice(1),await publicationAssetBytes(asset,previousRoot));
+    for(const asset of recordAssets)await write(asset.path.slice(1),await publicationAssetBytes(asset,previousRoot));
   }
   const byId=new Map(records.map(x=>[x.id,x]));
   const publicRecords=legacyRecords.map(({assets,markdown,body,historicalSignificance,value,...x})=>({...x,column:column(byId.get(sourceKey(x.kind,x)))}));

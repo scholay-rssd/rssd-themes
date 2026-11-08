@@ -12,6 +12,7 @@ import {archiveSection,archiveSections,isVerified} from '../../../scripts/archiv
 import {buildArchive,courseLabels} from './archive-pages.mjs';
 import {validateNews} from '../../../admin/news.mjs';
 import {renderArticle,renderMathText,mathStyles} from '../../engine/article-math.mjs';
+import {imageSizeMap} from '../../engine/publication-assets.mjs';
 import {articleStructures} from '../structures.mjs';
 import {renderFrontPage,frontPageGuard} from './front-page.mjs';
 import {writeMathAssets,mathStyleLoader} from '../../engine/math-assets.mjs';
@@ -41,7 +42,8 @@ const safeUrl = value => {
 const absolute = route => siteOrigin+route;
 // al-folio-inspired article structures; see docs/theme-structures.md.
 export const ACADEMIC_STRUCTURES=Object.freeze(['contents','tables','image-rows']);
-const newsBody=item=>articleStructures({structures:ACADEMIC_STRUCTURES,record:item,records:[],body:articleBodyHeadings(renderArticle(item.markdown.replace(/^# [^\n]+\n+/,'')))});
+const newsBody=(item,imageSizes)=>articleStructures({structures:ACADEMIC_STRUCTURES,record:item,records:[],body:articleBodyHeadings(renderArticle(item.markdown.replace(/^# [^\n]+\n+/,''),{imageSizes}))});
+const sizedArticle=async (markdown,item,root)=>renderArticle(markdown,{imageSizes:await imageSizeMap(item.assets,root)});
 const stamp = value => String(value || '').replaceAll('-', ' 年 ').replace(/ 年 (\d{2})$/, ' 月 $1 日');
 const monthDay = value => {
   const [month,day]=String(value || '').split('-').map(Number);
@@ -209,24 +211,26 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     for(const asset of item.assets||[]){const target=join(output,asset.path);await mkdir(dirname(target),{recursive:true});await writeFile(target,Buffer.from(asset.data,'base64'));}
   }
   for(const item of news){
-    const route=newsRoute(item);
-    await writeRoute(route,lastmod=>pageShell({header,title:item.title+'｜今日学术',description:excerpt(item.summary),route,lastmod,kind:'article',schema:[breadcrumb([{name:'今日学术',route:'/'},{name:'学术新闻',route:'/archive/'},{name:sectionFor('news',item).name,route:'/archive/'+sectionFor('news',item).slug+'/'},{name:item.title,route}]),{'@type':'Article',headline:item.title,datePublished:item.date+'T00:00:00+08:00',author:{'@type':'Organization',name:item.author},publisher:{'@id':siteOrigin+'/#organization'},mainEntityOfPage:absolute(route)}],body:'<main class="seo-main"><nav class="breadcrumbs"><a href="/">首页</a><span>／</span><a href="/archive/">学术新闻</a></nav><article class="record-page news-article"><p class="eyebrow">'+html(sectionFor('news',item).name)+' · '+html(item.date)+'</p><h1>'+html(item.title)+'</h1><p class="muted">'+html(item.author)+'</p>'+(publicRecord('news',item)?.course?'<p class="muted">'+courseLabels(publicRecord('news',item).course)+'</p>':'')+'<p class="lead">'+renderMathText(item.summary)+'</p>'+newsBody(item).lead+'<div class="article-body">'+newsBody(item).body+'</div></article></main>'}));
+    const route=newsRoute(item),article=newsBody(item,await imageSizeMap(item.assets,previousRoot));
+    await writeRoute(route,lastmod=>pageShell({header,title:item.title+'｜今日学术',description:excerpt(item.summary),route,lastmod,kind:'article',schema:[breadcrumb([{name:'今日学术',route:'/'},{name:'学术新闻',route:'/archive/'},{name:sectionFor('news',item).name,route:'/archive/'+sectionFor('news',item).slug+'/'},{name:item.title,route}]),{'@type':'Article',headline:item.title,datePublished:item.date+'T00:00:00+08:00',author:{'@type':'Organization',name:item.author},publisher:{'@id':siteOrigin+'/#organization'},mainEntityOfPage:absolute(route)}],body:'<main class="seo-main"><nav class="breadcrumbs"><a href="/">首页</a><span>／</span><a href="/archive/">学术新闻</a></nav><article class="record-page news-article"><p class="eyebrow">'+html(sectionFor('news',item).name)+' · '+html(item.date)+'</p><h1>'+html(item.title)+'</h1><p class="muted">'+html(item.author)+'</p>'+(publicRecord('news',item)?.course?'<p class="muted">'+courseLabels(publicRecord('news',item).course)+'</p>':'')+'<p class="lead">'+renderMathText(item.summary)+'</p>'+article.lead+'<div class="article-body">'+article.body+'</div></article></main>'}));
   }
 
   for(const item of calendar) {
     const route=calendarRoute(item);
     const date=item.end&&item.end!==item.start ? stamp(item.start)+' — '+stamp(item.end) : stamp(item.start);
     const summary=text(item.summary)||'已核验官网来源的科研日程记录。';
+    const notice=item.body?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>通知摘要</h2>'+await sizedArticle(item.body,item,previousRoot)+'</section>':'<section><h2>通知摘要</h2><p>'+renderMathText(item.body)+'</p></section>'):'';
     await writeRoute(route,lastmod=>recordPage({header,route,lastmod,title:/^\(?untitled\)?$/i.test(item.title)?datedRecordTitle(item,''):item.title,seoTitle:datedRecordTitle(item,date),description:excerpt(summary),section:sectionFor('year',item).name,sectionRoute:'/archive/'+sectionFor('year',item).slug+'/',summary,
       details:[[(item.dateBasis||'').includes('发布日期')?'通知发布日期':'日程日期',date],['类别',item.category],['日期依据',item.dateBasis||'以来源原文为准'],['来源机构',item.sourceName||'未标明'],[item.sectionId?'来源记录':'核验状态',item.provenance]],
-      body:item.body?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>通知摘要</h2>'+renderArticle(item.body)+'</section>':'<section><h2>通知摘要</h2><p>'+renderMathText(item.body)+'</p></section>'):'',links:[{label:item.sourceName||'原始来源',url:item.sourceUrl}],appRoute:'/#/year?date='+item.start}));
+      body:notice,links:[{label:item.sourceName||'原始来源',url:item.sourceUrl}],appRoute:'/#/year?date='+item.start}));
   }
   for(const item of history) {
     const route=historyRoute(item);
     const summary=text(item.factSummary)||'历史学术事件记录。';
+    const significance=item.historicalSignificance?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>学术意义</h2>'+await sizedArticle(item.historicalSignificance,item,previousRoot)+'</section>':'<section><h2>学术意义</h2><p>'+renderMathText(item.historicalSignificance)+'</p></section>'):'';
     await writeRoute(route,lastmod=>recordPage({header,route,lastmod,title:item.title,seoTitle:datedRecordTitle(item,item.year+' 年 '+monthDay(item.dateKey)),description:excerpt(summary),section:sectionFor('history',item).name,sectionRoute:'/archive/'+sectionFor('history',item).slug+'/',summary,
       details:[['发生时间',item.year+' 年 '+monthDay(item.dateKey)],['领域',item.domain],['事件类型',item.eventType||'学术事件'],['重要性',item.importance||'未标注']],
-      body:item.historicalSignificance?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>学术意义</h2>'+renderArticle(item.historicalSignificance)+'</section>':'<section><h2>学术意义</h2><p>'+renderMathText(item.historicalSignificance)+'</p></section>'):'',links:item.sources,appRoute:'/#/history?date='+item.dateKey}));
+      body:significance,links:item.sources,appRoute:'/#/history?date='+item.dateKey}));
   }
   for(const item of openSource) {
     const route=sourceRoute(item);
@@ -234,9 +238,10 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     const links=[{label:'项目原页',url:item.url},...(item.relatedUrl?[{label:'相关资料',url:item.relatedUrl}]:[])];
     const related=news.filter(x=>sectionFor('news',x).slug==='open-source'&&x.markdown.toLowerCase().includes(item.url.toLowerCase().replace(/\/$/,'')));
     const relatedBody=related.length?'<section><h2>项目解读</h2><ul class="source-list">'+related.map(x=>'<li><a href="'+newsRoute(x)+'">'+html(x.title)+'</a></li>').join('')+'</ul></section>':'';
+    const valueBody=item.value?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>为何收录</h2>'+await sizedArticle(item.value,item,previousRoot)+'</section>':'<section><h2>为何收录</h2><p>'+renderMathText(item.value)+'</p></section>')+relatedBody:relatedBody;
     await writeRoute(route,lastmod=>recordPage({header,route,lastmod,title:item.title,description:excerpt(summary),section:sectionFor('openSource',item).name,sectionRoute:'/archive/'+sectionFor('openSource',item).slug+'/',summary,
       details:[['收录日期',item.date],['类别',item.category],['状态',item.status||'公开收录']],
-      body:item.value?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>为何收录</h2>'+renderArticle(item.value)+'</section>':'<section><h2>为何收录</h2><p>'+renderMathText(item.value)+'</p></section>')+relatedBody:relatedBody,links,appRoute:'/#/open-source'}));
+      body:valueBody,links,appRoute:'/#/open-source'}));
   }
 
   // Use eligible public records and the same frozen permalinks as article pages.
