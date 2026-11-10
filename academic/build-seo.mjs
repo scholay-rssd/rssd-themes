@@ -6,6 +6,7 @@ import {descriptionText,articleBodyHeadings,datedRecordTitle} from '../../engine
 import {clarityScript} from '../../engine/site-services.mjs';
 import {DEFAULT_SITE} from '../../../scripts/site-config.mjs';
 import {fillNavigationSlot} from '../../engine/site-navigation.mjs';
+import {familyFooter} from '../../engine/site-family.mjs';
 import {addSocialMetadata} from '../../engine/social-metadata.mjs';
 
 import {archiveSection,archiveSections,isVerified} from '../../../scripts/archive-model.mjs';
@@ -84,7 +85,7 @@ function pageShell({title,description,route,body,schema,kind='website',lastmod,h
     (lastmod&&kind==='article'?'<meta property="article:modified_time" content="'+html(lastmod)+'">':'')+
     clarityScript({id:'scholay-today',origin:siteOrigin})+'<script type="application/ld+json">'+json({'@context':'https://schema.org','@graph':graph})+'</script></head><body>'+header+body+'<footer class="seo-footer">'+
     (lastmod?'<p>本页内容更新：<time datetime="'+html(lastmod)+'">'+html(new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',dateStyle:'medium',timeStyle:'short',hourCycle:'h23'}).format(new Date(lastmod)))+'（北京时间）</time></p>':'')+
-    '<p>今日学术 以人工维护的固定快照呈现科研日程、学术史与开源研究项目；具体要求请以来源原文为准。</p><a href="/">返回首页</a> · <a href="/content-feed.xml">RSS 订阅</a></footer></body></html>';
+    '<p>今日学术 以人工维护的固定快照呈现科研日程、学术史与开源研究项目；具体要求请以来源原文为准。</p><a href="/">返回首页</a> · <a href="/content-feed.xml">RSS 订阅</a>'+familyFooter(DEFAULT_SITE.id)+'</footer></body></html>';
 }
 
 function sourceLinks(links) {

@@ -59,3 +59,6 @@ button:disabled{cursor:default;opacity:.45}a,button,summary{touch-action:manipul
 .home-mode .site-footer { margin-top:12px; }
 @media(max-width:900px) { .home-record-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.home-record:last-child:nth-child(odd) { grid-column:1 / -1; } }
 @media(max-width:600px) { .home-overview { padding-top:22px; }.home-intro { align-items:flex-start; flex-direction:column; gap:8px; padding-bottom:20px; }.home-intro h1 { font-size:28px; }.home-section { margin-bottom:26px; }.home-section-head { align-items:flex-start; flex-direction:column; gap:12px; }.home-section h2 { font-size:23px; }.home-section-name { gap:10px; }.home-enter { align-self:stretch; justify-content:space-between; }.home-record-grid { grid-template-columns:1fr; gap:12px; }.home-record { padding:17px; } }
+.site-family{display:flex;justify-content:flex-end;gap:8px;margin:18px 0 0;padding:0}
+.site-family a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:#fff}
+.site-family img{width:18px;height:18px;object-fit:contain;display:block}

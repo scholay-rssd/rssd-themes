@@ -69,3 +69,6 @@ a { color:inherit; text-decoration:none; } a:hover { color:var(--seo-red); } .se
 .archive-record{border:0;border-top:2px solid var(--seo-ink);border-radius:0;background:transparent;padding:14px 0 18px;box-shadow:none}
 .archive-record h2,.archive-record h3{font-family:var(--seo-serif);font-weight:700;line-height:1.5}
 .archive-card-top{letter-spacing:.12em}
+.seo-footer .site-family{display:flex;justify-content:flex-end;gap:8px;margin:16px 0 0}
+.seo-footer .site-family a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:#fff;font-weight:400}
+.seo-footer .site-family img{width:18px;height:18px;object-fit:contain;display:block}
