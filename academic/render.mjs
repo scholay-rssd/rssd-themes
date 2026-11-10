@@ -12,6 +12,7 @@ import {imageSizeMap} from '../../engine/publication-assets.mjs';
 import {writeCalendarData} from './calendar-data.mjs';
 import {optimizeEntry} from './entry-hints.mjs';
 import {addSocialMetadata} from '../../engine/social-metadata.mjs';
+import {familyFooter,familyIconEntries} from '../../engine/site-family.mjs';
 export const publicFiles=['reference.css','index.html','styles.css','atlas.css','open-source.css','calendar-workspace.css','theme.css','seo.css','seo-theme.js','archive.js','app.js','calendar-model.js','calendar-data.js','scholay-logo.png','social-preview.png','favicon.ico','BingSiteAuth.xml','googlec9da0a94ddf2a20d.html'];
 async function listPublicAssets(root,prefix=''){const files=[];for(const e of await readdir(join(root,prefix),{withFileTypes:true})){const path=prefix+e.name;if(e.isDirectory())files.push(...await listPublicAssets(root,path+'/'));else if(e.isFile())files.push(path);else throw Error('Unexpected academic asset type');}return files;}
 export async function renderAcademic({job,source,target,previousRoot,now,site,theme,content}){
@@ -20,6 +21,8 @@ export async function renderAcademic({job,source,target,previousRoot,now,site,th
   await mkdir(target,{recursive:true});
   const assets=join(source,theme.publicDirectory);
   for(const file of publicFiles)await cp(join(assets,file),join(target,file));
+  for(const icon of familyIconEntries(source)){await mkdir(join(target,'family'),{recursive:true});await cp(icon.file,join(target,'family',icon.id+'.png'));}
+  {const index=join(target,'index.html');await writeFile(index,(await readFile(index,'utf8')).replace('<!-- site-family -->',familyFooter(site.id)));}
   await cp(join(assets,'fonts'),join(target,'fonts'),{recursive:true});
   await writeFile(join(target,'data.json'),JSON.stringify(job.snapshot.data));
   await writeFile(join(target,'open-source.json'),JSON.stringify(job.snapshot.openSource));
@@ -52,7 +55,7 @@ export async function renderAcademic({job,source,target,previousRoot,now,site,th
   }
   // Non-calendar modules use the same read-only interface on this Theme too.
   for(const page of display.pages.filter(x=>x.id!=='calendar')){
-    const files={...page.files,[page.route.slice(1)+'index.html']:`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(page.title)} · ${esc(site.name)}</title><link rel="canonical" href="${esc(site.origin+page.route)}">${clarityScript(site)}<link rel="stylesheet" href="/styles.css">${page.styles.map(url=>`<link rel="stylesheet" href="${url}">`).join('')}</head><body><header class="wrap"><a href="/">${esc(site.name)}</a> · <a href="/archive/">学术新闻</a></header><main class="wrap">${page.body}</main>${page.scripts.map(src=>`<script type="module" src="${src}"></script>`).join('')}</body></html>`};
+    const files={...page.files,[page.route.slice(1)+'index.html']:`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(page.title)} · ${esc(site.name)}</title><link rel="canonical" href="${esc(site.origin+page.route)}">${clarityScript(site)}<link rel="stylesheet" href="/styles.css">${page.styles.map(url=>`<link rel="stylesheet" href="${url}">`).join('')}</head><body><header class="wrap"><a href="/">${esc(site.name)}</a> · <a href="/archive/">学术新闻</a></header><main class="wrap">${page.body}</main><footer class="site-footer"><div class="wrap">${familyFooter(site.id)}</div></footer>${page.scripts.map(src=>`<script type="module" src="${src}"></script>`).join('')}</body></html>`};
     for(const [path,value] of Object.entries(files)){const bytes=path.endsWith('.html')?addSocialMetadata(value,{site,route:page.route}):value;await mkdir(dirname(join(target,path)),{recursive:true});await writeFile(join(target,path),bytes);hashes[path]=digest(await readFile(join(target,path)));}
   }
   const extraPages=display.pages.filter(x=>x.id!=='calendar');

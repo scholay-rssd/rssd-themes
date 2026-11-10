@@ -1,14 +1,14 @@
 /* Shared adaptation layer; no fonts, dependencies or runtime scripts. */
 body[data-blog]{--paper:#fcfbf8;--ink:#292b28;--muted:#666b65;--line:#dedfd7;--soft:#f0f1eb;--reading:720px;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
 [data-blog] :is(.site-header,main,footer){width:min(1120px,100% - 96px);max-width:none;padding-inline:0}
-[data-blog] .site-header{min-height:100px;border-bottom:1px solid var(--line);gap:32px}
+[data-blog] .site-header{min-height:72px;border-bottom:1px solid var(--line);gap:32px}
 [data-blog] .brand{display:grid;grid-template-columns:38px auto;column-gap:12px;align-items:center;font-size:21px;letter-spacing:-.035em;flex-shrink:0}
-[data-blog] .brand .site-logo{grid-row:1/3;float:none;margin:0;border-radius:0;width:36px;height:36px}
-.brand-monogram{grid-row:1/3;display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:#fff;font:22px/1.2 ui-serif,"Songti SC",SimSun,serif}
-[data-blog] .brand small{grid-column:2;font-size:10px;letter-spacing:.06em;color:var(--muted);font-weight:400}
+[data-blog] .brand .site-logo{grid-row:1;float:none;margin:0;border-radius:0;width:36px;height:36px}
+.brand-monogram{grid-row:1;display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:#fff;font:22px/1.2 ui-serif,"Songti SC",SimSun,serif}
 [data-blog] .site-header nav{gap:9px 24px;justify-content:flex-end;font-size:13px}
 [data-blog] .site-header nav a{padding:8px 0;white-space:nowrap}
 [data-blog] .site-header nav a[aria-current=page]{text-decoration-thickness:1px;text-underline-offset:8px}
+[data-blog] .site-header nav a.github-mark{margin-left:auto;padding:0;text-decoration:none}
 [data-blog] .hero{max-width:none;padding:72px 0 46px}
 .blog-intro{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:48px;align-items:center;border-bottom:1px solid var(--line)}
 [data-blog] .eyebrow{font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.16em;color:var(--accent);margin:0 0 22px}
@@ -70,6 +70,9 @@ body[data-blog]{--paper:#fcfbf8;--ink:#292b28;--muted:#666b65;--line:#dedfd7;--s
 [data-blog] .column-links>a{background:var(--soft);border-radius:3px}
 @media(max-width:650px){[data-blog] .showcase-grid{grid-template-columns:1fr}}
 [data-blog] footer{margin-top:80px;padding-block:24px 30px;border-color:var(--line);font-size:11px;color:var(--muted);align-items:center;flex-wrap:wrap}
+[data-blog] .site-family{display:flex;flex:1 0 100%;justify-content:flex-end;align-items:center;gap:8px;margin:16px 0 0;padding:0}
+[data-blog] .site-family a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:light-dark(#fff,#eceee9)}
+[data-blog] .site-family img{width:18px;height:18px;object-fit:contain;display:block}
 .footer-links{display:flex;gap:20px;align-items:center}
 [data-blog] a{transition:color .15s ease}
 [data-blog] a:hover{color:var(--accent)}
@@ -77,5 +80,5 @@ body[data-blog]{--paper:#fcfbf8;--ink:#292b28;--muted:#666b65;--line:#dedfd7;--s
 [data-blog] .skip:focus{padding:8px 16px;background:var(--paper)}
 @media(min-width:900px){.home-directory{position:sticky;top:32px}}
 @media(max-width:850px){[data-blog] :is(.site-header,main,footer){width:calc(100% - 48px)}[data-blog] .site-header{flex-wrap:wrap;gap:12px;padding-block:20px}[data-blog] .site-header nav{justify-content:flex-start;gap:8px 22px}.home-layout{grid-template-columns:minmax(0,1fr) 190px;gap:32px}[data-blog] .feed-layout{gap:32px;grid-template-columns:180px minmax(0,1fr)}}
-@media(max-width:650px){[data-blog] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-blog] .site-header{min-height:110px;align-items:flex-start;gap:12px}[data-blog] .site-header nav{font-size:12px;gap:4px 20px}[data-blog] .hero{padding:42px 0 32px}.blog-intro{grid-template-columns:minmax(0,1fr) 72px;gap:16px;align-items:start}.blog-emblem{margin-top:35px}.blog-emblem img{width:58px;height:58px}.blog-emblem span{font-size:39px}[data-blog] .eyebrow{font-size:9px;letter-spacing:.1em;margin-bottom:18px}.blog-slogan{font-size:16px}[data-blog] .hero-links{gap:8px 18px;margin-top:22px}.home-layout{display:flex;flex-direction:column-reverse;gap:32px;margin-top:28px}.home-main,.home-directory{width:100%}.home-directory nav{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.home-directory nav a{min-height:48px;font-size:13px}.home-directory h2{margin-bottom:12px}.directory-note{display:none}[data-blog] .section-heading h2{font-size:19px}[data-blog] .entry h3{font-size:21px}[data-blog] .feed-layout{grid-template-columns:1fr;gap:24px}[data-blog] .feed-sidebar{position:static}[data-blog] .feed-filters{flex-direction:row;flex-wrap:wrap}[data-blog] .reading{margin-top:36px}[data-blog] .prose{font-size:16px}[data-blog] footer{align-items:flex-start;gap:14px;margin-top:56px}}
+@media(max-width:650px){[data-blog] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-blog] .site-header{min-height:0;align-items:flex-start;gap:12px}[data-blog] .site-header nav{font-size:12px;gap:4px 20px}[data-blog] .hero{padding:42px 0 32px}.blog-intro{grid-template-columns:minmax(0,1fr) 72px;gap:16px;align-items:start}.blog-emblem{margin-top:35px}.blog-emblem img{width:58px;height:58px}.blog-emblem span{font-size:39px}[data-blog] .eyebrow{font-size:9px;letter-spacing:.1em;margin-bottom:18px}.blog-slogan{font-size:16px}[data-blog] .hero-links{gap:8px 18px;margin-top:22px}.home-layout{display:flex;flex-direction:column-reverse;gap:32px;margin-top:28px}.home-main,.home-directory{width:100%}.home-directory nav{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.home-directory nav a{min-height:48px;font-size:13px}.home-directory h2{margin-bottom:12px}.directory-note{display:none}[data-blog] .section-heading h2{font-size:19px}[data-blog] .entry h3{font-size:21px}[data-blog] .feed-layout{grid-template-columns:1fr;gap:24px}[data-blog] .feed-sidebar{position:static}[data-blog] .feed-filters{flex-direction:row;flex-wrap:wrap}[data-blog] .reading{margin-top:36px}[data-blog] .prose{font-size:16px}[data-blog] footer{align-items:flex-start;gap:14px;margin-top:56px}}
 @media(prefers-reduced-motion:reduce){[data-blog] *,[data-blog] *::before,[data-blog] *::after{scroll-behavior:auto;transition:none!important;animation:none!important}}
