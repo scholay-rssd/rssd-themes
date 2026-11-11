@@ -9,7 +9,9 @@ export const THEMES={
  'docs':{...common,id:'docs',name:'技术文档',homeEyebrow:'项目文档与记录',latestHeading:'最近更新'},
  'encyclopedia':{...common,id:'encyclopedia',name:'百科',homeEyebrow:'动物知识与生活记录',latestHeading:'最近收录'},
 };
-export function themeForSite(site){return THEMES[site.themeId||({'scholay-today':'academic',lingxi:'docs',pets:'encyclopedia'}[site.id])||'journal'];}
+// The profile names its Theme. Without one, only a declared legacy profile
+// keeps the academic renderer; a site's name never selects a Theme.
+export function themeForSite(site){return THEMES[site.themeId||(site.legacy===true?'academic':'journal')];}
 export function resolveTheme(site,document){
  const theme=themeForSite(site);
  if(!theme||theme.contentVersion!==document.version)throw Error('Unsupported Theme or content version');
