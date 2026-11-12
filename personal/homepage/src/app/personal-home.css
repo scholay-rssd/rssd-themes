@@ -206,3 +206,13 @@
 .portfolio .brand-mark { display:block; object-fit:contain; border-radius:0; box-shadow:none; background:transparent; }
 .portfolio :is(a,button,select):focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
 @media(max-width:680px){.portfolio .hero-stage{height:240px}.portfolio .hero-rhino{width:260px}.portfolio .stage-label-left{left:0;top:80px}.portfolio .stage-label-right{right:0;bottom:44px}.portfolio .hero-stage::after{width:240px}.portfolio .orbit-two{width:290px;height:290px}.portfolio .orbit-one{width:210px;height:210px}.portfolio .greeting{font-size:11px}.portfolio .hero-intro{padding-bottom:40px}.portfolio .content-section{padding-block:42px 52px}.portfolio .home-heading h2{font-size:27px}}
+
+/* Navigation standard: sections ｜ entrances, one sideways-scrolling row on narrow screens. */
+.section-nav .nav-divider { flex: none; align-self: center; width: 1px; height: 1.1em; background: currentColor; opacity: .35; }
+@media (max-width: 1100px) { .section-nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } .section-nav::-webkit-scrollbar { display: none; } .section-nav a { flex: none; } }
+/* 关于 page: the page title uses the section heading style. */
+.about-page .home-heading h1 { width: fit-content; margin: 12px 0 15px; padding-bottom: 7px; border-bottom: 5px solid #7abeb4; font-size: clamp(28px, 4vw, 39px); line-height: 1.24; letter-spacing: -.055em; }
+.about-page .about-lead strong { color: var(--accent); }
+/* The seven-entry bar needs its own row below the brand up to 1360px wide. */
+.network-nav a { white-space: nowrap; }
+@media (max-width: 1360px) { .topbar { flex-wrap: wrap; padding-block: 12px; } .section-nav { order: 4; flex: 0 0 100%; margin-left: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 8px 22px; border-top: 1px solid #384144; padding-top: 6px; } .network-nav { margin-left: auto; } }

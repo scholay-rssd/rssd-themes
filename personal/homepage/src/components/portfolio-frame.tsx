@@ -4,25 +4,33 @@ import { ArrowUpRight } from 'lucide-react';
 import { copy, type Locale } from '@/lib/site-content';
 import { localePath } from '@/lib/project-content';
 import { PortfolioLanguagePicker } from './portfolio-language-picker';
+import { NavScroll } from './nav-scroll';
 
 export const journalLabels: Record<Locale,[string,string,string,string]> = {zh:['手记','项目板块','零散的观察，也值得留下。','记录产品实践、生活近况与值得记住的日子。'],en:['Journal','Categories','Small observations, kept along the way.','Notes on products, everyday life, and dates worth remembering.'],ja:['手記','分類','小さな気づきも、残しておきたい。','プロダクトの実践、日々の記録、覚えておきたい日。'],fr:['Carnet','Catégories','Garder les petites observations.','Pratique produit, quotidien et dates à retenir.'],es:['Diario','Categorías','Guardar también las pequeñas observaciones.','Notas de producto, vida cotidiana y fechas para recordar.']};
 
 export function PortfolioHeader({ locale, path = '' }: { locale: Locale; path?: string }) {
   const home = localePath(locale);
-  const navigation = JSON.parse(process.env.SCHOLAY_SITE_NAVIGATION || '[]') as { id: string; label: string; href: string; localize?: boolean; labels?: Partial<Record<Locale, string>> }[];
+  const navigation = JSON.parse(process.env.SCHOLAY_SITE_NAVIGATION || '[]') as { id: string; label: string; href: string; group?: 'section' | 'entrance'; localize?: boolean; labels?: Partial<Record<Locale, string>> }[];
   const current = '/' + (path ? path.replace(/^\/+|\/+$/g, '') + '/' : '');
+  // Only the most specific entry is current, as on the engine pages.
+  const matchLength = (base: string) => base === '/' ? (current === '/' ? 1 : 0) : current.startsWith(base) ? base.length : 0;
+  const best = Math.max(0, ...navigation.map(item => item.href.includes('#') ? 0 : matchLength(item.href)));
   return <header className="site-header"><div className="topbar shell">
     <Link className="site-brand" href={home} aria-label="学术海 / Xueshuhai"><Image className="brand-mark" src="/brand/site-logo.webp?v=bw-v8-20261017" alt="" width={40} height={40} unoptimized /><span>学术海<small>XUESHUHAI</small></span></Link>
     <nav className="section-nav" aria-label={locale === 'zh' ? '主导航' : 'Main navigation'}>
-      {navigation.map(item => {
+      {navigation.map((item, index) => {
         const [base, hash] = item.href.split('#');
         const englishContent = locale === 'en' && ['/journal/', '/archive/', '/content-feed.xml'].includes(base);
         const href = englishContent ? '/en' + base + (hash ? '#' + hash : '') : item.localize ? localePath(locale, base) + (hash ? '#' + hash : '') : item.href;
-        const active = !hash && (base === '/' ? current === '/' : current.startsWith(base));
+        const active = !hash && best > 0 && matchLength(base) === best;
+        // A thin divider separates the sections from the fixed entrances.
+        const divider = item.group === 'entrance' && navigation[index - 1]?.group === 'section' ? <span className="nav-divider" aria-hidden="true" /> : null;
         const label = item.labels?.[locale] || item.label;
-        return item.localize ? <Link key={item.id} href={href} aria-current={active ? 'page' : undefined}>{label}</Link> : <a key={item.id} href={href} aria-current={active ? 'page' : undefined}>{label}</a>;
+        const link = item.localize ? <Link href={href} aria-current={active ? 'page' : undefined}>{label}</Link> : <a href={href} aria-current={active ? 'page' : undefined}>{label}</a>;
+        return <span key={item.id} style={{ display: 'contents' }}>{divider}{link}</span>;
       })}
     </nav>
+    <NavScroll />
     <nav className="network-nav" aria-label="Scholay sites">
       <a href="https://today.scholay.com/" target="_blank" rel="noopener noreferrer">Today <ArrowUpRight size={14} /></a>
       <a href="https://www.scholay.com/" target="_blank" rel="noopener noreferrer">Scholay <ArrowUpRight size={14} /></a>
@@ -38,7 +46,7 @@ export function PortfolioFooter({ locale }: { locale: Locale }) {
     <span>© {new Date().getFullYear()} 学术海 · XUESHUHAI</span><span><a href="https://github.com/janraasch/hugo-bearblog">Bear Blog</a> · <a href="/theme-license.txt">MIT</a></span><span>{copy[locale].footer}</span>
     <span><a href="https://www.craftz.dog/" target="_blank" rel="noopener noreferrer">craftzdog</a> · 3D cap: <a href="https://poly.pizza/m/aWxhfEnYwl" target="_blank" rel="noopener noreferrer">J-Toastie</a> (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>)</span>
     <nav className="site-family" aria-label="其他站点">{[
-      ['https://today.scholay.com/','今日学术','scholay-today'],
+      ['https://today.scholay.com/','Today','scholay-today'],
       ['https://xsime.com/','犀术 IME','xsime'],
       ['https://www.piggytuck.com/','小猪盖被','piggytuck'],
       ['https://pet.piggytuck.com/','小猪萌宠','pets'],
