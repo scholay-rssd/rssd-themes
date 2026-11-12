@@ -6,6 +6,7 @@ import {descriptionText,articleBodyHeadings,datedRecordTitle} from '../../engine
 import {clarityScript} from '../../engine/site-services.mjs';
 import {DEFAULT_SITE} from '../../../scripts/site-config.mjs';
 import {fillNavigationSlot} from '../../engine/site-navigation.mjs';
+import {plainSummary} from '../../engine/content-feed.mjs';
 import {loadAbout,renderAbout,ABOUT_ROUTE} from '../../engine/about-page.mjs';
 import {familyFooter} from '../../engine/site-family.mjs';
 import {addSocialMetadata} from '../../engine/social-metadata.mjs';
@@ -277,6 +278,8 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     ...[...history].sort((a,b)=>b.year-a.year||b.dateKey.localeCompare(a.dateKey)).map(x=>({section:sectionFor('history',x).slug,title:x.title,summary:x.factSummary,dateLabel:x.year+' 年 '+monthDay(x.dateKey),category:x.domain,route:historyRoute(x)})),
     ...openSource.map(x=>({section:sectionFor('openSource',x).slug,title:x.title,summary:x.summary,dateLabel:x.date,category:x.category,route:sourceRoute(x)}))
   ];
+  // Listing excerpts are plain text: a summary may open with a Markdown picture.
+  for(const record of archiveRecords)record.summary=plainSummary(record.summary);
   const archiveIndex=await buildArchive({sections:publicSections,records:archiveRecords,writeRoute,pageShell:options=>pageShell({...options,header})});
   await writeDated(join(output,'news/index.html'),'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><title>全部文章｜'+html(SITE_NAME)+'</title><link rel="canonical" href="'+siteOrigin+'/archive/"><meta http-equiv="refresh" content="0;url=/archive/"></head><body><a href="/archive/">打开全部文章</a></body></html>',state.pages['/archive/'].lastmod);
   const archiveJson=stableJson(archiveIndex);
