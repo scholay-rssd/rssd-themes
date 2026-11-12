@@ -18,4 +18,6 @@ body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:
 [data-site=personal][data-design] .entry-meta{font-size:11px}
 [data-site=personal][data-design] .reading{margin-top:45px}
 @media(max-width:1050px){body[data-site=personal][data-design]{grid-template-columns:240px minmax(0,1fr)}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 48px)}}
-@media(max-width:750px){body[data-site=personal][data-design]{display:block}[data-site=personal][data-design]>.site-header{position:static;height:auto;padding:24px;display:flex}[data-site=personal][data-design] .site-header nav{flex-direction:row;flex-wrap:wrap;margin:20px 0;gap:12px 20px}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 40px)}}
+@media(max-width:750px){body[data-site=personal][data-design]{display:block}[data-site=personal][data-design]>.site-header{position:static;height:auto;padding:24px;display:flex}[data-site=personal][data-design] .site-header nav{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:20px 0;gap:12px 20px;min-width:0;max-width:100%}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 40px)}}
+/* In the sidebar the bar stands vertically, so the divider lies flat. */
+@media(min-width:751px){[data-site=personal][data-design] .site-header nav .nav-divider{width:2em;height:1px;margin:0;align-self:flex-start}}

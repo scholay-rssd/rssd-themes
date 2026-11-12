@@ -40,9 +40,9 @@ const itemUrl=(type,item)=>item.articleUrl||'#/'+type+'/'+encodeURIComponent(ite
 const excerpt=(s,max=155)=>String(s||'').slice(0,max);
 const dLabel=(s,kind)=>kind==='history'?s.year+' 年 · '+Number(s.dateKey.slice(0,2))+' 月 '+Number(s.dateKey.slice(3))+' 日':Number(s.start.slice(5,7))+' 月 '+Number(s.start.slice(8))+' 日';
 const badge=(s,kind)=>kind==='history'?'<span class="badge">'+esc(historyGroup(s.domain))+'</span>':'<span class="badge'+(['已核验官网','已核验'].includes(s.provenance)?'':' needs')+'">'+esc(s.provenance)+'</span>';
-function setNav(view){document.querySelectorAll('[data-nav]').forEach(a=>{const active=a.dataset.nav===view;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});}
+function setNav(view){document.querySelectorAll('[data-nav]').forEach(a=>{const active=a.dataset.nav===view;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});(function(){var n=document.querySelector(".site-header .section-nav"),a=n&&n.querySelector("[aria-current]");if(a&&n.scrollWidth>n.clientWidth)n.scrollLeft=a.getBoundingClientRect().left-n.getBoundingClientRect().left+n.scrollLeft-(n.clientWidth-a.offsetWidth)/2})();}
 function setPageMeta(title,description){
-  document.title=title==='今日学术'?'今日学术 · 科研日历':title+' · 今日学术';
+  document.title=title+' · Today';
   const set=(selector,value)=>{const node=document.querySelector(selector);if(node)node.setAttribute('content',value)};
   set('meta[name="description"]',description);
   set('meta[property="og:title"]',title+'｜Scholay Today');

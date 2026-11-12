@@ -6,6 +6,7 @@ import {descriptionText,articleBodyHeadings,datedRecordTitle} from '../../engine
 import {clarityScript} from '../../engine/site-services.mjs';
 import {DEFAULT_SITE} from '../../../scripts/site-config.mjs';
 import {fillNavigationSlot} from '../../engine/site-navigation.mjs';
+import {loadAbout,renderAbout,ABOUT_ROUTE} from '../../engine/about-page.mjs';
 import {familyFooter} from '../../engine/site-family.mjs';
 import {addSocialMetadata} from '../../engine/social-metadata.mjs';
 
@@ -24,6 +25,8 @@ import {fileURLToPath} from 'node:url';
 import {createSeoState,stableJson,sitemapXml,splitSitemap} from '../../../scripts/seo-state.mjs';
 
 export const siteOrigin = 'https://today.scholay.com';
+// The site is called Today; 今日学术 is the name of its calendar section.
+const SITE_NAME = DEFAULT_SITE.name;
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
 export const defaultOutput = join(projectRoot, '.seo-output');
 
@@ -71,21 +74,21 @@ function pageShell({title,description,route,body,schema,kind='website',lastmod,h
   const canonical=absolute(route);
   const graph=[
     {'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description,inLanguage:'zh-CN',isPartOf:{'@id':siteOrigin+'/#website'},...(lastmod?{dateModified:lastmod}:{})},
-    {'@type':'WebSite','@id':siteOrigin+'/#website',url:siteOrigin+'/',name:'今日学术',alternateName:'今日学术 学术日历',inLanguage:'zh-CN'},
+    {'@type':'WebSite','@id':siteOrigin+'/#website',url:siteOrigin+'/',name:SITE_NAME,alternateName:'Scholay Today',inLanguage:'zh-CN'},
     {'@type':'Organization','@id':siteOrigin+'/#organization',name:'Scholay',url:'https://www.scholay.com/',logo:siteOrigin+'/scholay-logo.png',sameAs:['https://github.com/scholay']},
     ...schema.map(item=>lastmod&&['Article','CollectionPage'].includes(item['@type'])?{...item,dateModified:lastmod}:item)
   ];
   return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
     '<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#f7f5ef"><meta name="color-scheme" content="light dark">'+
     '<title>'+html(title)+'</title><meta name="description" content="'+html(description)+'"><link rel="canonical" href="'+html(canonical)+'">'+
-    '<link rel="alternate" type="application/rss+xml" title="今日学术 RSS" href="/content-feed.xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/calendar-workspace.css"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/seo.css?v=academic-news-20261018"><link rel="stylesheet" href="/reference.css?v=20261028"><script src="/seo-theme.js"></script>'+
-    mathStyles(body)+'<meta property="og:type" content="'+kind+'"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="今日学术">'+
-    '<meta property="og:title" content="'+html(title)+'"><meta property="og:description" content="'+html(description)+'"><meta property="og:url" content="'+html(canonical)+'"><meta property="og:image" content="'+siteOrigin+'/social-preview.png"><meta property="og:image:alt" content="今日学术：学术日历、学术史与学术开源">'+
+    '<link rel="alternate" type="application/rss+xml" title="'+html(SITE_NAME)+' RSS" href="/content-feed.xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/calendar-workspace.css"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/seo.css?v=academic-news-20261018"><link rel="stylesheet" href="/reference.css?v=20261028"><script src="/seo-theme.js"></script>'+
+    mathStyles(body)+'<meta property="og:type" content="'+kind+'"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="'+html(SITE_NAME)+'">'+
+    '<meta property="og:title" content="'+html(title)+'"><meta property="og:description" content="'+html(description)+'"><meta property="og:url" content="'+html(canonical)+'"><meta property="og:image" content="'+siteOrigin+'/social-preview.png"><meta property="og:image:alt" content="'+html(SITE_NAME)+'：学术日历、学术史与学术开源">'+
     '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+html(title)+'"><meta name="twitter:description" content="'+html(description)+'"><meta name="twitter:image" content="'+siteOrigin+'/social-preview.png">'+
     (lastmod&&kind==='article'?'<meta property="article:modified_time" content="'+html(lastmod)+'">':'')+
     clarityScript({id:'scholay-today',origin:siteOrigin})+'<script type="application/ld+json">'+json({'@context':'https://schema.org','@graph':graph})+'</script></head><body>'+header+body+'<footer class="seo-footer">'+
     (lastmod?'<p>本页内容更新：<time datetime="'+html(lastmod)+'">'+html(new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',dateStyle:'medium',timeStyle:'short',hourCycle:'h23'}).format(new Date(lastmod)))+'（北京时间）</time></p>':'')+
-    '<p>今日学术 以人工维护的固定快照呈现科研日程、学术史与开源研究项目；具体要求请以来源原文为准。</p><a href="/">返回首页</a> · <a href="/content-feed.xml">RSS 订阅</a>'+familyFooter(DEFAULT_SITE.id)+'</footer></body></html>';
+    '<p>'+html(SITE_NAME)+' 以人工维护的固定快照呈现科研日程、学术史与开源研究项目；具体要求请以来源原文为准。</p><a href="/">返回首页</a> · <a href="/content-feed.xml">RSS 订阅</a>'+familyFooter(DEFAULT_SITE.id)+'</footer></body></html>';
 }
 
 function sourceLinks(links) {
@@ -96,10 +99,10 @@ function sourceLinks(links) {
 function recordPage({route,title,seoTitle=title,description,section,sectionRoute,details,summary,body,links,appRoute,lastmod,header}) {
   description=descriptionText(seoTitle,description);
   body=articleBodyHeadings(body);
-  const crumbs=[{name:'今日学术',route:'/'},{name:'学术新闻',route:'/archive/'},{name:section,route:sectionRoute},{name:title,route}];
+  const crumbs=[{name:SITE_NAME,route:'/'},{name:'全部文章',route:'/archive/'},{name:section,route:sectionRoute},{name:title,route}];
   const schema=[breadcrumb(crumbs),{'@type':'Article','@id':absolute(route)+'#article',headline:title,description,mainEntityOfPage:{'@id':absolute(route)+'#webpage'},inLanguage:'zh-CN',publisher:{'@id':siteOrigin+'/#organization'}}];
-  const content='<main class="seo-main"><nav class="breadcrumbs" aria-label="面包屑"><a href="/archive/">学术新闻</a><span>／</span><a href="'+sectionRoute+'">'+html(section)+'</a></nav><article class="record-page"><p class="eyebrow">'+html(section.toUpperCase())+' / 固定快照</p><h1>'+html(title)+'</h1><p class="lead">'+renderMathText(summary)+'</p><dl class="record-facts">'+details.map(row=>'<div><dt>'+html(row[0])+'</dt><dd>'+html(row[1])+'</dd></div>').join('')+'</dl>'+body+'<section><h2>来源与延伸阅读</h2>'+sourceLinks(links)+'</section><p class="interaction-link"><a href="'+html(appRoute)+'">在交互式日历中查看这条记录 ↗</a></p></article></main>';
-  return pageShell({title:seoTitle+'｜今日学术',description,route,body:content,schema,kind:'article',lastmod,header});
+  const content='<main class="seo-main"><nav class="breadcrumbs" aria-label="面包屑"><a href="/archive/">全部文章</a><span>／</span><a href="'+sectionRoute+'">'+html(section)+'</a></nav><article class="record-page"><p class="eyebrow">'+html(section.toUpperCase())+' / 固定快照</p><h1>'+html(title)+'</h1><p class="lead">'+renderMathText(summary)+'</p><dl class="record-facts">'+details.map(row=>'<div><dt>'+html(row[0])+'</dt><dd>'+html(row[1])+'</dd></div>').join('')+'</dl>'+body+'<section><h2>来源与延伸阅读</h2>'+sourceLinks(links)+'</section><p class="interaction-link"><a href="'+html(appRoute)+'">在交互式日历中查看这条记录 ↗</a></p></article></main>';
+  return pageShell({title:seoTitle+'｜'+SITE_NAME,description,route,body:content,schema,kind:'article',lastmod,header});
 }
 
 const pageSize=120;
@@ -107,8 +110,8 @@ const collectionRoute=(route,page)=>page===1?route:route+'page/'+page+'/';
 function overviewPage({route:baseRoute,title,description,eyebrow,intro,records,recordRoute,recordSummary,section,page=1,lastmod,header}) {
   const pages=Math.max(1,Math.ceil(records.length/pageSize)),route=collectionRoute(baseRoute,page);
   const list=records.slice((page-1)*pageSize,page*pageSize);
-  if(page>1){title=section+' · 第 '+page+' 页｜今日学术';description+=' 第 '+page+' 页，共 '+pages+' 页。';}
-  const schema=[breadcrumb([{name:'今日学术',route:'/'},{name:section,route}]),{
+  if(page>1){title=section+' · 第 '+page+' 页｜'+SITE_NAME;description+=' 第 '+page+' 页，共 '+pages+' 页。';}
+  const schema=[breadcrumb([{name:SITE_NAME,route:'/'},{name:section,route}]),{
     '@type':'CollectionPage','@id':absolute(route)+'#collection',name:title,description,inLanguage:'zh-CN',
     mainEntity:{'@type':'ItemList',numberOfItems:records.length,itemListElement:list.map((item,index)=>({'@type':'ListItem',position:(page-1)*pageSize+index+1,name:item.title,url:absolute(recordRoute(item))}))}
   }];
@@ -136,7 +139,8 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
   const homeHtml=await readFile(join(homepageRoot,'index.html'),'utf8');
   const originalHeader=homeHtml.match(/<header class="site-header app-bar">[\s\S]*?<\/header>/)?.[0];
   if(!originalHeader)throw Error('Home navigation is missing');
-  const header=route=>fillNavigationSlot(originalHeader.replace(/href="#([^"]*)"/g,'href="/#$1"'),site,route);
+  // On phones the bar scrolls sideways: open it with the current entry in view.
+  const header=route=>fillNavigationSlot(originalHeader.replace(/href="#([^"]*)"/g,'href="/#$1"'),site,route)+'<script>addEventListener("load",function(){var n=document.querySelector(".site-header .section-nav"),a=n&&n.querySelector("[aria-current]");if(a&&n.scrollWidth>n.clientWidth)n.scrollLeft=a.getBoundingClientRect().left-n.getBoundingClientRect().left+n.scrollLeft-(n.clientWidth-a.offsetWidth)/2})</script>';
   let news=[];
   try {news=JSON.parse(await readFile(join(root,'news.json'),'utf8')).items.map(item=>validateNews(item)).sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));} catch(error){if(error.code!=='ENOENT')throw error;}
   let savedRoutes={};
@@ -186,22 +190,24 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     .replace('</head>','<link rel="stylesheet" href="/reference.css?v=20261028"></head>')
     .replace(/(<main id="main"[^>]*>)([\s\S]*?)(<div class="loading">[^<]*<\/div><\/main>)/,(_,open,noscript,loading)=>open+frontPageGuard+front+noscript+loading.replace(/<div class="loading">[^<]*<\/div>/,''));
   const rootData=[calendarData.year,calendarData.history,openSourceData.items].map(items=>items.map(stableJson).sort());
-  await writeRoute('/',lastmod=>lastmod?rootSource.replace('</head>','<script type="application/ld+json" data-seo-home>'+json({'@context':'https://schema.org','@type':'WebPage','@id':siteOrigin+'/#webpage',url:siteOrigin+'/',name:'今日学术 · 科研日历',dateModified:lastmod,isPartOf:{'@id':siteOrigin+'/#website'}})+'</script>\n</head>'):rootSource,stableJson(rootData));
+  await writeRoute('/',lastmod=>lastmod?rootSource.replace('</head>','<script type="application/ld+json" data-seo-home>'+json({'@context':'https://schema.org','@type':'WebPage','@id':siteOrigin+'/#webpage',url:siteOrigin+'/',name:SITE_NAME+' · 科研日历',dateModified:lastmod,isPartOf:{'@id':siteOrigin+'/#website'}})+'</script>\n</head>'):rootSource,stableJson(rootData));
 
   await writeCollection({
-    route:'/calendar/',section:'今日学术',title:'今日学术｜科研日程、申报机会与学术通知｜今日学术',
+    route:'/calendar/',section:'今日学术',title:'今日学术｜科研日程、申报机会与学术通知｜'+SITE_NAME,
     description:'浏览人工核验的科研日程、项目申报、学术会议、培养节点与研究通知。',eyebrow:'ACADEMIC CALENDAR',
     intro:'这里收录已由维护者核验的科研日程、项目申报、学术会议与培养节点。日期和资格条件以来源机构的原始通知为准。',records:calendar,recordRoute:calendarRoute,
     recordSummary:{meta:item=>item.start+' · '+item.category+' · '+item.sourceName,text:item=>item.summary}
   });
+  const about=await loadAbout(projectRoot,site.id);
+  if(about)await writeRoute(ABOUT_ROUTE,lastmod=>pageShell({title:about.title+'｜'+SITE_NAME,description:about.paragraphs[0].replace(/\*\*/g,''),route:ABOUT_ROUTE,body:'<main class="seo-main">'+renderAbout(about)+'</main>',schema:[breadcrumb([{name:SITE_NAME,route:'/'},{name:about.title,route:ABOUT_ROUTE}])],lastmod,header}));
   await writeCollection({
-    route:'/history/',section:'昔日学术',title:'昔日学术｜历史上的科研事件｜今日学术',
+    route:'/history/',section:'昔日学术',title:'昔日学术｜历史上的科研事件｜'+SITE_NAME,
     description:'按同月同日回望科学论文、研究机构、方法与学术制度的历史事件。',eyebrow:'ON THIS DAY',
     intro:'按同月同日整理学术史事件，呈现论文发表、研究制度、科学发现与学科演进如何走到今天。',records:history,recordRoute:historyRoute,
     recordSummary:{meta:item=>item.year+' 年 · '+item.domain+' · '+item.eventType,text:item=>item.factSummary}
   });
   await writeCollection({
-    route:'/open-source/',section:'学术开源',title:'学术开源｜值得关注的研究工具与开放项目｜今日学术',
+    route:'/open-source/',section:'学术开源',title:'学术开源｜值得关注的研究工具与开放项目｜'+SITE_NAME,
     description:'人工整理可公开访问的文献、科研 Agent、数据评测、实验与基础设施项目。',eyebrow:'OPEN RESEARCH',
     intro:'收录值得研究与试用的开源项目，包含文献与写作、科研 Agent、数据评测、实验仪器、生命医学与基础设施。',records:openSource,recordRoute:sourceRoute,
     recordSummary:{meta:item=>item.date+' · '+item.category+' · '+item.status,text:item=>item.summary}
@@ -213,7 +219,7 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
   }
   for(const item of news){
     const route=newsRoute(item),article=newsBody(item,await imageSizeMap(item.assets,previousRoot));
-    await writeRoute(route,lastmod=>pageShell({header,title:item.title+'｜今日学术',description:excerpt(item.summary),route,lastmod,kind:'article',schema:[breadcrumb([{name:'今日学术',route:'/'},{name:'学术新闻',route:'/archive/'},{name:sectionFor('news',item).name,route:'/archive/'+sectionFor('news',item).slug+'/'},{name:item.title,route}]),{'@type':'Article',headline:item.title,datePublished:item.date+'T00:00:00+08:00',author:{'@type':'Organization',name:item.author},publisher:{'@id':siteOrigin+'/#organization'},mainEntityOfPage:absolute(route)}],body:'<main class="seo-main"><nav class="breadcrumbs"><a href="/">首页</a><span>／</span><a href="/archive/">学术新闻</a></nav><article class="record-page news-article"><p class="eyebrow">'+html(sectionFor('news',item).name)+' · '+html(item.date)+'</p><h1>'+html(item.title)+'</h1><p class="muted">'+html(item.author)+'</p>'+(publicRecord('news',item)?.course?'<p class="muted">'+courseLabels(publicRecord('news',item).course)+'</p>':'')+'<p class="lead">'+renderMathText(item.summary)+'</p>'+article.lead+'<div class="article-body">'+article.body+'</div></article></main>'}));
+    await writeRoute(route,lastmod=>pageShell({header,title:item.title+'｜'+SITE_NAME,description:excerpt(item.summary),route,lastmod,kind:'article',schema:[breadcrumb([{name:SITE_NAME,route:'/'},{name:'全部文章',route:'/archive/'},{name:sectionFor('news',item).name,route:'/archive/'+sectionFor('news',item).slug+'/'},{name:item.title,route}]),{'@type':'Article',headline:item.title,datePublished:item.date+'T00:00:00+08:00',author:{'@type':'Organization',name:item.author},publisher:{'@id':siteOrigin+'/#organization'},mainEntityOfPage:absolute(route)}],body:'<main class="seo-main"><nav class="breadcrumbs"><a href="/">首页</a><span>／</span><a href="/archive/">全部文章</a></nav><article class="record-page news-article"><p class="eyebrow">'+html(sectionFor('news',item).name)+' · '+html(item.date)+'</p><h1>'+html(item.title)+'</h1><p class="muted">'+html(item.author)+'</p>'+(publicRecord('news',item)?.course?'<p class="muted">'+courseLabels(publicRecord('news',item).course)+'</p>':'')+'<p class="lead">'+renderMathText(item.summary)+'</p>'+article.lead+'<div class="article-body">'+article.body+'</div></article></main>'}));
   }
 
   for(const item of calendar) {
@@ -272,7 +278,7 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     ...openSource.map(x=>({section:sectionFor('openSource',x).slug,title:x.title,summary:x.summary,dateLabel:x.date,category:x.category,route:sourceRoute(x)}))
   ];
   const archiveIndex=await buildArchive({sections:publicSections,records:archiveRecords,writeRoute,pageShell:options=>pageShell({...options,header})});
-  await writeDated(join(output,'news/index.html'),'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><title>学术新闻｜今日学术</title><link rel="canonical" href="'+siteOrigin+'/archive/"><meta http-equiv="refresh" content="0;url=/archive/"></head><body><a href="/archive/">打开学术新闻</a></body></html>',state.pages['/archive/'].lastmod);
+  await writeDated(join(output,'news/index.html'),'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><title>全部文章｜'+html(SITE_NAME)+'</title><link rel="canonical" href="'+siteOrigin+'/archive/"><meta http-equiv="refresh" content="0;url=/archive/"></head><body><a href="/archive/">打开全部文章</a></body></html>',state.pages['/archive/'].lastmod);
   const archiveJson=stableJson(archiveIndex);
   await writeDated(join(output,'archive-index.json'),archiveJson,state.file('archive-index.json',archiveJson).lastmod);
 

@@ -364,3 +364,9 @@ body{--blue:light-dark(var(--chosen-background,#313ff4),color-mix(in srgb,var(--
  .hero-sky,.landscape{opacity:.2}
  .hero-bottom{color:var(--scene-ink)}
 }
+
+/* Sections ｜ entrances: a thin divider between the two groups of the bar. */
+.site-header nav .nav-divider{flex:none;align-self:center;width:1px;height:1.1em;background:currentColor;opacity:.35}
+/* The bar never squeezes the logo or the end link: on narrow screens it scrolls instead. */
+.site-header .brand,.site-header .nav-end{flex:none;white-space:nowrap}
+.site-header nav{min-width:0;overflow-x:auto;scrollbar-width:none}.site-header nav::-webkit-scrollbar{display:none}
