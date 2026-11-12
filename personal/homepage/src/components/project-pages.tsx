@@ -42,7 +42,7 @@ export function ProjectIndex({ locale }: { locale: Locale }) {
   const t = projectCopy[locale];
   return <PortfolioFrame locale={locale} path="projects"><main className="shell project-main">
     <Breadcrumb locale={locale} /><header className="project-page-heading"><span className="section-index">WORK / ARCHIVE</span><h1>{t.indexTitle}</h1><p>{t.indexIntro}</p></header>
-    <div className="project-spotlight-label"><span className="status-dot" />{t.recent} · Lingxi IME</div><CatalogSpotlight locale={locale} />
+    <div className="project-spotlight-label"><span className="status-dot" />{t.recent} · XSIME</div><CatalogSpotlight locale={locale} />
     <ProjectSections locale={locale} /><ProjectCards locale={locale} />
   </main></PortfolioFrame>;
 }
@@ -60,7 +60,7 @@ export function ProjectDetail({ locale, slug }: { locale: Locale; slug: ProjectS
         <a className="solid-button" href={rimes ? '#platforms' : productUrl} {...(!rimes && { target: '_blank', rel: 'noopener noreferrer' })}>{rimes ? t.download : slug === 'scholay' || slug === 'scholay-today' ? t.visit : t.source}<ArrowUpRight size={17} /></a>
         {rimes && <Link className="outline-button" href={localePath(locale, 'projects/rimes/input-schemes')}>{t.catalog}<ArrowRight size={16} /></Link>}
       </div></div>
-      {rimes ? <Image className="project-detail-mascot" src="/visuals/rimes-icon.webp" alt="Lingxi IME" width={320} height={320} priority unoptimized /> : <span className="project-detail-symbol" aria-hidden="true">{symbols[index]}</span>}
+      {rimes ? <Image className="project-detail-mascot" src="/visuals/rimes-icon.webp" alt="XSIME" width={320} height={320} priority unoptimized /> : <span className="project-detail-symbol" aria-hidden="true">{symbols[index]}</span>}
     </header>
     <section className="project-detail-section"><div className="home-heading"><span className="section-index">01 / PRODUCT</span><h2>{t.overview}</h2></div>
       <div className="capability-grid">{rimes ? t.modules.map((name, i) => { const Icon = moduleIcons[i]; return <article className="capability-card" key={name}><Icon size={24} /><span className="micro-label">{['INPUT', 'BUFFER', 'CAPSULE', 'MAILBOX'][i]}</span><h3>{name}</h3><p>{t.moduleText[i]}</p></article>; }) : capabilities.map((name, i) => <article className="capability-card" key={name}><span className="section-index">0{i + 1}</span><h3>{name}</h3><p>{capabilityDescriptions[locale][slug as Exclude<ProjectSlug, 'rimes'>][i]}</p></article>)}</div>

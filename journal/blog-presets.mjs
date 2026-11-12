@@ -9,7 +9,7 @@ export const BLOG_THEMES = Object.freeze({
   xmin: {name:'XMin',repository:'https://github.com/yihui/hugo-xmin'},
 });
 export const BLOG_SITES = Object.freeze({
-  lingxi: {theme:'papermod',label:'INPUT & IDEAS',mark:'犀',heading:'输入之间',color:'#385b49',structures:['toc','neighbors']},
+  xsime: {theme:'papermod',label:'INPUT & IDEAS',mark:'犀',heading:'输入之间',color:'#385b49',structures:['toc','neighbors']},
   piggytuck: {theme:'archie',label:'DESIGN NOTEBOOK',mark:'猪',heading:'创作手记',color:'#3949ac',structures:['image-rows','wide-figures']},
   personal: {theme:'bear',label:'A PERSONAL JOURNAL',mark:'海',heading:'最近写下的',color:'#376c68',structures:['post-meta','reading-progress','neighbors']},
   pets: {theme:'bear',label:'LITTLE COMPANIONS',mark:'伴',heading:'共同生活的小事',color:'#855434',structures:['infobox','see-also']},
@@ -24,7 +24,7 @@ export const DEMO_BLOG_SITES = Object.freeze(Object.fromEntries([
   ['demo-papermod','papermod'],['demo-archie','archie'],['demo-xmin','xmin'],['demo-bear','bear'],['demo-showcase','archie'],
   ['demo-docs','papermod'],['demo-encyclopedia','bear'],['demo-portfolio','archie'],['demo-personal','bear'],
 ].map(([id,theme])=>[id,{theme,label:'THEME UNIT TEST',mark:'演',heading:'最近发布',color:'#2b6e52',structures:Object.keys(STRUCTURES)}])));
-export const SKINNED_SITES = Object.freeze(['metho','enter','study','legis','xsiching','lingxi','pets','personal']);
+export const SKINNED_SITES = Object.freeze(['metho','enter','study','legis','xsiching','xsime','pets','personal']);
 export function blogPreset(site) {
   const real=site.id.startsWith('demo-skin-')&&BLOG_SITES[site.id.slice(10)];
   if(real)return {...real,...BLOG_THEMES[real.theme],id:real.theme,skin:site.id.slice(10)};

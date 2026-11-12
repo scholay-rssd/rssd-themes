@@ -5,7 +5,7 @@ Scholay 产品经理「学术海」的个人主页与项目档案。使用 Next.
 ## 内容
 
 - 中文、英语、日语、法语、西班牙语的独立静态页面与语言切换；中文位于 `/`，其余使用 `/en/`、`/ja/`、`/fr/`、`/es/` 前缀。
-- `/projects/` 汇总五个维护项目，各自具有站内详情页：Scholay Today、灵犀输入法 RIMES、Scholay Skills、Scholay Wiki、Scholay 在线研究平台。
+- `/projects/` 汇总五个维护项目，各自具有站内详情页：Scholay Today、犀术输入法 RIMES、Scholay Skills、Scholay Wiki、Scholay 在线研究平台。
 - RIMES 详情页汇集产品模块、各平台入口、原生 iOS 模拟器截图与文档；`/projects/rimes/input-schemes/` 提供输入方案搜索、分类、状态筛选与每页 24 条的分页。
 - 当前方案目录收录 **299 个方案包**，其中 **219 个通过 Mac 主机验证**、**152 个提供本站 ZIP 下载**。导入与许可边界、排除项及更新方法见 [输入方案维护说明](docs/input-schemes.md)。
 - 十个公开平台入口，以及个人定位与标语；顶部按钮连接 Today、Scholay、PM 和 GitHub。

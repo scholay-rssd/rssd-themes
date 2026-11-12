@@ -4,7 +4,7 @@ import {escapeHtml as esc} from '../../modules/shared.mjs';
 import {recordsInCollection} from '../../engine/site-organization.mjs';
 import {blogExcerpt} from './blog-presets.mjs';
 
-export const referenceSites=new Set(['lingxi','piggytuck','personal','pets','legis','metho','enter','xsiching','study']);
+export const referenceSites=new Set(['xsime','piggytuck','personal','pets','legis','metho','enter','xsiching','study']);
 export function referencePage(site,path){
   return referenceSites.has(site.id)&&!(site.id==='xsiching'&&path==='/');
 }
@@ -20,7 +20,7 @@ export function referenceHome({site,records,sections,directory}){
   const count=s=>recordsInCollection({records,collections:sections},s.id).length;
   const topics=`<nav class="ref-topics" aria-label="内容栏目">${sections.map(s=>`<a href="${esc(s.route)}">${esc(s.name)}<small>${count(s)}</small></a>`).join('')}</nav>`;
   switch(site.id){
-    case 'lingxi':return `<section class="ime-product-hero"><p class="eyebrow">XSIME · 犀术输入法</p><h1>每一次输入，<br>都更顺手。</h1><p>从熟悉的拼音，到自己的输入方案。</p><div class="ime-actions"><a class="ref-button" href="/projects/lingxi/">安装与下载</a><a href="${esc(sections.find(s=>s.id==='tutorials')?.route||'/archive/')}">查看使用教程 →</a></div><div class="ime-device-stage"><figure><img src="/design/xsime-typing.png" alt="犀术 IME 拼音键盘界面" width="390" height="844"><figcaption>拼音输入</figcaption></figure><figure><img src="/design/xsime-ninekey.png" alt="犀术 IME 九宫格键盘界面" width="390" height="844"><figcaption>九宫格输入</figcaption></figure><div><h2>找到自己的输入节奏</h2><p>方案、外观与使用方法，<br>按你的习惯慢慢调整。</p><a href="/projects/lingxi/">了解犀术 IME →</a></div></div></section>${directory}${heading('开发与使用记录')}${recent.slice(0,4).map(entry).join('')}`;
+    case 'xsime':return `<section class="ime-product-hero"><p class="eyebrow">XSIME · 犀术输入法</p><h1>每一次输入，<br>都更顺手。</h1><p>从熟悉的拼音，到自己的输入方案。</p><div class="ime-actions"><a class="ref-button" href="/projects/xsime/">安装与下载</a><a href="${esc(sections.find(s=>s.id==='tutorials')?.route||'/archive/')}">查看使用教程 →</a></div><div class="ime-device-stage"><figure><img src="/design/xsime-typing.png" alt="犀术 IME 拼音键盘界面" width="390" height="844"><figcaption>拼音输入</figcaption></figure><figure><img src="/design/xsime-ninekey.png" alt="犀术 IME 九宫格键盘界面" width="390" height="844"><figcaption>九宫格输入</figcaption></figure><div><h2>找到自己的输入节奏</h2><p>方案、外观与使用方法，<br>按你的习惯慢慢调整。</p><a href="/projects/xsime/">了解犀术 IME →</a></div></div></section>${directory}${heading('开发与使用记录')}${recent.slice(0,4).map(entry).join('')}`;
     case 'pets':return `${topics}${first?`<section class="pet-lead">${image(first)}<div>${meta(first)}<h1><a href="${esc(first.route)}">${esc(first.title)}</a></h1><p>${esc(blogExcerpt(first))}</p><a class="read" href="${esc(first.route)}">阅读这篇指南 →</a></div></section>`:''}${heading('与小动物共同生活')}<div class="ref-grid">${recent.filter(r=>r!==first).slice(0,6).map(card).join('')}</div>${directory}`;
     case 'legis':return `<div class="law-issue">法律 · 科技 · 公共议题</div><section class="law-paper"><h1>法律观察</h1><p class="eyebrow">最新文章 / ARTICLES</p>${recent.slice(0,8).map(entry).join('')}<a href="/archive/">浏览全部法律资料 →</a></section>${directory}`;
     case 'metho':{

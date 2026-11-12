@@ -116,7 +116,7 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   await write('site-theme.css',Buffer.concat([await readFile(join(source,'sites/site-theme.css')),await readFile(join(source,'web/themes/content.css')),await readFile(new URL('./blog.css',import.meta.url)),await readFile(new URL(`./${blog.id}.css`,import.meta.url)),await readFile(new URL('../structures.css',import.meta.url)),await readFile(new URL("./color-mode.css",import.meta.url)),...(blog.skin?[await readFile(new URL(`./skins/${blog.skin}.css`,import.meta.url))]:[])]));
   if(referenceSites.has(site.id)){
     await write('reference-layout.css',referenceCss);
-    if(site.id==='lingxi')for(const asset of ['xsime-typing.png','xsime-ninekey.png'])await write('design/'+asset,await readFile(new URL('./design/'+asset,import.meta.url)));
+    if(site.id==='xsime')for(const asset of ['xsime-typing.png','xsime-ninekey.png'])await write('design/'+asset,await readFile(new URL('./design/'+asset,import.meta.url)));
   }
   await write('theme-license.txt',await readFile(new URL(`./licenses/${blog.id}.txt`,import.meta.url)));
   for(const [path,text] of Object.entries(verificationFiles))await write(path,text);

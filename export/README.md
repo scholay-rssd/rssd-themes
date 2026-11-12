@@ -54,16 +54,16 @@
 | 智能学堂 | calendar | double | ledger | #4e7080 | [JSON](templates/study/calendar.json) |
 | 智能学堂 | history | seal | archive | #766957 | [JSON](templates/study/history.json) |
 | 智能学堂 | open-source | underline | guide | #4d7460 | [JSON](templates/study/open-source.json) |
-| 犀术 IME | tutorials | underline | guide | #32667e | [JSON](templates/lingxi/tutorials.json) |
-| 犀术 IME | development | rail | technical | #4f617f | [JSON](templates/lingxi/development.json) |
-| 犀术 IME | input-schemes | double | ledger | #536e50 | [JSON](templates/lingxi/input-schemes.json) |
-| 犀术 IME | input-skins | open | gallery | #82617f | [JSON](templates/lingxi/input-skins.json) |
-| 犀术 IME | archive | quiet | essay | #5a6a7d | [JSON](templates/lingxi/archive.json) |
-| 犀术 IME | calendar | double | ledger | #486e7c | [JSON](templates/lingxi/calendar.json) |
-| 犀术 IME | history | seal | archive | #6f6783 | [JSON](templates/lingxi/history.json) |
-| 犀术 IME | open-source | rail | technical | #487565 | [JSON](templates/lingxi/open-source.json) |
-| 犀术 IME | input-methods | rail | technical | #44697d | [JSON](templates/lingxi/input-methods.json) |
-| 犀术 IME | custom-keyboards | open | gallery | #79634e | [JSON](templates/lingxi/custom-keyboards.json) |
+| 犀术 IME | tutorials | underline | guide | #32667e | [JSON](templates/xsime/tutorials.json) |
+| 犀术 IME | development | rail | technical | #4f617f | [JSON](templates/xsime/development.json) |
+| 犀术 IME | input-schemes | double | ledger | #536e50 | [JSON](templates/xsime/input-schemes.json) |
+| 犀术 IME | input-skins | open | gallery | #82617f | [JSON](templates/xsime/input-skins.json) |
+| 犀术 IME | archive | quiet | essay | #5a6a7d | [JSON](templates/xsime/archive.json) |
+| 犀术 IME | calendar | double | ledger | #486e7c | [JSON](templates/xsime/calendar.json) |
+| 犀术 IME | history | seal | archive | #6f6783 | [JSON](templates/xsime/history.json) |
+| 犀术 IME | open-source | rail | technical | #487565 | [JSON](templates/xsime/open-source.json) |
+| 犀术 IME | input-methods | rail | technical | #44697d | [JSON](templates/xsime/input-methods.json) |
+| 犀术 IME | custom-keyboards | open | gallery | #79634e | [JSON](templates/xsime/custom-keyboards.json) |
 | 小猪盖被 | works | open | gallery | #a65d68 | [JSON](templates/piggytuck/works.json) |
 | 小猪盖被 | design-news | rule | dispatch | #9a663e | [JSON](templates/piggytuck/design-news.json) |
 | 小猪盖被 | icons | double | ledger | #557b71 | [JSON](templates/piggytuck/icons.json) |

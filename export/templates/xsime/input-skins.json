@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "siteId": "lingxi",
-  "sectionId": "input-schemes",
+  "siteId": "xsime",
+  "sectionId": "input-skins",
   "article": {
     "ink": "#27384b",
-    "accent": "#536e50",
+    "accent": "#82617f",
     "family": "sans",
-    "layout": "ledger",
+    "layout": "gallery",
     "paper": "#fbfcfe",
-    "heading": "double",
+    "heading": "open",
     "titleSize": 36,
     "bodySize": 17,
     "lineHeight": 1.9,
@@ -23,7 +23,7 @@
       "canvas": "#101923",
       "ink": "#dfe9f2",
       "muted": "#a6bbcc",
-      "accent": "#b3bfb2"
+      "accent": "#c8b9c7"
     },
     "titleFamily": "sans",
     "radius": 10,
@@ -33,9 +33,9 @@
   },
   "pages": {
     "ink": "#26343e",
-    "accent": "#536e50",
+    "accent": "#82617f",
     "family": "sans",
-    "layout": "ledger",
+    "layout": "gallery",
     "paper": "#f3f5f7",
     "width": 720,
     "height": 960,

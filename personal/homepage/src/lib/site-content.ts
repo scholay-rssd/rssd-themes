@@ -19,7 +19,7 @@ export const copy: Record<Locale, Copy> = {
     workEyebrow: 'SELECTED WORK / 正在维护', workTitle: '把好奇心，做成工具。', workIntro: '这些项目围绕研究、写作与日常知识工作持续生长。', projectLink: '查看项目',
     connectEyebrow: 'ELSEWHERE / 其他地方', connectTitle: '在不同地方，继续聊。', connectIntro: '产品、学术和日常思考，散落在这些平台。',
     aboutEyebrow: 'ABOUT / 关于', aboutTitle: '为好奇的人，做更好的工具。', aboutText: '我在 Scholay 做产品，也维护开源项目。这个站点是我整理项目、记录想法、与同行相遇的地方。', footer: '保持好奇，保持联系。',
-    projects: ['从科研日程、学术史到桌面 RSS 与 AI 辅助阅读，整理每天值得关注的学术信息。', '基于 RIME 的多平台灵犀输入法，连接日常输入、Buffer 工作台与个人知识管理。', 'Scholay 维护的开放学术 AI 技能。', 'Scholay 的学术产品知识与使用文档。', '连接论文检索、文献管理、LaTeX 写作与投稿前检查的在线学术研究平台。'],
+    projects: ['从科研日程、学术史到桌面 RSS 与 AI 辅助阅读，整理每天值得关注的学术信息。', '基于 RIME 的多平台犀术输入法，连接日常输入、Buffer 工作台与个人知识管理。', 'Scholay 维护的开放学术 AI 技能。', 'Scholay 的学术产品知识与使用文档。', '连接论文检索、文献管理、LaTeX 写作与投稿前检查的在线学术研究平台。'],
   },
   en: {
     nav: ['Work', 'About', 'Connect'], eyebrow: 'RESEARCH · PRODUCT · OPEN BUILDING', role: 'Product Manager at Scholay',
@@ -28,7 +28,7 @@ export const copy: Record<Locale, Copy> = {
     workEyebrow: 'SELECTED WORK', workTitle: 'Tools for curious minds.', workIntro: 'Projects growing around research, writing, and everyday knowledge work.', projectLink: 'View project',
     connectEyebrow: 'ELSEWHERE', connectTitle: 'Let’s keep talking.', connectIntro: 'Find my notes on products, research, and life across these platforms.',
     aboutEyebrow: 'ABOUT', aboutTitle: 'Better tools for curious people.', aboutText: 'I build products at Scholay and maintain open source projects. This is a home for my work, ideas, and conversations with fellow travelers.', footer: 'Stay curious. Stay connected.',
-    projects: ['Research calendars, academic history, and a desktop reader for RSS and AI-assisted reading.', 'Lingxi IME: a multi-platform input method built on RIME, with a Buffer workbench and personal knowledge tools.', 'Open academic AI skills maintained by Scholay.', 'Scholay product knowledge and documentation.', 'An online research platform for paper discovery, reference management, LaTeX writing, and pre-submission checks.'],
+    projects: ['Research calendars, academic history, and a desktop reader for RSS and AI-assisted reading.', 'XSIME: a multi-platform input method built on RIME, with a Buffer workbench and personal knowledge tools.', 'Open academic AI skills maintained by Scholay.', 'Scholay product knowledge and documentation.', 'An online research platform for paper discovery, reference management, LaTeX writing, and pre-submission checks.'],
   },
   ja: {
     nav: ['プロジェクト', '自己紹介', 'つながる'], eyebrow: '研究 · プロダクト · オープンな開発', role: 'Scholay プロダクトマネージャー',
@@ -46,7 +46,7 @@ export const copy: Record<Locale, Copy> = {
     workEyebrow: 'SELECTED WORK / PROJETS', workTitle: 'Des outils pour les curieux.', workIntro: 'Des projets pour la recherche, l’écriture et le travail intellectuel quotidien.', projectLink: 'Voir le projet',
     connectEyebrow: 'ELSEWHERE / AILLEURS', connectTitle: 'Continuons la conversation.', connectIntro: 'Retrouvez mes réflexions sur les produits, la recherche et le quotidien.',
     aboutEyebrow: 'ABOUT / À PROPOS', aboutTitle: 'De meilleurs outils pour les curieux.', aboutText: 'Je conçois des produits chez Scholay et maintiens des projets open source. Ce site rassemble mes projets et mes idées.', footer: 'Restons curieux. Restons en contact.',
-    projects: ['Calendriers de recherche, histoire académique et lecteur RSS avec lecture assistée par IA.', 'Lingxi IME, une méthode de saisie multiplateforme basée sur RIME, avec Buffer et gestion des connaissances.', 'Des compétences IA ouvertes pour le monde académique, maintenues par Scholay.', 'Les connaissances produit et la documentation de Scholay.', 'Une plateforme de recherche en ligne pour trouver des articles, gérer les références, écrire en LaTeX et préparer une soumission.'],
+    projects: ['Calendriers de recherche, histoire académique et lecteur RSS avec lecture assistée par IA.', 'XSIME, une méthode de saisie multiplateforme basée sur RIME, avec Buffer et gestion des connaissances.', 'Des compétences IA ouvertes pour le monde académique, maintenues par Scholay.', 'Les connaissances produit et la documentation de Scholay.', 'Une plateforme de recherche en ligne pour trouver des articles, gérer les références, écrire en LaTeX et préparer une soumission.'],
   },
   es: {
     nav: ['Proyectos', 'Sobre mí', 'Contacto'], eyebrow: 'INVESTIGACIÓN · PRODUCTO · CÓDIGO ABIERTO', role: 'Product manager en Scholay',
@@ -55,7 +55,7 @@ export const copy: Record<Locale, Copy> = {
     workEyebrow: 'SELECTED WORK / PROYECTOS', workTitle: 'Herramientas para la curiosidad.', workIntro: 'Proyectos para investigar, escribir y trabajar con conocimiento cada día.', projectLink: 'Ver proyecto',
     connectEyebrow: 'ELSEWHERE / EN OTROS LUGARES', connectTitle: 'Sigamos conversando.', connectIntro: 'Ideas sobre productos, investigación y vida cotidiana en estas plataformas.',
     aboutEyebrow: 'ABOUT / SOBRE MÍ', aboutTitle: 'Mejores herramientas para gente curiosa.', aboutText: 'Diseño productos en Scholay y mantengo proyectos de código abierto. Este sitio reúne mi trabajo, mis ideas y nuevas conversaciones.', footer: 'Sigamos con curiosidad y en contacto.',
-    projects: ['Calendarios de investigación, historia académica y un lector RSS con asistencia de IA.', 'Lingxi IME, un método de entrada multiplataforma basado en RIME, con Buffer y herramientas de conocimiento personal.', 'Herramientas abiertas de IA académica mantenidas por Scholay.', 'Conocimiento y documentación de producto de Scholay.', 'Una plataforma de investigación en línea para buscar artículos, gestionar referencias, escribir en LaTeX y revisar manuscritos antes de enviarlos.'],
+    projects: ['Calendarios de investigación, historia académica y un lector RSS con asistencia de IA.', 'XSIME, un método de entrada multiplataforma basado en RIME, con Buffer y herramientas de conocimiento personal.', 'Herramientas abiertas de IA académica mantenidas por Scholay.', 'Conocimiento y documentación de producto de Scholay.', 'Una plataforma de investigación en línea para buscar artículos, gestionar referencias, escribir en LaTeX y revisar manuscritos antes de enviarlos.'],
   },
 };
 
