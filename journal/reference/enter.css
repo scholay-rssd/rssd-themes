@@ -1,20 +1,129 @@
-/* OpenAlternative and AlternativeTo: compact, searchable resource records. */
-body[data-site=enter][data-design]{--paper:light-dark(#fff,#191b1d);--ink:light-dark(#222,#e9ebee);--accent:light-dark(#252525,#d2e3fc);--soft:light-dark(#f6f6f6,#282c31);--line:light-dark(#ddd,#40464e);--muted:light-dark(#686868,#b8c0cc);--card:light-dark(#fafafa,#22262b)}
-[data-site=enter][data-design] .ref-title h1{font:600 32px/1.4 system-ui,sans-serif}
-[data-site=enter][data-design] .resource-search{display:flex;flex-wrap:wrap;gap:8px;max-width:650px;margin-top:28px}
-[data-site=enter][data-design] .resource-search label{width:100%;font-size:12px;color:var(--muted)}
-[data-site=enter][data-design] .resource-search input{min-width:0;flex:1;border:1px solid var(--line);border-radius:6px;padding:12px;color:inherit;background:var(--paper);font:inherit}
-[data-site=enter][data-design] .resource-search button{padding:10px 20px;color:inherit;background:var(--soft);border:1px solid var(--line);border-radius:6px}
-[data-site=enter][data-design] :is(.ref-card,.feed-entry,.showcase-card){border:1px solid var(--line);border-radius:8px;background:var(--card);padding:22px;box-shadow:none}
-[data-site=enter][data-design] :is(.ref-card h2,.feed-entry h2,.showcase-card h2){font:600 19px/1.5 system-ui,sans-serif}
-[data-site=enter][data-design] :is(.ref-card p,.feed-entry p,.showcase-card p){font-size:13px;line-height:1.8}
-[data-site=enter][data-design] :is(.ref-cover,.feed-cover img,.showcase-card>a>img){width:48px;height:48px;object-fit:contain;border-radius:5px}
-[data-site=enter][data-design] .feed-cover{display:block;margin-bottom:18px}
+/* 学术之门 — wayfinding signage. The site is a gateway, so each section is a
+   coloured line, its articles are stops and the newest form an arrivals board.
+   Bold signage type, a dark signboard, four line colours and no picture boxes.
+   This file is enter's single visual source; the skin keeps only the tokens. */
+body[data-site=enter][data-design]{
+  --paper:light-dark(#f6f6f3,#0f1114);--card:light-dark(#fff,#171a1f);--soft:light-dark(#ecece7,#1d2127);
+  --ink:light-dark(#14171c,#eef0f3);--muted:light-dark(#5a616d,#a2aab6);--line:light-dark(#dadcdf,#2a2f37);
+  --accent:light-dark(#14171c,#eef0f3);--sign:light-dark(#14171c,#1c2027);--sign-ink:#f4f5f7;
+  --l-forums:light-dark(#0a8a4c,#4cc98a);--l-software:light-dark(#1a5fb4,#6fa8ff);
+  --l-search:light-dark(#c8620a,#ffa24d);--l-courses:light-dark(#7d36e0,#b98cff);
+  --sans:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Source Han Sans SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  background:var(--paper);color:var(--ink);font-family:var(--sans)}
+[data-site=enter][data-design] [data-line=forums],[data-site=enter][data-design] [data-section=forums]{--lc:var(--l-forums)}
+[data-site=enter][data-design] [data-line=software],[data-site=enter][data-design] [data-section=software]{--lc:var(--l-software)}
+[data-site=enter][data-design] [data-line=search],[data-site=enter][data-design] [data-section=search]{--lc:var(--l-search)}
+[data-site=enter][data-design] [data-line=courses],[data-site=enter][data-design] [data-section=courses]{--lc:var(--l-courses)}
+
+/* Header: a four-colour route stripe above a plain bar. */
+[data-site=enter][data-design] .site-header{position:relative;min-height:70px;border-bottom:1px solid var(--line)}
+[data-site=enter][data-design] .site-header::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--l-forums) 0 25%,var(--l-software) 25% 50%,var(--l-search) 50% 75%,var(--l-courses) 75%)}
+[data-site=enter][data-design] .brand{font:800 21px/1.3 var(--sans);letter-spacing:.02em}
+[data-site=enter][data-design] .site-header nav{gap:20px;font:600 14px/1 var(--sans)}
+[data-site=enter][data-design] .site-header nav a[aria-current=page]{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:9px}
+[data-site=enter][data-design] .site-header nav a[data-nav=section-forums][aria-current]{text-decoration-color:var(--l-forums)}
+[data-site=enter][data-design] .site-header nav a[data-nav=section-software][aria-current]{text-decoration-color:var(--l-software)}
+[data-site=enter][data-design] .site-header nav a[data-nav=section-search][aria-current]{text-decoration-color:var(--l-search)}
+[data-site=enter][data-design] .site-header nav a[data-nav=section-courses][aria-current]{text-decoration-color:var(--l-courses)}
+
+[data-site=enter][data-design] .gx-label{display:flex;align-items:baseline;gap:12px;margin:0 0 20px;font:900 24px/1.3 var(--sans)}
+[data-site=enter][data-design] .gx-label span{font:600 11px/1 var(--mono);letter-spacing:.24em;color:var(--muted)}
+/* The line number in a coloured disc, as on a station sign. */
+[data-site=enter][data-design] :is(.gx-chip,.gx-line-name,.gx-badge) b{display:inline-grid;place-items:center;flex:none;width:1.7em;height:1.7em;border-radius:50%;background:var(--lc);color:#fff;font:800 .8em/1 var(--mono)}
+
+/* Signboard: the question, the search and the four lines. */
+[data-site=enter][data-design] .gx-sign{margin:32px 0 0;padding:44px clamp(24px,5vw,56px) 36px;border-radius:6px;background:var(--sign);color:var(--sign-ink)}
+[data-site=enter][data-design] .gx-kicker{margin:0 0 14px;font:600 12px/1 var(--mono);letter-spacing:.28em;color:#aab1bc}
+[data-site=enter][data-design] .gx-sign h1{margin:0;font:900 clamp(44px,6.4vw,76px)/1.1 var(--sans);letter-spacing:.02em;color:#fff}
+[data-site=enter][data-design] .gx-slogan{margin:12px 0 0;font-size:17px;color:#c9ced6}
+[data-site=enter][data-design] .gx-search{display:flex;gap:0;max-width:680px;margin:28px 0 0;border:2px solid #fff;border-radius:4px;overflow:hidden;background:#fff}
+[data-site=enter][data-design] .gx-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+[data-site=enter][data-design] .gx-search input{flex:1;min-width:0;padding:14px 16px;border:0;background:#fff;color:#14171c;font:500 17px/1.4 var(--sans)}
+[data-site=enter][data-design] .gx-search input:focus{outline:none}
+[data-site=enter][data-design] .gx-search:focus-within{box-shadow:0 0 0 3px var(--l-search)}
+[data-site=enter][data-design] .gx-search button{padding:0 26px;border:0;background:var(--l-search);color:#fff;font:800 17px/1 var(--sans);letter-spacing:.2em;cursor:pointer}
+[data-site=enter][data-design] .gx-legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px}
+[data-site=enter][data-design] .gx-chip{display:inline-flex;align-items:center;gap:8px;color:#fff;font:700 15px/1.4 var(--sans)}
+[data-site=enter][data-design] .gx-chip small{font:500 12px/1 var(--mono);color:#aab1bc}
+[data-site=enter][data-design] .gx-chip:hover{text-decoration:underline;text-decoration-color:var(--lc);text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* Line map: four route strips; each latest article is a stop on its line. */
+[data-site=enter][data-design] .gx-map{padding:48px 0 12px}
+[data-site=enter][data-design] .gx-lines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+[data-site=enter][data-design] .gx-line{display:flex;flex-direction:column;min-width:0}
+[data-site=enter][data-design] .gx-line-name{display:flex;gap:10px;align-items:flex-start;padding-bottom:16px;border-bottom:4px solid var(--lc)}
+[data-site=enter][data-design] .gx-line-name b{font-size:15px}
+[data-site=enter][data-design] .gx-line-name strong{display:block;font:900 20px/1.3 var(--sans)}
+[data-site=enter][data-design] .gx-line-name small{display:block;margin-top:4px;font-size:12px;line-height:1.6;color:var(--muted)}
+[data-site=enter][data-design] .gx-stops{position:relative;margin:0;padding:6px 0 0 26px;list-style:none}
+[data-site=enter][data-design] .gx-stops::before{content:"";position:absolute;left:7px;top:0;bottom:14px;width:4px;border-radius:2px;background:var(--lc)}
+[data-site=enter][data-design] .gx-stops li{position:relative;padding:12px 0}
+[data-site=enter][data-design] .gx-stops li::before{content:"";position:absolute;left:-24px;top:16px;width:10px;height:10px;border:3px solid var(--lc);border-radius:50%;background:var(--paper)}
+[data-site=enter][data-design] .gx-stops a{display:block}
+[data-site=enter][data-design] .gx-stops span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;font:700 15px/1.55 var(--sans)}
+[data-site=enter][data-design] .gx-stops a:hover span{color:var(--lc)}
+[data-site=enter][data-design] .gx-stops time{display:block;margin-top:4px;font:12px/1.4 var(--mono);color:var(--muted)}
+[data-site=enter][data-design] .gx-terminal{margin:4px 0 0 26px;font:700 13px/1.4 var(--sans);color:var(--lc)}
+
+/* Arrivals board: date, line badge, title, a small picture when there is one. */
+[data-site=enter][data-design] .gx-board{padding:44px 0 16px}
+[data-site=enter][data-design] .gx-board ol{margin:0 0 18px;padding:0;list-style:none;border-top:2px solid var(--ink)}
+[data-site=enter][data-design] .gx-board li{display:grid;grid-template-columns:62px 118px minmax(0,1fr) 120px;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+[data-site=enter][data-design] .gx-board time{font:700 15px/1 var(--mono)}
+[data-site=enter][data-design] .gx-badge{display:inline-flex;align-items:center;gap:7px;font:700 13px/1.3 var(--sans);color:var(--lc)}
+[data-site=enter][data-design] .gx-board strong{display:block;font:800 17px/1.5 var(--sans)}
+[data-site=enter][data-design] .gx-board a:hover strong{color:var(--lc)}
+[data-site=enter][data-design] .gx-board small{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:4px;font-size:13px;line-height:1.75;color:var(--muted)}
+[data-site=enter][data-design] .gx-board img{display:block;width:120px;height:75px;object-fit:cover;border-radius:3px;background:var(--soft)}
+[data-site=enter][data-design] .gx-more{font:700 15px/1.4 var(--sans)}
+[data-site=enter][data-design] .gx-board~.home-directory{display:none}
+
+/* Listing pages: each entry carries its line colour, picture small on the right. */
+[data-site=enter][data-design] .content-feed h1,[data-site=enter][data-design] :is(.hero.compact,.ref-title) h1{font:900 40px/1.25 var(--sans)}
 [data-site=enter][data-design] :is(.feed-layout){display:block}
 [data-site=enter][data-design] .feed-sidebar{position:static;margin-bottom:24px}
-[data-site=enter][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px}
+[data-site=enter][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px 18px}
+[data-site=enter][data-design] .feed-filters a{font:600 14px/1.6 var(--sans)}
+[data-site=enter][data-design] .feed-filters a{padding:4px 0;border:0;border-radius:0;background:none}
+[data-site=enter][data-design] .feed-filters a:is(.active,[aria-current]){font-weight:900;background:none;text-decoration:underline;text-decoration-color:var(--lc,currentColor);text-decoration-thickness:3px;text-underline-offset:6px}
+[data-site=enter][data-design] .feed-filters a[href="/archive/forums/"]{--lc:var(--l-forums)}
+[data-site=enter][data-design] .feed-filters a[href="/archive/software/"]{--lc:var(--l-software)}
+[data-site=enter][data-design] .feed-filters a[href="/archive/search/"]{--lc:var(--l-search)}
+[data-site=enter][data-design] .feed-filters a[href="/archive/courses/"]{--lc:var(--l-courses)}
 [data-site=enter][data-design] #feed-search-form{max-width:600px}
-[data-site=enter][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-[data-site=enter][data-design] .showcase-copy{padding:16px 0 0}
-@media(max-width:850px){[data-site=enter][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){[data-site=enter][data-design] #feed-entries{grid-template-columns:1fr}[data-site=enter][data-design] .ref-title h1{font-size:28px}}
+[data-site=enter][data-design] #feed-entries{display:block;border-top:2px solid var(--ink)}
+[data-site=enter][data-design] .feed-entry{display:grid;grid-template-columns:minmax(0,1fr) 150px;grid-template-areas:"meta cover" "title cover" "text cover";column-gap:24px;align-items:start;margin:0;padding:20px 0 20px 18px;border:0;border-bottom:1px solid var(--line);border-left:4px solid var(--lc,var(--line));border-radius:0;background:none;box-shadow:none}
+[data-site=enter][data-design] .feed-entry .entry-meta{grid-area:meta;font:700 13px/1.6 var(--sans);color:var(--lc,var(--muted))}
+[data-site=enter][data-design] .feed-entry .entry-meta time{font-family:var(--mono);font-weight:400;color:var(--muted)}
+[data-site=enter][data-design] .feed-entry h2{grid-area:title;margin:4px 0 6px;font:800 19px/1.5 var(--sans)}
+[data-site=enter][data-design] .feed-entry p{grid-area:text;margin:0;font-size:14px;line-height:1.8;color:var(--muted)}
+[data-site=enter][data-design] .feed-cover{grid-area:cover;display:block;margin:0}
+[data-site=enter][data-design] .feed-cover img{display:block;width:150px;height:94px;object-fit:cover;border-radius:3px;background:var(--soft)}
+
+/* Article pages: the category template keeps its accent; paper and ink follow the site. */
+body[data-site=enter][data-design]:has(.rssd-article),body[data-site=enter][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
+[data-site=enter][data-design] .rssd-article-heading h1{font-family:var(--sans);font-weight:900}
+[data-site=enter][data-design] .about-page .about-body strong{color:inherit;box-shadow:inset 0 -.35em 0 color-mix(in srgb,var(--l-search) 30%,transparent)}
+
+@media(max-width:980px){
+  [data-site=enter][data-design] .gx-lines{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  [data-site=enter][data-design] .gx-board li{grid-template-columns:56px minmax(0,1fr) 100px;grid-template-areas:"time badge img" "title title img";row-gap:6px}
+  [data-site=enter][data-design] .gx-board time{grid-area:time}
+  [data-site=enter][data-design] .gx-board .gx-badge{grid-area:badge}
+  [data-site=enter][data-design] .gx-board li>a{grid-area:title}
+  [data-site=enter][data-design] .gx-board img{grid-area:img;width:100px;height:63px}
+}
+@media(max-width:650px){
+  [data-site=enter][data-design] .site-header nav{gap:14px;font-size:13px}
+  [data-site=enter][data-design] .gx-sign{margin-top:20px;padding:30px 20px 26px}
+  [data-site=enter][data-design] .gx-search button{padding:0 18px}
+  [data-site=enter][data-design] .gx-lines{grid-template-columns:1fr}
+  [data-site=enter][data-design] .gx-stops li:nth-child(n+4){display:none}
+  [data-site=enter][data-design] .gx-board li{grid-template-columns:48px minmax(0,1fr);grid-template-areas:"time badge" "title title"}
+  [data-site=enter][data-design] .gx-board img{display:none}
+  [data-site=enter][data-design] .feed-entry{grid-template-columns:minmax(0,1fr) 92px;column-gap:14px;padding-left:14px}
+  [data-site=enter][data-design] .feed-cover img{width:92px;height:58px}
+  [data-site=enter][data-design] .feed-entry h2{font-size:17px}
+  [data-site=enter][data-design] .content-feed h1{font-size:30px}
+}
