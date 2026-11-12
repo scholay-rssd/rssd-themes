@@ -3,6 +3,7 @@ import {renderRssFeed} from '../../engine/rss-feed.mjs';
 import {pageMetadata,listingDescription,articleBodyHeadings} from '../../engine/page-metadata.mjs';
 import {clarityScript,verificationFiles} from '../../engine/site-services.mjs';
 import {imageSizeMap,publicationAssetBytes} from '../../engine/publication-assets.mjs';
+import {readImageSize} from '../../engine/image-size.mjs';
 import {createSeoState,sitemapXml,splitSitemap} from '../../../scripts/seo-state.mjs';
 import {showcaseCards} from '../../modules/showcase/index.mjs';
 import {standingPages} from '../../engine/standing-pages.mjs';
@@ -73,7 +74,17 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   const posts=recent.map((x,index)=>`<article class="entry">${x.media?.[0]?`<a href="${esc(x.route)}" tabindex="-1" aria-hidden="true"><img class="entry-cover" src="${esc(x.media[0].src)}" alt="" width="640" height="360" ${index===0?'fetchpriority="high"':'loading="lazy"'} decoding="async"></a>`:''}<div class="entry-meta"><span>${esc(column(x))}</span><span>${esc(date(x))}</span></div><h3><a href="${esc(x.route)}">${esc(x.title)}</a></h3><p>${esc(blogExcerpt(x))}</p><a class="read" href="${esc(x.route)}">继续阅读 <span aria-hidden="true">↗</span></a></article>`).join('');
   const directory=`<aside class="home-directory" aria-label="栏目索引"><h2>按主题阅读</h2><nav>${primary.map(c=>`<a href="${esc(c.route)}"><span>${esc(c.name)}</span><small>${recordsInCollection(content,c.id).length.toString().padStart(2,'0')}</small></a>`).join('')}</nav><p class="directory-note">${esc(blog.description||site.description)}<br><a href="/content-feed.xml">通过 RSS 订阅更新 ↗</a></p></aside>`;
   const overview=intro+`<div class="home-layout"><section class="home-main"><div class="section-heading"><h2>${esc(blog.heading)}</h2><a href="/archive/">全部文章 <span aria-hidden="true">→</span></a></div><div class="entries">${posts||'<p class="empty">新的记录正在准备中。可以先从栏目开始探索。</p>'}</div></section>${directory}</div>${homeStructures({structures:blog.structures,content,sections:primary})}`;
-  if(!homepage)await write('index.html',shell(site.name,'/',referenceHome({site,records,sections:primary,directory})??overview));
+  // Real picture proportions, so home layouts can size each box to its picture
+  // instead of cropping every picture to one shape.
+  const pictureRatios=new Map();
+  for(const record of records)for(const media of (record.media||[]).slice(0,1)){
+    if(pictureRatios.has(media.src)||!/^\/article-media\/[a-f0-9]{64}\.(png|jpg|webp)$/.test(media.src))continue;
+    for(const base of [target,previousRoot].filter(Boolean)){
+      let bytes;try{bytes=await readFile(join(base,media.src.slice(1)));}catch(error){if(error.code==='ENOENT')continue;throw error;}
+      const size=readImageSize(bytes);if(size){pictureRatios.set(media.src,size.width/size.height);break;}
+    }
+  }
+  if(!homepage)await write('index.html',shell(site.name,'/',referenceHome({site,records,sections:primary,directory,pictureRatio:src=>pictureRatios.get(src)})??overview));
   const allFeed=renderFeed(feedIndex,{label:journalLabel});
   await write('journal/index.html',shell(journalLabel+' · 阅读目录','/journal/',allFeed.body));
   await write('content-feed.js',await readFile(new URL('../../engine/content-feed-client.js',import.meta.url)));
