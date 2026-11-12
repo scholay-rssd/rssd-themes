@@ -1,19 +1,99 @@
-/* Harvard Law Review issue layout; Cornell LII's legible source hierarchy. */
-body[data-site=legis][data-design]{--paper:light-dark(#f4f1ec,#191a19);--ink:light-dark(#262621,#e8e5de);--accent:light-dark(#793b31,#dca899);--soft:light-dark(#e5e0d5,#292a27);--line:light-dark(#d6d1c8,#41423c);--muted:light-dark(#68645e,#b4b2aa);--card:light-dark(#fffefd,#21231f)}
-[data-site=legis][data-design] .site-header{width:100%;max-width:none;min-height:155px;display:flex;flex-wrap:wrap;justify-content:center;padding:22px 5%;background:#1c1d1b;color:#f5f2eb;border:0}
-[data-site=legis][data-design] .site-header{position:relative}
-[data-site=legis][data-design] .brand{font:600 28px/1.6 var(--ref-serif);border:1px solid #66645f;padding:8px 22px;margin:0 auto}
-[data-site=legis][data-design] .site-language-control{position:absolute;right:5%;top:26px}
-[data-site=legis][data-design] .brand small{color:#c6c4bb;text-align:center;letter-spacing:.2em}
-[data-site=legis][data-design] .site-header nav{justify-content:center;flex-basis:100%;order:2;gap:42px}
-[data-site=legis][data-design] .site-header nav a{color:inherit}
-[data-site=legis][data-design] .law-issue{text-align:center;font-size:13px;letter-spacing:.14em;padding:28px}
-[data-site=legis][data-design] .law-paper{background:var(--card);border:1px solid var(--line);padding:40px 50px;max-width:860px;margin:auto}
-[data-site=legis][data-design] .law-paper h1{font-size:32px}
-[data-site=legis][data-design] .law-paper .ref-entry{border:0;padding:12px 0 28px}
-[data-site=legis][data-design] .law-paper .ref-entry h2{font:700 25px/1.5 var(--ref-serif)}
-[data-site=legis][data-design] .feed-results{background:var(--card);padding:20px 36px}
-[data-site=legis][data-design] .hero.compact{text-align:center}
-[data-site=legis][data-design] .prose{font-family:var(--ref-serif)}
-[data-site=legis][data-design] .home-directory{max-width:860px;margin:35px auto}
-@media(max-width:650px){[data-site=legis][data-design] .site-language-control{position:static;margin:12px auto 0!important}[data-site=legis][data-design] .law-paper{padding:24px 20px}[data-site=legis][data-design] .feed-results{padding:10px 20px}[data-site=legis][data-design] .site-header{padding:18px;min-height:0}[data-site=legis][data-design] .brand{font-size:23px}}
+/* 犀术智法 — law review in issues: ivory paper, navy-black ink, one oxblood
+   accent, serif throughout, double rules. This file is legis' single visual
+   source; the skin keeps only the same tokens. System fonts only. */
+body[data-site=legis][data-design]{
+  --paper:light-dark(#fbf9f4,#13151c);--card:light-dark(#fff,#1a1d25);--soft:light-dark(#f1ede3,#1e212a);
+  --ink:light-dark(#161b2e,#ece8df);--muted:light-dark(#5a5f6e,#a9adb8);--line:light-dark(#d8d3c7,#2d313c);
+  --accent:light-dark(#8b1e2d,#e0898f);
+  --serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;
+  background:var(--paper);color:var(--ink);font-family:var(--serif)}
+[data-site=legis][data-design] a:hover{color:var(--accent)}
+
+/* Masthead: centred brand between double rules. */
+[data-site=legis][data-design] .site-header{min-height:76px;border-bottom:3px double var(--ink)}
+[data-site=legis][data-design] .brand{font:700 24px/1.3 var(--serif);letter-spacing:.08em}
+[data-site=legis][data-design] .site-header nav{gap:22px;font:15px/1 var(--serif)}
+[data-site=legis][data-design] .site-header nav a[aria-current=page]{color:var(--accent);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px}
+
+[data-site=legis][data-design] .lx-label{display:flex;align-items:baseline;gap:12px;margin:0 0 18px;padding-bottom:10px;border-bottom:1px solid var(--ink);font:700 22px/1.3 var(--serif)}
+[data-site=legis][data-design] .lx-label span{font:500 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.24em;color:var(--muted)}
+[data-site=legis][data-design] .lx-section{display:inline-block;margin-bottom:8px;font:600 13px/1.4 var(--serif);letter-spacing:.12em;color:var(--accent)}
+[data-site=legis][data-design] .lx-more{font:600 14px/1.4 var(--serif);color:var(--accent)}
+
+/* Issue header. */
+[data-site=legis][data-design] .lx-issue{padding:46px 0 30px;text-align:center;border-bottom:1px solid var(--line)}
+[data-site=legis][data-design] .lx-kicker{margin:0 0 14px;font:500 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.3em;color:var(--muted)}
+[data-site=legis][data-design] .lx-issue h1{margin:0;font:900 clamp(40px,5.4vw,64px)/1.15 var(--serif);letter-spacing:.06em}
+[data-site=legis][data-design] .lx-date{margin:10px 0 0;font-size:16px;color:var(--muted);letter-spacing:.12em}
+[data-site=legis][data-design] .lx-motto{display:inline-block;margin:22px 0 0;padding:8px 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:17px;font-style:italic;letter-spacing:.08em}
+
+/* Current issue: lead with its picture at its own shape, then numbered entries. */
+[data-site=legis][data-design] .lx-current{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;padding:40px 0 52px;border-bottom:3px double var(--ink)}
+[data-site=legis][data-design] .lx-figure{display:block;aspect-ratio:var(--ar,1.5);overflow:hidden;margin-bottom:20px;background:var(--soft);border:1px solid var(--line)}
+[data-site=legis][data-design] .lx-figure img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+[data-site=legis][data-design] .lx-lead h2{margin:0 0 14px;font:800 clamp(26px,2.8vw,34px)/1.35 var(--serif)}
+[data-site=legis][data-design] .lx-lead p{margin:0 0 16px;font-size:17px;line-height:1.95;color:var(--muted)}
+[data-site=legis][data-design] .lx-entries{display:grid;align-content:start;border-top:2px solid var(--ink)}
+[data-site=legis][data-design] .lx-entry{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+[data-site=legis][data-design] .lx-no{font:300 30px/1 Georgia,var(--serif);color:var(--accent)}
+[data-site=legis][data-design] .lx-entry h3{margin:0 0 8px;font:700 20px/1.45 var(--serif)}
+[data-site=legis][data-design] .lx-entry p{margin:0;font-size:14px;line-height:1.85;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+
+/* Sections as dockets. */
+[data-site=legis][data-design] .lx-dockets{padding:44px 0 8px}
+[data-site=legis][data-design] .lx-dockets>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+[data-site=legis][data-design] .lx-docket{padding:0 20px 24px;border-left:1px solid var(--line)}
+[data-site=legis][data-design] .lx-docket:first-child{padding-left:0;border-left:0}
+[data-site=legis][data-design] .lx-docket h3{margin:4px 0 6px;font:800 20px/1.3 var(--serif)}
+[data-site=legis][data-design] .lx-docket>p{margin:0 0 14px;font-size:13px;line-height:1.7;color:var(--muted)}
+[data-site=legis][data-design] .lx-docket ol{margin:0 0 14px;padding:0;list-style:none;counter-reset:dk}
+[data-site=legis][data-design] .lx-docket li{counter-increment:dk;display:grid;grid-template-columns:22px minmax(0,1fr);gap:2px 6px;padding:10px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.55}
+[data-site=legis][data-design] .lx-docket li::before{content:counter(dk) ".";grid-row:span 2;font:600 13px/1.9 Georgia,var(--serif);color:var(--accent)}
+[data-site=legis][data-design] .lx-docket li time{font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+
+/* Past issues as a table of contents. */
+[data-site=legis][data-design] .lx-past{padding:44px 0 24px}
+[data-site=legis][data-design] .lx-past table{width:100%;border-collapse:collapse;margin-bottom:18px}
+[data-site=legis][data-design] .lx-past th{width:130px;padding:16px 16px 16px 0;vertical-align:top;text-align:left;font-weight:400}
+[data-site=legis][data-design] .lx-past th b{display:block;font:800 17px/1.4 var(--serif)}
+[data-site=legis][data-design] .lx-past th time{font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+[data-site=legis][data-design] .lx-past tr{border-top:1px solid var(--line)}
+[data-site=legis][data-design] .lx-past td{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;padding:16px 0}
+[data-site=legis][data-design] .lx-past td a{font-size:15px;line-height:1.55}
+[data-site=legis][data-design] .lx-past td span{margin-right:8px;font-size:12px;letter-spacing:.08em;color:var(--accent)}
+[data-site=legis][data-design] .lx-past~.home-directory{display:none}
+
+/* Listing pages: a ruled docket with a small whole picture on the right. */
+[data-site=legis][data-design] .content-feed h1,[data-site=legis][data-design] :is(.hero.compact,.ref-title) h1{font:900 40px/1.25 var(--serif);letter-spacing:.04em}
+[data-site=legis][data-design] .feed-filters a{font:15px/1.6 var(--serif)}
+[data-site=legis][data-design] .feed-filters a:is(.active,[aria-current]){color:var(--accent);font-weight:700}
+[data-site=legis][data-design] .feed-results{border-top:3px double var(--ink)}
+[data-site=legis][data-design] .feed-entry{display:grid;grid-template-columns:minmax(0,1fr) 168px;grid-template-areas:"meta cover" "title cover" "text cover";column-gap:28px;align-items:start;padding:24px 0}
+[data-site=legis][data-design] .feed-entry .entry-meta{grid-area:meta;font:600 13px/1.6 var(--serif);letter-spacing:.08em;color:var(--accent)}
+[data-site=legis][data-design] .feed-entry h2{grid-area:title;margin:6px 0 8px;font:800 22px/1.45 var(--serif)}
+[data-site=legis][data-design] .feed-entry p{grid-area:text;margin:0;font-size:15px;line-height:1.85;color:var(--muted)}
+[data-site=legis][data-design] .feed-cover{grid-area:cover;display:block;aspect-ratio:4/3;background:var(--soft);border:1px solid var(--line)}
+[data-site=legis][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Article pages: the category template keeps its accent; paper and ink follow the site. */
+body[data-site=legis][data-design]:has(.rssd-article),body[data-site=legis][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
+[data-site=legis][data-design] .rssd-article-heading h1{font-family:var(--serif);font-weight:800}
+
+[data-site=legis][data-design] footer{border-top:3px double var(--ink)}
+
+@media(max-width:900px){
+  [data-site=legis][data-design] .lx-current{grid-template-columns:1fr;gap:28px}
+  [data-site=legis][data-design] .lx-dockets>div{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
+  [data-site=legis][data-design] .lx-docket:nth-child(3){padding-left:0;border-left:0}
+}
+@media(max-width:650px){
+  [data-site=legis][data-design] .site-header nav{gap:14px;font-size:14px}
+  [data-site=legis][data-design] .lx-issue{padding:32px 0 24px}
+  [data-site=legis][data-design] .lx-dockets>div{grid-template-columns:1fr}
+  [data-site=legis][data-design] .lx-docket{padding:0 0 20px;border-left:0}
+  [data-site=legis][data-design] .lx-past th{width:92px}
+  [data-site=legis][data-design] .lx-past td{grid-template-columns:1fr}
+  [data-site=legis][data-design] .feed-entry{grid-template-columns:minmax(0,1fr) 96px;column-gap:16px}
+  [data-site=legis][data-design] .feed-entry h2{font-size:18px}
+  [data-site=legis][data-design] .content-feed h1{font-size:30px}
+}
