@@ -288,3 +288,6 @@ html[data-theme="dark"] .calendar-public .calendar-ribbon.is-scaled { color:var(
 .calendar-public .calendar-empty-month[open] .calendar-month-action::before { content:'收起 −'; }
 .calendar-public .calendar-empty-month[open] > summary { margin-bottom:10px; }
 @media (max-width:380px) { .calendar-public .calendar-empty-month > summary { gap:8px; padding-inline:8px; }.calendar-public .calendar-empty-month h2 small { display:none; } }
+
+/* Sections ｜ entrances: a thin divider between the two groups of the bar. */
+.site-header.app-bar .section-nav .nav-divider { flex:none; align-self:center; width:1px; height:1.1em; margin:0 8px; background:var(--cw-line-strong); }

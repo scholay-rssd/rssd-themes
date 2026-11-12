@@ -72,3 +72,7 @@ a { color:inherit; text-decoration:none; } a:hover { color:var(--seo-red); } .se
 .seo-footer .site-family{display:flex;justify-content:flex-end;gap:8px;margin:16px 0 0}
 .seo-footer .site-family a{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:#fff;font-weight:400}
 .seo-footer .site-family img{width:18px;height:18px;object-fit:contain;display:block}
+
+.about-page .about-body { max-width:42em; margin:0 0 56px; }
+.about-page .about-body p { margin:0 0 1.4em; font-size:17px; line-height:2; }
+.about-page .about-body strong { color:var(--seo-red); }
