@@ -40,16 +40,16 @@ export function referenceHome({site,records,sections,directory,pictureRatio=()=>
       // One tile per species: several articles can cover the same animal.
       const speciesName=r=>{const head=r.title.split(/[：:]/)[0].trim(),short=head.split('的')[0];return short.length>=2&&short.length<=8?short:head;},seen=new Set();
       const exotic=recent.filter(r=>r.collectionId==='exotic-pets'&&withPhoto(r)&&!seen.has(speciesName(r))&&seen.add(speciesName(r))).slice(0,8);
-      const story=(r,i)=>`<a class="pt-card" data-section="${esc(r.collectionId||'')}" style="--ar:${box(r)};order:${i}" href="${esc(r.route)}"><span class="pt-photo">${photo(r)}</span>${chip(r)}<h3>${esc(r.title)}</h3><p>${esc(blogExcerpt(r))}</p></a>`;
-      // Three columns filled in turn keep reading order across each row; on a
-      // phone the columns dissolve and the order property restores the list.
-      const masonry=Array.from({length:3},(_,c)=>`<div class="pt-col">${stories.map(story).filter((_,i)=>i%3===c).join('')}</div>`).join('');
+      // Gallery: each story is its picture at its own shape, in justified rows of
+      // three; chip, title and summary sit on a mask over the picture.
+      const story=r=>`<a class="pt-card" data-section="${esc(r.collectionId||'')}" style="--ar:${box(r)}" href="${esc(r.route)}">${photo(r)}<div class="pt-mask">${chip(r)}<h3>${esc(r.title)}</h3><p>${esc(blogExcerpt(r))}</p></div></a>`;
+      const gallery=[];for(let i=0;i<stories.length;i+=3)gallery.push(`<div class="pt-row">${stories.slice(i,i+3).map(story).join('')}</div>`);
       const tile=r=>`<a class="pt-tile" style="--ar:${box(r)}" href="${esc(r.route)}"><span class="pt-photo">${photo(r)}</span><b>${esc(speciesName(r))}</b></a>`;
       // Rows of four on wide screens, each made of two pairs that become their own rows on phones.
       const pair=list=>`<div class="pt-pair">${list.map(tile).join('')}</div>`;
       const rows=[];for(let i=0;i<exotic.length;i+=4)rows.push(`<div class="pt-row">${pair(exotic.slice(i,i+2))}${exotic.length>i+2?pair(exotic.slice(i+2,i+4)):''}</div>`);
       const exoticRoute=sections.find(s=>s.id==='exotic-pets')?.route||'/archive/';
-      return `<section class="pt-hero"><div class="pt-greeting"><p class="pt-kicker">🐾 ${esc(site.name)}</p><h1>${esc(site.slogan||site.name)}</h1><p>${esc(site.description||'')}</p></div><div class="pt-dailies">${daily(cat,'今日一猫')}${daily(dog,'今日一狗')}</div></section><nav class="pt-sections" aria-label="内容栏目">${sections.map(s=>`<a class="pt-section" data-section="${esc(s.id)}" href="${esc(s.route)}"><b>${esc(s.name)}</b><small>${esc(s.description||'')}</small><em>${count(s)} 篇</em></a>`).join('')}</nav><section class="pt-block" aria-labelledby="pt-latest"><div class="pt-head"><h2 id="pt-latest">最近的故事</h2><a href="/archive/">全部文章 →</a></div><div class="pt-masonry">${masonry}</div></section>${exotic.length?`<section class="pt-block" aria-labelledby="pt-exotic"><div class="pt-head"><h2 id="pt-exotic">异宠图鉴</h2><a href="${esc(exoticRoute)}">查看全部 →</a></div><div class="pt-tiles">${rows.join('')}</div></section>`:''}${directory}`;
+      return `<section class="pt-hero"><div class="pt-greeting"><p class="pt-kicker">🐾 ${esc(site.name)}</p><h1>${esc(site.slogan||site.name)}</h1><p>${esc(site.description||'')}</p></div><div class="pt-dailies">${daily(cat,'今日一猫')}${daily(dog,'今日一狗')}</div></section><nav class="pt-sections" aria-label="内容栏目">${sections.map(s=>`<a class="pt-section" data-section="${esc(s.id)}" href="${esc(s.route)}"><b>${esc(s.name)}</b><small>${esc(s.description||'')}</small><em>${count(s)} 篇</em></a>`).join('')}</nav><section class="pt-block" aria-labelledby="pt-latest"><div class="pt-head"><h2 id="pt-latest">最近的故事</h2><a href="/archive/">全部文章 →</a></div><div class="pt-gallery">${gallery.join('')}</div></section>${exotic.length?`<section class="pt-block" aria-labelledby="pt-exotic"><div class="pt-head"><h2 id="pt-exotic">异宠图鉴</h2><a href="${esc(exoticRoute)}">查看全部 →</a></div><div class="pt-tiles">${rows.join('')}</div></section>`:''}${directory}`;
     }
     case 'legis':return `<div class="law-issue">法律 · 科技 · 公共议题</div><section class="law-paper"><h1>法律观察</h1><p class="eyebrow">最新文章 / ARTICLES</p>${recent.slice(0,8).map(entry).join('')}<a href="/archive/">浏览全部法律资料 →</a></section>${directory}`;
     case 'metho':{
