@@ -1,18 +1,124 @@
-/* The Spruce Pets editorial lead and San Diego Zoo subject navigation. */
-body[data-site=pets][data-design]{--paper:light-dark(#fff,#17201e);--ink:light-dark(#192b2a,#e1eeea);--accent:light-dark(#356d72,#97cfd0);--soft:light-dark(#eef4ed,#24322e);--line:light-dark(#d9e3db,#3b4c44);--muted:light-dark(#5e7169,#afc5bb)}
-[data-site=pets][data-design] .brand{font-family:var(--ref-serif);font-size:28px}
-[data-site=pets][data-design] .pet-lead{position:relative;min-height:470px;display:flex;justify-content:flex-end;background:var(--soft);margin-bottom:40px}
-[data-site=pets][data-design] .pet-lead>.ref-cover{width:73%;height:470px}
-[data-site=pets][data-design] .pet-lead>div{position:absolute;left:0;top:35px;width:40%;padding:30px;background:var(--paper);box-shadow:0 2px 10px #263e2b10}
-[data-site=pets][data-design] .pet-lead h1{font:500 34px/1.4 var(--ref-serif);margin:14px 0}
-[data-site=pets][data-design] .pet-lead p{font-size:14px;line-height:1.8;color:var(--muted)}
-[data-site=pets][data-design] .ref-card h2,[data-site=pets][data-design] .feed-entry h2{font-family:var(--ref-serif)}
+/* 小猪萌宠 — picture almanac: warm cream page, cocoa ink, rounded photo cards,
+   one colour per section (matching each category's article accent). This file
+   is pets' single visual source; the skin keeps only the same tokens.
+   System fonts only: web fonts are slow or blocked for many readers in China. */
+body[data-site=pets][data-design]{
+  --paper:light-dark(#fffaf3,#1b1511);--card:light-dark(#fff,#241c16);--soft:light-dark(#fbeedd,#2e241c);
+  --ink:light-dark(#2e2118,#f6ece2);--muted:light-dark(#6e5b4b,#c7b4a3);--line:light-dark(#f0e1cc,#3a2e24);
+  --accent:light-dark(#b5501a,#ffab73);
+  --cat:light-dark(#b4532a,#ff9d70);--dog:light-dark(#3f7a52,#8fd3a3);--exotic:light-dark(#6a4fa3,#c3a8ff);--news:light-dark(#2f6690,#8cc4ef);
+  --round:ui-rounded,"SF Pro Rounded","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);color:var(--ink);font-family:var(--round)}
+[data-site=pets][data-design] [data-section]{--sec:var(--accent)}
+[data-site=pets][data-design] [data-section=daily-cat]{--sec:var(--cat)}
+[data-site=pets][data-design] [data-section=daily-dog]{--sec:var(--dog)}
+[data-site=pets][data-design] [data-section=exotic-pets]{--sec:var(--exotic)}
+[data-site=pets][data-design] [data-section=pet-news]{--sec:var(--news)}
+[data-site=pets][data-design] a:hover{color:inherit}
+
+/* Header: rounded brand and pill navigation. */
+[data-site=pets][data-design] .site-header{min-height:80px;border-bottom:0}
+[data-site=pets][data-design] .brand{font:800 24px/1.2 var(--round);letter-spacing:.01em}
+[data-site=pets][data-design] .brand .site-logo,[data-site=pets][data-design] .brand .brand-monogram{border-radius:50%}
+[data-site=pets][data-design] .site-header nav{gap:6px;font-size:14px}
+[data-site=pets][data-design] .site-header nav a{padding:8px 16px;border-radius:999px;font-weight:700}
+[data-site=pets][data-design] .site-header nav a:hover{background:var(--soft)}
+[data-site=pets][data-design] .site-header nav a[aria-current=page]{background:var(--ink);color:var(--paper);text-decoration:none}
+[data-site=pets][data-design] .site-header nav a.github-mark{background:none}
+
+/* Shared pieces. */
+[data-site=pets][data-design] .pt-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--sec) 13%,var(--card));color:var(--sec);font:700 12px/1.2 var(--round);letter-spacing:.02em}
+[data-site=pets][data-design] .pt-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sec)}
+[data-site=pets][data-design] .pt-photo{display:block;overflow:hidden;border-radius:18px;background:var(--soft)}
+/* Published pictures end in a site-name band; crops on the home page leave it out. */
+[data-site=pets][data-design] .pt-photo img{display:block;width:100%;height:105%;object-fit:cover;object-position:center top;transition:transform .35s ease}
+[data-site=pets][data-design] a:hover .pt-photo img,[data-site=pets][data-design] .pt-daily:hover img{transform:scale(1.04)}
+
+/* Home: greeting and today's cat and dog. */
+[data-site=pets][data-design] .pt-hero{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:center;padding:40px 0 48px}
+[data-site=pets][data-design] .pt-kicker{display:inline-block;margin:0 0 20px;padding:7px 14px;border-radius:999px;background:var(--soft);color:var(--accent);font:800 13px/1 var(--round)}
+[data-site=pets][data-design] .pt-greeting h1{margin:0 0 18px;font:800 clamp(34px,4.4vw,54px)/1.18 var(--round);letter-spacing:-.01em}
+[data-site=pets][data-design] .pt-greeting p:last-child{margin:0;max-width:24em;font-size:17px;line-height:1.85;color:var(--muted)}
+[data-site=pets][data-design] .pt-dailies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+[data-site=pets][data-design] .pt-daily{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:28px;background:var(--soft);color:#fff;box-shadow:0 18px 40px -24px rgba(46,33,24,.55)}
+[data-site=pets][data-design] .pt-daily:hover{color:#fff;text-decoration:none}
+[data-site=pets][data-design] .pt-daily img{position:absolute;inset:0 0 auto;width:100%;height:105%;object-fit:cover;object-position:center top;transition:transform .35s ease}
+[data-site=pets][data-design] .pt-daily>div{position:absolute;inset:auto 0 0;padding:70px 20px 20px;background:linear-gradient(transparent,rgba(20,12,6,.78))}
+[data-site=pets][data-design] .pt-daily .pt-chip{background:#fff;color:var(--sec)}
+[data-site=pets][data-design] .pt-daily h2{margin:12px 0 6px;font:800 21px/1.4 var(--round);color:#fff}
+[data-site=pets][data-design] .pt-daily time{font-size:12px;opacity:.85}
+
+/* Home: sections as coloured cards. */
+[data-site=pets][data-design] .pt-sections{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 56px;padding:0;border:0}
+[data-site=pets][data-design] .pt-section{display:grid;gap:6px;padding:20px 20px 18px;border-radius:22px;background:color-mix(in srgb,var(--sec) 9%,var(--card));border:1px solid color-mix(in srgb,var(--sec) 22%,transparent);color:inherit;transition:transform .15s ease}
+[data-site=pets][data-design] .pt-section:hover{transform:translateY(-3px);text-decoration:none}
+[data-site=pets][data-design] .pt-section b{font:800 18px/1.3 var(--round);color:var(--sec)}
+[data-site=pets][data-design] .pt-section small{font-size:13px;line-height:1.6;color:var(--muted)}
+[data-site=pets][data-design] .pt-section em{font:700 12px/1.4 var(--round);font-style:normal;color:var(--sec)}
+
+/* Home: latest stories and the exotic pets picture index. */
+[data-site=pets][data-design] .pt-block{margin:0 0 56px}
+[data-site=pets][data-design] .pt-head{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 20px}
+[data-site=pets][data-design] .pt-head h2{margin:0;font:800 26px/1.3 var(--round)}
+[data-site=pets][data-design] .pt-head a{font-weight:700;color:var(--accent)}
+[data-site=pets][data-design] .pt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+[data-site=pets][data-design] .pt-card{display:grid;align-content:start;gap:10px;padding:10px 10px 20px;border-radius:24px;background:var(--card);color:inherit;box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(46,33,24,.6)}
+[data-site=pets][data-design] .pt-card:hover{text-decoration:none}
+[data-site=pets][data-design] .pt-card .pt-photo{aspect-ratio:4/3;margin-bottom:6px}
+[data-site=pets][data-design] .pt-photo:empty{display:grid;place-items:center;background:color-mix(in srgb,var(--sec,var(--accent)) 10%,var(--soft))}
+[data-site=pets][data-design] .pt-photo:empty::after{content:"🐾";font-size:42px;opacity:.55}
+[data-site=pets][data-design] .pt-card .pt-chip{justify-self:start;margin:0 8px}
+[data-site=pets][data-design] .pt-card h3{margin:0 8px;font:800 18px/1.45 var(--round)}
+[data-site=pets][data-design] .pt-card p{margin:0 8px;font-size:14px;line-height:1.75;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+[data-site=pets][data-design] .pt-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+[data-site=pets][data-design] .pt-tile{display:grid;gap:10px;justify-items:center;text-align:center;color:inherit}
+[data-site=pets][data-design] .pt-tile:hover{text-decoration:none;color:var(--exotic)}
+[data-site=pets][data-design] .pt-tile .pt-photo{width:100%;aspect-ratio:1;border-radius:32px;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+[data-site=pets][data-design] .pt-tile b{font:800 15px/1.4 var(--round)}
+[data-site=pets][data-design] .pt-block~.home-directory{display:none}
+
+/* Listing pages: photo cards. */
+[data-site=pets][data-design] .content-feed h1,[data-site=pets][data-design] :is(.hero.compact,.ref-title) h1{font:800 40px/1.25 var(--round)}
 [data-site=pets][data-design] .feed-layout{display:block}
-[data-site=pets][data-design] .feed-sidebar{position:static;margin-bottom:22px}
-[data-site=pets][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px}
+[data-site=pets][data-design] .feed-sidebar{position:static;margin-bottom:24px}
+[data-site=pets][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px}
+[data-site=pets][data-design] .feed-filters a{padding:7px 14px;border-radius:999px;background:var(--soft);font-weight:700;font-size:14px}
+[data-site=pets][data-design] .feed-filters a:is(.active,[aria-current]){background:var(--ink);color:var(--paper)}
 [data-site=pets][data-design] #feed-search-form{max-width:480px}
-[data-site=pets][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-[data-site=pets][data-design] .feed-cover{display:block;margin-bottom:20px}
-[data-site=pets][data-design] .feed-entry{border:0}
-@media(max-width:850px){[data-site=pets][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}[data-site=pets][data-design] .pet-lead>div{width:47%}}
-@media(max-width:650px){[data-site=pets][data-design] .pet-lead{display:block;min-height:0}[data-site=pets][data-design] .pet-lead>.ref-cover{width:100%;height:250px}[data-site=pets][data-design] .pet-lead>div{position:relative;top:0;width:92%;margin:-35px auto 0;padding:22px}[data-site=pets][data-design] .pet-lead h1{font-size:28px}[data-site=pets][data-design] #feed-entries{grid-template-columns:1fr}}
+[data-site=pets][data-design] #feed-search{border-radius:999px}
+[data-site=pets][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+[data-site=pets][data-design] .feed-entry{display:grid;align-content:start;gap:8px;padding:10px 10px 18px;border:0;border-radius:24px;background:var(--card);box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(46,33,24,.6)}
+[data-site=pets][data-design] .feed-entry>:not(.feed-cover){margin-left:8px;margin-right:8px}
+[data-site=pets][data-design] .feed-cover{display:block;overflow:hidden;border-radius:18px;aspect-ratio:4/3;background:var(--soft)}
+[data-site=pets][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:cover}
+[data-site=pets][data-design] .feed-entry .entry-meta{font-size:12px;font-weight:700;color:var(--accent)}
+[data-site=pets][data-design] .feed-entry h2{margin:0;font:800 18px/1.45 var(--round)}
+[data-site=pets][data-design] .feed-entry p{margin:0;font-size:14px;line-height:1.75;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+
+/* Article pages: the category template keeps its accent; paper and ink follow the site. */
+body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
+[data-site=pets][data-design] .rssd-article{border-radius:28px}
+[data-site=pets][data-design] .rssd-article-heading h1{font-family:var(--round);font-weight:800}
+[data-site=pets][data-design] .rssd-article .article-body img{border-radius:16px}
+
+[data-site=pets][data-design] footer{border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  [data-site=pets][data-design] .pt-hero{grid-template-columns:1fr;gap:28px;padding:24px 0 36px}
+  [data-site=pets][data-design] .pt-sections{grid-template-columns:repeat(2,minmax(0,1fr))}
+  [data-site=pets][data-design] :is(.pt-grid,#feed-entries){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  [data-site=pets][data-design] .site-header nav a{padding:6px 11px}
+  [data-site=pets][data-design] .pt-dailies{gap:12px}
+  [data-site=pets][data-design] .pt-daily{border-radius:22px}
+  [data-site=pets][data-design] .pt-daily>div{padding:50px 14px 14px}
+  [data-site=pets][data-design] .pt-daily h2{font-size:16px}
+  [data-site=pets][data-design] .pt-sections{gap:10px;margin-bottom:40px}
+  [data-site=pets][data-design] .pt-section{padding:16px}
+  [data-site=pets][data-design] .pt-section small{display:none}
+  [data-site=pets][data-design] :is(.pt-grid,#feed-entries){grid-template-columns:1fr}
+  [data-site=pets][data-design] .pt-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  [data-site=pets][data-design] .content-feed h1{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){[data-site=pets][data-design] :is(.pt-photo img,.pt-daily img,.pt-section){transition:none}}
