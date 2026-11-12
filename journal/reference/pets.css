@@ -30,8 +30,10 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .pt-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--sec) 13%,var(--card));color:var(--sec);font:700 12px/1.2 var(--round);letter-spacing:.02em}
 [data-site=pets][data-design] .pt-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sec)}
 [data-site=pets][data-design] .pt-photo{display:block;overflow:hidden;border-radius:18px;background:var(--soft)}
-/* Published pictures end in a site-name band; crops on the home page leave it out. */
-[data-site=pets][data-design] .pt-photo img{display:block;width:100%;height:105%;object-fit:cover;object-position:center top;transition:transform .35s ease}
+/* Boxes take each picture's own shape (--ar, set by the template from the real
+   size) minus the site-name band at the foot of published pictures, so only
+   that band is trimmed. */
+[data-site=pets][data-design] .pt-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s ease}
 [data-site=pets][data-design] a:hover .pt-photo img,[data-site=pets][data-design] .pt-daily:hover img{transform:scale(1.04)}
 
 /* Home: greeting and today's cat and dog. */
@@ -39,10 +41,10 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .pt-kicker{display:inline-block;margin:0 0 20px;padding:7px 14px;border-radius:999px;background:var(--soft);color:var(--accent);font:800 13px/1 var(--round)}
 [data-site=pets][data-design] .pt-greeting h1{margin:0 0 18px;font:800 clamp(34px,4.4vw,54px)/1.18 var(--round);letter-spacing:-.01em}
 [data-site=pets][data-design] .pt-greeting p:last-child{margin:0;max-width:24em;font-size:17px;line-height:1.85;color:var(--muted)}
-[data-site=pets][data-design] .pt-dailies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-[data-site=pets][data-design] .pt-daily{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:28px;background:var(--soft);color:#fff;box-shadow:0 18px 40px -24px rgba(46,33,24,.55)}
+[data-site=pets][data-design] .pt-dailies{display:flex;gap:18px;align-items:flex-start}
+[data-site=pets][data-design] .pt-daily{position:relative;display:block;flex:var(--ar,1) 1 0;min-width:0;aspect-ratio:var(--ar,1);overflow:hidden;border-radius:28px;background:var(--soft);color:#fff;box-shadow:0 18px 40px -24px rgba(46,33,24,.55)}
 [data-site=pets][data-design] .pt-daily:hover{color:#fff;text-decoration:none}
-[data-site=pets][data-design] .pt-daily img{position:absolute;inset:0 0 auto;width:100%;height:105%;object-fit:cover;object-position:center top;transition:transform .35s ease}
+[data-site=pets][data-design] .pt-daily img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s ease}
 [data-site=pets][data-design] .pt-daily>div{position:absolute;inset:auto 0 0;padding:70px 20px 20px;background:linear-gradient(transparent,rgba(20,12,6,.78))}
 [data-site=pets][data-design] .pt-daily .pt-chip{background:#fff;color:var(--sec)}
 [data-site=pets][data-design] .pt-daily h2{margin:12px 0 6px;font:800 21px/1.4 var(--round);color:#fff}
@@ -61,19 +63,22 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .pt-head{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 20px}
 [data-site=pets][data-design] .pt-head h2{margin:0;font:800 26px/1.3 var(--round)}
 [data-site=pets][data-design] .pt-head a{font-weight:700;color:var(--accent)}
-[data-site=pets][data-design] .pt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-[data-site=pets][data-design] .pt-card{display:grid;align-content:start;gap:10px;padding:10px 10px 20px;border-radius:24px;background:var(--card);color:inherit;box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(46,33,24,.6)}
-[data-site=pets][data-design] .pt-card:hover{text-decoration:none}
-[data-site=pets][data-design] .pt-card .pt-photo{aspect-ratio:4/3;margin-bottom:6px}
-[data-site=pets][data-design] .pt-photo:empty{display:grid;place-items:center;background:color-mix(in srgb,var(--sec,var(--accent)) 10%,var(--soft))}
-[data-site=pets][data-design] .pt-photo:empty::after{content:"🐾";font-size:42px;opacity:.55}
-[data-site=pets][data-design] .pt-card .pt-chip{justify-self:start;margin:0 8px}
-[data-site=pets][data-design] .pt-card h3{margin:0 8px;font:800 18px/1.45 var(--round)}
-[data-site=pets][data-design] .pt-card p{margin:0 8px;font-size:14px;line-height:1.75;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
-[data-site=pets][data-design] .pt-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-[data-site=pets][data-design] .pt-tile{display:grid;gap:10px;justify-items:center;text-align:center;color:inherit}
+[data-site=pets][data-design] .pt-gallery{display:grid;gap:18px}
+[data-site=pets][data-design] .pt-card{position:relative;display:block;flex:var(--ar,1.33) 1 0;min-width:0;aspect-ratio:var(--ar,1.33);overflow:hidden;border-radius:22px;background:color-mix(in srgb,var(--sec,var(--accent)) 14%,var(--soft));color:#fff;box-shadow:0 14px 30px -24px rgba(46,33,24,.6)}
+[data-site=pets][data-design] .pt-card:hover{color:#fff;text-decoration:none}
+[data-site=pets][data-design] .pt-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s ease}
+[data-site=pets][data-design] .pt-card:hover>img{transform:scale(1.04)}
+[data-site=pets][data-design] .pt-card:not(:has(img))::before{content:"🐾";position:absolute;top:22%;left:50%;transform:translateX(-50%);font-size:44px;opacity:.5}
+[data-site=pets][data-design] .pt-mask{position:absolute;inset:auto 0 0;display:grid;justify-items:start;gap:6px;padding:56px 16px 16px;background:linear-gradient(transparent,rgba(20,12,6,.82))}
+[data-site=pets][data-design] .pt-mask .pt-chip{background:#fff}
+[data-site=pets][data-design] .pt-mask h3{margin:0;font:800 17px/1.4 var(--round);color:#fff;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+[data-site=pets][data-design] .pt-mask p{margin:0;font-size:13px;line-height:1.6;color:rgba(255,255,255,.85);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+[data-site=pets][data-design] .pt-tiles{display:grid;gap:22px}
+[data-site=pets][data-design] .pt-row{display:flex;gap:18px;align-items:flex-start}
+[data-site=pets][data-design] .pt-pair{display:contents}
+[data-site=pets][data-design] .pt-tile{display:grid;gap:10px;justify-items:center;flex:var(--ar,1) 1 0;min-width:0;text-align:center;color:inherit}
 [data-site=pets][data-design] .pt-tile:hover{text-decoration:none;color:var(--exotic)}
-[data-site=pets][data-design] .pt-tile .pt-photo{width:100%;aspect-ratio:1;border-radius:32px;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+[data-site=pets][data-design] .pt-tile .pt-photo{width:100%;aspect-ratio:var(--ar,1);border-radius:24px;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line)}
 [data-site=pets][data-design] .pt-tile b{font:800 15px/1.4 var(--round)}
 [data-site=pets][data-design] .pt-block~.home-directory{display:none}
 
@@ -90,7 +95,8 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .feed-entry{display:grid;align-content:start;gap:8px;padding:10px 10px 18px;border:0;border-radius:24px;background:var(--card);box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(46,33,24,.6)}
 [data-site=pets][data-design] .feed-entry>:not(.feed-cover){margin-left:8px;margin-right:8px}
 [data-site=pets][data-design] .feed-cover{display:block;overflow:hidden;border-radius:18px;aspect-ratio:4/3;background:var(--soft)}
-[data-site=pets][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:cover}
+/* Listings keep a chronological grid, so pictures sit whole inside the box. */
+[data-site=pets][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:contain}
 [data-site=pets][data-design] .feed-entry .entry-meta{font-size:12px;font-weight:700;color:var(--accent)}
 [data-site=pets][data-design] .feed-entry h2{margin:0;font:800 18px/1.45 var(--round)}
 [data-site=pets][data-design] .feed-entry p{margin:0;font-size:14px;line-height:1.75;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
@@ -106,7 +112,7 @@ body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-d
 @media(max-width:900px){
   [data-site=pets][data-design] .pt-hero{grid-template-columns:1fr;gap:28px;padding:24px 0 36px}
   [data-site=pets][data-design] .pt-sections{grid-template-columns:repeat(2,minmax(0,1fr))}
-  [data-site=pets][data-design] :is(.pt-grid,#feed-entries){grid-template-columns:repeat(2,minmax(0,1fr))}
+  [data-site=pets][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:650px){
   [data-site=pets][data-design] .site-header nav a{padding:6px 11px}
@@ -117,8 +123,14 @@ body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-d
   [data-site=pets][data-design] .pt-sections{gap:10px;margin-bottom:40px}
   [data-site=pets][data-design] .pt-section{padding:16px}
   [data-site=pets][data-design] .pt-section small{display:none}
-  [data-site=pets][data-design] :is(.pt-grid,#feed-entries){grid-template-columns:1fr}
-  [data-site=pets][data-design] .pt-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  [data-site=pets][data-design] #feed-entries{grid-template-columns:1fr}
+  [data-site=pets][data-design] .pt-gallery .pt-row{flex-direction:column}
+  [data-site=pets][data-design] .pt-card{flex:none;width:100%}
+  [data-site=pets][data-design] .pt-dailies{gap:12px}
+  [data-site=pets][data-design] .pt-row{display:grid;gap:22px}
+  [data-site=pets][data-design] .pt-pair{display:flex;gap:14px;align-items:flex-start}
+  [data-site=pets][data-design] .pt-dailies{flex-direction:column;align-items:stretch}
+  [data-site=pets][data-design] .pt-daily{flex:none;width:100%}
   [data-site=pets][data-design] .content-feed h1{font-size:30px}
 }
 @media(prefers-reduced-motion:reduce){[data-site=pets][data-design] :is(.pt-photo img,.pt-daily img,.pt-section){transition:none}}
