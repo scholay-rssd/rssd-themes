@@ -1,30 +1,3 @@
-/* 犀术智法 — law review after CourtListener: navy masthead, serif, docket cards. */
-body[data-skin=legis]{--paper:light-dark(#fbfaf7,#171a20);--ink:light-dark(#16202e,#e9edf3);--muted:light-dark(#4c5868,#a9b3c2);--line:light-dark(#d9d5cb,#323a47);--soft:light-dark(#f1eee6,#212630);--card:light-dark(#fff,#1d222b);--accent:light-dark(#22344d,#9db7d9);--red:light-dark(#8a2b2b,#e59a92);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;font-family:var(--serif)}
-[data-skin=legis] .site-header{width:100%;max-width:none;padding-inline:max(32px,calc((100% - 1160px)/2));background:#22344d;color:#f4f1ea;border:0;min-height:68px}
-[data-skin=legis] .site-header a,[data-skin=legis] .site-header nav a,[data-skin=legis] .brand small{color:#f4f1ea}
-[data-skin=legis] .site-header .brand small{color:#c3cfde}
-[data-skin=legis] .site-header nav a:hover{color:#fff;text-decoration:underline}
-[data-skin=legis] .site-header nav a[aria-current=page]{color:#fff}
-[data-skin=legis] .brand{font-family:var(--serif);letter-spacing:.06em}
-[data-skin=legis] :is(main,footer){width:min(1160px,100% - 64px)}
-[data-skin=legis] .blog-intro{display:block;text-align:center;padding:64px 0 40px;border-bottom:1px solid var(--ink)}
-[data-skin=legis] .blog-emblem{display:none}
-[data-skin=legis] .eyebrow{font-family:system-ui,sans-serif;font-weight:600;letter-spacing:.24em;color:var(--red)}
-[data-skin=legis] h1{font-family:var(--serif);font-weight:900;margin-inline:auto;max-width:14em}
-[data-skin=legis] .blog-slogan{margin-inline:auto}
-[data-skin=legis] .hero-links{justify-content:center}
-[data-skin=legis] .home-layout{display:block;margin-top:36px}
-[data-skin=legis] .home-directory{display:none}
-[data-skin=legis] .section-heading h2{font-family:system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;color:var(--muted)}
-[data-skin=legis] .entries{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;align-items:start}
-[data-skin=legis] .entry{padding:22px 24px;border:1px solid var(--line);border-top:3px solid var(--red);border-radius:0;background:var(--card)}
-[data-skin=legis] .entry:nth-child(3n+2){border-top-color:var(--accent)}
-[data-skin=legis] .entry h3{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.45}
-[data-skin=legis] .entry-meta{font-family:system-ui,sans-serif;font-size:12px}
-[data-skin=legis] .entry p{font-family:system-ui,"PingFang SC",sans-serif;font-size:14px;line-height:1.85}
-[data-skin=legis] .feed-entry{padding:20px 24px;margin-bottom:14px;border:1px solid var(--line);border-top:3px solid var(--red);background:var(--card)}
-[data-skin=legis] .feed-entry h2{font-family:var(--serif);font-size:21px}
-[data-skin=legis] .prose{font-family:var(--serif);font-size:18px;line-height:2}
-[data-skin=legis] .prose :is(h1,h2,h3){font-family:var(--serif)}
-[data-skin=legis] .fact-sheet{border-radius:0}
-@media(max-width:650px){[data-skin=legis] :is(main,footer){width:calc(100% - 40px)}[data-skin=legis] .site-header{padding-inline:20px}[data-skin=legis] .entries{grid-template-columns:1fr}}
+/* 犀术智法 — tokens only. The design lives in reference/legis.css, which every
+   legis page loads last; keeping one source stops the two layers disagreeing. */
+body[data-skin=legis]{--paper:light-dark(#fbf9f4,#13151c);--card:light-dark(#fff,#1a1d25);--soft:light-dark(#f1ede3,#1e212a);--ink:light-dark(#161b2e,#ece8df);--muted:light-dark(#5a5f6e,#a9adb8);--line:light-dark(#d8d3c7,#2d313c);--accent:light-dark(#8b1e2d,#e0898f);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;font-family:var(--serif)}
