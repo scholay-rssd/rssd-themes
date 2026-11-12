@@ -1,19 +1,120 @@
-/* Seeing Theory chapter hierarchy and Observable's quiet reading column. */
-body[data-site=metho][data-design]{--paper:light-dark(#fff,#151b20);--ink:light-dark(#2c2d34,#e4e9ef);--accent:light-dark(#4b7990,#a3c9df);--soft:light-dark(#f1f3f7,#222e38);--line:light-dark(#dce1e7,#35424d);--muted:light-dark(#63717e,#aebdc9)}
-[data-site=metho][data-design] h1,[data-site=metho][data-design] .feed-entry h2{font-family:inherit}
-[data-site=metho][data-design] .method-feature{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:60px 0}
-[data-site=metho][data-design] .method-feature h1{font:600 48px/1.28 system-ui,sans-serif;letter-spacing:-.04em}
-[data-site=metho][data-design] .method-feature p{font-size:17px;color:var(--muted);max-width:520px}
-[data-site=metho][data-design] .method-feature .eyebrow{font-size:11px}
-[data-site=metho][data-design] .ref-button{border-radius:24px;margin-top:12px}
-[data-site=metho][data-design] .method-example{background:var(--soft);padding:20px}
-[data-site=metho][data-design] .method-example img{height:280px;object-fit:contain}
-[data-site=metho][data-design] .method-example span{display:block;font-size:13px;line-height:1.7;text-align:center;margin-top:14px}
-[data-site=metho][data-design] .method-chapter{display:flex;gap:30px;align-items:center;padding:30px 0;border-top:1px solid var(--line)}
-[data-site=metho][data-design] .method-chapter>strong{font:400 55px/1.2 Georgia,serif;color:var(--accent);opacity:.6}
-[data-site=metho][data-design] .method-chapter h3{font-size:25px;margin:0 0 8px}
-[data-site=metho][data-design] .method-chapter p{font-size:14px;color:var(--muted);margin:0}
-[data-site=metho][data-design] .method-chapter>span{margin-left:auto;flex-shrink:0;font-size:12px;color:var(--muted)}
-[data-site=metho][data-design] .method-chapters~.home-directory{display:none}
-[data-site=metho][data-design] .prose h2{font-family:inherit;font-size:27px}
-@media(max-width:650px){[data-site=metho][data-design] .method-feature{grid-template-columns:1fr;gap:24px;padding:30px 0}[data-site=metho][data-design] .method-feature h1{font-size:37px}[data-site=metho][data-design] .method-example img{height:210px}[data-site=metho][data-design] .method-chapter{gap:16px}[data-site=metho][data-design] .method-chapter>strong{font-size:38px}[data-site=metho][data-design] .method-chapter h3{font-size:21px}}
+/* 研究方法 — lab notebook: graph paper, black ink, one highlighter.
+   This file is metho's single visual source. The skin keeps only the same
+   tokens so pages without the reference layer agree with it. System fonts only:
+   web fonts are slow or blocked for many readers in China. */
+body[data-site=metho][data-design]{
+  --paper:light-dark(#fbfaf6,#121417);--card:light-dark(#fff,#181b1f);--soft:light-dark(#f2efe6,#1b1e22);
+  --ink:light-dark(#15181c,#eceae4);--muted:light-dark(#5b6068,#a7abb2);--line:light-dark(#dcd8cd,#2c3036);
+  --accent:light-dark(#8a5a00,#ffd84d);--mark:light-dark(#ffd84d,rgba(255,216,77,.3));--grid:light-dark(rgba(21,24,28,.055),rgba(236,234,228,.05));
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;
+  background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+[data-site=metho][data-design] ::selection{background:var(--mark);color:#15181c}
+[data-site=metho][data-design] a:hover{color:inherit;text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:.35em;text-underline-offset:-.15em;text-decoration-skip-ink:none}
+
+/* Header: a ruled masthead with mono navigation. */
+[data-site=metho][data-design] .site-header{min-height:72px;border-bottom:2px solid var(--ink)}
+[data-site=metho][data-design] .brand{font:700 21px/1.2 var(--serif);letter-spacing:.02em}
+[data-site=metho][data-design] .site-header nav{gap:4px;font:500 13px/1 var(--mono);letter-spacing:.04em}
+[data-site=metho][data-design] .site-header nav a{padding:8px 10px;border-radius:2px}
+[data-site=metho][data-design] .site-header nav a[aria-current=page]{background:var(--ink);color:var(--paper);text-decoration:none}
+[data-site=metho][data-design] .site-header nav a.github-mark{background:none}
+
+/* Shared labels. */
+[data-site=metho][data-design] .mx-label{display:flex;align-items:baseline;gap:12px;margin:0 0 22px;font:700 22px/1.3 var(--serif);letter-spacing:.02em}
+[data-site=metho][data-design] .mx-label span{font:500 11px/1 var(--mono);letter-spacing:.18em;color:var(--muted)}
+[data-site=metho][data-design] mark{background:linear-gradient(transparent 52%,var(--mark) 52%,var(--mark) 92%,transparent 92%);color:inherit;padding:0 .04em}
+
+/* Home: hero on graph paper. */
+[data-site=metho][data-design] .mx-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;padding:72px 0 64px;border-bottom:1px solid var(--line)}
+[data-site=metho][data-design] .mx-hero::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;background-position:center top;mask-image:linear-gradient(#000 60%,transparent)}
+[data-site=metho][data-design] .mx-kicker{display:flex;align-items:center;gap:12px;margin:0 0 26px;font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--muted)}
+[data-site=metho][data-design] .mx-kicker span{padding:5px 8px;background:var(--ink);color:var(--paper);letter-spacing:.2em}
+[data-site=metho][data-design] .mx-hero h1{margin:0 0 24px;font:900 clamp(40px,5.6vw,68px)/1.18 var(--serif);letter-spacing:-.02em}
+[data-site=metho][data-design] .mx-lede{max-width:30em;margin:0 0 32px;font-size:18px;line-height:1.85;color:var(--muted)}
+[data-site=metho][data-design] .mx-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;font-size:15px}
+[data-site=metho][data-design] .mx-button{display:inline-flex;align-items:center;padding:13px 26px;background:var(--ink);color:var(--paper);font-weight:600;border-radius:2px;box-shadow:4px 4px 0 var(--mark);transition:transform .15s ease,box-shadow .15s ease}
+[data-site=metho][data-design] .mx-button:hover{color:var(--paper);text-decoration:none;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--mark)}
+[data-site=metho][data-design] .mx-stats{display:flex;gap:0;margin:44px 0 0;border-top:1px solid var(--ink)}
+[data-site=metho][data-design] .mx-stats div{flex:1;padding:14px 16px 0 0}
+[data-site=metho][data-design] .mx-stats div+div{padding-left:16px;border-left:1px solid var(--line)}
+[data-site=metho][data-design] .mx-stats dt{font:500 11px/1.4 var(--mono);letter-spacing:.12em;color:var(--muted)}
+[data-site=metho][data-design] .mx-stats dd{margin:6px 0 0;font:600 26px/1.2 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+[data-site=metho][data-design] .mx-stats div:last-child dd{font-size:17px;padding-top:7px}
+[data-site=metho][data-design] .mx-figure{display:block;color:inherit}
+[data-site=metho][data-design] .mx-figure:hover{text-decoration:none}
+[data-site=metho][data-design] .mx-figure figure{margin:0;padding:14px;background:var(--card);border:1px solid var(--ink);box-shadow:10px 10px 0 var(--soft)}
+[data-site=metho][data-design] .mx-figure img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;background:var(--soft)}
+[data-site=metho][data-design] .mx-figure figcaption{display:grid;gap:6px;padding:14px 2px 2px;font-size:15px;line-height:1.6}
+[data-site=metho][data-design] .mx-figure figcaption span{font:500 11px/1.4 var(--mono);letter-spacing:.12em;color:var(--accent)}
+[data-site=metho][data-design] .mx-figure:hover strong{text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:.35em;text-underline-offset:-.15em;text-decoration-skip-ink:none}
+
+/* Home: numbered table of contents. */
+[data-site=metho][data-design] .mx-contents{padding:56px 0 8px}
+[data-site=metho][data-design] .mx-contents ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin:0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+[data-site=metho][data-design] .mx-contents li{border-bottom:1px solid var(--line)}
+[data-site=metho][data-design] .mx-contents a{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"num name count" "num note note";gap:4px 14px;height:100%;padding:22px 18px 22px 0;color:inherit}
+[data-site=metho][data-design] .mx-contents a:hover{text-decoration:none;background:linear-gradient(90deg,var(--soft),transparent)}
+[data-site=metho][data-design] .mx-num{grid-area:num;font:600 30px/1 var(--mono);color:var(--accent);font-variant-numeric:tabular-nums}
+[data-site=metho][data-design] .mx-contents strong{grid-area:name;font:700 19px/1.4 var(--serif)}
+[data-site=metho][data-design] .mx-contents small{grid-area:note;font-size:13px;line-height:1.7;color:var(--muted)}
+[data-site=metho][data-design] .mx-contents em{grid-area:count;font:500 12px/1.9 var(--mono);font-style:normal;color:var(--muted);white-space:nowrap}
+
+/* Home: dated log. */
+[data-site=metho][data-design] .mx-log{padding:56px 0 24px}
+[data-site=metho][data-design] .mx-log-head{display:flex;justify-content:space-between;align-items:baseline}
+[data-site=metho][data-design] .mx-log-head>a{font:500 13px/1 var(--mono)}
+[data-site=metho][data-design] .mx-log ol{margin:0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+[data-site=metho][data-design] .mx-log li{display:grid;grid-template-columns:110px 120px minmax(0,1fr);gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+[data-site=metho][data-design] .mx-log time{font:500 13px/1.6 var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+[data-site=metho][data-design] .mx-log li>span{font-size:13px;color:var(--accent);font-weight:600}
+[data-site=metho][data-design] .mx-log li>a{display:grid;gap:6px;color:inherit}
+[data-site=metho][data-design] .mx-log strong{font:700 20px/1.5 var(--serif)}
+[data-site=metho][data-design] .mx-log small{font-size:14px;line-height:1.8;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+[data-site=metho][data-design] .mx-log li>a:hover{text-decoration:none}
+[data-site=metho][data-design] .mx-log li>a:hover strong{text-decoration:underline;text-decoration-color:var(--mark);text-decoration-thickness:.35em;text-underline-offset:-.15em;text-decoration-skip-ink:none}
+
+/* The numbered contents above already list every section. */
+[data-site=metho][data-design] .mx-log~.home-directory{display:none}
+
+/* Listing pages: same ledger language. */
+[data-site=metho][data-design] .content-feed h1,[data-site=metho][data-design] :is(.hero.compact,.ref-title) h1{font:900 40px/1.3 var(--serif);letter-spacing:-.01em}
+[data-site=metho][data-design] .feed-filters a{font-size:14px}
+[data-site=metho][data-design] .feed-filters a[aria-current]{background:var(--ink);color:var(--paper)}
+[data-site=metho][data-design] .feed-results{border-top:2px solid var(--ink)}
+[data-site=metho][data-design] .feed-entry{padding:22px 0}
+[data-site=metho][data-design] .feed-entry .entry-meta{font:500 12px/1.6 var(--mono);letter-spacing:.04em}
+[data-site=metho][data-design] .feed-entry h2{font:700 22px/1.5 var(--serif)}
+[data-site=metho][data-design] .feed-entry p{font-size:14px}
+
+/* Article pages: the category template keeps its accent; paper and ink follow the site. */
+body[data-site=metho][data-design]:has(.rssd-article),body[data-site=metho][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
+[data-site=metho][data-design] .rssd-reading-nav .back{font:500 13px/1 var(--mono)}
+[data-site=metho][data-design] .rssd-article-heading .rssd-kicker{font:500 12px/1.6 var(--mono);letter-spacing:.08em}
+[data-site=metho][data-design] .rssd-article-heading h1{font-family:var(--serif);font-weight:700}
+[data-site=metho][data-design] .rssd-article-heading .rssd-byline{font:500 13px/1.6 var(--mono);color:var(--read-muted)}
+
+/* Footer. */
+[data-site=metho][data-design] footer{border-top:2px solid var(--ink)}
+
+@media(max-width:900px){
+  [data-site=metho][data-design] .mx-hero{grid-template-columns:1fr;gap:40px;padding:48px 0}
+  [data-site=metho][data-design] .mx-log li{grid-template-columns:96px minmax(0,1fr);gap:4px 18px}
+  [data-site=metho][data-design] .mx-log li>a{grid-column:1/-1}
+}
+@media(max-width:650px){
+  [data-site=metho][data-design] .site-header nav{font-size:12px}
+  [data-site=metho][data-design] .site-header nav a{padding:6px 7px}
+  [data-site=metho][data-design] .mx-hero{padding:36px 0 40px}
+  [data-site=metho][data-design] .mx-lede{font-size:16px}
+  [data-site=metho][data-design] .mx-stats dd{font-size:22px}
+  [data-site=metho][data-design] .mx-stats div:last-child dd{font-size:14px;white-space:nowrap;padding-top:9px}
+  [data-site=metho][data-design] .mx-stats div+div{padding-left:12px}
+  [data-site=metho][data-design] .mx-figure figure{padding:10px;box-shadow:6px 6px 0 var(--soft)}
+  [data-site=metho][data-design] .mx-contents,[data-site=metho][data-design] .mx-log{padding-top:40px}
+  [data-site=metho][data-design] .mx-contents ol{grid-template-columns:1fr}
+  [data-site=metho][data-design] .mx-num{font-size:24px}
+  [data-site=metho][data-design] .mx-log strong{font-size:18px}
+  [data-site=metho][data-design] .content-feed h1{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){[data-site=metho][data-design] .mx-button{transition:none}}

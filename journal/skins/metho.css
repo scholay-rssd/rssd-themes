@@ -1,30 +1,3 @@
-/* 研究方法 — lab notebook after Distill: white page, mono labels, ruled columns.
-   System fonts only: web fonts are slow or blocked for many readers in China. */
-body[data-skin=metho]{--paper:light-dark(#fff,#14191a);--ink:light-dark(#16201d,#e8eeea);--muted:light-dark(#4f5a56,#a9b5af);--line:light-dark(#e1e5e2,#2f3835);--soft:light-dark(#f3f6f4,#1d2523);--card:light-dark(#fafbfa,#1a2120);--accent:light-dark(#316b5c,#8fd1bb);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
-[data-skin=metho] :is(.site-header,main,footer){width:min(1180px,100% - 64px)}
-[data-skin=metho] .site-header{min-height:76px}
-[data-skin=metho] .brand .brand-monogram{border-radius:0;font-family:var(--serif)}
-[data-skin=metho] .site-header nav{font-size:14px}
-[data-skin=metho] .blog-intro{grid-template-columns:minmax(0,1fr) 220px;border-bottom:1px solid var(--line);padding:72px 0 52px}
-[data-skin=metho] h1{font-family:var(--serif);font-weight:900;letter-spacing:-.01em;line-height:1.25}
-[data-skin=metho] .eyebrow,[data-skin=metho] .entry-meta,[data-skin=metho] .home-directory h2{font-family:var(--mono);letter-spacing:.1em}
-[data-skin=metho] .blog-emblem{border-radius:0;background:transparent;border:1px solid var(--line);box-shadow:none;aspect-ratio:4/3}
-[data-skin=metho] .home-layout{display:grid;grid-template-areas:"dir" "main";grid-template-columns:minmax(0,1fr);gap:0;margin-top:0}
-[data-skin=metho] .home-directory{grid-area:dir;position:static;padding:0;border-bottom:1px solid var(--line)}
-[data-skin=metho] .home-directory h2,[data-skin=metho] .directory-note{display:none}
-[data-skin=metho] .home-directory nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border:0;counter-reset:sec}
-[data-skin=metho] .home-directory nav a{counter-increment:sec;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px;min-height:150px;padding:28px 24px 24px 0;border:0;font-size:22px;font-weight:700;line-height:1.3}
-[data-skin=metho] .home-directory nav a::before{content:counter(sec,decimal-leading-zero);font:500 12px/1 var(--mono);color:var(--accent)}
-[data-skin=metho] .home-directory nav small{font-family:var(--mono);font-weight:400}
-[data-skin=metho] .home-main{grid-area:main;padding-top:48px}
-[data-skin=metho] .entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 32px;align-items:start}
-[data-skin=metho] .entry{padding:14px 0 0;border:0;border-top:2px solid var(--ink)}
-[data-skin=metho] .entry-cover{max-height:170px;border-radius:0}
-[data-skin=metho] .entry h3{font-size:19px;line-height:1.5;letter-spacing:0}
-[data-skin=metho] .entry p{font-size:14px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-[data-skin=metho] .prose{font-size:18px;line-height:2}
-[data-skin=metho] .prose h1{font-family:var(--serif);font-weight:900}
-[data-skin=metho] .prose :is(h2,h3){font-family:var(--serif)}
-[data-skin=metho] .feed-entry h2{font-family:var(--serif);font-size:21px}
-@media(max-width:900px){[data-skin=metho] .entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){[data-skin=metho] :is(.site-header,main,footer){width:calc(100% - 40px)}[data-skin=metho] .entries{grid-template-columns:1fr}[data-skin=metho] .blog-intro{grid-template-columns:1fr;padding:44px 0 32px}[data-skin=metho] .blog-emblem{display:none}[data-skin=metho] .home-directory nav a{min-height:0;padding:16px 0;flex-direction:row;align-items:baseline}}
+/* 研究方法 — tokens only. The design lives in reference/metho.css, which every
+   metho page loads last; keeping one source stops the two layers disagreeing. */
+body[data-skin=metho]{--paper:light-dark(#fbfaf6,#121417);--ink:light-dark(#15181c,#eceae4);--muted:light-dark(#5b6068,#a7abb2);--line:light-dark(#dcd8cd,#2c3036);--soft:light-dark(#f2efe6,#1b1e22);--card:light-dark(#fff,#181b1f);--accent:light-dark(#8a5a00,#ffd84d);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
