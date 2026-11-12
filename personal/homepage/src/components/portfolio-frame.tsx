@@ -39,7 +39,7 @@ export function PortfolioFooter({ locale }: { locale: Locale }) {
     <span><a href="https://www.craftz.dog/" target="_blank" rel="noopener noreferrer">craftzdog</a> · 3D cap: <a href="https://poly.pizza/m/aWxhfEnYwl" target="_blank" rel="noopener noreferrer">J-Toastie</a> (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>)</span>
     <nav className="site-family" aria-label="其他站点">{[
       ['https://today.scholay.com/','今日学术','scholay-today'],
-      ['https://xsime.com/','犀术 IME','lingxi'],
+      ['https://xsime.com/','犀术 IME','xsime'],
       ['https://www.piggytuck.com/','小猪盖被','piggytuck'],
       ['https://pet.piggytuck.com/','小猪萌宠','pets'],
       ['https://legis.wiki/','犀术智法','legis'],

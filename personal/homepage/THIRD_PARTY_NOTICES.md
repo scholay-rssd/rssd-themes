@@ -10,6 +10,6 @@ The interactive split keyboard is a web export of Scholay's local D01 split modu
 
 The keyboard viewer uses Three.js under the MIT license, retained at `public/models/licenses/THREE-MIT.txt`. Its bundled Draco decoder files are distributed unchanged from Three.js's glTF decoder package under Apache 2.0; the license and source README are retained in `public/models/draco/`.
 
-The Lingxi IME project icon is from the RIMES `Logo/rimes-rhino.png` asset. The four iOS screenshots are native Release simulator renders from 2026-10-06, converted to WebP for this website.
+The XSIME project icon is from the RIMES `Logo/rimes-rhino.png` asset. The four iOS screenshots are native Release simulator renders from 2026-10-06, converted to WebP for this website.
 
 The input-scheme directory is derived from `scholay/rimes`'s `Catalog/input-schemes/index.json`. Each linked ZIP retains its upstream licenses, attribution, pinned revisions, and modification manifest. The website's code does not replace those licenses. Packages without redistribution permission, without host verification, with high resource requirements, or with known incomplete license attachments are linked to their upstream source instead of hosted here. See `docs/input-schemes.md` for the current exclusions and synchronization process.

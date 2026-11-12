@@ -248,52 +248,52 @@
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/archive.json",
+      "path": "export/templates/xsime/archive.json",
       "sha256": "1a1a883828c4e07c549b33c1c8ae3870a206aa31940443687368db0a7de0f08a",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/calendar.json",
+      "path": "export/templates/xsime/calendar.json",
       "sha256": "8e908977784f20a493880109dbc79695167e2742c3e60935f5f5e5d38eebba4b",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/custom-keyboards.json",
+      "path": "export/templates/xsime/custom-keyboards.json",
       "sha256": "feec20e835b048d82e8ddcb34b4c5c137dd405ee0a50526b83eb629d5ea454eb",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/development.json",
+      "path": "export/templates/xsime/development.json",
       "sha256": "a0cab82edea3a59fe23b5bc74e746fb797f54933c8840f243d94ab01a66c8f00",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/history.json",
+      "path": "export/templates/xsime/history.json",
       "sha256": "b4347e93bed1c2f608573961021125b504fa53703eb2232f14ec21007d41c1cf",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/input-methods.json",
+      "path": "export/templates/xsime/input-methods.json",
       "sha256": "a465dc21902c6c0535f6e06d39878976b1dcbab58134eb2716c86f61b9bc6a37",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/input-schemes.json",
+      "path": "export/templates/xsime/input-schemes.json",
       "sha256": "20eb9ab514ad124291698af481cc2065e211a09cd2aadfd4c0fccefcdf5fdbc1",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/input-skins.json",
+      "path": "export/templates/xsime/input-skins.json",
       "sha256": "8bfda2dbc426d9f1f15b0f5c6fde7b7c9035bd97395935055e7a745cc8764668",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/open-source.json",
+      "path": "export/templates/xsime/open-source.json",
       "sha256": "6af6020858697ce9ba3a38a639f66e5a578791df9f0deb91f642094a8cf792b6",
       "syntheticContentReplacement": false
     },
     {
-      "path": "export/templates/lingxi/tutorials.json",
+      "path": "export/templates/xsime/tutorials.json",
       "sha256": "329822abcecf6c4468cbe2669eb3c55368334f241c007301566ca7b671eec10b",
       "syntheticContentReplacement": false
     },
@@ -688,7 +688,7 @@
       "syntheticContentReplacement": false
     },
     {
-      "path": "journal/reference/lingxi.css",
+      "path": "journal/reference/xsime.css",
       "sha256": "c206b1ffd832b52746b360cc78c3eb7dc2528c7d6f3de72b0fd7c8c082e375a0",
       "syntheticContentReplacement": false
     },
@@ -743,7 +743,7 @@
       "syntheticContentReplacement": false
     },
     {
-      "path": "journal/skins/lingxi.css",
+      "path": "journal/skins/xsime.css",
       "sha256": "0483c87347a0c5bd27115fc31608c32767e5ce9c1c4115c61e30da1724e56027",
       "syntheticContentReplacement": false
     },
