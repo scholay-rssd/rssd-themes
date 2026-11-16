@@ -1,4 +1,9 @@
 export const publicationOnly = item => String(item.dateBasis || '').includes('发布日期');
+/**
+ * Rows that only know when a notice was posted are not calendar events: they
+ * stay findable in lists and search, but never fill a calendar day or agenda.
+ */
+export const calendarEvent = item => !publicationOnly(item);
 export const endDate = item => publicationOnly(item) ? item.start : (item.end || item.start);
 export const coversDate = (item, iso) => item.start <= iso && endDate(item) >= iso;
 /**
@@ -47,9 +52,9 @@ export function filterRecords(items, filters, kind, group = value => value) {
 }
 export function agendaBuckets(items, today) {
   const until = addDays(today, 30);
-  const current = items.filter(item => coversDate(item, today)).sort((a, b) =>
+  const current = items.filter(item => calendarEvent(item) && coversDate(item, today)).sort((a, b) =>
     Number(a.category === '节假日') - Number(b.category === '节假日') || Number(b.provenance === '已核验官网') - Number(a.provenance === '已核验官网') || endDate(a).localeCompare(endDate(b)) || String(a.title || '').localeCompare(String(b.title || '')));
-  const upcoming = items.filter(item => item.start > today && item.start <= until)
+  const upcoming = items.filter(item => calendarEvent(item) && item.start > today && item.start <= until)
     .sort((a, b) => a.start.localeCompare(b.start) || Number(b.provenance === '已核验官网') - Number(a.provenance === '已核验官网') || a.title.localeCompare(b.title));
   return {current, upcoming};
 }
