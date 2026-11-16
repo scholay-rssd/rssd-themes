@@ -1,5 +1,5 @@
 'use strict';
-import {publicationOnly, endDate, coversDate, addDays, monthDates, filterRecords, agendaBuckets, historyForDate, rangeSegmentKind, rangeProgress} from './calendar-model.js?v=20260929-range-ribbons';
+import {publicationOnly, calendarEvent, endDate, coversDate, addDays, monthDates, filterRecords, agendaBuckets, historyForDate, rangeSegmentKind, rangeProgress} from './calendar-model.js?v=20261116-notices';
 import {createCalendarLoader} from './calendar-data.js?v=20261016';
 import {ensureMathStyles} from './math-style.js?v=20261019';
 const app = document.getElementById('main');
@@ -39,7 +39,8 @@ const historyGroup=domain=>Object.entries(historyGroups).find(([,members])=>memb
 const itemUrl=(type,item)=>item.articleUrl||'#/'+type+'/'+encodeURIComponent(item.id);
 const excerpt=(s,max=155)=>String(s||'').slice(0,max);
 const dLabel=(s,kind)=>kind==='history'?s.year+' 年 · '+Number(s.dateKey.slice(0,2))+' 月 '+Number(s.dateKey.slice(3))+' 日':Number(s.start.slice(5,7))+' 月 '+Number(s.start.slice(8))+' 日';
-const badge=(s,kind)=>kind==='history'?'<span class="badge">'+esc(historyGroup(s.domain))+'</span>':'<span class="badge'+(['已核验官网','已核验'].includes(s.provenance)?'':' needs')+'">'+esc(s.provenance)+'</span>';
+// A posted-date notice never claims a verified event date, whatever its source label says.
+const badge=(s,kind)=>kind==='history'?'<span class="badge">'+esc(historyGroup(s.domain))+'</span>':publicationOnly(s)?'<span class="badge needs">事件日期未核实</span>':'<span class="badge'+(['已核验官网','已核验'].includes(s.provenance)?'':' needs')+'">'+esc(s.provenance)+'</span>';
 function setNav(view){document.querySelectorAll('[data-nav]').forEach(a=>{const active=a.dataset.nav===view;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});(function(){var n=document.querySelector(".site-header .section-nav"),a=n&&n.querySelector("[aria-current]");if(a&&n.scrollWidth>n.clientWidth)n.scrollLeft=a.getBoundingClientRect().left-n.getBoundingClientRect().left+n.scrollLeft-(n.clientWidth-a.offsetWidth)/2})();}
 function setPageMeta(title,description){
   document.title=title+' · Today';
@@ -102,7 +103,7 @@ const baseItems = kind => {
   if(!r.tag)return items;
   return items.filter(item=>kind==='year'?(item.tags||[]).includes(r.tag):item.domain===r.tag);
 };
-const onDate = (kind, items, date) => items.filter(s => kind==='year' ? coversDate(s,date) : s.dateKey===date);
+const onDate = (kind, items, date) => items.filter(s => kind==='year' ? calendarEvent(s)&&coversDate(s,date) : s.dateKey===date);
 function sourcesList(s,kind){
   const sources=kind==='year'?[{label:s.sourceName||'原始来源',url:s.sourceUrl}]:(s.sources||[]);
   return sources.filter(x=>safeUrl(x.url)).map(x=>'<li><a href="'+esc(safeUrl(x.url))+'" target="_blank" rel="noopener noreferrer">'+esc(x.label||'原始来源')+' ↗</a></li>').join('');

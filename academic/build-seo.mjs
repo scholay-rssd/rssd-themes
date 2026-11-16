@@ -229,7 +229,7 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
     const summary=text(item.summary)||'已核验官网来源的科研日程记录。';
     const notice=item.body?(item.assets?.length||item.sectionId?'<section class="article-body"><h2>通知摘要</h2>'+await sizedArticle(item.body,item,previousRoot)+'</section>':'<section><h2>通知摘要</h2><p>'+renderMathText(item.body)+'</p></section>'):'';
     await writeRoute(route,lastmod=>recordPage({header,route,lastmod,title:/^\(?untitled\)?$/i.test(item.title)?datedRecordTitle(item,''):item.title,seoTitle:datedRecordTitle(item,date),description:excerpt(summary),section:sectionFor('year',item).name,sectionRoute:'/archive/'+sectionFor('year',item).slug+'/',summary,
-      details:[[(item.dateBasis||'').includes('发布日期')?'通知发布日期':'日程日期',date],['类别',item.category],['日期依据',item.dateBasis||'以来源原文为准'],['来源机构',item.sourceName||'未标明'],[item.sectionId?'来源记录':'核验状态',item.provenance]],
+      details:[[(item.dateBasis||'').includes('发布日期')?'通知发布日期':'日程日期',date],['类别',item.category],['日期依据',item.dateBasis||'以来源原文为准'],['来源机构',item.sourceName||'未标明'],[item.sectionId?'来源记录':'核验状态',(item.dateBasis||'').includes('发布日期')?'事件日期未核实':item.provenance]],
       body:notice,links:[{label:item.sourceName||'原始来源',url:item.sourceUrl}],appRoute:'/#/year?date='+item.start}));
   }
   for(const item of history) {
