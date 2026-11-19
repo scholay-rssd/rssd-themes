@@ -68,12 +68,11 @@ body[data-site=legis][data-design]{
 [data-site=legis][data-design] .feed-filters a{font:15px/1.6 var(--serif)}
 [data-site=legis][data-design] .feed-filters a:is(.active,[aria-current]){color:var(--accent);font-weight:700}
 [data-site=legis][data-design] .feed-results{border-top:3px double var(--ink)}
-[data-site=legis][data-design] .feed-entry{display:grid;grid-template-columns:minmax(0,1fr) 168px;grid-template-areas:"meta cover" "title cover" "text cover";column-gap:28px;align-items:start;padding:24px 0}
-[data-site=legis][data-design] .feed-entry .entry-meta{grid-area:meta;font:600 13px/1.6 var(--serif);letter-spacing:.08em;color:var(--accent)}
-[data-site=legis][data-design] .feed-entry h2{grid-area:title;margin:6px 0 8px;font:800 22px/1.45 var(--serif)}
-[data-site=legis][data-design] .feed-entry p{grid-area:text;margin:0;font-size:15px;line-height:1.85;color:var(--muted)}
-[data-site=legis][data-design] .feed-cover{grid-area:cover;display:block;aspect-ratio:4/3;background:var(--soft);border:1px solid var(--line)}
-[data-site=legis][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:contain}
+/* Waterfall listing (shared.css): this site's cards. */
+/* Documents and screenshots are shown whole. */
+[data-site=legis][data-design] .content-feed{--wf-radius:0;--wf-fit:contain;--wf-title:var(--serif);--wf-meta:var(--serif)}
+[data-site=legis][data-design] .content-feed .feed-entry h2{font-weight:800}
+[data-site=legis][data-design] .content-feed .feed-entry .entry-meta span{font-weight:600;letter-spacing:.06em}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=legis][data-design]:has(.rssd-article),body[data-site=legis][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
@@ -93,7 +92,5 @@ body[data-site=legis][data-design]:has(.rssd-article),body[data-site=legis][data
   [data-site=legis][data-design] .lx-docket{padding:0 0 20px;border-left:0}
   [data-site=legis][data-design] .lx-past th{width:92px}
   [data-site=legis][data-design] .lx-past td{grid-template-columns:1fr}
-  [data-site=legis][data-design] .feed-entry{grid-template-columns:minmax(0,1fr) 96px;column-gap:16px}
-  [data-site=legis][data-design] .feed-entry h2{font-size:18px}
   [data-site=legis][data-design] .content-feed h1{font-size:30px}
 }

@@ -14,7 +14,6 @@ body[data-site=xsime][data-design]{--paper:light-dark(#fff,#121923);--ink:light-
 [data-site=xsime] .entry-meta{font-family:var(--mono)}
 [data-site=xsime] .read{font-family:var(--mono);padding:3px 10px;border:1px solid var(--line);border-bottom-width:3px;border-radius:6px}
 [data-site=xsime] .home-directory nav a{font-family:var(--mono)}
-[data-site=xsime] .feed-entry{margin-bottom:10px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
 [data-site=xsime] .toc li a:hover{color:var(--accent)}
 [data-site=xsime][data-design] .ime-product-hero{background:var(--soft);margin:0 calc((min(1200px,100vw - 80px) - 100vw)/2);padding:45px max(40px,calc((100vw - 1120px)/2)) 30px;text-align:center}
 [data-site=xsime][data-design] .ime-product-hero h1{font-size:54px;line-height:1.3;margin:18px 0}
@@ -28,6 +27,7 @@ body[data-site=xsime][data-design]{--paper:light-dark(#fff,#121923);--ink:light-
 [data-site=xsime][data-design] .ime-device-stage h2{font-size:22px}
 [data-site=xsime][data-design] .ime-device-stage p{font-size:14px;color:var(--muted)}
 [data-site=xsime][data-design] .feed-sidebar{background:var(--soft);padding:20px}
-[data-site=xsime][data-design] .feed-entry h2{font-family:inherit}
+/* Waterfall listing (shared.css): this site's cards. */
+[data-site=xsime][data-design] .content-feed{--wf-radius:12px;--wf-meta:var(--mono)}
 @media(max-width:850px){[data-site=xsime][data-design] .ime-product-hero{margin:0 -20px;padding:35px 20px}}
 @media(max-width:650px){[data-site=xsime][data-design] .ime-product-hero{margin:0 -18px}[data-site=xsime][data-design] .ime-product-hero h1{font-size:39px}[data-site=xsime][data-design] .ime-device-stage{flex-wrap:wrap;gap:16px}[data-site=xsime][data-design] .ime-device-stage figure{width:42%;max-width:185px}[data-site=xsime][data-design] .ime-device-stage>div{text-align:center;margin:0;max-width:100%}[data-site=xsime][data-design] .ime-device-stage>div p{display:none}}

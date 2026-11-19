@@ -16,17 +16,13 @@ body[data-site=xsiching][data-design]{font-family:var(--ref-serif)}
 [data-site=xsiching][data-design] .feed-filters a{border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent}
 [data-site=xsiching][data-design] .feed-filters a[aria-current=page]{border-color:var(--accent);color:var(--accent)}
 [data-site=xsiching][data-design] #feed-search-form{max-width:550px}
-[data-site=xsiching][data-design] #feed-entries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-[data-site=xsiching][data-design] :is(.feed-entry,.showcase-card){background:var(--card);border:1px solid var(--line);border-radius:0;box-shadow:none;padding:0 0 20px}
-[data-site=xsiching][data-design] .feed-entry>:not(.feed-cover){margin-left:19px;margin-right:19px}
-[data-site=xsiching][data-design] .feed-entry h2{font:500 21px/1.6 var(--ref-serif)}
-[data-site=xsiching][data-design] .feed-entry p{font-size:15px;line-height:1.95}
-[data-site=xsiching][data-design] .feed-cover{display:block;margin-bottom:18px}
-[data-site=xsiching][data-design] .feed-cover img{filter:saturate(.75);height:220px}
+[data-site=xsiching][data-design] .showcase-card{background:var(--card);border:1px solid var(--line);border-radius:0;box-shadow:none;padding:0 0 20px}
+/* Waterfall listing (shared.css): this site's cards. */
+[data-site=xsiching][data-design] .content-feed{--wf-radius:0;--wf-title:var(--ref-serif);--wf-meta:var(--ref-serif)}
+[data-site=xsiching][data-design] .content-feed .feed-entry h2{font-weight:500;letter-spacing:.04em}
+[data-site=xsiching][data-design] .content-feed .feed-cover img{filter:saturate(.75)}
 [data-site=xsiching][data-design] .prose h1{text-align:center;font-weight:500;font-family:var(--ref-serif)}
 [data-site=xsiching][data-design] .prose{font-size:18px;line-height:2.1}
-@media(max-width:850px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:1fr}}
 /* The folio homepage (no data-design): its own layout. */
 [data-site=xsiching]:where(:not([data-design])) .site-header{min-height:92px}
 [data-site=xsiching]:where(:not([data-design])) .brand{letter-spacing:.2em;font-weight:900}

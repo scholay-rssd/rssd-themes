@@ -92,14 +92,13 @@ body[data-site=enter][data-design]{
 [data-site=enter][data-design] .feed-filters a[href="/archive/search/"]{--lc:var(--l-search)}
 [data-site=enter][data-design] .feed-filters a[href="/archive/courses/"]{--lc:var(--l-courses)}
 [data-site=enter][data-design] #feed-search-form{max-width:600px}
-[data-site=enter][data-design] #feed-entries{display:block;border-top:2px solid var(--ink)}
-[data-site=enter][data-design] .feed-entry{display:grid;grid-template-columns:minmax(0,1fr) 150px;grid-template-areas:"meta cover" "title cover" "text cover";column-gap:24px;align-items:start;margin:0;padding:20px 0 20px 18px;border:0;border-bottom:1px solid var(--line);border-left:4px solid var(--lc,var(--line));border-radius:0;background:none;box-shadow:none}
-[data-site=enter][data-design] .feed-entry .entry-meta{grid-area:meta;font:700 13px/1.6 var(--sans);color:var(--lc,var(--muted))}
-[data-site=enter][data-design] .feed-entry .entry-meta time{font-family:var(--mono);font-weight:400;color:var(--muted)}
-[data-site=enter][data-design] .feed-entry h2{grid-area:title;margin:4px 0 6px;font:800 19px/1.5 var(--sans)}
-[data-site=enter][data-design] .feed-entry p{grid-area:text;margin:0;font-size:14px;line-height:1.8;color:var(--muted)}
-[data-site=enter][data-design] .feed-cover{grid-area:cover;display:block;margin:0}
-[data-site=enter][data-design] .feed-cover img{display:block;width:150px;height:94px;object-fit:cover;border-radius:3px;background:var(--soft)}
+/* Waterfall listing (shared.css): this site's cards. */
+[data-site=enter][data-design] .content-feed{--wf-radius:4px;--wf-title:var(--sans);--wf-meta:var(--sans)}
+[data-site=enter][data-design] .content-feed .feed-entry h2{font-weight:800}
+[data-site=enter][data-design] .content-feed .feed-entry .entry-meta span{font-weight:700;color:var(--lc,var(--accent))}
+[data-site=enter][data-design] .content-feed .feed-entry .entry-meta time{font-family:var(--mono)}
+/* Each card keeps its section's line colour, as a stripe above the cover. */
+[data-site=enter][data-design] .content-feed .feed-entry{border-top:4px solid var(--lc,var(--line))}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=enter][data-design]:has(.rssd-article),body[data-site=enter][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
@@ -122,8 +121,5 @@ body[data-site=enter][data-design]:has(.rssd-article),body[data-site=enter][data
   [data-site=enter][data-design] .gx-stops li:nth-child(n+4){display:none}
   [data-site=enter][data-design] .gx-board li{grid-template-columns:48px minmax(0,1fr);grid-template-areas:"time badge" "title title"}
   [data-site=enter][data-design] .gx-board img{display:none}
-  [data-site=enter][data-design] .feed-entry{grid-template-columns:minmax(0,1fr) 92px;column-gap:14px;padding-left:14px}
-  [data-site=enter][data-design] .feed-cover img{width:92px;height:58px}
-  [data-site=enter][data-design] .feed-entry h2{font-size:17px}
   [data-site=enter][data-design] .content-feed h1{font-size:30px}
 }
