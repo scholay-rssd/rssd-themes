@@ -139,10 +139,10 @@ body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-d
 [data-site=pets][data-design] .rssd-article-heading h1{font-family:var(--round);font-weight:800}
 [data-site=pets][data-design] .rssd-article .article-body img{border-radius:10px}
 
-/* #topics under an article: the section first, then the work's bound tags. */
-[data-site=pets][data-design] .rssd-topics{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 30px;padding-top:18px;border-top:1px dashed var(--line);font:700 15px/1.6 var(--round)}
-[data-site=pets][data-design] .rssd-topics :is(a,span){color:var(--sec,var(--accent));text-decoration:none}
-[data-site=pets][data-design] .rssd-topics a:hover{text-decoration:underline;text-underline-offset:4px}
+/* #tags under an article: the section first, then the tags bound to the work, then its own. */
+[data-site=pets][data-design] .rssd-tags{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 30px;padding-top:18px;border-top:1px dashed var(--line);font:700 15px/1.6 var(--round)}
+[data-site=pets][data-design] .rssd-tags :is(a,span){color:var(--sec,var(--accent));text-decoration:none}
+[data-site=pets][data-design] .rssd-tags a:hover{text-decoration:underline;text-underline-offset:4px}
 
 [data-site=pets][data-design] footer{border-top:1px solid var(--line)}
 
