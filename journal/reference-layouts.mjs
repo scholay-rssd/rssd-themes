@@ -5,6 +5,9 @@ import {recordsInCollection} from '../../engine/site-organization.mjs';
 import {blogExcerpt} from './blog-presets.mjs';
 
 export const referenceSites=new Set(['xsime','piggytuck','personal','pets','legis','metho','enter','xsiching','study']);
+// Every page of a reference site loads its reference stylesheet, the site's single visual
+// source; only these pages also take the reference layout (`data-design`). xsiching keeps
+// its own folio homepage, styled by rules that do not require `data-design`.
 export function referencePage(site,path){
   return referenceSites.has(site.id)&&!(site.id==='xsiching'&&path==='/');
 }
