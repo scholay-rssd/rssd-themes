@@ -1,5 +1,21 @@
-/* Frank Chimero Archive and Derek Sivers. Original Next homepage is separate. */
-body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:light-dark(#303633,#e2e9e2);--accent:light-dark(#3f6251,#aacfb9);--soft:light-dark(#e2e5df,#2b352e);--line:light-dark(#cfd5cc,#465248);--muted:light-dark(#677267,#afbbaf);display:grid;grid-template-columns:300px minmax(0,1fr);font-family:ui-monospace,"PingFang SC",monospace}
+/* 学术海 — Frank Chimero's archive and Derek Sivers: a dark sidebar and mono archive rows. The authored Next homepage is separate.
+   This file is personal's single visual source; skins/personal.css keeps only the same
+   tokens. System fonts only: web fonts are slow or blocked for many readers in China. */
+body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:light-dark(#303633,#e2e9e2);--accent:light-dark(#3f6251,#aacfb9);--soft:light-dark(#e2e5df,#2b352e);--line:light-dark(#cfd5cc,#465248);--muted:light-dark(#677267,#afbbaf);display:grid;grid-template-columns:300px minmax(0,1fr);font-family:ui-monospace,"PingFang SC",monospace;--card:light-dark(#fbfaf5,#222b29);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+/* Rules that came from the skin, at its specificity, so the reference rules below still win. */
+[data-site=personal] .site-header nav{font-family:var(--mono)}
+[data-site=personal] h1{font-family:var(--serif)}
+[data-site=personal] .eyebrow,[data-site=personal] .entry-meta{font-family:var(--mono)}
+[data-site=personal] .feed-filters{margin-top:16px}
+[data-site=personal] .feed-filters a{border:1px solid var(--line);border-radius:999px}
+/* On phones the shared reference size and padding apply. */
+@media(min-width:651px){[data-site=personal] .feed-filters a{padding:5px 12px;font-size:13px}}
+[data-site=personal] .feed-entry{display:grid;grid-template-columns:124px minmax(0,1fr);column-gap:16px}
+[data-site=personal] .feed-entry>.entry-meta{grid-column:1;grid-row:1/span 2;display:block}
+[data-site=personal] .feed-entry>.entry-meta span:first-child{display:none}
+[data-site=personal] .feed-entry>h2,[data-site=personal] .feed-entry>p{grid-column:2}
+[data-site=personal] .feed-entry p{display:none}
+@media(max-width:650px){[data-site=personal] .feed-entry{grid-template-columns:72px minmax(0,1fr)}}
 [data-site=personal][data-design]>.site-header{grid-row:1/3;position:sticky;top:0;height:100vh;width:100%;margin:0;background:#343b37;color:#edf2e9;padding:45px 32px;display:flex;flex-direction:column;align-items:start;justify-content:start;border:0;overflow:auto}
 [data-site=personal][data-design] .brand{font:400 24px/1.6 var(--ref-serif)}
 [data-site=personal][data-design] .brand small{color:#b0bdb1;font-size:11px}

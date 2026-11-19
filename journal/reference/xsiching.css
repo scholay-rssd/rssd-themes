@@ -1,5 +1,13 @@
-/* Shuge catalogue. The authored homepage never loads this stylesheet. */
-body[data-site=xsiching][data-design]{--paper:light-dark(#f0ecdf,#25231e);--ink:light-dark(#2c2821,#e9e1d3);--accent:light-dark(#8d4d37,#d7a28a);--soft:light-dark(#eae3d4,#343027);--line:light-dark(#d7cebc,#4c4437);--muted:light-dark(#716858,#bdb09c);--card:light-dark(#fbf8ef,#2e2b24);font-family:var(--ref-serif)}
+/* 犀术国学 — Shuge catalogue for the reading pages; the homepage is a classical folio with a vermilion seal and vertical dates.
+   This file is xsiching's single visual source; skins/xsiching.css keeps only the same
+   tokens. System fonts only: web fonts are slow or blocked for many readers in China. */
+body[data-site=xsiching]{--paper:light-dark(#f0ecdf,#25231e);--ink:light-dark(#2c2821,#e9e1d3);--accent:light-dark(#8d4d37,#d7a28a);--soft:light-dark(#eae3d4,#343027);--line:light-dark(#d7cebc,#4c4437);--muted:light-dark(#716858,#bdb09c);--card:light-dark(#fbf8ef,#2e2b24);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--kai:"Kaiti SC",STKaiti,KaiTi,"Noto Serif CJK SC",serif;font-family:var(--serif)}
+body[data-site=xsiching][data-design]{font-family:var(--ref-serif)}
+/* Rules that came from the skin, at its specificity, so the reference rules below still win. */
+[data-site=xsiching] .brand .brand-monogram,[data-site=xsiching] .brand .site-logo{border-radius:3px;background:var(--accent);font-family:var(--kai)}
+[data-site=xsiching] .site-header nav{letter-spacing:.12em}
+[data-site=xsiching] .eyebrow{font-family:var(--serif);letter-spacing:.5em}
+[data-site=xsiching] h1{font-weight:900}
 [data-site=xsiching][data-design] .brand{font:600 27px/1.3 var(--ref-serif);letter-spacing:.12em}
 [data-site=xsiching][data-design] .site-header{border-bottom:1px solid var(--line)}
 [data-site=xsiching][data-design] .feed-layout{display:block}
@@ -19,3 +27,23 @@ body[data-site=xsiching][data-design]{--paper:light-dark(#f0ecdf,#25231e);--ink:
 [data-site=xsiching][data-design] .prose{font-size:18px;line-height:2.1}
 @media(max-width:850px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){[data-site=xsiching][data-design] #feed-entries{grid-template-columns:1fr}}
+/* The folio homepage (no data-design): its own layout. */
+[data-site=xsiching]:where(:not([data-design])) .site-header{min-height:92px}
+[data-site=xsiching]:where(:not([data-design])) .brand{letter-spacing:.2em;font-weight:900}
+[data-site=xsiching]:where(:not([data-design])) .site-header nav{font-size:15px}
+[data-site=xsiching]:where(:not([data-design])) .blog-intro{grid-template-columns:minmax(0,1fr) 120px;padding:72px 0 56px;border-bottom:1px solid var(--line)}
+[data-site=xsiching]:where(:not([data-design])) .eyebrow{color:var(--muted)}
+[data-site=xsiching]:where(:not([data-design])) h1{letter-spacing:.14em}
+[data-site=xsiching]:where(:not([data-design])) .blog-slogan{font-family:var(--kai);font-size:clamp(20px,2.4vw,28px);letter-spacing:.2em;color:var(--accent)}
+[data-site=xsiching]:where(:not([data-design])) .blog-emblem{width:96px;height:96px;aspect-ratio:auto;justify-self:end;border-radius:3px;background:var(--accent);color:#f8efe4;border:0;transform:rotate(-3deg)}
+[data-site=xsiching]:where(:not([data-design])) .hero-links a{border-color:var(--line);letter-spacing:.1em}
+[data-site=xsiching]:where(:not([data-design])) .home-layout{grid-template-columns:minmax(0,1fr) 200px;gap:56px}
+[data-site=xsiching]:where(:not([data-design])) .section-heading h2{font-size:15px;letter-spacing:.4em;color:var(--muted);font-weight:600}
+[data-site=xsiching]:where(:not([data-design])) .entry{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:18px;padding:26px 0}
+[data-site=xsiching]:where(:not([data-design])) .entry>*{grid-column:2}
+[data-site=xsiching]:where(:not([data-design])) .entry>.entry-meta{grid-column:1;grid-row:1/span 4;display:block;writing-mode:vertical-rl;letter-spacing:.3em;font-size:13px;border-left:1px solid var(--line);padding-left:10px;max-height:9em}
+[data-site=xsiching]:where(:not([data-design])) .entry>.entry-meta span:last-child{display:none}
+[data-site=xsiching]:where(:not([data-design])) .entry h3{font-family:var(--serif);font-size:22px;line-height:1.6;font-weight:700}
+[data-site=xsiching]:where(:not([data-design])) .entry p{line-height:2}
+[data-site=xsiching]:where(:not([data-design])) .home-directory nav a{letter-spacing:.14em}
+@media(max-width:700px){[data-site=xsiching]:where(:not([data-design])) :is(.site-header,main,footer){width:calc(100% - 40px)}[data-site=xsiching]:where(:not([data-design])) .blog-intro{grid-template-columns:minmax(0,1fr) 64px}[data-site=xsiching]:where(:not([data-design])) .blog-emblem{width:56px;height:56px}}

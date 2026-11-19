@@ -1,5 +1,21 @@
-/* Sogou Mac product hierarchy; Starlight documentation navigation. */
-body[data-site=xsime][data-design]{--paper:light-dark(#fff,#121923);--ink:light-dark(#19334e,#e1ecf8);--accent:light-dark(#2369b5,#9ac8ff);--soft:light-dark(#eff6ff,#202d40);--line:light-dark(#dbe4ef,#35445a);--muted:light-dark(#5d7186,#adbed3)}
+/* 犀术 IME — Sogou Mac product hierarchy with Starlight documentation navigation: blue on white, mono labels, keycap links.
+   This file is xsime's single visual source; skins/xsime.css keeps only the same
+   tokens. System fonts only: web fonts are slow or blocked for many readers in China. */
+body[data-site=xsime][data-design]{--paper:light-dark(#fff,#121923);--ink:light-dark(#19334e,#e1ecf8);--accent:light-dark(#2369b5,#9ac8ff);--soft:light-dark(#eff6ff,#202d40);--line:light-dark(#dbe4ef,#35445a);--muted:light-dark(#5d7186,#adbed3);--card:light-dark(#fff,#131b17);--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+/* Rules that came from the skin, at its specificity, so the reference rules below still win. */
+[data-site=xsime] .site-header{border-color:var(--line)}
+[data-site=xsime] .brand .brand-monogram,[data-site=xsime] .brand .site-logo{border-radius:7px;border-bottom:3px solid color-mix(in srgb,var(--accent) 60%,#000)}
+[data-site=xsime] .eyebrow{font-family:var(--mono);letter-spacing:.1em}
+[data-site=xsime] h1{font-weight:900;letter-spacing:-.02em}
+[data-site=xsime] .hero-links a{font-family:var(--mono);font-size:12px;padding:6px 12px;border:1px solid var(--line);border-bottom-width:3px;border-radius:7px}
+[data-site=xsime] .hero-links a:hover{border-color:var(--accent)}
+[data-site=xsime] .entry{padding:22px;margin-bottom:12px;border-radius:12px}
+[data-site=xsime] .entry:hover{border-color:var(--accent);transform:none}
+[data-site=xsime] .entry-meta{font-family:var(--mono)}
+[data-site=xsime] .read{font-family:var(--mono);padding:3px 10px;border:1px solid var(--line);border-bottom-width:3px;border-radius:6px}
+[data-site=xsime] .home-directory nav a{font-family:var(--mono)}
+[data-site=xsime] .feed-entry{margin-bottom:10px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+[data-site=xsime] .toc li a:hover{color:var(--accent)}
 [data-site=xsime][data-design] .ime-product-hero{background:var(--soft);margin:0 calc((min(1200px,100vw - 80px) - 100vw)/2);padding:45px max(40px,calc((100vw - 1120px)/2)) 30px;text-align:center}
 [data-site=xsime][data-design] .ime-product-hero h1{font-size:54px;line-height:1.3;margin:18px 0}
 [data-site=xsime][data-design] .ime-product-hero>p{color:var(--muted)}
