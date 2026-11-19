@@ -8,6 +8,7 @@ import {createSeoState,sitemapXml,splitSitemap} from '../../../scripts/seo-state
 import {showcaseCards} from '../../modules/showcase/index.mjs';
 import {standingPages} from '../../engine/standing-pages.mjs';
 import {loadAbout,renderAbout,ABOUT_ROUTE} from '../../engine/about-page.mjs';
+import {guestbookBody,guestbookShell,guestbookDescription,GUESTBOOK_ROUTE,GUESTBOOK_TITLE} from '../../engine/guestbook-page.mjs';
 import {portfolioMedia} from '../../engine/portfolio-media.mjs';
 import {renderDisplayModules} from '../../modules/registry.mjs';
 import {copyThemeHomepage,byteHash} from '../../engine/theme-homepage.mjs';
@@ -59,7 +60,7 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   const journalLabel=feedLabel(site),feedIndex=createFeedIndex(content,{ratio:src=>pictureRatios.get(src)});
   const feedSections=[{id:'',route:'/archive/'},...feedIndex.sections];
   const feedRoutes=feedSections.flatMap(c=>Array.from({length:Math.max(1,Math.ceil((c.id?feedIndex.records.filter(r=>c.members.includes(r.section)):records).length/feedPageSize))},(_,i)=>feedRoute(c.route,i+1)));
-  const reserved=new Set(['/','/journal/','/calendar/',...feedRoutes,...display.pages.map(p=>p.route),...standing.pages.map(p=>p.route),...standing.hubs.map(h=>h.route),...(about?[ABOUT_ROUTE]:[])]);
+  const reserved=new Set(['/','/journal/','/calendar/',...feedRoutes,...display.pages.map(p=>p.route),...standing.pages.map(p=>p.route),...standing.hubs.map(h=>h.route),...(about?[ABOUT_ROUTE]:[]),...(site.services?.guestbook?.enabled?[GUESTBOOK_ROUTE]:[])]);
   for(const record of records)if(reserved.has(record.route))throw Error('Organization page collides with article: '+record.route);
   const column=x=>content.collections.find(c=>c.id===x.collectionId)?.name||'';
   const date=x=>x.event?.mode==='historical'?`${x.event.year} · ${x.event.monthDay}`:x.event?.mode==='annual'?'每年 '+x.event.recurrence.monthDay:x.publication.date||x.event?.start||'';
@@ -100,6 +101,8 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   }
   for(const page of standing.pages)await write(page.route.slice(1)+'index.html',shell(page.title,page.route,page.body));
   if(about)await write(ABOUT_ROUTE.slice(1)+'index.html',shell(about.title,ABOUT_ROUTE,renderAbout(about),about.paragraphs[0]));
+  // The guestbook sits inside the site's own shell, so it looks like the rest of the site.
+  if(site.services?.guestbook?.enabled)await write(GUESTBOOK_ROUTE.slice(1)+'index.html',guestbookShell(shell(GUESTBOOK_TITLE,GUESTBOOK_ROUTE,await guestbookBody(),guestbookDescription(site))));
   for(const [path,bytes]of Object.entries(standing.files))await write(path,bytes);
   for(const page of display.pages){
     await write(page.route.slice(1)+'index.html',shell(page.title,page.route,page.body+page.scripts.map(src=>`<script type="module" src="${src}"></script>`).join(''),site.description,page.styles));
