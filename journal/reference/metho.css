@@ -82,10 +82,9 @@ body[data-site=metho][data-design]{
 [data-site=metho][data-design] .feed-filters a{font-size:14px}
 [data-site=metho][data-design] .feed-filters a[aria-current]{background:var(--ink);color:var(--paper)}
 [data-site=metho][data-design] .feed-results{border-top:2px solid var(--ink)}
-[data-site=metho][data-design] .feed-entry{padding:22px 0}
-[data-site=metho][data-design] .feed-entry .entry-meta{font:500 12px/1.6 var(--mono);letter-spacing:.04em}
-[data-site=metho][data-design] .feed-entry h2{font:700 22px/1.5 var(--serif)}
-[data-site=metho][data-design] .feed-entry p{font-size:14px}
+/* Waterfall listing (shared.css): this site's cards. */
+[data-site=metho][data-design] .content-feed{--wf-radius:2px;--wf-title:var(--serif);--wf-meta:var(--mono)}
+[data-site=metho][data-design] .content-feed .feed-entry h2{font-weight:700}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=metho][data-design]:has(.rssd-article),body[data-site=metho][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}

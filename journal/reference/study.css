@@ -17,7 +17,6 @@ body[data-site=study][data-design]{--paper:light-dark(#fff,#161a23);--ink:light-
 [data-site=study] .entries{display:grid;gap:16px;align-items:start}
 [data-site=study] .entry{padding:22px;border-radius:14px}
 [data-site=study] .entry:hover{border-color:var(--accent);transform:none}
-[data-site=study] .feed-entry{margin-bottom:10px;background:var(--card)}
 @media(max-width:700px){[data-site=study] .entries{grid-template-columns:1fr}}
 [data-site=study][data-design] .learn-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
 [data-site=study][data-design] .learn-course{position:relative;min-height:285px;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;align-items:flex-end;background:var(--soft)}
@@ -29,13 +28,13 @@ body[data-site=study][data-design]{--paper:light-dark(#fff,#161a23);--ink:light-
 [data-site=study][data-design] .course-1{--soft:light-dark(#f9f0d8,#373121)}
 [data-site=study][data-design] .course-2{--soft:light-dark(#e8edf9,#252f45)}
 [data-site=study][data-design] .course-3{--soft:light-dark(#eee7f8,#332840)}
-[data-site=study][data-design] .ref-grid,[data-site=study][data-design] #feed-entries{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-[data-site=study][data-design] :is(.ref-card,.feed-entry){border:1px solid var(--line);border-radius:9px;overflow:hidden;padding:0 0 22px}
+[data-site=study][data-design] .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+/* Waterfall listing (shared.css): this site's cards. */
+[data-site=study][data-design] .content-feed{--wf-radius:9px}
+[data-site=study][data-design] .ref-card{border:1px solid var(--line);border-radius:9px;overflow:hidden;padding:0 0 22px}
 [data-site=study][data-design] .ref-copy{padding:20px}
-[data-site=study][data-design] .feed-entry>:not(.feed-cover){margin-left:22px;margin-right:22px}
-[data-site=study][data-design] .feed-cover{display:block;margin-bottom:20px}
 [data-site=study][data-design] .feed-layout{display:block}
 [data-site=study][data-design] .feed-sidebar{position:static;margin-bottom:22px}
 [data-site=study][data-design] .feed-filters{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px}
 [data-site=study][data-design] #feed-search-form{max-width:560px}
-@media(max-width:650px){[data-site=study][data-design] .learn-grid,[data-site=study][data-design] .ref-grid,[data-site=study][data-design] #feed-entries{grid-template-columns:1fr}[data-site=study][data-design] .learn-course{min-height:245px}}
+@media(max-width:650px){[data-site=study][data-design] .learn-grid,[data-site=study][data-design] .ref-grid{grid-template-columns:1fr}[data-site=study][data-design] .learn-course{min-height:245px}}
