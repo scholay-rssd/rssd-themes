@@ -145,7 +145,9 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   for(const file of pages){
     const route='/'+file.replace(/index.html$/,''),bytes=await readFile(join(target,file));
     if(/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(bytes.toString()))continue;
-    if(['metho','enter'].includes(site.id)&&!bytes.toString().includes(`<link rel="canonical" href="${esc(site.origin+route)}">`))continue;
+    // A page that names another page as canonical (such as /journal/) is an alias, never a sitemap entry.
+    const canonical=bytes.toString().match(/<link rel="canonical" href="([^"]*)">/)?.[1];
+    if(canonical&&canonical!==esc(site.origin+route))continue;
     const {lastmod}=seo.page(route,bytes);entries.push({loc:site.origin+route,lastmod});
   }
   const chunks=splitSitemap('content',entries),maps=[];
