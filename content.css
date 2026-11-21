@@ -23,6 +23,8 @@ body[data-theme="personal"]{--accent:#3a7c77;background:#f1ede3;color:#293638}
 .feed-filters a{display:flex;justify-content:space-between;gap:16px;padding:10px 12px;border-radius:5px}
 .feed-filters a[aria-current="page"]{color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);font-weight:600}
 .feed-filters small{font-size:12px;color:#747b70}
+/* In the selected filter the count follows its text colour, whatever the design paints the filter. */
+.feed-filters a:is([aria-current],.active) small{color:inherit;opacity:.75}
 .feed-legacy{margin-top:24px;color:#687160}.feed-legacy summary{cursor:pointer}.feed-legacy .feed-filters{margin-top:8px}
 #feed-count{font-size:12px;color:#747b70;margin:0;padding:0 0 18px;border-bottom:1px solid #d9ddcf}
 .feed-entry{padding:25px 0;border-bottom:1px solid #d9ddcf;overflow-wrap:anywhere}
