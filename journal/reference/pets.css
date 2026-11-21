@@ -100,7 +100,9 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .feed-entry{display:flex;flex-direction:column;gap:8px;break-inside:avoid;margin:0 0 16px;padding:0 0 12px;border:0;border-radius:10px;overflow:hidden;background:var(--card);box-shadow:0 1px 0 var(--line),0 14px 30px -26px rgba(46,33,24,.6);transition:transform .2s ease,box-shadow .2s ease}
 [data-site=pets][data-design] .feed-entry:hover{transform:translateY(-2px);box-shadow:0 1px 0 var(--line),0 18px 34px -24px rgba(46,33,24,.7)}
 [data-site=pets][data-design] .feed-entry>:not(.feed-cover){margin-left:12px;margin-right:12px}
-[data-site=pets][data-design] .feed-entry:not(:has(.feed-cover)){padding-top:16px;background:color-mix(in srgb,var(--accent) 8%,var(--card))}
+[data-site=pets][data-design] .feed-entry:not(:has(.feed-cover:not(.feed-cover-text))){padding-top:16px;background:color-mix(in srgb,var(--accent) 8%,var(--card))}
+/* A work without a picture keeps pets' summary card rather than the shared text cover. */
+[data-site=pets][data-design] .feed-cover-text{display:none}
 [data-site=pets][data-design] .feed-cover{display:block;overflow:hidden;aspect-ratio:clamp(.75,var(--ar,1.3333),1.5);background:var(--soft)}
 [data-site=pets][data-design] .feed-cover img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 35%;transition:transform .35s ease}
 [data-site=pets][data-design] .feed-entry:hover .feed-cover img{transform:scale(1.03)}
@@ -109,7 +111,7 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .feed-entry h2 a::after{content:"";position:absolute;inset:0}
 [data-site=pets][data-design] .feed-entry{position:relative}
 [data-site=pets][data-design] .feed-entry p{order:2;margin:0;font-size:13px;line-height:1.7;color:var(--muted);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover) p{display:none}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text)) p{display:none}
 [data-site=pets][data-design] .feed-entry .entry-meta{order:3;display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:2px;font:600 12px/1.4 var(--round);color:var(--muted)}
 [data-site=pets][data-design] .feed-entry .entry-meta span{display:inline-flex;align-items:center;gap:6px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--sec,var(--accent))}
 [data-site=pets][data-design] .feed-entry .entry-meta span::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:currentColor}
@@ -117,21 +119,21 @@ body[data-site=pets][data-design]{
 [data-site=pets][data-design] .feed-entry .entry-meta time{flex:none;font:500 12px/1.4 var(--round);color:inherit}
 /* A card with a cover is the cover itself: a shadow rises from its foot and the title, section and date float
    on it in white, as on the home page. The whole card stays one link. */
-[data-site=pets][data-design] .feed-entry:has(.feed-cover){display:grid;grid-template-rows:1fr auto auto;gap:0;padding:0;color:#fff}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover)>.feed-cover{grid-area:1/1/4/2;position:relative}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover)>.feed-cover::after{content:"";position:absolute;inset:auto 0 0;height:max(64%,128px);background:linear-gradient(to top,rgba(20,12,6,.88),rgba(20,12,6,.62) 42%,rgba(20,12,6,0));pointer-events:none}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text)){display:grid;grid-template-rows:1fr auto auto;gap:0;padding:0;color:#fff}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>.feed-cover{grid-area:1/1/4/2;position:relative}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>.feed-cover::after{content:"";position:absolute;inset:auto 0 0;height:max(64%,128px);background:linear-gradient(to top,rgba(20,12,6,.88),rgba(20,12,6,.62) 42%,rgba(20,12,6,0));pointer-events:none}
 /* A soft shade in the corner keeps the type icon visible on light pictures. */
 [data-site=pets][data-design] .feed-entry:has(.feed-type)>.feed-cover::before{content:"";position:absolute;top:0;right:0;z-index:1;width:72px;height:72px;background:radial-gradient(circle at top right,rgba(20,12,6,.5),rgba(20,12,6,0) 70%);pointer-events:none}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover)>h2{grid-area:2/1/3/2;z-index:1;margin:0 12px 6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.55)}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover)>.entry-meta{grid-area:3/1/4/2;z-index:1;margin:0 12px 12px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover) .entry-meta time{font-weight:600;font-variant-numeric:tabular-nums}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover) .entry-meta span{color:#fff}
-[data-site=pets][data-design] .feed-entry:has(.feed-cover) .entry-meta span::before{background:var(--sec,var(--accent));box-shadow:0 0 0 1.5px rgba(255,255,255,.9)}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>h2{grid-area:2/1/3/2;z-index:1;margin:0 12px 6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.55)}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>.entry-meta{grid-area:3/1/4/2;z-index:1;margin:0 12px 12px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text)) .entry-meta time{font-weight:600;font-variant-numeric:tabular-nums}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text)) .entry-meta span{color:#fff}
+[data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text)) .entry-meta span::before{background:var(--sec,var(--accent));box-shadow:0 0 0 1.5px rgba(255,255,255,.9)}
 /* Article or note: a small picture floating on the cover's corner; on a card without a cover, above the title. */
 [data-site=pets][data-design] .feed-type{position:absolute;top:10px;right:10px;z-index:2;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.55))}
 [data-site=pets][data-design] .feed-type svg{width:20px;height:20px}
 [data-site=pets][data-design] .feed-type[data-type=article]{opacity:1}
-[data-site=pets][data-design] .feed-entry:not(:has(.feed-cover)) .feed-type{position:static;align-self:flex-start;margin:0 12px;color:var(--sec,var(--accent));filter:none}
+[data-site=pets][data-design] .feed-entry:not(:has(.feed-cover:not(.feed-cover-text))) .feed-type{position:static;align-self:flex-start;margin:0 12px;color:var(--sec,var(--accent));filter:none}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}
@@ -163,8 +165,8 @@ body[data-site=pets][data-design]:has(.rssd-article),body[data-site=pets][data-d
   [data-site=pets][data-design] .feed-entry{margin-bottom:10px;border-radius:8px;gap:6px;padding-bottom:10px}
   [data-site=pets][data-design] .feed-entry>:not(.feed-cover){margin-left:9px;margin-right:9px}
   [data-site=pets][data-design] .feed-entry h2{margin:0 9px;font-size:14px}
-  [data-site=pets][data-design] .feed-entry:has(.feed-cover)>h2{margin:0 10px 4px}
-  [data-site=pets][data-design] .feed-entry:has(.feed-cover)>.entry-meta{margin:0 10px 10px}
+  [data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>h2{margin:0 10px 4px}
+  [data-site=pets][data-design] .feed-entry:has(.feed-cover:not(.feed-cover-text))>.entry-meta{margin:0 10px 10px}
   [data-site=pets][data-design] .feed-type{top:8px;right:8px}
   [data-site=pets][data-design] .pt-gallery .pt-row{flex-direction:column}
   [data-site=pets][data-design] .pt-card{flex:none;width:100%}

@@ -98,7 +98,16 @@ body[data-site=enter][data-design]{
 [data-site=enter][data-design] .content-feed .feed-entry .entry-meta span{font-weight:700;color:var(--lc,var(--accent))}
 [data-site=enter][data-design] .content-feed .feed-entry .entry-meta time{font-family:var(--mono)}
 /* Each card keeps its section's line colour, as a stripe above the cover. */
-[data-site=enter][data-design] .content-feed .feed-entry{border-top:4px solid var(--lc,var(--line))}
+[data-site=enter][data-design] :is(.feed-lead,.feed-notes,[data-feed-layout=waterfall])>.feed-entry,[data-site=enter][data-design] [data-feed-layout=waterfall] .feed-entry{border-top:4px solid var(--lc,var(--line))}
+/* List rows (shared.css): this site's own row design. */
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) #feed-entries{border-top:2px solid var(--ink)}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry{--wf-thumb:150px;padding:20px 0 20px 18px;border-left:4px solid var(--lc,var(--line))}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta{font:700 13px/1.6 var(--sans)}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta span{color:var(--lc,var(--muted))}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta time{font-family:var(--mono);font-weight:400}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{margin:4px 0 6px;font:800 19px/1.5 var(--sans)}
+[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .feed-cover{aspect-ratio:150/94;border-radius:3px}
+@media(max-width:650px){[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry{--wf-thumb:92px;column-gap:14px;padding-left:14px}[data-site=enter][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{font-size:17px}}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=enter][data-design]:has(.rssd-article),body[data-site=enter][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}

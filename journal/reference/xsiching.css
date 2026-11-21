@@ -21,6 +21,9 @@ body[data-site=xsiching][data-design]{font-family:var(--ref-serif)}
 [data-site=xsiching][data-design] .content-feed{--wf-radius:0;--wf-title:var(--ref-serif);--wf-meta:var(--ref-serif)}
 [data-site=xsiching][data-design] .content-feed .feed-entry h2{font-weight:500;letter-spacing:.04em}
 [data-site=xsiching][data-design] .content-feed .feed-cover img{filter:saturate(.75)}
+/* List rows (shared.css): this site's own row design. */
+[data-site=xsiching][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{font:500 21px/1.6 var(--ref-serif);letter-spacing:.04em}
+[data-site=xsiching][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry p{font-size:15px;line-height:1.95}
 [data-site=xsiching][data-design] .prose h1{text-align:center;font-weight:500;font-family:var(--ref-serif)}
 [data-site=xsiching][data-design] .prose{font-size:18px;line-height:2.1}
 /* The folio homepage (no data-design): its own layout. */

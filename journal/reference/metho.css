@@ -85,6 +85,11 @@ body[data-site=metho][data-design]{
 /* Waterfall listing (shared.css): this site's cards. */
 [data-site=metho][data-design] .content-feed{--wf-radius:2px;--wf-title:var(--serif);--wf-meta:var(--mono)}
 [data-site=metho][data-design] .content-feed .feed-entry h2{font-weight:700}
+/* List rows (shared.css): this site's own row design. */
+[data-site=metho][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry{--wf-thumb:120px;padding:22px 0}
+[data-site=metho][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta{font:500 12px/1.6 var(--mono);letter-spacing:.04em}
+[data-site=metho][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{font:700 22px/1.5 var(--serif)}
+@media(max-width:650px){[data-site=metho][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{font-size:18px}}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=metho][data-design]:has(.rssd-article),body[data-site=metho][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}

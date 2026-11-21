@@ -73,6 +73,13 @@ body[data-site=legis][data-design]{
 [data-site=legis][data-design] .content-feed{--wf-radius:0;--wf-fit:contain;--wf-title:var(--serif);--wf-meta:var(--serif)}
 [data-site=legis][data-design] .content-feed .feed-entry h2{font-weight:800}
 [data-site=legis][data-design] .content-feed .feed-entry .entry-meta span{font-weight:600;letter-spacing:.06em}
+/* List rows (shared.css): this site's own row design. */
+[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry{--wf-thumb:168px;column-gap:28px;padding:24px 0}
+[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta{font:600 13px/1.6 var(--serif);letter-spacing:.08em}
+[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{margin:6px 0 8px;font:800 22px/1.45 var(--serif)}
+[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry p{font-size:15px;line-height:1.85}
+[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .feed-cover{border:1px solid var(--line);border-radius:0}
+@media(max-width:650px){[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry{--wf-thumb:96px;column-gap:16px}[data-site=legis][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{font-size:18px}}
 
 /* Article pages: the category template keeps its accent; paper and ink follow the site. */
 body[data-site=legis][data-design]:has(.rssd-article),body[data-site=legis][data-design] article.rssd-article.rssd-article{--read-paper:var(--card);--read-canvas:var(--paper);--read-ink:var(--ink);--read-muted:var(--muted);--read-line:var(--line)}

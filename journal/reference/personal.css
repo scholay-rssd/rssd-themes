@@ -25,6 +25,12 @@ body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:
 /* Waterfall listing (shared.css): this site's cards. */
 [data-site=personal][data-design] .content-feed{--wf-radius:0;--wf-title:ui-monospace,"PingFang SC",monospace;--wf-meta:ui-monospace,"PingFang SC",monospace}
 [data-site=personal][data-design] .content-feed .feed-entry h2{font-weight:400}
+/* List rows (shared.css): this site's own row design. */
+[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry,[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry:not(:has(.feed-cover:not(.feed-cover-text))){grid-template-columns:124px minmax(0,1fr);grid-template-areas:"meta title";column-gap:16px}
+[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .feed-cover,[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry p,[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta span{display:none}
+[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry .entry-meta{display:block;margin-top:5px}
+[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry h2{margin:0;font:400 18px/1.8 ui-monospace,"PingFang SC",monospace}
+@media(max-width:650px){[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry,[data-site=personal][data-design] :is([data-feed-layout=list],[data-feed-layout=mixed]) .feed-results>div>.feed-entry:not(:has(.feed-cover:not(.feed-cover-text))){grid-template-columns:72px minmax(0,1fr)}}
 [data-site=personal][data-design] .entry-meta{font-size:11px}
 [data-site=personal][data-design] .reading{margin-top:45px}
 @media(max-width:1050px){body[data-site=personal][data-design]{grid-template-columns:240px minmax(0,1fr)}[data-site=personal][data-design]>main,[data-site=personal][data-design]>footer{width:calc(100% - 48px)}}
