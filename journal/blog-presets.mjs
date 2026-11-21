@@ -9,15 +9,15 @@ export const BLOG_THEMES = Object.freeze({
   xmin: {name:'XMin',repository:'https://github.com/yihui/hugo-xmin'},
 });
 export const BLOG_SITES = Object.freeze({
-  xsime: {theme:'papermod',label:'INPUT & IDEAS',mark:'犀',heading:'输入之间',color:'#385b49',structures:['toc','neighbors']},
-  piggytuck: {theme:'archie',label:'DESIGN NOTEBOOK',mark:'猪',heading:'创作手记',color:'#3949ac',structures:['image-rows','wide-figures']},
-  personal: {theme:'bear',label:'A PERSONAL JOURNAL',mark:'海',heading:'最近写下的',color:'#376c68',structures:['post-meta','reading-progress','neighbors']},
-  pets: {theme:'bear',label:'LITTLE COMPANIONS',mark:'伴',heading:'共同生活的小事',color:'#855434',structures:['infobox','see-also']},
-  legis: {theme:'xmin',label:'LAW & SOCIETY',mark:'法',heading:'法律观察',color:'#46596e',structures:['fact-sheet','citations','toc']},
-  metho: {theme:'archie',label:'METHODS & PRACTICE',mark:'研',heading:'方法与发现',color:'#316b5c',structures:['byline','wide-figures','appendix'],searchTitle:'研究方法｜研究设计、统计分析与实验实践',description:'面向研究者的研究方法学习与实践指南，涵盖研究设计、统计分析、实验复现与方法前沿，通过概念讲解、可复算示例和资料链接理解证据。'},
-  enter: {theme:'archie',label:'AN OPEN NOTEBOOK',mark:'知',heading:'探索与记录',color:'#405e8b',structures:['link-directory','source-action'],searchTitle:'学术之门｜科研软件、文献检索与课程资源',description:'面向研究者的学术资源导航与使用指南，整理学术论坛、科研软件、文献检索和课程资源，提供工具介绍、操作步骤与官方入口。'},
-  xsiching: {theme:'xmin',label:'读书 · 观象 · 明理',mark:'易',heading:'案头新读',color:'#8a4437',structures:['epigraph','title-seal','toc']},
-  study: {theme:'papermod',label:'LEARN & EXPLORE',mark:'学',heading:'学习新知',color:'#536247',structures:['tables','neighbors']},
+  xsime: {theme:'papermod',feed:{all:'mixed',section:'list',sections:{'input-skins':'waterfall'}},label:'INPUT & IDEAS',mark:'犀',heading:'输入之间',color:'#385b49',structures:['toc','neighbors']},
+  piggytuck: {theme:'archie',feed:{all:'waterfall',section:'waterfall'},label:'DESIGN NOTEBOOK',mark:'猪',heading:'创作手记',color:'#3949ac',structures:['image-rows','wide-figures']},
+  personal: {theme:'bear',feed:{all:'list',section:'list'},label:'A PERSONAL JOURNAL',mark:'海',heading:'最近写下的',color:'#376c68',structures:['post-meta','reading-progress','neighbors']},
+  pets: {theme:'bear',feed:{all:'waterfall',section:'waterfall'},label:'LITTLE COMPANIONS',mark:'伴',heading:'共同生活的小事',color:'#855434',structures:['infobox','see-also']},
+  legis: {theme:'xmin',feed:{all:'list',section:'list'},label:'LAW & SOCIETY',mark:'法',heading:'法律观察',color:'#46596e',structures:['fact-sheet','citations','toc']},
+  metho: {theme:'archie',feed:{all:'mixed',section:'list'},label:'METHODS & PRACTICE',mark:'研',heading:'方法与发现',color:'#316b5c',structures:['byline','wide-figures','appendix'],searchTitle:'研究方法｜研究设计、统计分析与实验实践',description:'面向研究者的研究方法学习与实践指南，涵盖研究设计、统计分析、实验复现与方法前沿，通过概念讲解、可复算示例和资料链接理解证据。'},
+  enter: {theme:'archie',feed:{all:'list',section:'list'},label:'AN OPEN NOTEBOOK',mark:'知',heading:'探索与记录',color:'#405e8b',structures:['link-directory','source-action'],searchTitle:'学术之门｜科研软件、文献检索与课程资源',description:'面向研究者的学术资源导航与使用指南，整理学术论坛、科研软件、文献检索和课程资源，提供工具介绍、操作步骤与官方入口。'},
+  xsiching: {theme:'xmin',feed:{all:'mixed',section:'list',sections:{classics:'waterfall'}},label:'读书 · 观象 · 明理',mark:'易',heading:'案头新读',color:'#8a4437',structures:['epigraph','title-seal','toc']},
+  study: {theme:'papermod',feed:{all:'mixed',section:'list',sections:{courses:'waterfall',offers:'waterfall'}},label:'LEARN & EXPLORE',mark:'学',heading:'学习新知',color:'#536247',structures:['tables','neighbors']},
 });
 // Local Demo variants (web/demo/) reuse the same four styles; never deployed.
 export const DEMO_BLOG_SITES = Object.freeze(Object.fromEntries([
@@ -25,6 +25,13 @@ export const DEMO_BLOG_SITES = Object.freeze(Object.fromEntries([
   ['demo-docs','papermod'],['demo-encyclopedia','bear'],['demo-portfolio','archie'],['demo-personal','bear'],
 ].map(([id,theme])=>[id,{theme,label:'THEME UNIT TEST',mark:'演',heading:'最近发布',color:'#2b6e52',structures:Object.keys(STRUCTURES)}])));
 export const SKINNED_SITES = Object.freeze(['metho','enter','study','legis','xsiching','xsime','pets','personal']);
+// How each listing is laid out (content-feed.mjs FEED_LAYOUTS): `all` for 全部 (/archive/), `section` for a section,
+// `sections` for one section by id. Picture-led content gets covers; content read by title and date gets rows;
+// mixed puts the newest four as covers above the rows. A site without `feed` keeps the waterfall.
+export function feedLayout(blog,sectionId=''){
+  const feed=blog.feed||{};
+  return (sectionId?feed.sections?.[sectionId]??feed.section:feed.all)||'waterfall';
+}
 export function blogPreset(site) {
   const real=site.id.startsWith('demo-skin-')&&BLOG_SITES[site.id.slice(10)];
   if(real)return {...real,...BLOG_THEMES[real.theme],id:real.theme,skin:site.id.slice(10)};

@@ -16,7 +16,8 @@ import {renderNavigation,feedLabel,githubNavLink} from '../../engine/site-naviga
 import {familyFooter,familyIconEntries} from '../../engine/site-family.mjs';
 import {createFeedIndex,renderFeed,feedRoute,feedPageSize} from '../../engine/content-feed.mjs';
 import {siteBranding} from '../../../sites/branding/assets.mjs';
-import {blogPreset,blogExcerpt} from './blog-presets.mjs';
+import {blogPreset,blogExcerpt,feedLayout} from './blog-presets.mjs';
+import {exportTemplate} from '../export/registry.mjs';
 import {referenceHome,referencePage,referenceSites} from './reference-layouts.mjs';
 import {articleStructures,homeStructures} from '../structures.mjs';
 import {recordsInCollection} from '../../engine/site-organization.mjs';
@@ -57,7 +58,7 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
       const size=readImageSize(bytes);if(size){pictureRatios.set(media.src,size.width/size.height);break;}
     }
   }
-  const journalLabel=feedLabel(site),feedIndex=createFeedIndex(content,{ratio:src=>pictureRatios.get(src)});
+  const journalLabel=feedLabel(site),feedIndex=createFeedIndex(content,{ratio:src=>pictureRatios.get(src),palette:sectionId=>{try{return exportTemplate({siteId:site.id,sectionId,format:'pages'});}catch{return undefined;}}});
   const feedSections=[{id:'',route:'/archive/'},...feedIndex.sections];
   const feedRoutes=feedSections.flatMap(c=>Array.from({length:Math.max(1,Math.ceil((c.id?feedIndex.records.filter(r=>c.members.includes(r.section)):records).length/feedPageSize))},(_,i)=>feedRoute(c.route,i+1)));
   const reserved=new Set(['/','/journal/','/calendar/',...feedRoutes,...display.pages.map(p=>p.route),...standing.pages.map(p=>p.route),...standing.hubs.map(h=>h.route),...(about?[ABOUT_ROUTE]:[]),...(site.services?.guestbook?.enabled?[GUESTBOOK_ROUTE]:[])]);
@@ -88,14 +89,14 @@ export async function renderJournal({job,target,site,source,previousRoot,now,con
   const directory=`<aside class="home-directory" aria-label="栏目索引"><h2>按主题阅读</h2><nav>${primary.map(c=>`<a href="${esc(c.route)}"><span>${esc(c.name)}</span><small>${recordsInCollection(content,c.id).length.toString().padStart(2,'0')}</small></a>`).join('')}</nav><p class="directory-note">${esc(blog.description||site.description)}<br><a href="/content-feed.xml">通过 RSS 订阅更新 ↗</a></p></aside>`;
   const overview=intro+`<div class="home-layout"><section class="home-main"><div class="section-heading"><h2>${esc(blog.heading)}</h2><a href="/archive/">全部文章 <span aria-hidden="true">→</span></a></div><div class="entries">${posts||'<p class="empty">新的记录正在准备中。可以先从栏目开始探索。</p>'}</div></section>${directory}</div>${homeStructures({structures:blog.structures,content,sections:primary})}`;
   if(!homepage)await write('index.html',shell(site.name,'/',referenceHome({site,records,sections:primary,directory,pictureRatio:src=>pictureRatios.get(src)})??overview));
-  const allFeed=renderFeed(feedIndex,{label:journalLabel});
+  const allFeed=renderFeed(feedIndex,{label:journalLabel,layout:feedLayout(blog)});
   await write('journal/index.html',shell(journalLabel+' · 阅读目录','/journal/',allFeed.body));
   await write('content-feed.js',await readFile(new URL('../../engine/content-feed-client.js',import.meta.url)));
   await write('content-feed-index.json',JSON.stringify(feedIndex));
   for(const c of [{id:'',route:'/archive/'},...content.collections.filter(c=>c.route!=='/archive/')]){
-    const first=renderFeed(feedIndex,{label:journalLabel,section:c.id});
+    const first=renderFeed(feedIndex,{label:journalLabel,section:c.id,layout:feedLayout(blog,c.id)});
     for(let page=1;page<=first.pages;page++){
-      const route=feedRoute(c.route,page),feed=page===1?first:renderFeed(feedIndex,{label:journalLabel,section:c.id,page});
+      const route=feedRoute(c.route,page),feed=page===1?first:renderFeed(feedIndex,{label:journalLabel,section:c.id,page,layout:feedLayout(blog,c.id)});
       await write(route.slice(1)+'index.html',shell(feed.title+(c.id?'文章':'')+(page>1?' · 第 '+page+' 页':''),route,feed.body,listingDescription({title:feed.title,description:c.description,page,pages:first.pages,items:(c.id?feedIndex.records.filter(r=>feedIndex.sections.find(s=>s.id===c.id)?.members.includes(r.section)):feedIndex.records).slice((page-1)*feedPageSize,page*feedPageSize)})));
     }
   }
