@@ -1,7 +1,7 @@
 /* 学术海 — Frank Chimero's archive and Derek Sivers: a dark sidebar and mono archive rows. The authored Next homepage is separate.
    This file is personal's single visual source; skins/personal.css keeps only the same
    tokens. System fonts only: web fonts are slow or blocked for many readers in China. */
-body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:light-dark(#303633,#e2e9e2);--accent:light-dark(#3f6251,#aacfb9);--soft:light-dark(#e2e5df,#2b352e);--line:light-dark(#cfd5cc,#465248);--muted:light-dark(#677267,#afbbaf);display:grid;grid-template-columns:300px minmax(0,1fr);font-family:ui-monospace,"PingFang SC",monospace;--card:light-dark(#fbfaf5,#222b29);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+body[data-site=personal][data-design]{--paper:light-dark(#eeeeeb,#1c211e);--ink:light-dark(#303633,#e2e9e2);--accent:light-dark(#3f6251,#aacfb9);--soft:light-dark(#e2e5df,#2b352e);--line:light-dark(#cfd5cc,#465248);--muted:light-dark(#5c665c,#afbbaf);display:grid;grid-template-columns:300px minmax(0,1fr);font-family:ui-monospace,"PingFang SC",monospace;--card:light-dark(#fbfaf5,#222b29);--serif:"Songti SC","Noto Serif CJK SC","Source Han Serif SC",STSong,SimSun,Georgia,serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 /* Rules that came from the skin, at its specificity, so the reference rules below still win. */
 [data-site=personal] .site-header nav{font-family:var(--mono)}
 [data-site=personal] h1{font-family:var(--serif)}

@@ -20,10 +20,14 @@ import {articleStructures} from '../structures.mjs';
 import {renderFrontPage,frontPageGuard} from './front-page.mjs';
 import {writeMathAssets,mathStyleLoader} from '../../engine/math-assets.mjs';
 import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
 import {mkdir, readFile, rm, writeFile, utimes} from 'node:fs/promises';
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createSeoState,stableJson,sitemapXml,splitSitemap} from '../../../scripts/seo-state.mjs';
+// Stylesheets are versioned by their bytes, so a reader's browser fetches them again after a design change.
+// Read when a page is written, not on import: a package without the public files still loads this module.
+const cssHref=name=>{try{return '/'+name+'?v='+createHash('sha256').update(readFileSync(new URL('./public/'+name,import.meta.url))).digest('hex').slice(0,12);}catch(error){if(error.code==='ENOENT')return '/'+name;throw error;}};
 
 export const siteOrigin = 'https://today.scholay.com';
 // The site is called Today; 今日学术 is the name of its calendar section.
@@ -82,7 +86,7 @@ function pageShell({title,description,route,body,schema,kind='website',lastmod,h
   return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
     '<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#f7f5ef"><meta name="color-scheme" content="light dark">'+
     '<title>'+html(title)+'</title><meta name="description" content="'+html(description)+'"><link rel="canonical" href="'+html(canonical)+'">'+
-    '<link rel="alternate" type="application/rss+xml" title="'+html(SITE_NAME)+' RSS" href="/content-feed.xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/calendar-workspace.css"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/seo.css?v=academic-news-20261018"><link rel="stylesheet" href="/reference.css?v=20261028"><script src="/seo-theme.js"></script>'+
+    '<link rel="alternate" type="application/rss+xml" title="'+html(SITE_NAME)+' RSS" href="/content-feed.xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/calendar-workspace.css"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="'+cssHref('seo.css')+'"><link rel="stylesheet" href="'+cssHref('reference.css')+'"><script src="/seo-theme.js"></script>'+
     mathStyles(body)+'<meta property="og:type" content="'+kind+'"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="'+html(SITE_NAME)+'">'+
     '<meta property="og:title" content="'+html(title)+'"><meta property="og:description" content="'+html(description)+'"><meta property="og:url" content="'+html(canonical)+'"><meta property="og:image" content="'+siteOrigin+'/social-preview.png"><meta property="og:image:alt" content="'+html(SITE_NAME)+'：学术日历、学术史与学术开源">'+
     '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+html(title)+'"><meta name="twitter:description" content="'+html(description)+'"><meta name="twitter:image" content="'+siteOrigin+'/social-preview.png">'+
@@ -188,7 +192,7 @@ export async function buildSeoSite({root=projectRoot,homepageRoot=root===project
   const front=renderFrontPage({news,openSource,sections:frontSections,
     route:{news:newsRoute,openSource:sourceRoute},cover:item=>publicRecord('news',item)?.media?.[0],sectionName:item=>sectionFor('news',item).name});
   const rootSource=fillNavigationSlot(await readFile(join(homepageRoot,'index.html'),'utf8'),site).replace(/<script type="application\/ld\+json" data-seo-home>[\s\S]*?<\/script>\n?/g,'')
-    .replace('</head>','<link rel="stylesheet" href="/reference.css?v=20261028"></head>')
+    .replace('</head>','<link rel="stylesheet" href="'+cssHref('reference.css')+'"></head>')
     .replace(/(<main id="main"[^>]*>)([\s\S]*?)(<div class="loading">[^<]*<\/div><\/main>)/,(_,open,noscript,loading)=>open+frontPageGuard+front+noscript+loading.replace(/<div class="loading">[^<]*<\/div>/,''));
   const rootData=[calendarData.year,calendarData.history,openSourceData.items].map(items=>items.map(stableJson).sort());
   await writeRoute('/',lastmod=>lastmod?rootSource.replace('</head>','<script type="application/ld+json" data-seo-home>'+json({'@context':'https://schema.org','@type':'WebPage','@id':siteOrigin+'/#webpage',url:siteOrigin+'/',name:SITE_NAME+' · 科研日历',dateModified:lastmod,isPartOf:{'@id':siteOrigin+'/#website'}})+'</script>\n</head>'):rootSource,stableJson(rootData));

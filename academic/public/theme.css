@@ -16,7 +16,7 @@ html[data-theme="light"] {
   --pr-list: #fffefa;
   --pr-ink: #1a1816;
   --pr-ink2: #3a3733;
-  --pr-muted: #777269;
+  --pr-muted: #6b665d;
   --pr-line: rgba(20, 18, 16, .11);
   --pr-accent: #b86643;
   --pr-accent-soft: #f5e8dc;
@@ -24,7 +24,7 @@ html[data-theme="light"] {
   --cal-panel: #fbf9f3;
   --cal-panel-2: #fffefa;
   --cal-ink: #1a1816;
-  --cal-muted: #777269;
+  --cal-muted: #6b665d;
   --cal-line: rgba(20, 18, 16, .12);
   --cal-accent: #b86643;
   --cal-accent-soft: #f7e5da;
@@ -33,7 +33,7 @@ html[data-theme="light"] {
   --cw-panel-2: #fffefa;
   --cw-ink: #1a1816;
   --cw-ink2: #3a3733;
-  --cw-muted: #777269;
+  --cw-muted: #6b665d;
   --cw-hair: rgba(20, 18, 16, .12);
   --cw-accent: #b86643;
   --cw-accent-soft: #f7e5da;

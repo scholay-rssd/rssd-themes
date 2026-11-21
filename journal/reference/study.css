@@ -1,19 +1,20 @@
 /* 智能学堂 — Hugging Face Learn course shelves and roadmap.sh entry points, with pill-shaped topic links.
    This file is study's single visual source; skins/study.css keeps only the same
    tokens. System fonts only: web fonts are slow or blocked for many readers in China. */
-body[data-site=study][data-design]{--paper:light-dark(#fff,#161a23);--ink:light-dark(#20232c,#e7eaf3);--accent:light-dark(#34548a,#a4c2ef);--soft:light-dark(#f0f2f7,#252b3c);--line:light-dark(#e0e4ec,#3b445a);--muted:light-dark(#65708a,#b0bad0);--card:light-dark(#fff,#1d2418);font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+body[data-site=study][data-design]{--paper:light-dark(#fff,#161a23);--ink:light-dark(#20232c,#e7eaf3);--accent:light-dark(#34548a,#a4c2ef);--soft:light-dark(#f0f2f7,#252b3c);--line:light-dark(#e0e4ec,#3b445a);--muted:light-dark(#58627a,#b0bad0);--card:light-dark(#fff,#1d2418);font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
 /* Rules that came from the skin, at its specificity, so the reference rules below still win. */
 [data-site=study] .brand .brand-monogram,[data-site=study] .brand .site-logo{border-radius:9px}
 [data-site=study] h1{font-weight:900}
 [data-site=study] .eyebrow{font-weight:700}
 [data-site=study] .home-directory{margin-bottom:28px}
 [data-site=study] .home-directory h2,[data-site=study] .directory-note{display:none}
-[data-site=study] .home-directory nav a{min-height:0;border-radius:999px;font-weight:600}
-[data-site=study] .home-directory nav a:nth-child(4n+1){background:#e6eed9;color:#35501d;border-color:#d3e1bf}
-[data-site=study] .home-directory nav a:nth-child(4n+2){background:#dde9f3;color:#1f4a6b;border-color:#c5dbe9}
-[data-site=study] .home-directory nav a:nth-child(4n+3){background:#f6ead0;color:#6b4a0e;border-color:#ebd7a8}
-[data-site=study] .home-directory nav a:nth-child(4n){background:#e6e2f3;color:#4a3a7a;border-color:#d4cdea}
-[data-site=study] .home-directory nav small{margin-left:8px;opacity:.7}
+[data-site=study] .home-directory nav a{min-height:0;padding:8px 16px;border:1px solid transparent;border-radius:999px;font-weight:600}
+/* Each topic pill has a light and a dark colour; the light pastels alone glared on the dark page. */
+[data-site=study] .home-directory nav a:nth-child(4n+1){background:light-dark(#e6eed9,#24301a);color:light-dark(#35501d,#cfe3b5);border-color:light-dark(#d3e1bf,#3a4c2d)}
+[data-site=study] .home-directory nav a:nth-child(4n+2){background:light-dark(#dde9f3,#182838);color:light-dark(#1f4a6b,#bcd6ee);border-color:light-dark(#c5dbe9,#2c4259)}
+[data-site=study] .home-directory nav a:nth-child(4n+3){background:light-dark(#f6ead0,#33280f);color:light-dark(#6b4a0e,#f0d9a6);border-color:light-dark(#ebd7a8,#4d3c1a)}
+[data-site=study] .home-directory nav a:nth-child(4n){background:light-dark(#e6e2f3,#27223d);color:light-dark(#4a3a7a,#d6cdf3);border-color:light-dark(#d4cdea,#3d355a)}
+[data-site=study] .home-directory nav small{margin-left:8px;color:inherit;opacity:.75}
 [data-site=study] .entries{display:grid;gap:16px;align-items:start}
 [data-site=study] .entry{padding:22px;border-radius:14px}
 [data-site=study] .entry:hover{border-color:var(--accent);transform:none}

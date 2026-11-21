@@ -14,7 +14,8 @@
 .fp-more{gap:26px}
 .fp-story h2{font-size:21px;line-height:1.5}
 .fp-side h2{font-size:16px;letter-spacing:0}
-.fp-side section{padding:20px;background:var(--panel)}
+/* The history block keeps its own green panel and light text (theme.css); a light panel made it invisible. */
+.fp-side section:not(.fp-history){padding:20px;background:var(--panel)}
 .fp-calendar li{grid-template-columns:1fr;gap:4px;padding:12px 0}
 .fp-open-grid a{background:transparent;border:0;border-top:2px solid var(--line);padding:20px 0}
 .archive-library{max-width:1240px;grid-template-columns:210px minmax(0,1fr);gap:38px}
@@ -28,3 +29,18 @@
 .seo-main .record-card{background:transparent;border:0;border-top:1px solid var(--seo-rule);padding:22px 0}
 @media(max-width:900px){.fp-grid{grid-template-columns:minmax(0,1fr) 250px;gap:24px}.fp-stories{padding-right:24px}.fp-lead h2{font-size:29px}.archive-library{gap:22px;grid-template-columns:180px minmax(0,1fr)}}
 @media(max-width:760px){.fp{padding:10px 18px 40px}.fp-masthead h1{font-size:39px}.fp-sections{justify-content:flex-start;gap:10px 20px}.fp-grid{grid-template-columns:1fr}.fp-stories{border:0;padding:0}.fp-cover{height:240px}.fp-more{grid-template-columns:1fr}.fp-story .fp-cover{height:230px}.fp-side{display:grid;grid-template-columns:1fr;gap:20px}.archive-library{display:block}.archive-record h2{font-size:21px}}
+/* Section listings are rows, read by date and title: the section and category with the date across the top, the
+   title, then two lines of summary. Text-only cards in a grid made uneven walls of large type. */
+.archive-grid{display:block!important;border-top:2px solid var(--seo-ink)}
+.archive-grid>.archive-record{background:transparent;border:0;border-bottom:1px solid var(--seo-rule);border-radius:0;padding:0;box-shadow:none}
+.archive-grid .archive-card-link{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"top time" "title title" "text text" "course course";column-gap:20px;padding:18px 4px 18px 0;color:inherit;text-decoration:none;background:transparent}
+.archive-grid .archive-card-link:hover{background:transparent}
+.archive-grid .archive-card-link:hover h2{color:var(--accent,var(--seo-ink));text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.archive-grid .archive-card-top{grid-area:top;display:flex;gap:12px;align-items:baseline;min-width:0;margin:0;font-size:12px;letter-spacing:.08em}
+.archive-grid .archive-card-top small{margin:0;font-size:12px;letter-spacing:.04em;opacity:.75}
+.archive-grid .archive-record h2{grid-area:title;margin:8px 0 6px;font-size:20px;line-height:1.5;font-weight:700}
+.archive-grid .archive-record h2+p{grid-area:text;margin:0;font-size:14px;line-height:1.8;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.archive-grid .archive-record h2+p+p{grid-area:course;margin:6px 0 0;font-size:12px}
+.archive-grid .archive-record footer{grid-area:time;display:block;margin:0;padding:0;border:0;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.archive-grid .archive-record footer span{display:none}
+@media(max-width:760px){.archive-grid .archive-card-link{padding:16px 0}.archive-grid .archive-record h2{font-size:17px}}
